@@ -1,0 +1,7835 @@
+[
+  {
+    "name": "(CLCC OUTDOOR RESEARCH PAD)",
+    "bldgCode": "X97",
+    "rateSchedule": "CM",
+    "sector": "WEST-A01",
+    "subtype": null
+  },
+  {
+    "name": "(MILL AVENUE STUDENT HOUSING)",
+    "bldgCode": "189",
+    "rateSchedule": "CS",
+    "sector": "TMPE-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "(POLYTECHNIC MATERIALS STORAGE FACILITY AND UTILITY YARD)",
+    "bldgCode": "E835",
+    "rateSchedule": null,
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "(TEMPE DISTRICT UTILITY PLANT)",
+    "bldgCode": "190",
+    "rateSchedule": null,
+    "sector": "TMPE-A01",
+    "subtype": null
+  },
+  {
+    "name": "(WEST ACADEMIC AND OFFICE BUILDING)",
+    "bldgCode": "918",
+    "rateSchedule": null,
+    "sector": "WEST-A01",
+    "subtype": null
+  },
+  {
+    "name": "(WEST CAMPUS STUDENT HOUSING)",
+    "bldgCode": "919",
+    "rateSchedule": null,
+    "sector": "WEST-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "1776 EYE STREET NW",
+    "bldgCode": "R76",
+    "rateSchedule": "CB",
+    "sector": "WADC",
+    "subtype": null
+  },
+  {
+    "name": "2055 CENTENNIAL DR. - RESEARCH PARK",
+    "bldgCode": "X21",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "213/215 E. SIXTH ST.",
+    "bldgCode": "L167",
+    "rateSchedule": "CM",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "426 N. 1ST STREET",
+    "bldgCode": "P31",
+    "rateSchedule": "CB",
+    "sector": "DTPC-A02",
+    "subtype": null
+  },
+  {
+    "name": "64 E. BROADWAY ROAD. - WELLS FARGO",
+    "bldgCode": "R39",
+    "rateSchedule": "CM",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "777 TOWER AT NOVUS",
+    "bldgCode": "R99",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C01",
+    "subtype": null
+  },
+  {
+    "name": "A. E. ENGLAND BLDG.",
+    "bldgCode": "R16",
+    "rateSchedule": "CM",
+    "sector": "DTPC-A02",
+    "subtype": null
+  },
+  {
+    "name": "ACADEMIC CENTER",
+    "bldgCode": "E004",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "ADELPHI COMMONS (East)",
+    "bldgCode": "157A",
+    "rateSchedule": "CB",
+    "sector": "RFMT-S1",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "ADELPHI COMMONS (Mail Facility)",
+    "bldgCode": "157F",
+    "rateSchedule": "CB",
+    "sector": "RFMT-S1",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "ADELPHI COMMONS (Northeast)",
+    "bldgCode": "157B",
+    "rateSchedule": "CB",
+    "sector": "RFMT-S1",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "ADELPHI COMMONS (Northwest)",
+    "bldgCode": "157C",
+    "rateSchedule": "CB",
+    "sector": "RFMT-S1",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "ADELPHI COMMONS (South)",
+    "bldgCode": "157E",
+    "rateSchedule": "CB",
+    "sector": "RFMT-S1",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "ADELPHI COMMONS (Southwest)",
+    "bldgCode": "157D",
+    "rateSchedule": "CB",
+    "sector": "RFMT-S1",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "ADELPHI II COMMONS COMMUNITY CENTER",
+    "bldgCode": "159C",
+    "rateSchedule": "CB",
+    "sector": "RFMT-S1",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "ADELPHI II COMMONS EAST",
+    "bldgCode": "159A",
+    "rateSchedule": "CB",
+    "sector": "RFMT-S1",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "ADELPHI II COMMONS WEST",
+    "bldgCode": "159B",
+    "rateSchedule": "CB",
+    "sector": "RFMT-S1",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "ADMINISTRATION",
+    "bldgCode": "E001",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "AGRIBUSINESS CENTER",
+    "bldgCode": "E785",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "ALAMEDA BUILDING",
+    "bldgCode": "544",
+    "rateSchedule": "CM",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "ALTITUDE CHAMBER",
+    "bldgCode": "E234",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "AMMO BUNKER 1",
+    "bldgCode": "E1007",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "AMMO BUNKER 2",
+    "bldgCode": "E1008",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "ANTENNA - STAUFFER HALL WEST",
+    "bldgCode": "L01",
+    "rateSchedule": "CM",
+    "sector": "TMPE-A01",
+    "subtype": null
+  },
+  {
+    "name": "APACHE BLVD. PARKING STRUCTURE (APACHE & COLLEGE)",
+    "bldgCode": "P01",
+    "rateSchedule": "CB",
+    "sector": "TMPE-A02",
+    "subtype": null
+  },
+  {
+    "name": "APPLIED ARTS PAVILION",
+    "bldgCode": "E827B",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "AQUATIC COMPLEX - MAIN AREA",
+    "bldgCode": "L03",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C01",
+    "subtype": null
+  },
+  {
+    "name": "ARAVAIPA AUDITORIUM",
+    "bldgCode": "E795",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "ARIZONA BIOMEDICAL COLLABORATIVE",
+    "bldgCode": "3001",
+    "rateSchedule": "CB",
+    "sector": "DTPC-A01",
+    "subtype": null
+  },
+  {
+    "name": "ARIZONA CENTER TOWER",
+    "bldgCode": "R19",
+    "rateSchedule": "CB",
+    "sector": "DTPC-A01",
+    "subtype": null
+  },
+  {
+    "name": "ARMSTRONG HALL",
+    "bldgCode": "043",
+    "rateSchedule": "CM",
+    "sector": "TMPE-B02",
+    "subtype": null
+  },
+  {
+    "name": "ART BLDG.",
+    "bldgCode": "087",
+    "rateSchedule": "CM",
+    "sector": "TMPE-A01",
+    "subtype": null
+  },
+  {
+    "name": "ART WAREHOUSE",
+    "bldgCode": "094",
+    "rateSchedule": "CM",
+    "sector": "TMPE-A01",
+    "subtype": null
+  },
+  {
+    "name": "ARTISAN COURT AT THE BRICKYARD",
+    "bldgCode": "R10B",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C01",
+    "subtype": null
+  },
+  {
+    "name": "ASU AT ST. LUKE\u2019S MEDICAL PAVILION",
+    "bldgCode": "R103",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "ASU CHANDLER INNOVATION CENTER",
+    "bldgCode": "R70",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "ASU LOCAL YUMA",
+    "bldgCode": "R120",
+    "rateSchedule": null,
+    "sector": null,
+    "subtype": null
+  },
+  {
+    "name": "ASU POLICE",
+    "bldgCode": "168",
+    "rateSchedule": "CM",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "ASU PPA - ACADEMICS",
+    "bldgCode": "R90A",
+    "rateSchedule": "CB",
+    "sector": "DTPC-A01",
+    "subtype": null
+  },
+  {
+    "name": "ASU PPA - ADMINISTRATION",
+    "bldgCode": "R90B",
+    "rateSchedule": "CB",
+    "sector": "DTPC-A01",
+    "subtype": null
+  },
+  {
+    "name": "ASU PPA - AUDITORIUM",
+    "bldgCode": "R90C",
+    "rateSchedule": "CB",
+    "sector": "DTPC-A01",
+    "subtype": null
+  },
+  {
+    "name": "ASU PPA - DINING",
+    "bldgCode": "R90F",
+    "rateSchedule": "CB",
+    "sector": "DTPC-A01",
+    "subtype": null
+  },
+  {
+    "name": "ASU PPA - GYMNASIUM",
+    "bldgCode": "R90E",
+    "rateSchedule": "CB",
+    "sector": "DTPC-A01",
+    "subtype": null
+  },
+  {
+    "name": "ASU PPA - MUSIC",
+    "bldgCode": "R90D",
+    "rateSchedule": "CB",
+    "sector": "DTPC-A01",
+    "subtype": null
+  },
+  {
+    "name": "ASU PREP POLY STEM HS",
+    "bldgCode": "E832",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "ASU PREPARATORY ACADEMY SOUTH PHOENIX - HIGH SCHOOL",
+    "bldgCode": "R22",
+    "rateSchedule": "CB",
+    "sector": "DTPC-A01",
+    "subtype": null
+  },
+  {
+    "name": "ASU PREPARATORY ACADEMY SOUTH PHOENIX - PRIMARY/INTERMEDIATE",
+    "bldgCode": "R21",
+    "rateSchedule": "CB",
+    "sector": "DTPC-A01",
+    "subtype": null
+  },
+  {
+    "name": "ASU PREPARATORY ACADEMY SOUTH PHOENIX - PRIMARY",
+    "bldgCode": "RX20",
+    "rateSchedule": "CB",
+    "sector": "DTPC-A01",
+    "subtype": null
+  },
+  {
+    "name": "ASU PREPARATORY ACADEMY TEMPE",
+    "bldgCode": "R25",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "ASU SCOTTSDALE INNOVATION CENTER BUILDING FIVE",
+    "bldgCode": "R79",
+    "rateSchedule": "CB",
+    "sector": "TMPE-E04",
+    "subtype": null
+  },
+  {
+    "name": "ASU SCOTTSDALE INNOVATION CENTER BUILDING FOUR",
+    "bldgCode": "R93",
+    "rateSchedule": "CB",
+    "sector": "TMPE-E04",
+    "subtype": null
+  },
+  {
+    "name": "ASU SCOTTSDALE INNOVATION CENTER BUILDING ONE",
+    "bldgCode": "R50",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "ASU SCOTTSDALE INNOVATION CENTER BUILDING ONE",
+    "bldgCode": "R50",
+    "rateSchedule": "CB",
+    "sector": "TMPE-E04",
+    "subtype": null
+  },
+  {
+    "name": "ASU SCOTTSDALE INNOVATION CENTER BUILDING THREE",
+    "bldgCode": "R72",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "ASU SCOTTSDALE INNOVATION CENTER BUILDING TWO",
+    "bldgCode": "R100",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "ASU SCOTTSDALE INNOVATION CENTER BUILDING TWO",
+    "bldgCode": "R100",
+    "rateSchedule": "CB",
+    "sector": "TMPE-E04",
+    "subtype": null
+  },
+  {
+    "name": "ASU/COP COMMUNITY PARK",
+    "bldgCode": "L30",
+    "rateSchedule": "CM",
+    "sector": "WEST-A01",
+    "subtype": null
+  },
+  {
+    "name": "ASU/COP COMMUNITY PARK RESTROOM",
+    "bldgCode": "R51",
+    "rateSchedule": "CM",
+    "sector": "WEST-A01",
+    "subtype": null
+  },
+  {
+    "name": "BAND BLDG., TOILETS & STORAGE",
+    "bldgCode": "097",
+    "rateSchedule": "CM",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "BANK OF AMERICA AT THE BRICKYARD",
+    "bldgCode": "R10A",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C01",
+    "subtype": null
+  },
+  {
+    "name": "BANK OF AMERICA ATM",
+    "bldgCode": "X93",
+    "rateSchedule": "CB",
+    "sector": "DTPC-A02",
+    "subtype": null
+  },
+  {
+    "name": "BARRETT & O'CONNOR CENTER",
+    "bldgCode": "R88",
+    "rateSchedule": "CB",
+    "sector": "WADC",
+    "subtype": null
+  },
+  {
+    "name": "BARRETT COLLEGE AGAVE HALL",
+    "bldgCode": "173B",
+    "rateSchedule": "CB",
+    "sector": "TMPE-B02",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "BARRETT COLLEGE CEREUS HALL",
+    "bldgCode": "173C",
+    "rateSchedule": "CB",
+    "sector": "TMPE-B02",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "BARRETT COLLEGE COTTONWOOD HALL",
+    "bldgCode": "173D",
+    "rateSchedule": "CB",
+    "sector": "TMPE-B02",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "BARRETT COLLEGE FIRE PUMP HOUSE",
+    "bldgCode": "173J",
+    "rateSchedule": "CB",
+    "sector": "TMPE-B02",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "BARRETT COLLEGE HONORS HALL",
+    "bldgCode": "173H",
+    "rateSchedule": "CB",
+    "sector": "TMPE-B02",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "BARRETT COLLEGE JUNIPER HALL",
+    "bldgCode": "173E",
+    "rateSchedule": "CB",
+    "sector": "TMPE-B02",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "BARRETT COLLEGE ROSEWOOD HALL",
+    "bldgCode": "173F",
+    "rateSchedule": "CB",
+    "sector": "TMPE-B02",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "BARRETT COLLEGE SAGE HALL",
+    "bldgCode": "173A",
+    "rateSchedule": "CB",
+    "sector": "TMPE-B02",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "BARRETT COLLEGE WILLOW HALL",
+    "bldgCode": "173G",
+    "rateSchedule": "CB",
+    "sector": "TMPE-B02",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "BATEMAN CHEMICAL STORAGE BUILDING (G)",
+    "bldgCode": "057G",
+    "rateSchedule": "CM",
+    "sector": "TMPE-B01",
+    "subtype": null
+  },
+  {
+    "name": "BATEMAN PHYSICAL SCIENCES CENTER B",
+    "bldgCode": "057B",
+    "rateSchedule": "CM",
+    "sector": "TMPE-B01",
+    "subtype": null
+  },
+  {
+    "name": "BATEMAN PHYSICAL SCIENCES CENTER C",
+    "bldgCode": "057C",
+    "rateSchedule": "CM",
+    "sector": "TMPE-B01",
+    "subtype": null
+  },
+  {
+    "name": "BATEMAN PHYSICAL SCIENCES CENTER D",
+    "bldgCode": "057D",
+    "rateSchedule": "CM",
+    "sector": "TMPE-B01",
+    "subtype": null
+  },
+  {
+    "name": "BATEMAN PHYSICAL SCIENCES CENTER E",
+    "bldgCode": "057E",
+    "rateSchedule": "CM",
+    "sector": "TMPE-B01",
+    "subtype": null
+  },
+  {
+    "name": "BATEMAN PHYSICAL SCIENCES CENTER F",
+    "bldgCode": "057F",
+    "rateSchedule": "CM",
+    "sector": "TMPE-B01",
+    "subtype": null
+  },
+  {
+    "name": "BATEMAN PHYSICAL SCIENCES CENTER H",
+    "bldgCode": "057H",
+    "rateSchedule": "CM",
+    "sector": "TMPE-B01",
+    "subtype": null
+  },
+  {
+    "name": "BATTING TUNNELS @ PACKARD STADIUM",
+    "bldgCode": "X24",
+    "rateSchedule": "CM",
+    "sector": "TMPE-C01",
+    "subtype": null
+  },
+  {
+    "name": "BAYLOR HALL NORTH",
+    "bldgCode": "X481",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "BAYLOR HALL SOUTH",
+    "bldgCode": "X480",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "BEE LAB",
+    "bldgCode": "E1069",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "BEE LAB ANNEX",
+    "bldgCode": "E823",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "BEE LAB APIARY",
+    "bldgCode": "E824",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "BELL HALL",
+    "bldgCode": "E633",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "BEST HALL A",
+    "bldgCode": "038A",
+    "rateSchedule": "CB",
+    "sector": "RFMT-S1",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "BEST HALL B",
+    "bldgCode": "038B",
+    "rateSchedule": "CB",
+    "sector": "RFMT-S1",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "BEST HALL C",
+    "bldgCode": "038C",
+    "rateSchedule": "CB",
+    "sector": "RFMT-S1",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "BEUS CENTER FOR LAW AND SOCIETY",
+    "bldgCode": "309",
+    "rateSchedule": "CM",
+    "sector": "DTPC-A01",
+    "subtype": null
+  },
+  {
+    "name": "BIG WIND (RESIDENCE)",
+    "bldgCode": "B07",
+    "rateSchedule": null,
+    "sector": "BIOS",
+    "subtype": null
+  },
+  {
+    "name": "BIODESIGN INSTITUTE BLDG A",
+    "bldgCode": "104A",
+    "rateSchedule": "CM",
+    "sector": "TMPE-E01",
+    "subtype": null
+  },
+  {
+    "name": "BIODESIGN INSTITUTE BLDG B",
+    "bldgCode": "104B",
+    "rateSchedule": "CB",
+    "sector": "TMPE-E01",
+    "subtype": null
+  },
+  {
+    "name": "BIODESIGN INSTITUTE BLDG C",
+    "bldgCode": "104C",
+    "rateSchedule": "CB",
+    "sector": "TMPE-E01",
+    "subtype": null
+  },
+  {
+    "name": "BLUFORD HALL",
+    "bldgCode": "X410",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "BOOKSTORE",
+    "bldgCode": "039",
+    "rateSchedule": "CB",
+    "sector": "TMPE-B02",
+    "subtype": null
+  },
+  {
+    "name": "BOX OFFICE/TEAM SHOP",
+    "bldgCode": "R87E",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "BOYS & GIRLS CLUB PLAYGROUND",
+    "bldgCode": "L103",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "BRICKYARD PARKING GARAGE",
+    "bldgCode": "RP02",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "BULLDOG HALL",
+    "bldgCode": "041",
+    "rateSchedule": "CM",
+    "sector": "TMPE-B02",
+    "subtype": null
+  },
+  {
+    "name": "BUSINESS ADMINISTRATION",
+    "bldgCode": "040",
+    "rateSchedule": "CM",
+    "sector": "TMPE-A02",
+    "subtype": null
+  },
+  {
+    "name": "BUSINESS ADMINISTRATION C WING",
+    "bldgCode": "040C",
+    "rateSchedule": "CM",
+    "sector": "TMPE-A02",
+    "subtype": null
+  },
+  {
+    "name": "CARRIAGE HOUSE (MARLIN/DOLPHIN/BONITA/PORPOISE RESIDENCE)",
+    "bldgCode": "B04",
+    "rateSchedule": null,
+    "sector": "BIOS",
+    "subtype": null
+  },
+  {
+    "name": "CARSON STUDENT ATHLETE CENTER",
+    "bldgCode": "059B",
+    "rateSchedule": "CM",
+    "sector": "TMPE-C01",
+    "subtype": null
+  },
+  {
+    "name": "CASA DE ORO",
+    "bldgCode": "913",
+    "rateSchedule": "CB",
+    "sector": "WEST-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "CASA LINDA (RESIDENCE)",
+    "bldgCode": "B03",
+    "rateSchedule": null,
+    "sector": "BIOS",
+    "subtype": null
+  },
+  {
+    "name": "CBBG LABORATORY",
+    "bldgCode": "X84",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "CBBG SOILS FIELD LABORATORY",
+    "bldgCode": "L33",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "CEDAR HALL",
+    "bldgCode": "E504",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "CENTER FOR FAMILY STUDIES",
+    "bldgCode": "017",
+    "rateSchedule": "CM",
+    "sector": "TMPE-A01",
+    "subtype": null
+  },
+  {
+    "name": "CENTERPOINT BLDG. A",
+    "bldgCode": "179",
+    "rateSchedule": "CM",
+    "sector": "TMPE-C01",
+    "subtype": null
+  },
+  {
+    "name": "CENTRAL PLANT - 015",
+    "bldgCode": "015",
+    "rateSchedule": "CB",
+    "sector": "TMPE-A02",
+    "subtype": null
+  },
+  {
+    "name": "CENTRAL PLANT - 902",
+    "bldgCode": "902",
+    "rateSchedule": "CM",
+    "sector": "WEST-A01",
+    "subtype": null
+  },
+  {
+    "name": "CENTRAL PLANT STORAGE",
+    "bldgCode": "X52",
+    "rateSchedule": "CM",
+    "sector": "WEST-A01",
+    "subtype": null
+  },
+  {
+    "name": "CENTRAL SERVICES COMPLEX",
+    "bldgCode": "906",
+    "rateSchedule": "CM",
+    "sector": "WEST-A01",
+    "subtype": null
+  },
+  {
+    "name": "CENTRAL UTILITIES BLDG FOR MTW",
+    "bldgCode": "576",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "CENTURY HALL",
+    "bldgCode": "E829",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "CHASE TOWER OFFICE SPACE",
+    "bldgCode": "R73",
+    "rateSchedule": "CB",
+    "sector": "DTPC-A02",
+    "subtype": null
+  },
+  {
+    "name": "CHEMICAL STORAGE FACILITY",
+    "bldgCode": "B14",
+    "rateSchedule": null,
+    "sector": "BIOS",
+    "subtype": null
+  },
+  {
+    "name": "CHERRY TREE (RESIDENCE)",
+    "bldgCode": "B02",
+    "rateSchedule": null,
+    "sector": "BIOS",
+    "subtype": null
+  },
+  {
+    "name": "CHILLED WATER PLANT",
+    "bldgCode": "E828",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "CHILLED WATER PLANT 2",
+    "bldgCode": "E790A",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "CHOLLA BALLFIELD",
+    "bldgCode": "L126",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "CITRUS DINING PAVILION",
+    "bldgCode": "E830",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "CITY OF PHOENIX COMMUNICATIONS SITE",
+    "bldgCode": "X61",
+    "rateSchedule": "CM",
+    "sector": "WEST-A01",
+    "subtype": null
+  },
+  {
+    "name": "CITY OF PHOENIX ENZYME STORAGE TANK AT CSC",
+    "bldgCode": "X56",
+    "rateSchedule": "CM",
+    "sector": "WEST-A01",
+    "subtype": null
+  },
+  {
+    "name": "CLASSROOM BUILDING",
+    "bldgCode": "E571",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "CLASSROOM/LAB/COMPUTER CLASSROOM",
+    "bldgCode": "905",
+    "rateSchedule": "CM",
+    "sector": "WEST-A01",
+    "subtype": null
+  },
+  {
+    "name": "COLLABORATORY ON CENTRAL",
+    "bldgCode": "R89",
+    "rateSchedule": "CS",
+    "sector": "DTPC-A02",
+    "subtype": null
+  },
+  {
+    "name": "COLLEGE AVENUE COMMONS",
+    "bldgCode": "178",
+    "rateSchedule": "CS",
+    "sector": "TMPE-C01",
+    "subtype": null
+  },
+  {
+    "name": "COLLEGE AVENUE MARKET PLACE",
+    "bldgCode": "R11A",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C01",
+    "subtype": null
+  },
+  {
+    "name": "COMBINED HEAT AND POWER FACILITY",
+    "bldgCode": "135",
+    "rateSchedule": "CB",
+    "sector": "TMPE-B02",
+    "subtype": null
+  },
+  {
+    "name": "COMMUNICATIONS",
+    "bldgCode": "E721",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "COMMUNITY SERVICES BLDG.",
+    "bldgCode": "130",
+    "rateSchedule": "CM",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "COMMUNITY SERVICES CENTER-MAINTENANCE BLDG",
+    "bldgCode": "668",
+    "rateSchedule": "CM",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "COMMUNITY SERVICES STORAGE BLDG. NO. 2",
+    "bldgCode": "146",
+    "rateSchedule": "CM",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "COMMUNITY SERVICES STORAGE BLDG. NO. 3",
+    "bldgCode": "539",
+    "rateSchedule": "CM",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "COOR HALL",
+    "bldgCode": "065",
+    "rateSchedule": "CM",
+    "sector": "TMPE-A01",
+    "subtype": null
+  },
+  {
+    "name": "COWDEN FAMILY RESOURCES BLDG.",
+    "bldgCode": "016",
+    "rateSchedule": "CM",
+    "sector": "TMPE-A01",
+    "subtype": null
+  },
+  {
+    "name": "CREATIVITY COMMONS",
+    "bldgCode": "136",
+    "rateSchedule": "CM",
+    "sector": "TMPE-B02",
+    "subtype": null
+  },
+  {
+    "name": "CREATIVITY HALL",
+    "bldgCode": "E237",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "CREATIVITY HALL ADMINISTRATION",
+    "bldgCode": "E241",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "CREATIVITY HALL SERVICES",
+    "bldgCode": "E239",
+    "rateSchedule": null,
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "CRONKITE/Arizona PBS",
+    "bldgCode": "305",
+    "rateSchedule": "CM",
+    "sector": "DTPC-A02",
+    "subtype": null
+  },
+  {
+    "name": "DANFORTH CHAPEL",
+    "bldgCode": "008",
+    "rateSchedule": "CM",
+    "sector": "TMPE-A02",
+    "subtype": null
+  },
+  {
+    "name": "DATE GROVE",
+    "bldgCode": "L832",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "DEAN HALL",
+    "bldgCode": "E643",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "DEER VALLEY PETROGLYPH PRESERVE",
+    "bldgCode": "542",
+    "rateSchedule": "CB",
+    "sector": "WEST-A01",
+    "subtype": null
+  },
+  {
+    "name": "DEER VALLEY PETROGLYPH PRESERVE- X25 OUTDOOR",
+    "bldgCode": "X25",
+    "rateSchedule": "CB",
+    "sector": "WEST-A01",
+    "subtype": null
+  },
+  {
+    "name": "DESERT ARBORETUM PARK",
+    "bldgCode": "L20",
+    "rateSchedule": "CM",
+    "sector": "TMPE-C01",
+    "subtype": null
+  },
+  {
+    "name": "DESERT FINANCIAL ARENA",
+    "bldgCode": "069",
+    "rateSchedule": "CS",
+    "sector": "TMPE-C01",
+    "subtype": null
+  },
+  {
+    "name": "DESIGN NORTH",
+    "bldgCode": "127",
+    "rateSchedule": "CM",
+    "sector": "TMPE-A01",
+    "subtype": null
+  },
+  {
+    "name": "DESIGN SOUTH",
+    "bldgCode": "088",
+    "rateSchedule": "CM",
+    "sector": "TMPE-A01",
+    "subtype": null
+  },
+  {
+    "name": "DIGITAL REALTY TRUST",
+    "bldgCode": "R46",
+    "rateSchedule": "CB",
+    "sector": "DTPC-A02",
+    "subtype": null
+  },
+  {
+    "name": "DISCOVERY HALL",
+    "bldgCode": "044",
+    "rateSchedule": "CM",
+    "sector": "TMPE-A02",
+    "subtype": null
+  },
+  {
+    "name": "DIXIE GAMMAGE HALL",
+    "bldgCode": "009",
+    "rateSchedule": "CM",
+    "sector": "TMPE-A01",
+    "subtype": null
+  },
+  {
+    "name": "DOWNTOWN YMCA",
+    "bldgCode": "R63",
+    "rateSchedule": "CB",
+    "sector": "DTPC-A02",
+    "subtype": null
+  },
+  {
+    "name": "DRIVING RANGE",
+    "bldgCode": "L818",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "DURHAM HALL",
+    "bldgCode": "012",
+    "rateSchedule": "CM",
+    "sector": "TMPE-A01",
+    "subtype": null
+  },
+  {
+    "name": "EAGLE RESIDENCE HALL",
+    "bldgCode": "X326",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "ECET RESEARCH",
+    "bldgCode": "E789",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "EDUCATION LECTURE HALL",
+    "bldgCode": "006C",
+    "rateSchedule": "CM",
+    "sector": "TMPE-A02",
+    "subtype": null
+  },
+  {
+    "name": "ENGINEERING CENTER A",
+    "bldgCode": "053A",
+    "rateSchedule": "CM",
+    "sector": "TMPE-B02",
+    "subtype": null
+  },
+  {
+    "name": "ENGINEERING CENTER ANNEX",
+    "bldgCode": "140",
+    "rateSchedule": "CM",
+    "sector": "TMPE-B02",
+    "subtype": null
+  },
+  {
+    "name": "ENGINEERING CENTER B",
+    "bldgCode": "053B",
+    "rateSchedule": "CM",
+    "sector": "TMPE-B02",
+    "subtype": null
+  },
+  {
+    "name": "ENGINEERING CENTER C",
+    "bldgCode": "053C",
+    "rateSchedule": "CM",
+    "sector": "TMPE-B02",
+    "subtype": null
+  },
+  {
+    "name": "ENGINEERING CENTER D",
+    "bldgCode": "053D",
+    "rateSchedule": "CM",
+    "sector": "TMPE-B02",
+    "subtype": null
+  },
+  {
+    "name": "ENGINEERING CENTER E",
+    "bldgCode": "053E",
+    "rateSchedule": "CM",
+    "sector": "TMPE-B02",
+    "subtype": null
+  },
+  {
+    "name": "ENGINEERING CENTER F",
+    "bldgCode": "053F",
+    "rateSchedule": "CM",
+    "sector": "TMPE-B02",
+    "subtype": null
+  },
+  {
+    "name": "ENGINEERING CENTER G",
+    "bldgCode": "053G",
+    "rateSchedule": "CM",
+    "sector": "TMPE-B02",
+    "subtype": null
+  },
+  {
+    "name": "ENGINEERING GAS CANISTER STOR.",
+    "bldgCode": "L14",
+    "rateSchedule": "CM",
+    "sector": "TMPE-B02",
+    "subtype": null
+  },
+  {
+    "name": "ENGINEERING RESEARCH CENTER",
+    "bldgCode": "063",
+    "rateSchedule": "CM",
+    "sector": "TMPE-B02",
+    "subtype": null
+  },
+  {
+    "name": "ENGINEERING STUDIO",
+    "bldgCode": "E786",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "ENTRY SIGN",
+    "bldgCode": "L814",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "FAB OUTDOOR ROOM",
+    "bldgCode": "X904A",
+    "rateSchedule": "CM",
+    "sector": "WEST-A01",
+    "subtype": null
+  },
+  {
+    "name": "FACILITIES MANAGEMENT / POLICE DEPARTMENT",
+    "bldgCode": "E712",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "FACILITIES MANAGEMENT / POLICE DEPARTMENT 2",
+    "bldgCode": "E710",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "FACILITIES MANAGEMENT / POLICE DEPARTMENT 3",
+    "bldgCode": "E719",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "FACILITIES MANAGEMENT / POLICE DEPARTMENT 4",
+    "bldgCode": "E720",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "FACILITIES MANAGEMENT 1",
+    "bldgCode": "E757",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "FACILITIES MANAGEMENT 10",
+    "bldgCode": "E771",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "FACILITIES MANAGEMENT 11",
+    "bldgCode": "E773",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "FACILITIES MANAGEMENT 13",
+    "bldgCode": "X770",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "FACILITIES MANAGEMENT 14",
+    "bldgCode": "E1244",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "FACILITIES MANAGEMENT 15",
+    "bldgCode": "E011",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "FACILITIES MANAGEMENT 17",
+    "bldgCode": "E783",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "FACILITIES MANAGEMENT 2",
+    "bldgCode": "E788",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "FACILITIES MANAGEMENT 3",
+    "bldgCode": "E726",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "FACILITIES MANAGEMENT 4",
+    "bldgCode": "E768",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "FACILITIES MANAGEMENT 5",
+    "bldgCode": "E787",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "FACILITIES MANAGEMENT 7",
+    "bldgCode": "E761",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "FACILITIES MANAGEMENT 8",
+    "bldgCode": "E102",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "FACILITIES MANAGEMENT 9",
+    "bldgCode": "E770",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "FACILITY SERVICES",
+    "bldgCode": "E101",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "FACULTY OFFICE/ADMINISTRATION",
+    "bldgCode": "904",
+    "rateSchedule": "CM",
+    "sector": "WEST-A01",
+    "subtype": null
+  },
+  {
+    "name": "FALCON RESIDENCE HALL",
+    "bldgCode": "X344",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "FARMER EDUCATION BLDG.",
+    "bldgCode": "006A",
+    "rateSchedule": "CM",
+    "sector": "TMPE-A02",
+    "subtype": null
+  },
+  {
+    "name": "FARRINGTON SOFTBALL STADIUM",
+    "bldgCode": "153",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "FASHION INSTITUTE OF DESIGN AND MERCHANDISING",
+    "bldgCode": "581",
+    "rateSchedule": "CB",
+    "sector": "LACA",
+    "subtype": null
+  },
+  {
+    "name": "FIELD LAB",
+    "bldgCode": "E1070",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "FLAGPOLE",
+    "bldgCode": "L100",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "FLETCHER LIBRARY",
+    "bldgCode": "900",
+    "rateSchedule": "CM",
+    "sector": "WEST-A01",
+    "subtype": null
+  },
+  {
+    "name": "FM MATERIALS AND EQUIPMENT YARD",
+    "bldgCode": "128",
+    "rateSchedule": "CM",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "FULTON CENTER",
+    "bldgCode": "R11",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C01",
+    "subtype": null
+  },
+  {
+    "name": "FULTON CENTER PARKING STRUCTURE",
+    "bldgCode": "RP01",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C01",
+    "subtype": null
+  },
+  {
+    "name": "FUSION ON FIRST",
+    "bldgCode": "311",
+    "rateSchedule": "CM",
+    "sector": "DTPC-A02",
+    "subtype": null
+  },
+  {
+    "name": "GAMMAGE PKWY SOLAR",
+    "bldgCode": "X72",
+    "rateSchedule": "CM",
+    "sector": "TMPE-A02",
+    "subtype": null
+  },
+  {
+    "name": "GARDEN OFFICE SPACE LEASE - ARIZONA CENTER",
+    "bldgCode": "R69",
+    "rateSchedule": "CB",
+    "sector": "DTPC-A01",
+    "subtype": null
+  },
+  {
+    "name": "GAZEBO AT E633",
+    "bldgCode": "X666",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "GAZEBO AT E711",
+    "bldgCode": "X718",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "GAZEBO AT L813",
+    "bldgCode": "X1200",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "GENERATOR",
+    "bldgCode": "B08",
+    "rateSchedule": null,
+    "sector": "BIOS",
+    "subtype": null
+  },
+  {
+    "name": "GLV COMMUNITY CENTER",
+    "bldgCode": "182",
+    "rateSchedule": "CB",
+    "sector": "RFMT-S1",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "GOLDWATER CENTER FOR SCIENCE & ENGINEERING",
+    "bldgCode": "085",
+    "rateSchedule": "CM",
+    "sector": "TMPE-B01",
+    "subtype": null
+  },
+  {
+    "name": "GOLF PERFORMANCE CENTER",
+    "bldgCode": "128G",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "GOLF PRO SHOP",
+    "bldgCode": "E819",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "GORDON COMMONS (NORTH TOWER)",
+    "bldgCode": "306B",
+    "rateSchedule": "CB",
+    "sector": "DTPC-A02",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "GORDON COMMONS (SOUTH TOWER)",
+    "bldgCode": "306A",
+    "rateSchedule": "CB",
+    "sector": "DTPC-A02",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "GRADY GAMMAGE MEMORIAL AUDITORIUM",
+    "bldgCode": "001",
+    "rateSchedule": "CS",
+    "sector": "TMPE-A02",
+    "subtype": null
+  },
+  {
+    "name": "GRANT STREET STUDIOS",
+    "bldgCode": "546",
+    "rateSchedule": "CM",
+    "sector": "DTPC-A02",
+    "subtype": null
+  },
+  {
+    "name": "GRANT STREET STUDIOS SUPPORT LOT",
+    "bldgCode": "L32",
+    "rateSchedule": "CM",
+    "sector": "DTPC-A02",
+    "subtype": null
+  },
+  {
+    "name": "GRAY HAWK NATURE CENTER",
+    "bldgCode": "X46",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "GREEK LEADERSHIP VILLAGE - BLDG A",
+    "bldgCode": "182A",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "GREEK LEADERSHIP VILLAGE - BLDG B",
+    "bldgCode": "182B",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "GREEK LEADERSHIP VILLAGE - BLDG C",
+    "bldgCode": "182C",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "GREEK LEADERSHIP VILLAGE - BLDG D",
+    "bldgCode": "182D",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "GREENHOUSE",
+    "bldgCode": "E810",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "GREENHOUSE FIELD",
+    "bldgCode": "L820",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "GROUNDS DEPARTMENT AGRICULTURAL CHEMICAL STORAGE",
+    "bldgCode": "X39",
+    "rateSchedule": "CM",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "GROUNDS FENCED YARD 'BONEYARD'",
+    "bldgCode": "L22",
+    "rateSchedule": "CM",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "GROUNDS MAINTENANCE FACILITY",
+    "bldgCode": "176",
+    "rateSchedule": "CM",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "GROUNDS STORAGE",
+    "bldgCode": "X94",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "HARRINGTON-BIRCHETT HOUSE",
+    "bldgCode": "141A",
+    "rateSchedule": "CM",
+    "sector": "TMPE-C01",
+    "subtype": null
+  },
+  {
+    "name": "HAV- ACACIA HALL",
+    "bldgCode": "160E",
+    "rateSchedule": "CB",
+    "sector": "RFMT-S3",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "HAV- ACOURTIA HALL",
+    "bldgCode": "163C",
+    "rateSchedule": "CB",
+    "sector": "RFMT-S3",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "HAV- ARROYO HALL",
+    "bldgCode": "160B",
+    "rateSchedule": "CB",
+    "sector": "RFMT-S3",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "HAV- CHUPAROSA HALL",
+    "bldgCode": "160D",
+    "rateSchedule": "CB",
+    "sector": "RFMT-S3",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "HAV- JOJOBA HALL",
+    "bldgCode": "160C",
+    "rateSchedule": "CB",
+    "sector": "RFMT-S3",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "HAV- MESQUITE HALL",
+    "bldgCode": "163A",
+    "rateSchedule": "CB",
+    "sector": "RFMT-S3",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "HAV- MESQUITE OUTDOOR ROOM",
+    "bldgCode": "X163A",
+    "rateSchedule": "CM",
+    "sector": "TMPE-GRND",
+    "subtype": null
+  },
+  {
+    "name": "HAV- MOHAVE HALL",
+    "bldgCode": "160A",
+    "rateSchedule": "CB",
+    "sector": "RFMT-S3",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "HAV- VERBENA HALL",
+    "bldgCode": "163B",
+    "rateSchedule": "CB",
+    "sector": "RFMT-S3",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "HAYDEN HALL EAST",
+    "bldgCode": "014E",
+    "rateSchedule": "CB",
+    "sector": "RFMT-S1",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "HAYDEN HALL WEST",
+    "bldgCode": "014W",
+    "rateSchedule": "CB",
+    "sector": "RFMT-S1",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "HAYDEN LIBRARY",
+    "bldgCode": "010",
+    "rateSchedule": "CM",
+    "sector": "TMPE-A02",
+    "subtype": null
+  },
+  {
+    "name": "HEADHOUSE",
+    "bldgCode": "E821",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "HEALTH FUTURES CENTER",
+    "bldgCode": "551",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "HEALTH NORTH",
+    "bldgCode": "307",
+    "rateSchedule": "CM",
+    "sector": "DTPC-A01",
+    "subtype": null
+  },
+  {
+    "name": "HEALTH SCIENCES EDUCATION BLDG.",
+    "bldgCode": "3004",
+    "rateSchedule": "CB",
+    "sector": "DTPC-A01",
+    "subtype": null
+  },
+  {
+    "name": "HEALTH SERVICE",
+    "bldgCode": "025",
+    "rateSchedule": "CS",
+    "sector": "TMPE-A01",
+    "subtype": null
+  },
+  {
+    "name": "HEALTH SOUTH",
+    "bldgCode": "302",
+    "rateSchedule": "CM",
+    "sector": "DTPC-A01",
+    "subtype": null
+  },
+  {
+    "name": "HELIUM RECOVERY SHED - ADJ 57B&C",
+    "bldgCode": "X18",
+    "rateSchedule": "CM",
+    "sector": "TMPE-A01",
+    "subtype": null
+  },
+  {
+    "name": "HERALD EXAMINER",
+    "bldgCode": "R27",
+    "rateSchedule": "CB",
+    "sector": "LACA",
+    "subtype": null
+  },
+  {
+    "name": "HERBERGER YOUNG SCHOLARS ACADEMY",
+    "bldgCode": "917",
+    "rateSchedule": "CM",
+    "sector": "WEST-A01",
+    "subtype": null
+  },
+  {
+    "name": "HOBBS HOUSE",
+    "bldgCode": "128D",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "HOLBROOK WAREHOUSE",
+    "bldgCode": "R61",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "HOME LOCKER/CONCESSIONS",
+    "bldgCode": "R87A",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "INTERDISCIPLINARY A",
+    "bldgCode": "002",
+    "rateSchedule": "CM",
+    "sector": "TMPE-A02",
+    "subtype": null
+  },
+  {
+    "name": "INTERDISCIPLINARY A OUTDOOR ROOM",
+    "bldgCode": "X002A",
+    "rateSchedule": "CM",
+    "sector": "TMPE-GRND",
+    "subtype": null
+  },
+  {
+    "name": "INTERDISCIPLINARY B",
+    "bldgCode": "003",
+    "rateSchedule": "CM",
+    "sector": "TMPE-A02",
+    "subtype": null
+  },
+  {
+    "name": "INTERDISCIPLINARY SCIENCE & TECHNOLOGY BUILDING III SUPPORT",
+    "bldgCode": "X816A",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "INTERDISCIPLINARY SCIENCE AND TECHNOLOGY BLDG II SUPPORT",
+    "bldgCode": "054A",
+    "rateSchedule": "CB",
+    "sector": "TMPE-E02",
+    "subtype": null
+  },
+  {
+    "name": "INTERDISCIPLINARY SCIENCE AND TECHNOLOGY BUILDING 10",
+    "bldgCode": "007",
+    "rateSchedule": "CM",
+    "sector": "TMPE-A01",
+    "subtype": null
+  },
+  {
+    "name": "INTERDISCIPLINARY SCIENCE AND TECHNOLOGY BUILDING 12",
+    "bldgCode": "E834",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "INTERDISCIPLINARY SCIENCE AND TECHNOLOGY BUILDING 4",
+    "bldgCode": "075",
+    "rateSchedule": "CB",
+    "sector": "TMPE-E03",
+    "subtype": null
+  },
+  {
+    "name": "INTERDISCIPLINARY SCIENCE AND TECHNOLOGY BUILDING 8",
+    "bldgCode": "R75",
+    "rateSchedule": "CB",
+    "sector": "DTPC-A01",
+    "subtype": null
+  },
+  {
+    "name": "INTERDISCIPLINARY SCIENCE AND TECHNOLOGY BUILDING I",
+    "bldgCode": "108",
+    "rateSchedule": "CB",
+    "sector": "TMPE-E02",
+    "subtype": null
+  },
+  {
+    "name": "INTERDISCIPLINARY SCIENCE AND TECHNOLOGY BUILDING II",
+    "bldgCode": "054",
+    "rateSchedule": "CB",
+    "sector": "TMPE-E02",
+    "subtype": null
+  },
+  {
+    "name": "INTERDISCIPLINARY SCIENCE AND TECHNOLOGY BUILDING III",
+    "bldgCode": "E816",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "INTERDISCIPLINARY SCIENCE AND TECHNOLOGY BUILDING V",
+    "bldgCode": "072",
+    "rateSchedule": "CM",
+    "sector": "TMPE-B01",
+    "subtype": null
+  },
+  {
+    "name": "IRISH HALL A (ACADEMIC OFFICES)",
+    "bldgCode": "026A",
+    "rateSchedule": "CM",
+    "sector": "TMPE-A02",
+    "subtype": null
+  },
+  {
+    "name": "IRISH HALL B (NORTHWEST)",
+    "bldgCode": "026B",
+    "rateSchedule": "CB",
+    "sector": "RFMT-S1",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "IRISH HALL C (SOUTHWEST)",
+    "bldgCode": "026C",
+    "rateSchedule": "CB",
+    "sector": "RFMT-S1",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "IRONWOOD BLDG.",
+    "bldgCode": "E711",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "KAET TRANSMITTER @ SOUTH MT.",
+    "bldgCode": "R35",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "KERR CULTURAL CENTER A - OFFICES",
+    "bldgCode": "504A",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "KERR CULTURAL CENTER B - STUDIO",
+    "bldgCode": "504B",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "LANGTON VILLA (RESIDENCE)",
+    "bldgCode": "B01",
+    "rateSchedule": null,
+    "sector": "BIOS",
+    "subtype": null
+  },
+  {
+    "name": "LANTANA HALL",
+    "bldgCode": "E833",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "LAS CASAS - A WING (SE)",
+    "bldgCode": "930A",
+    "rateSchedule": "CM",
+    "sector": "WEST-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "LAS CASAS - B WING (NE)",
+    "bldgCode": "930B",
+    "rateSchedule": "CM",
+    "sector": "WEST-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "LAS CASAS - POOL",
+    "bldgCode": "930C",
+    "rateSchedule": "CM",
+    "sector": "WEST-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "LAS CASAS COMMUNITY CENTER",
+    "bldgCode": "930D",
+    "rateSchedule": "CM",
+    "sector": "WEST-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "LECTURE HALL",
+    "bldgCode": "911",
+    "rateSchedule": "CM",
+    "sector": "WEST-A01",
+    "subtype": null
+  },
+  {
+    "name": "LIFE SCIENCES CENTER A",
+    "bldgCode": "056A",
+    "rateSchedule": "CM",
+    "sector": "TMPE-B02",
+    "subtype": null
+  },
+  {
+    "name": "LIFE SCIENCES CENTER B-ANIMAL CARE",
+    "bldgCode": "056B",
+    "rateSchedule": "CM",
+    "sector": "TMPE-B02",
+    "subtype": null
+  },
+  {
+    "name": "LIFE SCIENCES CENTER C",
+    "bldgCode": "056C",
+    "rateSchedule": "CM",
+    "sector": "TMPE-B02",
+    "subtype": null
+  },
+  {
+    "name": "LIFE SCIENCES CENTER D-AQUATIC TERRESTRIAL",
+    "bldgCode": "056D",
+    "rateSchedule": "CM",
+    "sector": "TMPE-B02",
+    "subtype": null
+  },
+  {
+    "name": "LIFE SCIENCES TOWER E-WING",
+    "bldgCode": "056E",
+    "rateSchedule": "CM",
+    "sector": "TMPE-B02",
+    "subtype": null
+  },
+  {
+    "name": "LYCEUM THEATRE",
+    "bldgCode": "027",
+    "rateSchedule": "CM",
+    "sector": "TMPE-A01",
+    "subtype": null
+  },
+  {
+    "name": "MAINTENANCE WORKSHOP AND WAREHOUSE",
+    "bldgCode": "B11",
+    "rateSchedule": null,
+    "sector": "BIOS",
+    "subtype": null
+  },
+  {
+    "name": "MANZANITA HALL",
+    "bldgCode": "061",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "MANZY CAFE",
+    "bldgCode": "103",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C01",
+    "subtype": null
+  },
+  {
+    "name": "MARINE OPERATIONS BUILDING",
+    "bldgCode": "B09",
+    "rateSchedule": null,
+    "sector": "BIOS",
+    "subtype": null
+  },
+  {
+    "name": "MATERIAL SERVICES BLDG.",
+    "bldgCode": "131",
+    "rateSchedule": "CM",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "MATTHEWS CENTER",
+    "bldgCode": "034",
+    "rateSchedule": "CM",
+    "sector": "TMPE-A01",
+    "subtype": null
+  },
+  {
+    "name": "MATTHEWS HALL",
+    "bldgCode": "033",
+    "rateSchedule": "CM",
+    "sector": "TMPE-A01",
+    "subtype": null
+  },
+  {
+    "name": "MCCLINTOCK HALL",
+    "bldgCode": "028",
+    "rateSchedule": "CS",
+    "sector": "RFMT-S2",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "MCCORD HALL",
+    "bldgCode": "040D",
+    "rateSchedule": "CM",
+    "sector": "TMPE-A02",
+    "subtype": null
+  },
+  {
+    "name": "MEDIA AND IMMERSIVE EXPERIENCE CENTER",
+    "bldgCode": "R77",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "MEMORIAL UNION",
+    "bldgCode": "035",
+    "rateSchedule": "CB",
+    "sector": "TMPE-A02",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "MERCADO A",
+    "bldgCode": "152A",
+    "rateSchedule": "CM",
+    "sector": "DTPC-A01",
+    "subtype": null
+  },
+  {
+    "name": "MERCADO B",
+    "bldgCode": "152B",
+    "rateSchedule": "CM",
+    "sector": "DTPC-A01",
+    "subtype": null
+  },
+  {
+    "name": "MERCADO C",
+    "bldgCode": "152C",
+    "rateSchedule": "CM",
+    "sector": "DTPC-A01",
+    "subtype": null
+  },
+  {
+    "name": "MERCADO D",
+    "bldgCode": "152D",
+    "rateSchedule": "CM",
+    "sector": "DTPC-A01",
+    "subtype": null
+  },
+  {
+    "name": "MERCADO E",
+    "bldgCode": "152E",
+    "rateSchedule": "CM",
+    "sector": "DTPC-A01",
+    "subtype": null
+  },
+  {
+    "name": "MERCADO F",
+    "bldgCode": "152F",
+    "rateSchedule": "CM",
+    "sector": "DTPC-A01",
+    "subtype": null
+  },
+  {
+    "name": "MICRO-GRID TEST BED MODULAR",
+    "bldgCode": "X85",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "MOEUR BLDG.",
+    "bldgCode": "037",
+    "rateSchedule": "CM",
+    "sector": "TMPE-A02",
+    "subtype": null
+  },
+  {
+    "name": "MONA PLUMMER AQUATIC COMPLEX",
+    "bldgCode": "071",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C01",
+    "subtype": null
+  },
+  {
+    "name": "MOUNTAIN AMERICA STADIUM",
+    "bldgCode": "059",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C01",
+    "subtype": null
+  },
+  {
+    "name": "MULLETT ARENA",
+    "bldgCode": "185",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C01",
+    "subtype": null
+  },
+  {
+    "name": "MURDOCK LECTURE HALL",
+    "bldgCode": "021",
+    "rateSchedule": "CM",
+    "sector": "TMPE-A02",
+    "subtype": null
+  },
+  {
+    "name": "MUSIC BLDG.",
+    "bldgCode": "084",
+    "rateSchedule": "CM",
+    "sector": "TMPE-A02",
+    "subtype": null
+  },
+  {
+    "name": "MUSTANG RESIDENCE HALL",
+    "bldgCode": "X354",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "MYRTLE AVENUE PARKING STRUCTURE",
+    "bldgCode": "P03",
+    "rateSchedule": "CB",
+    "sector": "TMPE-A01",
+    "subtype": null
+  },
+  {
+    "name": "N.E. FIELDS - BAND PRACTICE FIELD",
+    "bldgCode": "L05",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "N.E. FIELDS - KAJIKAWA FOOTBALL PRACTICE FIELDS",
+    "bldgCode": "L04",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "N.E. FIELDS - SOFTBALL",
+    "bldgCode": "L07",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "NAUTILUS STAFF HOUSING COMPLEX (RESIDENCE)",
+    "bldgCode": "B05",
+    "rateSchedule": null,
+    "sector": "BIOS",
+    "subtype": null
+  },
+  {
+    "name": "NDV_5607 S. TERRIPIN_E9147",
+    "bldgCode": "E9147",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_5608 S. SAGEWOOD_E9140",
+    "bldgCode": "E9140",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_5609 S. SAGEWOOD_E9141",
+    "bldgCode": "E9141",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_5610 S. TERRIPIN_E9146",
+    "bldgCode": "E9146",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_5614 S. SAGEWOOD_E9139",
+    "bldgCode": "E9139",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_5615 S. SAGEWOOD_E9142",
+    "bldgCode": "E9142",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_5639 S. SAGEWOOD_E9130",
+    "bldgCode": "E9130",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_5645 S. SAGEWOOD_E9131",
+    "bldgCode": "E9131",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_5648 S. SAGEWOOD_E9137",
+    "bldgCode": "E9137",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_5651 S. SAGEWOOD_E9132",
+    "bldgCode": "E9132",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_5652 S. TERRIPIN_E9115",
+    "bldgCode": "E9115",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_5654 S. SAGEWOOD_E9136",
+    "bldgCode": "E9136",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_5656 S. STERLING_E9152",
+    "bldgCode": "E9152",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_5657 S. SAGEWOOD_E9133",
+    "bldgCode": "E9133",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_5657 S. TERRIPIN_E9111",
+    "bldgCode": "E9111",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_5658 S. TERRIPIN_E9114",
+    "bldgCode": "E9114",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_5662 S. SAGEWOOD_E9135",
+    "bldgCode": "E9135",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_5663 S. SAGEWOOD_E9134",
+    "bldgCode": "E9134",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_5664 S. TERRIPIN_E9113",
+    "bldgCode": "E9113",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_5665 S. TERRIPIN_E9112",
+    "bldgCode": "E9112",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_5705 S. RAVEN; MESA; AZ; 85212_X9029",
+    "bldgCode": "X9029",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_5706 S. AMULET; MESA; AZ; 85212_X9015",
+    "bldgCode": "X9015",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_5706 S. RAVEN; MESA; AZ; 85212_X9030",
+    "bldgCode": "X9030",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_5706 S. SAGEWOOD_E9097",
+    "bldgCode": "E9097",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_5707 S. SAGEWOOD_E9098",
+    "bldgCode": "E9098",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_5708 S. TERRIPIN_E9103",
+    "bldgCode": "E9103",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_5709 S. TERRIPIN_E9104",
+    "bldgCode": "E9104",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_5713 S. RAVEN; MESA; AZ; 85212_X9028",
+    "bldgCode": "X9028",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_5714 S. SAGEWOOD_E9096",
+    "bldgCode": "E9096",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_5715 S. SAGEWOOD_E9099",
+    "bldgCode": "E9099",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_5716 S. TERRIPIN_E9102",
+    "bldgCode": "E9102",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_5718 S. AMULET; MESA; AZ; 85212_X9016",
+    "bldgCode": "X9016",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_5721 S. RAVEN; MESA; AZ; 85212_X9027",
+    "bldgCode": "X9027",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_5726 S. AMULET; MESA; AZ; 85212_X9017",
+    "bldgCode": "X9017",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_5726 S. RAVEN; MESA; AZ; 85212_X9037",
+    "bldgCode": "X9037",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_5729 S. RAVEN; MESA; AZ; 85212_X9026",
+    "bldgCode": "X9026",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_5734 S. AMULET; MESA; AZ; 85212_X9018",
+    "bldgCode": "X9018",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_5735 S. AMULET; MESA; AZ; 85212_X9014",
+    "bldgCode": "X9014",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_5737 S. RAVEN; MESA; AZ; 85212_X9025",
+    "bldgCode": "X9025",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_5738 S. RAVEN; MESA; AZ; 85212_X9038",
+    "bldgCode": "X9038",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_5742 S. AMULET; MESA; AZ; 85212_X9019",
+    "bldgCode": "X9019",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_5745 S. RAVEN; MESA; AZ; 85212_X9024",
+    "bldgCode": "X9024",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_5750 S. AMULET; MESA; AZ; 85212_X9020",
+    "bldgCode": "X9020",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_5753 S. RAVEN; MESA; AZ; 85212_X9023",
+    "bldgCode": "X9023",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_5761 S. RAVEN; MESA; AZ; 85212_X9022",
+    "bldgCode": "X9022",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_5762 S. AMULET; MESA; AZ; 85212_X9021",
+    "bldgCode": "X9021",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_5762 S. RAVEN; MESA; AZ; 85212_X9042",
+    "bldgCode": "X9042",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_5803 S. SAGEWOOD_E9063",
+    "bldgCode": "E9063",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_5804 S. TERRIPIN_E9059",
+    "bldgCode": "E9059",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_5810 S. SAGEWOOD_E9071",
+    "bldgCode": "E9071",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_5811 S. SAGEWOOD_E9064",
+    "bldgCode": "E9064",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_5812 S. TERRIPIN_E9058",
+    "bldgCode": "E9058",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_5818 S. SAGEWOOD_E9070",
+    "bldgCode": "E9070",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_5819 S. SAGEWOOD_E9065",
+    "bldgCode": "E9065",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_5820 S. TERRIPIN_E9057",
+    "bldgCode": "E9057",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_5826 S. SAGEWOOD_E9069",
+    "bldgCode": "E9069",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_5827 S. SAGEWOOD_E9066",
+    "bldgCode": "E9066",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_5828 S. TERRIPIN_E9056",
+    "bldgCode": "E9056",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_5834 S. SAGEWOOD_E9068",
+    "bldgCode": "E9068",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_5835 S. SAGEWOOD_E9067",
+    "bldgCode": "E9067",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_5836 S. TERRIPIN_E9055",
+    "bldgCode": "E9055",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_7003 E. TALON AVE._E9129",
+    "bldgCode": "E9129",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_7004 E. TALON AVE._E9138",
+    "bldgCode": "E9138",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_7006 E. TRENT AVE._E9094",
+    "bldgCode": "E9094",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_7007 E. TRENT AVE._E9093",
+    "bldgCode": "E9093",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_7008 E. THISTLE AVE._E9073",
+    "bldgCode": "E9073",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_7009 E. THISTLE AVE._E9072",
+    "bldgCode": "E9072",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_7015 E. TALON AVE._E9128",
+    "bldgCode": "E9128",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_7016 E. THISTLE AVE._E9074",
+    "bldgCode": "E9074",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_7018 E. TRENT AVE._E9095",
+    "bldgCode": "E9095",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_7019 E. TRENT AVE._E9092",
+    "bldgCode": "E9092",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_7022 E. THISTLE AVE._E9075",
+    "bldgCode": "E9075",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_7027 E. TALON AVE._E9127",
+    "bldgCode": "E9127",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_7031 E. TRENT AVE._E9091",
+    "bldgCode": "E9091",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_7034 E. THISTLE AVE._E9076",
+    "bldgCode": "E9076",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_7037 E. THISTLE AVE._E9062",
+    "bldgCode": "E9062",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_7038 E. TALON AVE._E9143",
+    "bldgCode": "E9143",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_7039 E. TALON AVE._E9126",
+    "bldgCode": "E9126",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_7040 E. TRENT AVE._E9100",
+    "bldgCode": "E9100",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_7043 E. TRENT AVE._E9090",
+    "bldgCode": "E9090",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_7048 E. THISTLE AVE._E9077",
+    "bldgCode": "E9077",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_7049 E. THISTLE AVE._E9061",
+    "bldgCode": "E9061",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_7050 E. TALON AVE._E9144",
+    "bldgCode": "E9144",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_7051 E. TALON AVE._E9125",
+    "bldgCode": "E9125",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_7052 E. TRENT AVE._E9101",
+    "bldgCode": "E9101",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_7055 E. TRENT AVE._E9089",
+    "bldgCode": "E9089",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_7056 E. THISTLE AVE._E9078",
+    "bldgCode": "E9078",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_7061 E. THISTLE AVE._E9060",
+    "bldgCode": "E9060",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_7062 E. TALON AVE._E9145",
+    "bldgCode": "E9145",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_7063 E. TALON AVE._E9124",
+    "bldgCode": "E9124",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_7063 E. TRENT AVE._E9088",
+    "bldgCode": "E9088",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_7064 E. THISTLE AVE._E9079",
+    "bldgCode": "E9079",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_7104 E. TESLA AVE._E9116",
+    "bldgCode": "E9116",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_7105 E. TALON AVE._E9123",
+    "bldgCode": "E9123",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_7113 E. TRENT AVE._E9087",
+    "bldgCode": "E9087",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_7114 E. TALON AVE._E9148",
+    "bldgCode": "E9148",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_7115 E. TESLA AVE._E9110",
+    "bldgCode": "E9110",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_7116 E. TESLA AVE._E9117",
+    "bldgCode": "E9117",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_7117 E. TALON AVE._E9122",
+    "bldgCode": "E9122",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_7122 E. THUNDERBOLT AVE._E9153",
+    "bldgCode": "E9153",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_7124 E. TRENT AVE._E9105",
+    "bldgCode": "E9105",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_7125 E. TRENT AVE._E9086",
+    "bldgCode": "E9086",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_7126 E. TALON AVE._E9149",
+    "bldgCode": "E9149",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_7127 E. TESLA AVE._E9109",
+    "bldgCode": "E9109",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_7128 E. TESLA AVE._E9118",
+    "bldgCode": "E9118",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_7129 E. TALON AVE._E9121",
+    "bldgCode": "E9121",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_7136 E. TRENT AVE._E9106",
+    "bldgCode": "E9106",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_7137 E. TRENT AVE._E9085",
+    "bldgCode": "E9085",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_7138 E. TALON AVE._E9150",
+    "bldgCode": "E9150",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_7139 E. TESLA AVE._E9108",
+    "bldgCode": "E9108",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_7140 E. TESLA AVE._E9119",
+    "bldgCode": "E9119",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_7141 E. TALON AVE._E9120",
+    "bldgCode": "E9120",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_7146 E. TRENT AVE._E9107",
+    "bldgCode": "E9107",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_7149 E. TRENT AVE._E9084",
+    "bldgCode": "E9084",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_7150 E. TRENT AVENUE; MESA; AZ; 85212_X9033",
+    "bldgCode": "X9033",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_7151 E. TRENT AVENUE; MESA; AZ; 85212_X9034",
+    "bldgCode": "X9034",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_7152 E. THISTLE AVENUE; MESA; AZ; 85212_X9041",
+    "bldgCode": "X9041",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_7153 E. THISTLE AVENUE; MESA; AZ; 85212_E9045",
+    "bldgCode": "E9045",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_7162 E. TRENT AVENUE; MESA; AZ; 85212_X9032",
+    "bldgCode": "X9032",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_7163 E. TRENT AVENUE; MESA; AZ; 85212_X9035",
+    "bldgCode": "X9035",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_7164 E. THISTLE AVENUE; MESA; AZ; 85212_X9040",
+    "bldgCode": "X9040",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_7165 E. THISTLE AVENUE; MESA; AZ; 85212_X9044",
+    "bldgCode": "X9044",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_7210 E. TRENT AVENUE; MESA; AZ; 85212_X9031",
+    "bldgCode": "X9031",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_7211 E. TRENT AVENUE; MESA; AZ; 85212_X9036",
+    "bldgCode": "X9036",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_7212 E. THISTLE AVENUE; MESA; AZ; 85212_X9039",
+    "bldgCode": "X9039",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_7213 E. THISTLE AVENUE; MESA; AZ; 85212_X9043",
+    "bldgCode": "X9043",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_7247 E. TRENT AVENUE; MESA; AZ; 85212_X9013",
+    "bldgCode": "X9013",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NDV_7255 E. TRENT AVENUE; MESA; AZ; 85212_X9012",
+    "bldgCode": "X9012",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "NEEB HALL",
+    "bldgCode": "086",
+    "rateSchedule": "CM",
+    "sector": "TMPE-A01",
+    "subtype": null
+  },
+  {
+    "name": "NELSON FINE ARTS CENTER",
+    "bldgCode": "048",
+    "rateSchedule": "CM",
+    "sector": "TMPE-A02",
+    "subtype": null
+  },
+  {
+    "name": "NOBLE SCIENCE LIBRARY",
+    "bldgCode": "047",
+    "rateSchedule": "CM",
+    "sector": "TMPE-B01",
+    "subtype": null
+  },
+  {
+    "name": "NORTH SERVICES BUILDING",
+    "bldgCode": "912",
+    "rateSchedule": "CM",
+    "sector": "WEST-A01",
+    "subtype": null
+  },
+  {
+    "name": "NORTH SUB-STATION (METER #E68972)",
+    "bldgCode": "X41",
+    "rateSchedule": "CM",
+    "sector": "TMPE-C01",
+    "subtype": null
+  },
+  {
+    "name": "NORTHERN CHILLER PLANT",
+    "bldgCode": "181",
+    "rateSchedule": "CM",
+    "sector": "TMPE-C01",
+    "subtype": null
+  },
+  {
+    "name": "NOVUS PARKING STRUCTURE",
+    "bldgCode": "P08",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C01",
+    "subtype": null
+  },
+  {
+    "name": "OFFICE & STORAGE CONTAINERS",
+    "bldgCode": "B12",
+    "rateSchedule": null,
+    "sector": "BIOS",
+    "subtype": null
+  },
+  {
+    "name": "OFFICIAL'S LOCKER/MAINTENANCE",
+    "bldgCode": "R87M",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "OLD MAIN",
+    "bldgCode": "032",
+    "rateSchedule": "CM",
+    "sector": "TMPE-A01",
+    "subtype": null
+  },
+  {
+    "name": "ORANGE - CADY MALLS SOLAR",
+    "bldgCode": "X73",
+    "rateSchedule": "CM",
+    "sector": "TMPE-A02",
+    "subtype": null
+  },
+  {
+    "name": "ORCHIDHOUSE AT THE BRICKYARD",
+    "bldgCode": "R10C",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C01",
+    "subtype": null
+  },
+  {
+    "name": "PACKARD BASEBALL STADIUM",
+    "bldgCode": "066",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C01",
+    "subtype": null
+  },
+  {
+    "name": "PACKARD DRIVE PARKING STRUCTURE",
+    "bldgCode": "P07",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C01",
+    "subtype": null
+  },
+  {
+    "name": "PACKARD STADIUM SHED (NW)",
+    "bldgCode": "627",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C01",
+    "subtype": null
+  },
+  {
+    "name": "PALO BLANCO HALL",
+    "bldgCode": "E670",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "PALO VERDE EAST (F)",
+    "bldgCode": "051F",
+    "rateSchedule": "CB",
+    "sector": "RFMT-S2",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "PALO VERDE WEST (G)",
+    "bldgCode": "051G",
+    "rateSchedule": "CB",
+    "sector": "RFMT-S2",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "PAPAGO GOLF HOUSE",
+    "bldgCode": "548",
+    "rateSchedule": null,
+    "sector": null,
+    "subtype": null
+  },
+  {
+    "name": "PARCEL 22 @ WILLIAMS GATEWAY AIRPORT (FLIGHT PROGRAM)",
+    "bldgCode": "R37",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "PARKING LOT 11 SOLAR",
+    "bldgCode": "X74",
+    "rateSchedule": "CB",
+    "sector": "TMPE-A01",
+    "subtype": null
+  },
+  {
+    "name": "PARKING LOT 19 SOLAR",
+    "bldgCode": "X75",
+    "rateSchedule": "CB",
+    "sector": "TMPE-B02",
+    "subtype": null
+  },
+  {
+    "name": "PARKING LOT 41 SOLAR",
+    "bldgCode": "X76",
+    "rateSchedule": "CB",
+    "sector": "TMPE-B02",
+    "subtype": null
+  },
+  {
+    "name": "PARKING LOT 45 SOLAR",
+    "bldgCode": "X80",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "PARKING LOT 55 EAST SOLAR",
+    "bldgCode": "X81",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "PARKING LOT 55 WEST SOLAR",
+    "bldgCode": "X82",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "PARKING LOT 58 SOLAR",
+    "bldgCode": "X77",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C01",
+    "subtype": null
+  },
+  {
+    "name": "PARKING LOT 59 NORTH SOLAR",
+    "bldgCode": "X63",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C01",
+    "subtype": null
+  },
+  {
+    "name": "PARKING LOT 59 SOUTH SOLAR",
+    "bldgCode": "X78",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C01",
+    "subtype": null
+  },
+  {
+    "name": "PAYNE HALL",
+    "bldgCode": "006B",
+    "rateSchedule": "CM",
+    "sector": "TMPE-A02",
+    "subtype": null
+  },
+  {
+    "name": "PERALTA HALL",
+    "bldgCode": "E825A",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "PHANTOM RESIDENCE HALL",
+    "bldgCode": "X334",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "PHOENIX MUNICIPAL BALLFIELD",
+    "bldgCode": "L87A",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "PHOENIX MUNICIPAL EAST PRACTICE BALLFIELD",
+    "bldgCode": "L87B",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "PHOENIX MUNICIPAL STADIUM",
+    "bldgCode": "R87",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "PHYSICAL EDUCATION CENTER",
+    "bldgCode": "X470",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "PHYSICAL SCIENCES C OUTDOOR ROOM",
+    "bldgCode": "X057A",
+    "rateSchedule": "CM",
+    "sector": "TMPE-GRND",
+    "subtype": null
+  },
+  {
+    "name": "PICACHO HALL",
+    "bldgCode": "E825B",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "PIPER WRITERS HOUSE",
+    "bldgCode": "042",
+    "rateSchedule": "CM",
+    "sector": "TMPE-A01",
+    "subtype": null
+  },
+  {
+    "name": "PITCHING LAB",
+    "bldgCode": "R87H",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "POLYTECHNIC CAMPUS INFRASTRUCTURE",
+    "bldgCode": "E712X",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "POLYTECHNIC CENTRAL RECEIVING",
+    "bldgCode": "E800R",
+    "rateSchedule": null,
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "POLYTECHNIC SOLAR GROUND MOUNT 1",
+    "bldgCode": "X64",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "POLYTECHNIC SOLAR GROUND MOUNT 2",
+    "bldgCode": "X65",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "POST OFFICE",
+    "bldgCode": "304",
+    "rateSchedule": "CM",
+    "sector": "DTPC-A02",
+    "subtype": null
+  },
+  {
+    "name": "PSYCHOLOGY BLDG.",
+    "bldgCode": "013",
+    "rateSchedule": "CM",
+    "sector": "TMPE-B01",
+    "subtype": null
+  },
+  {
+    "name": "PSYCHOLOGY NORTH",
+    "bldgCode": "031A",
+    "rateSchedule": "CM",
+    "sector": "TMPE-B01",
+    "subtype": null
+  },
+  {
+    "name": "QUAD 1",
+    "bldgCode": "E231",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "QUAD 2",
+    "bldgCode": "E233",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "QUAD 3",
+    "bldgCode": "E232",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "QUAD 4",
+    "bldgCode": "E230",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "RES1 CHILLER",
+    "bldgCode": "X670A",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "RESEARCH GREENHOUSE",
+    "bldgCode": "E822",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "RESEARCH SUPPORT SERVICES 1",
+    "bldgCode": "018",
+    "rateSchedule": "CM",
+    "sector": "TMPE-B01",
+    "subtype": null
+  },
+  {
+    "name": "RESTROOMS AT L813",
+    "bldgCode": "E1201",
+    "rateSchedule": null,
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "RINCON BUILDING",
+    "bldgCode": "E508",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "ROBSON FAMILY PLAYER FACILITY",
+    "bldgCode": "096A",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C01",
+    "subtype": null
+  },
+  {
+    "name": "ROSS-BLAKLEY HALL",
+    "bldgCode": "143",
+    "rateSchedule": "CM",
+    "sector": "TMPE-B02",
+    "subtype": null
+  },
+  {
+    "name": "ROUNDABOUT",
+    "bldgCode": "L815",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "RURAL ROAD PARKING STRUCTURE (RURAL ROAD)",
+    "bldgCode": "P04",
+    "rateSchedule": "CB",
+    "sector": "TMPE-B02",
+    "subtype": null
+  },
+  {
+    "name": "SACATON HALL",
+    "bldgCode": "E505",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "SAN PABLO RESIDENCE HALL",
+    "bldgCode": "151",
+    "rateSchedule": "CB",
+    "sector": "RFMT-S2",
+    "subtype": null
+  },
+  {
+    "name": "SAN PABLO RESIDENCE HALL (CLASSROOM)",
+    "bldgCode": "151A",
+    "rateSchedule": "CB",
+    "sector": "RFMT-S2",
+    "subtype": null
+  },
+  {
+    "name": "SANDS CLASSROOM & LECTURE HALL",
+    "bldgCode": "901",
+    "rateSchedule": "CM",
+    "sector": "WEST-A01",
+    "subtype": null
+  },
+  {
+    "name": "SANTA CATALINA HALL",
+    "bldgCode": "E827A",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "SANTAN HALL",
+    "bldgCode": "E826",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "SCHOOL OF HUMAN EVOLUTION AND SOCIAL CHANGE",
+    "bldgCode": "004",
+    "rateSchedule": "CM",
+    "sector": "TMPE-A01",
+    "subtype": null
+  },
+  {
+    "name": "SCHWADA CLASSROOM OFFICE BLDG.",
+    "bldgCode": "055",
+    "rateSchedule": "CM",
+    "sector": "TMPE-B01",
+    "subtype": null
+  },
+  {
+    "name": "SCHWADA OUTDOOR ROOM",
+    "bldgCode": "X055A",
+    "rateSchedule": "CM",
+    "sector": "TMPE-GRND",
+    "subtype": null
+  },
+  {
+    "name": "SDFC INTRAMURAL FIELDS",
+    "bldgCode": "L46",
+    "rateSchedule": "CB",
+    "sector": "TMPE-B02",
+    "subtype": null
+  },
+  {
+    "name": "SDS ICE PRODUCTION",
+    "bldgCode": "134A",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C01",
+    "subtype": null
+  },
+  {
+    "name": "SDV_6340 S. SAGEWOOD_E9227",
+    "bldgCode": "E9227",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6341 S. SAGEWOOD_E9236",
+    "bldgCode": "E9236",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "SDV_6342 S. ROWEN_E9475",
+    "bldgCode": "E9475",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6342 S. TERRIPIN_E9409",
+    "bldgCode": "E9409",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6343 S. TERRIPIN_E9408",
+    "bldgCode": "E9408",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6344 S. ATHENA_E9413",
+    "bldgCode": "E9413",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6344 S. SAGEWOOD_E9228",
+    "bldgCode": "E9228",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6345 S. ATHENA_E9422",
+    "bldgCode": "E9422",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6346 S. RAVEN_E9427",
+    "bldgCode": "E9427",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6347 S. AMULET_E9438",
+    "bldgCode": "E9438",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6347 S. RAVEN_E9428",
+    "bldgCode": "E9428",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6347 S. SAGEWOOD_E9235",
+    "bldgCode": "E9235",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6347 S. TERRIPIN_E9407",
+    "bldgCode": "E9407",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6348 S. AMULET_E9437",
+    "bldgCode": "E9437",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6348 S. ATHENA_E9414",
+    "bldgCode": "E9414",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6348 S. ROWEN_E9474",
+    "bldgCode": "E9474",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6348 S. SAGEWOOD_E9229",
+    "bldgCode": "E9229",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6348 S. TERRIPIN_E9410",
+    "bldgCode": "E9410",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6349 S. ROWEN_E9476",
+    "bldgCode": "E9476",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6351 S. ATHENA_E9423",
+    "bldgCode": "E9423",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6351 S. TERRIPIN_E9406",
+    "bldgCode": "E9406",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6352 S. ATHENA_E9415",
+    "bldgCode": "E9415",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6352 S. RAVEN_E9426",
+    "bldgCode": "E9426",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6352 S. SAGEWOOD_E9230",
+    "bldgCode": "E9230",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6353 S. AMULET_E9439",
+    "bldgCode": "E9439",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6353 S. RAVEN_E9429",
+    "bldgCode": "E9429",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6353 S. SAGEWOOD_E9234",
+    "bldgCode": "E9234",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6354 S. AMULET_E9436",
+    "bldgCode": "E9436",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6354 S. TERRIPIN_E9411",
+    "bldgCode": "E9411",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6355 S. ROWEN_E9477",
+    "bldgCode": "E9477",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6355 S. TERRIPIN_E9405",
+    "bldgCode": "E9405",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6356 S. ATHENA_E9416",
+    "bldgCode": "E9416",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6356 S. SAGEWOOD_E9231",
+    "bldgCode": "E9231",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6357 S. ATHENA_E9424",
+    "bldgCode": "E9424",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6359 S. AMULET_E9440",
+    "bldgCode": "E9440",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6359 S. RAVEN_E9430",
+    "bldgCode": "E9430",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6359 S. SAGEWOOD_E9233",
+    "bldgCode": "E9233",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6359 S. TERRIPIN_E9404",
+    "bldgCode": "E9404",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6360 S. AMULET_E9435",
+    "bldgCode": "E9435",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6360 S. ATHENA_E9417",
+    "bldgCode": "E9417",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6360 S. SAGEWOOD_E9232",
+    "bldgCode": "E9232",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6361 S. ROWEN_E9478",
+    "bldgCode": "E9478",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6362 S. TERRIPIN_E9412",
+    "bldgCode": "E9412",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6363 S. ATHENA_E9425",
+    "bldgCode": "E9425",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6363 S. TERRIPIN_E9403",
+    "bldgCode": "E9403",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6364 S. ATHENA_E9418",
+    "bldgCode": "E9418",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6365 S. AMULET_E9441",
+    "bldgCode": "E9441",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6404 S. SAGEWOOD CIR._E9241",
+    "bldgCode": "E9241",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6406 S. ROWEN_E9463",
+    "bldgCode": "E9463",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6406 S. TERRIPIN CIR._E9386",
+    "bldgCode": "E9386",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6407 S. SAGEWOOD CIR._E9240",
+    "bldgCode": "E9240",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6409 S. TERRIPIN CIR._E9387",
+    "bldgCode": "E9387",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6410 S. SAGEWOOD CIR._E9242",
+    "bldgCode": "E9242",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6412 S. ROSLYN_E9252",
+    "bldgCode": "E9252",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6412 S. TERRIPIN CIR._E9385",
+    "bldgCode": "E9385",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6413 S. SAGEWOOD CIR._E9239",
+    "bldgCode": "E9239",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6415 S. TERRIPIN CIR._E9388",
+    "bldgCode": "E9388",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6416 S. SAGEWOOD CIR._E9243",
+    "bldgCode": "E9243",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6418 S. ROSLYN_E9253",
+    "bldgCode": "E9253",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6418 S. TERRIPIN CIR._E9384",
+    "bldgCode": "E9384",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6419 S. ROSLYN_E9262",
+    "bldgCode": "E9262",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6419 S. SAGEWOOD CIR._E9238",
+    "bldgCode": "E9238",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6421 S. TERRIPIN CIR._E9389",
+    "bldgCode": "E9389",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6422 S. SAGEWOOD CIR._E9244",
+    "bldgCode": "E9244",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6424 S. ROSLYN_E9254",
+    "bldgCode": "E9254",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6424 S. ROWEN_E9459",
+    "bldgCode": "E9459",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6424 S. TERRIPIN CIR._E9383",
+    "bldgCode": "E9383",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6425 S. ROWEN_E9460",
+    "bldgCode": "E9460",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6425 S. SAGEWOOD CIR._E9237",
+    "bldgCode": "E9237",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6427 S. ROSLYN_E9261",
+    "bldgCode": "E9261",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6427 S. TERRIPIN CIR._E9390",
+    "bldgCode": "E9390",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6430 S. ROSLYN_E9255",
+    "bldgCode": "E9255",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6430 S. ROWEN_E9458",
+    "bldgCode": "E9458",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6433 S. ESSEX_E9247",
+    "bldgCode": "E9247",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6433 S. SAGEWOOD_E9373",
+    "bldgCode": "E9373",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6436 S. ATHENA_E9393",
+    "bldgCode": "E9393",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6436 S. ROSLYN_E9256",
+    "bldgCode": "E9256",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6436 S. ROWEN_E9457",
+    "bldgCode": "E9457",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6437 S. ATHENA AVE._E9401",
+    "bldgCode": "E9401",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6437 S. ROWEN_E9461",
+    "bldgCode": "E9461",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6438 S. SAGEWOOD_E9372",
+    "bldgCode": "E9372",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6439 S. ESSEX_E9246",
+    "bldgCode": "E9246",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6439 S. ROSLYN_E9260",
+    "bldgCode": "E9260",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6440 S. TERRIPIN_E9382",
+    "bldgCode": "E9382",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6442 S. ATHENA_E9392",
+    "bldgCode": "E9392",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6442 S. ESSEX_E9266",
+    "bldgCode": "E9266",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6442 S. ROSLYN_E9257",
+    "bldgCode": "E9257",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6442 S. ROWEN_E9456",
+    "bldgCode": "E9456",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6443 S. TERRIPIN_E9367",
+    "bldgCode": "E9367",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6444 S. SAGEWOOD_E9371",
+    "bldgCode": "E9371",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6445 S. ATHENA AVE._E9402",
+    "bldgCode": "E9402",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6445 S. ESSEX_E9245",
+    "bldgCode": "E9245",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6445 S. SAGEWOOD_E9374",
+    "bldgCode": "E9374",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6446 S. TERRIPIN_E9381",
+    "bldgCode": "E9381",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6447 S. ROSLYN_E9259",
+    "bldgCode": "E9259",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6448 S. ATHENA_E9391",
+    "bldgCode": "E9391",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6448 S. ESSEX_E9267",
+    "bldgCode": "E9267",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6448 S. ROSLYN_E9258",
+    "bldgCode": "E9258",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6448 S. ROWEN_E9455",
+    "bldgCode": "E9455",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6449 S. ROWEN_E9462",
+    "bldgCode": "E9462",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6450 S. SAGEWOOD_E9370",
+    "bldgCode": "E9370",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6451 S. SAGEWOOD_E9375",
+    "bldgCode": "E9375",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6453 S. ROSLYN_E9289",
+    "bldgCode": "E9289",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6454 S. AMULET_E9533",
+    "bldgCode": "E9533",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6454 S. ROSLYN_E9296",
+    "bldgCode": "E9296",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6454 S. TERRIPIN_E9380",
+    "bldgCode": "E9380",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6455 S. AMULET_E9532",
+    "bldgCode": "E9532",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6455 S. TERRIPIN_E9366",
+    "bldgCode": "E9366",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6456 S. ATHENA_E9479",
+    "bldgCode": "E9479",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6456 S. LONGWOOD_E9288",
+    "bldgCode": "E9288",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6456 S. ROWEN_E9537",
+    "bldgCode": "E9537",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6457 S. ATHENA_E9488",
+    "bldgCode": "E9488",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6457 S. LONGWOOD_E9278",
+    "bldgCode": "E9278",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6457 S. ROWEN_E9550",
+    "bldgCode": "E9550",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6457 S. SAGEWOOD_E9376",
+    "bldgCode": "E9376",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6458 S. ESSEX_E9268",
+    "bldgCode": "E9268",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6458 S. RAVEN_E9489",
+    "bldgCode": "E9489",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6459 S. ESSEX_E9277",
+    "bldgCode": "E9277",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6459 S. RAVEN_E9498",
+    "bldgCode": "E9498",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6459 S. ROSLYN_E9290",
+    "bldgCode": "E9290",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6460 S. AMULET_E9534",
+    "bldgCode": "E9534",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6460 S. ROSLYN_E9295",
+    "bldgCode": "E9295",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6460 S. TERRIPIN_E9379",
+    "bldgCode": "E9379",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6461 S. AMULET_E9531",
+    "bldgCode": "E9531",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6461 S. TERRIPIN_E9365",
+    "bldgCode": "E9365",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6462 S. ATHENA_E9480",
+    "bldgCode": "E9480",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6462 S. LONGWOOD_E9287",
+    "bldgCode": "E9287",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6462 S. ROWEN_E9538",
+    "bldgCode": "E9538",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6463 S. ATHENA_E9487",
+    "bldgCode": "E9487",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6463 S. LONGWOOD_E9279",
+    "bldgCode": "E9279",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6463 S. ROWEN_E9549",
+    "bldgCode": "E9549",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6464 S. ESSEX_E9269",
+    "bldgCode": "E9269",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6464 S. RAVEN_E9490",
+    "bldgCode": "E9490",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6465 S. ESSEX_E9276",
+    "bldgCode": "E9276",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6465 S. RAVEN_E9497",
+    "bldgCode": "E9497",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6502 S. ROSLYN_E9294",
+    "bldgCode": "E9294",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6503 S. AMULET_E9530",
+    "bldgCode": "E9530",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6503 S. LONGWOOD_E9280",
+    "bldgCode": "E9280",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6504 S. ATHENA_E9481",
+    "bldgCode": "E9481",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6504 S. LONGWOOD_E9286",
+    "bldgCode": "E9286",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6504 S. ROWEN_E9539",
+    "bldgCode": "E9539",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6505 S. ATHENA_E9486",
+    "bldgCode": "E9486",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6505 S. ESSEX_E9275",
+    "bldgCode": "E9275",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6505 S. ROWEN_E9548",
+    "bldgCode": "E9548",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6506 S. AMULET_E9535",
+    "bldgCode": "E9535",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6506 S. ESSEX_E9270",
+    "bldgCode": "E9270",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6506 S. RAVEN_E9491",
+    "bldgCode": "E9491",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6507 S. ROSLYN_E9291",
+    "bldgCode": "E9291",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6508 S. ROSLYN_E9293",
+    "bldgCode": "E9293",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6509 S. AMULET_E9529",
+    "bldgCode": "E9529",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6509 S. LONGWOOD_E9281",
+    "bldgCode": "E9281",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6510 S. LONGWOOD_E9285",
+    "bldgCode": "E9285",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6510 S. ROWEN_E9540",
+    "bldgCode": "E9540",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6511 S. ATHENA_E9485",
+    "bldgCode": "E9485",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6511 S. ESSEX_E9274",
+    "bldgCode": "E9274",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6512 S. ESSEX_E9271",
+    "bldgCode": "E9271",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6512 S. RAVEN_E9492",
+    "bldgCode": "E9492",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6513 S. RAVEN_E9496",
+    "bldgCode": "E9496",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6513 S. ROWEN_E9547",
+    "bldgCode": "E9547",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6514 S. ROSLYN_E9292",
+    "bldgCode": "E9292",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6515 S. AMULET_E9528",
+    "bldgCode": "E9528",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6515 S. LONGWOOD_E9282",
+    "bldgCode": "E9282",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6516 S. ATHENA_E9482",
+    "bldgCode": "E9482",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6516 S. ROWEN_E9541",
+    "bldgCode": "E9541",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6517 S. ATHENA_E9484",
+    "bldgCode": "E9484",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6518 S. AMULET_E9536",
+    "bldgCode": "E9536",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6518 S. ESSEX_E9272",
+    "bldgCode": "E9272",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6518 S. RAVEN_E9493",
+    "bldgCode": "E9493",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6521 S. LONGWOOD_E9283",
+    "bldgCode": "E9283",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6521 S. ROWEN_E9546",
+    "bldgCode": "E9546",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6522 S. ROWEN_E9542",
+    "bldgCode": "E9542",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6523 S. ATHENA_E9483",
+    "bldgCode": "E9483",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6524 S. ESSEX_E9273",
+    "bldgCode": "E9273",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6524 S. RAVEN_E9494",
+    "bldgCode": "E9494",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6525 S. RAVEN_E9495",
+    "bldgCode": "E9495",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6527 S. LONGWOOD_E9284",
+    "bldgCode": "E9284",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6528 S. ROWEN_E9543",
+    "bldgCode": "E9543",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6529 S. ROWEN_E9545",
+    "bldgCode": "E9545",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6534 S. ROWEN_E9544",
+    "bldgCode": "E9544",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6538 S. SAGEWOOD_E9328",
+    "bldgCode": "E9328",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6539 S. SAGEWOOD_E9333",
+    "bldgCode": "E9333",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6540 S. TERRIPIN_E9336",
+    "bldgCode": "E9336",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6541 S. TERRIPIN_E9341",
+    "bldgCode": "E9341",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6544 S. SAGEWOOD_E9329",
+    "bldgCode": "E9329",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6545 S. SAGEWOOD_E9332",
+    "bldgCode": "E9332",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6546 S. TERRIPIN_E9337",
+    "bldgCode": "E9337",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6547 S. TERRIPIN_E9340",
+    "bldgCode": "E9340",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6548 S. RAVEN_E9504",
+    "bldgCode": "E9504",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6549 S. RAVEN_E9501",
+    "bldgCode": "E9501",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6550 S. SAGEWOOD_E9330",
+    "bldgCode": "E9330",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6551 S. SAGEWOOD_E9331",
+    "bldgCode": "E9331",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6552 S. TERRIPIN_E9338",
+    "bldgCode": "E9338",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6553 S. TERRIPIN_E9339",
+    "bldgCode": "E9339",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6554 S. LONGWOOD_E9308",
+    "bldgCode": "E9308",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6555 S. LONGWOOD_E9311",
+    "bldgCode": "E9311",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6555 S. RAVEN_E9502",
+    "bldgCode": "E9502",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6560 S. LONGWOOD_E9309",
+    "bldgCode": "E9309",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6561 S. LONGWOOD_E9310",
+    "bldgCode": "E9310",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6846 E. VERONA AVE._E9303",
+    "bldgCode": "E9303",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6848 E. VOLANTE CIR._E9297",
+    "bldgCode": "E9297",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6849 E. VOLANTE CIR._E9302",
+    "bldgCode": "E9302",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6854 E. VERONA AVE._E9304",
+    "bldgCode": "E9304",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6856 E. VOLANTE CIR._E9298",
+    "bldgCode": "E9298",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6857 E. VOLANTE CIR._E9301",
+    "bldgCode": "E9301",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6862 E. VERONA AVE._E9305",
+    "bldgCode": "E9305",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6864 E. VOLANTE CIR._E9299",
+    "bldgCode": "E9299",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6865 E. VOLANTE CIR._E9300",
+    "bldgCode": "E9300",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6907 E. VOLANTE AVE._E9306",
+    "bldgCode": "E9306",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6908 E. VOLANTE AVE._E9317",
+    "bldgCode": "E9317",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6909 E. UNION AVE._E9201",
+    "bldgCode": "E9201",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6910 E. VALWOOD CIR._E9214",
+    "bldgCode": "E9214",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6911 E. VALWOOD CIR._E9215",
+    "bldgCode": "E9215",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6915 E. UNION AVE._E9202",
+    "bldgCode": "E9202",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6915 E. VOLANTE AVE._E9307",
+    "bldgCode": "E9307",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6916 E. VALWOOD CIR._E9213",
+    "bldgCode": "E9213",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6916 E. VOLANTE AVE._E9318",
+    "bldgCode": "E9318",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6917 E. VALWOOD CIR._E9216",
+    "bldgCode": "E9216",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6921 E. UNION AVE._E9203",
+    "bldgCode": "E9203",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6922 E. VALWOOD CIR._E9212",
+    "bldgCode": "E9212",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6923 E. VALWOOD CIR._E9217",
+    "bldgCode": "E9217",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6924 E. VOLANTE AVE._E9319",
+    "bldgCode": "E9319",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6927 E. UNION AVE._E9204",
+    "bldgCode": "E9204",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6928 E. VALWOOD CIR._E9211",
+    "bldgCode": "E9211",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6929 E. VALWOOD CIR._E9218",
+    "bldgCode": "E9218",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6931 E. VOLANTE AVE._E9312",
+    "bldgCode": "E9312",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6932 E. VOLANTE AVE._E9320",
+    "bldgCode": "E9320",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6933 E. VENTANA AVE._E9263",
+    "bldgCode": "E9263",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6934 E. VENTANA AVE._E9251",
+    "bldgCode": "E9251",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6935 E. VALWOOD AVE._E9219",
+    "bldgCode": "E9219",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6936 E. VALWOOD AVE._E9210",
+    "bldgCode": "E9210",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6939 E. VENTANA AVE._E9264",
+    "bldgCode": "E9264",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6939 E. VOLANTE AVE._E9313",
+    "bldgCode": "E9313",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6940 E. VENTANA AVE._E9250",
+    "bldgCode": "E9250",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6940 E. VOLANTE AVE._E9321",
+    "bldgCode": "E9321",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6941 E. VALWOOD AVE._E9220",
+    "bldgCode": "E9220",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6942 E. VALWOOD AVE._E9209",
+    "bldgCode": "E9209",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6945 E. VALWOOD AVE._E9221",
+    "bldgCode": "E9221",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6946 E. VENTANA AVE._E9249",
+    "bldgCode": "E9249",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6947 E. VOLANTE AVE._E9314",
+    "bldgCode": "E9314",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6948 E. VALWOOD AVE._E9208",
+    "bldgCode": "E9208",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6948 E. VOLANTE AVE._E9322",
+    "bldgCode": "E9322",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6949 E. VALWOOD AVE._E9222",
+    "bldgCode": "E9222",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6951 E. VENTANA AVE._E9265",
+    "bldgCode": "E9265",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6952 E. VENTANA AVE._E9248",
+    "bldgCode": "E9248",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6953 E. VALWOOD AVE._E9223",
+    "bldgCode": "E9223",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6954 E. VALWOOD AVE._E9207",
+    "bldgCode": "E9207",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6955 E. VOLANTE AVE._E9315",
+    "bldgCode": "E9315",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6955 E. VOSLER AVE._E9575",
+    "bldgCode": "E9575",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6956 E. VOLANTE AVE._E9323",
+    "bldgCode": "E9323",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6957 E. VALWOOD AVE._E9224",
+    "bldgCode": "E9224",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6960 E. VALWOOD AVE._E9206",
+    "bldgCode": "E9206",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6960 E. VOSLER AVE._E9570-1",
+    "bldgCode": "E9570",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6960 E. VOSLER AVE._E9572-2",
+    "bldgCode": "E9572",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6961 E. VALWOOD AVE._E9225",
+    "bldgCode": "E9225",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6963 E. VOLANTE AVE._E9316",
+    "bldgCode": "E9316",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6964 E. VOLANTE AVE._E9324",
+    "bldgCode": "E9324",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6965 E. VALWOOD AVE._E9226",
+    "bldgCode": "E9226",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_6966 E. VALWOOD AVE._E9205",
+    "bldgCode": "E9205",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7007 E. VOSLER AVE._E9569-1",
+    "bldgCode": "E9569",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7007 E. VOSLER AVE._E9571-2",
+    "bldgCode": "E9571",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7008 E. VANDENBURG AVE._E9368",
+    "bldgCode": "E9368",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7009 E. VANDENBURG AVE._E9355",
+    "bldgCode": "E9355",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7010 E. VANCE AVE._E9354",
+    "bldgCode": "E9354",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7011 E. VANCE AVE._E9325",
+    "bldgCode": "E9325",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7014 E. VANDENBURG AVE._E9369",
+    "bldgCode": "E9369",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7015 E. VANDENBURG AVE._E9356",
+    "bldgCode": "E9356",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7016 E. VANCE AVE._E9353",
+    "bldgCode": "E9353",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7019 E. VANCE AVE._E9326",
+    "bldgCode": "E9326",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7021 E. VANDENBURG AVE._E9357",
+    "bldgCode": "E9357",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7021 E. VOSLER AVE._E9565-1",
+    "bldgCode": "E9565",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7021 E. VOSLER AVE._E9567-2",
+    "bldgCode": "E9567",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7022 E. VANCE AVE._E9352",
+    "bldgCode": "E9352",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7022 E. VOSLER AVE._E9566-1",
+    "bldgCode": "E9566",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7022 E. VOSLER AVE._E9568-2",
+    "bldgCode": "E9568",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7027 E. VANCE AVE._E9327",
+    "bldgCode": "E9327",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7028 E. VANCE AVE._E9351",
+    "bldgCode": "E9351",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7029 E. VANDENBURG AVE._E9358",
+    "bldgCode": "E9358",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7030 E. VANDENBURG AVE._E9377",
+    "bldgCode": "E9377",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7034 E. VANCE AVE._E9350",
+    "bldgCode": "E9350",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7035 E. VANCE AVE._E9334",
+    "bldgCode": "E9334",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7035 E. VOSLER CIR._E9561-1",
+    "bldgCode": "E9561",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7035 E. VOSLER CIR._E9563-2",
+    "bldgCode": "E9563",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7036 E. VOSLER CIR._E9562-1",
+    "bldgCode": "E9562",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7036 E. VOSLER CIR._E9564-2",
+    "bldgCode": "E9564",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7038 E. VANDENBURG AVE._E9378",
+    "bldgCode": "E9378",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7040 E. VANCE AVE._E9349",
+    "bldgCode": "E9349",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7041 E. VANCE AVE._E9335",
+    "bldgCode": "E9335",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7041 E. VANDENBURG AVE._E9359",
+    "bldgCode": "E9359",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7045 E. VANCE AVE._E9342",
+    "bldgCode": "E9342",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7046 E. VANCE AVE._E9348",
+    "bldgCode": "E9348",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7047 E. VANDENBURG AVE._E9360",
+    "bldgCode": "E9360",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7049 E. VOSLER CIR._E9557-1",
+    "bldgCode": "E9557",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7049 E. VOSLER CIR._E9559-2",
+    "bldgCode": "E9559",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7050 E. VOSLER CIR._E9558-1",
+    "bldgCode": "E9558",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7050 E. VOSLER CIR._E9560-2",
+    "bldgCode": "E9560",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7052 E. VANCE AVE._E9347",
+    "bldgCode": "E9347",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7053 E. VANCE AVE._E9343",
+    "bldgCode": "E9343",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7054 E. VANDENBURG AVE._E9364",
+    "bldgCode": "E9364",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7055 E. VANDENBURG AVE._E9361",
+    "bldgCode": "E9361",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7058 E. VANCE AVE._E9346",
+    "bldgCode": "E9346",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7060 E. VANDENBURG AVE._E9363",
+    "bldgCode": "E9363",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7061 E. VANCE AVE._E9344",
+    "bldgCode": "E9344",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7063 E. VANDENBURG AVE._E9362",
+    "bldgCode": "E9362",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7063 E. VOSLER CIR._E9553-1",
+    "bldgCode": "E9553",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7063 E. VOSLER CIR._E9555-2",
+    "bldgCode": "E9555",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7064 E. VANCE AVE._E9345",
+    "bldgCode": "E9345",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7064 E. VOSLER CIR._E9554-1",
+    "bldgCode": "E9554",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7064 E. VOSLER CIR._E9556-2",
+    "bldgCode": "E9556",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7109 E. VOLANTE AVE._E9508",
+    "bldgCode": "E9508",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7110 E. VOLANTE AVE._E9509",
+    "bldgCode": "E9509",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7117 E. VOLANTE AVE._E9507",
+    "bldgCode": "E9507",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7118 E. VOLANTE AVE._E9510",
+    "bldgCode": "E9510",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7125 E. VOLANTE AVE._E9506",
+    "bldgCode": "E9506",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7126 E. VOLANTE AVE._E9511",
+    "bldgCode": "E9511",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7134 E. VOLANTE AVE._E9512",
+    "bldgCode": "E9512",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7140 E. VENTANA AVE._E9394",
+    "bldgCode": "E9394",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7141 E. VOLANTE AVE._E9505",
+    "bldgCode": "E9505",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7142 E. VOLANTE AVE._E9513",
+    "bldgCode": "E9513",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7147 E. VALWOOD AVE._E9419",
+    "bldgCode": "E9419",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7147 E. VENTANA AVE._E9400",
+    "bldgCode": "E9400",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7148 E. VENTANA AVE._E9395",
+    "bldgCode": "E9395",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7150 E. VOLANTE AVE._E9514",
+    "bldgCode": "E9514",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7153 E. VALWOOD AVE._E9420",
+    "bldgCode": "E9420",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7154 E. VALWOOD AVE._E9431",
+    "bldgCode": "E9431",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7155 E. VENTANA AVE._E9399",
+    "bldgCode": "E9399",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7156 E. VENTANA AVE._E9396",
+    "bldgCode": "E9396",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7157 E. VOLANTE AVE._E9500",
+    "bldgCode": "E9500",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7158 E. VOLANTE AVE._E9515",
+    "bldgCode": "E9515",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7159 E. VALWOOD AVE._E9421",
+    "bldgCode": "E9421",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7160 E. VALWOOD AVE._E9432",
+    "bldgCode": "E9432",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7163 E. VENTANA AVE._E9398",
+    "bldgCode": "E9398",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7163 E. VOLANTE AVE._E9499",
+    "bldgCode": "E9499",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7164 E. VENTANA AVE._E9397",
+    "bldgCode": "E9397",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7164 E. VOLANTE AVE._E9516",
+    "bldgCode": "E9516",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7202 E. VALWOOD AVE._E9433",
+    "bldgCode": "E9433",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7203 E. VALWOOD AVE._E9444",
+    "bldgCode": "E9444",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7204 E. VOLANTE AVE._E9517",
+    "bldgCode": "E9517",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7206 E. VENTANA AVE._E9445",
+    "bldgCode": "E9445",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7207 E. VENTANA AVE._E9454",
+    "bldgCode": "E9454",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7207 E. VOLANTE AVE._E9526",
+    "bldgCode": "E9526",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7208 E. VALWOOD AVE._E9434",
+    "bldgCode": "E9434",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7209 E. VALWOOD AVE._E9443",
+    "bldgCode": "E9443",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7212 E. VENTANA AVE._E9446",
+    "bldgCode": "E9446",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7212 E. VOLANTE AVE._E9518",
+    "bldgCode": "E9518",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7213 E. VENTANA AVE._E9453",
+    "bldgCode": "E9453",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7215 E. VALWOOD AVE._E9442",
+    "bldgCode": "E9442",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7218 E. VENTANA AVE._E9447",
+    "bldgCode": "E9447",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7219 E. VOLANTE AVE._E9525",
+    "bldgCode": "E9525",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7220 E. VOLANTE AVE._E9519",
+    "bldgCode": "E9519",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7224 E. VENTANA AVE._E9448",
+    "bldgCode": "E9448",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7225 E. VENTANA AVE._E9452",
+    "bldgCode": "E9452",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7228 E. VOLANTE AVE._E9520",
+    "bldgCode": "E9520",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7230 E. VENTANA AVE._E9449",
+    "bldgCode": "E9449",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7231 E. VOLANTE AVE._E9524",
+    "bldgCode": "E9524",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7232 E. VALWOOD CIR._E9469",
+    "bldgCode": "E9469",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7233 E. VALWOOD CIR._E9468",
+    "bldgCode": "E9468",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7235 E. VENTANA AVE._E9451",
+    "bldgCode": "E9451",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7236 E. VENTANA AVE._E9450",
+    "bldgCode": "E9450",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7236 E. VOLANTE AVE._E9521",
+    "bldgCode": "E9521",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7240 E. VALWOOD CIR._E9470",
+    "bldgCode": "E9470",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7241 E. VALWOOD CIR._E9467",
+    "bldgCode": "E9467",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7243 E. VOLANTE AVE._E9523",
+    "bldgCode": "E9523",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7244 E. VOLANTE AVE._E9522",
+    "bldgCode": "E9522",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7248 E. VALWOOD CIR._E9471",
+    "bldgCode": "E9471",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7249 E. VALWOOD CIR._E9466",
+    "bldgCode": "E9466",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7256 E. VALWOOD CIR._E9472",
+    "bldgCode": "E9472",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7257 E. VALWOOD CIR._E9465",
+    "bldgCode": "E9465",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7264 E. VALWOOD CIR._E9473",
+    "bldgCode": "E9473",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SDV_7265 E. VALWOOD CIR._E9464",
+    "bldgCode": "E9464",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SIMULATOR BUILDING",
+    "bldgCode": "E425",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "SKYSPACE RAMADA",
+    "bldgCode": "X62",
+    "rateSchedule": "CM",
+    "sector": "TMPE-B02",
+    "subtype": null
+  },
+  {
+    "name": "SOCCER & LACROSSE FIELD",
+    "bldgCode": "L19",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "SOCCER & LACROSSE STADIUM",
+    "bldgCode": "154",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "SOCIAL SCIENCES BLDG.",
+    "bldgCode": "005",
+    "rateSchedule": "CM",
+    "sector": "TMPE-A01",
+    "subtype": null
+  },
+  {
+    "name": "SOIL VAPOR EXTRACTION FACILITY",
+    "bldgCode": "X803",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "SOLAR FUEL CELL",
+    "bldgCode": "X632A",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "SONORA - EAST AREA",
+    "bldgCode": "L16",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SONORA ANNEX",
+    "bldgCode": "138",
+    "rateSchedule": "CB",
+    "sector": "RFMT-S1",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SONORA CENTER",
+    "bldgCode": "139",
+    "rateSchedule": "CB",
+    "sector": "RFMT-S1",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "SONORAN ARROYO MALL",
+    "bldgCode": "L801",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "SOUTH FIELDS' RESTROOMS",
+    "bldgCode": "916",
+    "rateSchedule": "CM",
+    "sector": "WEST-A01",
+    "subtype": null
+  },
+  {
+    "name": "SOUTH RESTROOMS",
+    "bldgCode": "R87B",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "SOUTH STORAGE",
+    "bldgCode": "128H",
+    "rateSchedule": "CM",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "SOUTH SUB-STATION (METER #J77961)",
+    "bldgCode": "X42",
+    "rateSchedule": "CM",
+    "sector": "TMPE-B02",
+    "subtype": null
+  },
+  {
+    "name": "SRC PUMP HOUSE",
+    "bldgCode": "X28",
+    "rateSchedule": "CM",
+    "sector": "TMPE-B02",
+    "subtype": null
+  },
+  {
+    "name": "STADIUM MANAGEMENT",
+    "bldgCode": "R87C",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "STADIUM PARKING STRUCTURE (VETERANS WAY)",
+    "bldgCode": "P05",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C01",
+    "subtype": null
+  },
+  {
+    "name": "STADIUM SUPPORT",
+    "bldgCode": "R87G",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "STAUFFER COMMUNICATION ARTS A",
+    "bldgCode": "024A",
+    "rateSchedule": "CM",
+    "sector": "TMPE-A01",
+    "subtype": null
+  },
+  {
+    "name": "STAUFFER COMMUNICATION ARTS B",
+    "bldgCode": "024B",
+    "rateSchedule": "CM",
+    "sector": "TMPE-A01",
+    "subtype": null
+  },
+  {
+    "name": "STORAGE",
+    "bldgCode": "909",
+    "rateSchedule": "CM",
+    "sector": "WEST-A01",
+    "subtype": null
+  },
+  {
+    "name": "STORAGE CONTAINERS",
+    "bldgCode": "B10",
+    "rateSchedule": null,
+    "sector": "BIOS",
+    "subtype": null
+  },
+  {
+    "name": "STUDENT ATHLETE FACILITY",
+    "bldgCode": "059K",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C01",
+    "subtype": null
+  },
+  {
+    "name": "STUDENT PAVILION",
+    "bldgCode": "169",
+    "rateSchedule": "CB",
+    "sector": "TMPE-A02",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "STUDENT SERVICES BLDG.",
+    "bldgCode": "045",
+    "rateSchedule": "CM",
+    "sector": "TMPE-A02",
+    "subtype": null
+  },
+  {
+    "name": "STUDENT UNION",
+    "bldgCode": "E812",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "STUDENT UNION ANNEX",
+    "bldgCode": "E300",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "SUN ANGEL STADIUM",
+    "bldgCode": "098",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "SUN ANGEL STADIUM - YARD",
+    "bldgCode": "L09",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "SUN DEVIL BEACH VOLLEYBALL FACILITY",
+    "bldgCode": "L38",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "SUN DEVIL FITNESS COMPLEX - 046",
+    "bldgCode": "046",
+    "rateSchedule": "CS",
+    "sector": "TMPE-B",
+    "subtype": null
+  },
+  {
+    "name": "SUN DEVIL FITNESS COMPLEX - 308",
+    "bldgCode": "308",
+    "rateSchedule": "CM",
+    "sector": "DTPC-A02",
+    "subtype": null
+  },
+  {
+    "name": "SUN DEVIL FITNESS COMPLEX - 308",
+    "bldgCode": "308",
+    "rateSchedule": "CM",
+    "sector": "DTPC-A02SDFC",
+    "subtype": null
+  },
+  {
+    "name": "SUN DEVIL FITNESS COMPLEX - 915",
+    "bldgCode": "915",
+    "rateSchedule": "CM",
+    "sector": "WEST-A01",
+    "subtype": null
+  },
+  {
+    "name": "SUN DEVIL FITNESS COMPLEX - E831",
+    "bldgCode": "E831",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "SUN DEVIL HALL",
+    "bldgCode": "036",
+    "rateSchedule": "CM",
+    "sector": "TMPE-A02",
+    "subtype": null
+  },
+  {
+    "name": "SUN DEVIL MALL",
+    "bldgCode": "L802",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "SUN DEVIL SPORTS PERFORMANCE",
+    "bldgCode": "158",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "SUN DEVIL STADIUM SUITES",
+    "bldgCode": "059D",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C01",
+    "subtype": null
+  },
+  {
+    "name": "SUN DEVIL STADIUM-NORTH LOCKER BLDG",
+    "bldgCode": "134",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C01",
+    "subtype": null
+  },
+  {
+    "name": "SUNPOWER CPV SOLAR PLANT",
+    "bldgCode": "X66",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "SUTTON HALL",
+    "bldgCode": "E632",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "TALON RESIDENCE HALL",
+    "bldgCode": "X324",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "TAYLOR HALL",
+    "bldgCode": "E672",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "TAYLOR MALL",
+    "bldgCode": "306M",
+    "rateSchedule": null,
+    "sector": "DTPC-A02",
+    "subtype": null
+  },
+  {
+    "name": "TAYLOR STREET PARKING STRUCTURE",
+    "bldgCode": "P32",
+    "rateSchedule": "CS",
+    "sector": "DTPC-A01",
+    "subtype": null
+  },
+  {
+    "name": "TEACHING GREENHOUSE",
+    "bldgCode": "E820",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "TECHNOLOGY CENTER",
+    "bldgCode": "E790",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "TECHNOLOGY INNOVATION LABS",
+    "bldgCode": "E539",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "TENNIS COURT 3",
+    "bldgCode": "X128",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "THE ANNEX",
+    "bldgCode": "060",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C01",
+    "subtype": null
+  },
+  {
+    "name": "THE BIRD",
+    "bldgCode": "547",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "THE STUDIOS AT MESA CITY CENTER",
+    "bldgCode": "R107",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "THERMAL ENERGY STORAGE",
+    "bldgCode": "X01",
+    "rateSchedule": "CB",
+    "sector": "TMPE-B02",
+    "subtype": null
+  },
+  {
+    "name": "THOMAS HALL",
+    "bldgCode": "X477",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "THUNDERBIRD GLOBAL HEADQUARTERS BUILDING",
+    "bldgCode": "310",
+    "rateSchedule": "CB",
+    "sector": "DTPC-A02",
+    "subtype": null
+  },
+  {
+    "name": "TICKET TRAILER/SUN DEVIL STADIUM-N",
+    "bldgCode": "R23",
+    "rateSchedule": "CM",
+    "sector": "TMPE-C01",
+    "subtype": null
+  },
+  {
+    "name": "TLAB FIELD EAST",
+    "bldgCode": "L539E",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "TLAB FIELD WEST",
+    "bldgCode": "L539W",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "T-MOBILE MONOPALM AT KARSTEN GC",
+    "bldgCode": "L31",
+    "rateSchedule": "CM",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "TONTOZONA - CARETAKERS CABIN",
+    "bldgCode": "522",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "TONTOZONA - CREEKSIDE CABIN",
+    "bldgCode": "523",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "TONTOZONA - DINING HALL",
+    "bldgCode": "506",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "TONTOZONA - EXECUTIVE LODGE",
+    "bldgCode": "507",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "TONTOZONA - HILLTOP DORMITORY",
+    "bldgCode": "508",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "TONTOZONA - LITTLE CREEK LODGE",
+    "bldgCode": "524",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "TONTOZONA - METAL STORAGE SHED",
+    "bldgCode": "X19",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "TONTOZONA - PUMP HOUSE",
+    "bldgCode": "512",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "TONTOZONA - SPARKYS DEN",
+    "bldgCode": "509",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "TONTOZONA - SUN ANGEL LODGE",
+    "bldgCode": "521",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "TONTOZONA - SUN DEVIL LODGE",
+    "bldgCode": "511",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "TONTOZONA - TALL PINES LODGE",
+    "bldgCode": "525",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "TONTOZONA - UNITS C,D,E,F",
+    "bldgCode": "505",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "TONTOZONA - VALVE HOUSE",
+    "bldgCode": "513",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "TONTOZONA - WELL #2 - PUMP HOUSE",
+    "bldgCode": "526",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "TONTOZONA - WORKSHOP",
+    "bldgCode": "510",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "TONTOZONA FOOTBALL FIELD 1",
+    "bldgCode": "L517",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "TONTOZONA FOOTBALL FIELD 2",
+    "bldgCode": "L518",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "TOOKER HOUSE A",
+    "bldgCode": "162A",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "TOOKER HOUSE B",
+    "bldgCode": "162B",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "TOOKER HOUSE C",
+    "bldgCode": "162C",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "TOOKER HOUSE DINING",
+    "bldgCode": "162D",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "TOPSIDE/BELOW (RESIDENCE)",
+    "bldgCode": "B06",
+    "rateSchedule": null,
+    "sector": "BIOS",
+    "subtype": null
+  },
+  {
+    "name": "TRACK",
+    "bldgCode": "L129",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "TREE RESEARCH PLATFORM",
+    "bldgCode": "L53",
+    "rateSchedule": "CB",
+    "sector": "WEST-A01",
+    "subtype": null
+  },
+  {
+    "name": "TYLER MALL CANTINA",
+    "bldgCode": "751",
+    "rateSchedule": "CM",
+    "sector": "TMPE-B01",
+    "subtype": null
+  },
+  {
+    "name": "TYLER STREET PARKING STRUCTURE (McALLISTER & TYLER)",
+    "bldgCode": "P02",
+    "rateSchedule": "CB",
+    "sector": "TMPE-B01",
+    "subtype": null
+  },
+  {
+    "name": "UA COLLEGE OF MEDICINE - PHOENIX (ADMINISTRATION)",
+    "bldgCode": "3002",
+    "rateSchedule": "CB",
+    "sector": "DTPC-A01",
+    "subtype": null
+  },
+  {
+    "name": "UA COLLEGE OF MEDICINE - PHOENIX (AUDITORIUM)",
+    "bldgCode": "3002A",
+    "rateSchedule": "CB",
+    "sector": "DTPC-A01",
+    "subtype": null
+  },
+  {
+    "name": "UA COLLEGE OF MEDICINE - PHOENIX (STUDENT BLDG)",
+    "bldgCode": "3002B",
+    "rateSchedule": "CB",
+    "sector": "DTPC-A01",
+    "subtype": null
+  },
+  {
+    "name": "UNDERGROUND THERMAL STORAGE",
+    "bldgCode": "X51",
+    "rateSchedule": "CM",
+    "sector": "WEST-A01",
+    "subtype": null
+  },
+  {
+    "name": "UNIVERSITY CENTER - 301",
+    "bldgCode": "301",
+    "rateSchedule": "CM",
+    "sector": "DTPC-A02",
+    "subtype": null
+  },
+  {
+    "name": "UNIVERSITY CENTER - 903",
+    "bldgCode": "903",
+    "rateSchedule": "CM",
+    "sector": "WEST-A01",
+    "subtype": null
+  },
+  {
+    "name": "UNIVERSITY CENTER BLDG. A",
+    "bldgCode": "180A",
+    "rateSchedule": "CM",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "UNIVERSITY CENTER BLDG. B",
+    "bldgCode": "180B",
+    "rateSchedule": "CM",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "UNIVERSITY CENTER BLDG. C",
+    "bldgCode": "180C",
+    "rateSchedule": "CM",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "UNIVERSITY CLUB",
+    "bldgCode": "011",
+    "rateSchedule": "CB",
+    "sector": "TMPE-A01",
+    "subtype": null
+  },
+  {
+    "name": "UNIVERSITY LIBRARY ARCHIVES",
+    "bldgCode": "E811",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "UNIVERSITY SERVICES",
+    "bldgCode": "150",
+    "rateSchedule": "CM",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "UNIVERSITY TOWERS",
+    "bldgCode": "142",
+    "rateSchedule": "CB",
+    "sector": "RFMT-S2",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "UNIVERSITY TOWERS PARKING STRUCTURE (TOWERS)",
+    "bldgCode": "P06",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C01",
+    "subtype": null
+  },
+  {
+    "name": "UNIVERSITY TUNNEL NETWORK - 015A",
+    "bldgCode": "015A",
+    "rateSchedule": "CM",
+    "sector": "TMPE-A02",
+    "subtype": null
+  },
+  {
+    "name": "UNIVERSITY TUNNEL NETWORK - 902A",
+    "bldgCode": "902A",
+    "rateSchedule": "CM",
+    "sector": "WEST-A01",
+    "subtype": null
+  },
+  {
+    "name": "URBAN SYSTEMS ENGINEERING",
+    "bldgCode": "077",
+    "rateSchedule": "CM",
+    "sector": "TMPE-B01",
+    "subtype": null
+  },
+  {
+    "name": "US WEATHER STATION",
+    "bldgCode": "L28",
+    "rateSchedule": "CM",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "VERDE DICKEY DOME",
+    "bldgCode": "175",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "VERDE DINING PAVILION",
+    "bldgCode": "914",
+    "rateSchedule": "CB",
+    "sector": "WEST-A01",
+    "subtype": null
+  },
+  {
+    "name": "VILLAS @ VISTA DEL SOL",
+    "bldgCode": "177",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "VISITOR LOCKER/CONCESSIONS",
+    "bldgCode": "R87F",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "VISTA DEL SOL B",
+    "bldgCode": "170B",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "VISTA DEL SOL C",
+    "bldgCode": "170C",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "VISTA DEL SOL CABANA/PUMP HOUSE",
+    "bldgCode": "172",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "VISTA DEL SOL COMMUNITY CENTER (A)",
+    "bldgCode": "171",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "VISTA DEL SOL D",
+    "bldgCode": "170D",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "VISTA DEL SOL DOME",
+    "bldgCode": "X33",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "VISTA DEL SOL E",
+    "bldgCode": "170E",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "VISTA DEL SOL F",
+    "bldgCode": "170F",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "VISTA DEL SOL G",
+    "bldgCode": "170G",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "VISTA DEL SOL H",
+    "bldgCode": "170H",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "VISTA DEL SOL I",
+    "bldgCode": "170I",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "VISTA DEL SOL J - WEST TOWER",
+    "bldgCode": "170J",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "VISTA DEL SOL JACUZZI",
+    "bldgCode": "X30",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "VISTA DEL SOL K - EAST TOWER",
+    "bldgCode": "170K",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "VISTA DEL SOL PARKING STRUCTURE",
+    "bldgCode": "RP03",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "VISTA DEL SOL PAVILION",
+    "bldgCode": "X31",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "VISTA DEL SOL TRASH COMPACTION",
+    "bldgCode": "X32",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WALTON CENTER FOR PLANETARY HEALTH",
+    "bldgCode": "079",
+    "rateSchedule": "CB",
+    "sector": "TMPE-E05",
+    "subtype": null
+  },
+  {
+    "name": "WANNER HALL",
+    "bldgCode": "E640",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "WATER TOWER",
+    "bldgCode": "X724",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "WATER TOWER PUMP BLDG.",
+    "bldgCode": "E715",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "WCH STORAGE",
+    "bldgCode": "E9551",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6145 S. EDGEWATER_E9598-1",
+    "bldgCode": "E9598",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6145 S. EDGEWATER_E9600-2",
+    "bldgCode": "E9600",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6156 S. EDGEWATER_E9593-1",
+    "bldgCode": "E9593",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6156 S. EDGEWATER_E9595-2",
+    "bldgCode": "E9595",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6157 S. EDGEWATER_E9594-1",
+    "bldgCode": "E9594",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6157 S. EDGEWATER_E9596-2",
+    "bldgCode": "E9596",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6825 E. VALWOOD AVE._E9739-1",
+    "bldgCode": "E9739",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6825 E. VALWOOD AVE._E9740-2",
+    "bldgCode": "E9740",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6830 E. UNGER AVE._E9709-1",
+    "bldgCode": "E9709",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6830 E. UNGER AVE._E9710-2",
+    "bldgCode": "E9710",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6833 E. UPSALA AVE._E9712-1",
+    "bldgCode": "E9712",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6833 E. UPSALA AVE._E9714-2",
+    "bldgCode": "E9714",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6834 E. URAL AVE._E9737-1",
+    "bldgCode": "E9737",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6834 E. URAL AVE._E9738-2",
+    "bldgCode": "E9738",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6837 E. VALWOOD AVE._E9741-1",
+    "bldgCode": "E9741",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6837 E. VALWOOD AVE._E9742-2",
+    "bldgCode": "E9742",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6842 E. UNGER AVE._E9707-1",
+    "bldgCode": "E9707",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6842 E. UNGER AVE._E9708-2",
+    "bldgCode": "E9708",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6844 E. UPSALA AVE._E9711-1",
+    "bldgCode": "E9711",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6844 E. UPSALA AVE._E9713-2",
+    "bldgCode": "E9713",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6845 E. UPSALA AVE._E9715-1",
+    "bldgCode": "E9715",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6845 E. UPSALA AVE._E9717-2",
+    "bldgCode": "E9717",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6846 E. URAL AVE._E9734-1",
+    "bldgCode": "E9734",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6846 E. URAL AVE._E9736-2",
+    "bldgCode": "E9736",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6847 E. URAL AVE._E9733-1",
+    "bldgCode": "E9733",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6847 E. URAL AVE._E9735-2",
+    "bldgCode": "E9735",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6848 E. VALWOOD AVE._E9744-1",
+    "bldgCode": "E9744",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6848 E. VALWOOD AVE._E9746-2",
+    "bldgCode": "E9746",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6849 E. VALWOOD AVE._E9743-1",
+    "bldgCode": "E9743",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6849 E. VALWOOD AVE._E9745-2",
+    "bldgCode": "E9745",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6854 E. UNGER AVE._E9704-1",
+    "bldgCode": "E9704",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6854 E. UNGER AVE._E9706-2",
+    "bldgCode": "E9706",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6855 E. UNGER AVE._E9703-1",
+    "bldgCode": "E9703",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6855 E. UNGER AVE._E9705-2",
+    "bldgCode": "E9705",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6856 E. UPSALA AVE._E9716-1",
+    "bldgCode": "E9716",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6856 E. UPSALA AVE._E9718-2",
+    "bldgCode": "E9718",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6857 E. UPSALA AVE._E9719-1",
+    "bldgCode": "E9719",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6857 E. UPSALA AVE._E9721-2",
+    "bldgCode": "E9721",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6858 E. URAL AVE._E9730-1",
+    "bldgCode": "E9730",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6858 E. URAL AVE._E9732-2",
+    "bldgCode": "E9732",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6859 E. URAL AVE._E9729-1",
+    "bldgCode": "E9729",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6859 E. URAL AVE._E9731-2",
+    "bldgCode": "E9731",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6860 E. VALWOOD AVE._E9748-1",
+    "bldgCode": "E9748",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6860 E. VALWOOD AVE._E9750-2",
+    "bldgCode": "E9750",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6861 E. VALWOOD AVE._E9747-1",
+    "bldgCode": "E9747",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6861 E. VALWOOD AVE._E9749-2",
+    "bldgCode": "E9749",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6866 E. UNGER AVE._E9701-1",
+    "bldgCode": "E9701",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6866 E. UNGER AVE._E9702-2",
+    "bldgCode": "E9702",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6901 E. UNGER AVE._E9697-1",
+    "bldgCode": "E9697",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6901 E. UNGER AVE._E9699-2",
+    "bldgCode": "E9699",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6902 E. UPSALA AVE._E9720-1",
+    "bldgCode": "E9720",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6902 E. UPSALA AVE._E9722-2",
+    "bldgCode": "E9722",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6903 E. UPSALA AVE._E9723-1",
+    "bldgCode": "E9723",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6903 E. UPSALA AVE._E9724-2",
+    "bldgCode": "E9724",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6904 E. URAL AVE._E9726-1",
+    "bldgCode": "E9726",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6904 E. URAL AVE._E9728-2",
+    "bldgCode": "E9728",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6905 E. URAL AVE._E9725-1",
+    "bldgCode": "E9725",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6905 E. URAL AVE._E9727-2",
+    "bldgCode": "E9727",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6912 E. UNGER AVE._E9698-1",
+    "bldgCode": "E9698",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6912 E. UNGER AVE._E9700-2",
+    "bldgCode": "E9700",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6928 E. USHER AVE._E9605-1",
+    "bldgCode": "E9605",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6928 E. USHER AVE._E9607-2",
+    "bldgCode": "E9607",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6929 E. URBANA AVE._E9601-1",
+    "bldgCode": "E9601",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6929 E. URBANA AVE._E9603-2",
+    "bldgCode": "E9603",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6940 E. USHER AVE._E9606-1",
+    "bldgCode": "E9606",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6940 E. USHER AVE._E9608-2",
+    "bldgCode": "E9608",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6941 E. URBANA AVE._E9597-1",
+    "bldgCode": "E9597",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6941 E. URBANA AVE._E9599-2",
+    "bldgCode": "E9599",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6952 E. USHER AVE._E9602-1",
+    "bldgCode": "E9602",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WDV_6952 E. USHER AVE._E9604-2",
+    "bldgCode": "E9604",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": "Residential Facilities"
+  },
+  {
+    "name": "WEATHERUP CENTER",
+    "bldgCode": "174",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "WEST CAMPUS INFRASTRUCTURE",
+    "bldgCode": "906X",
+    "rateSchedule": "CM",
+    "sector": "WEST-A01",
+    "subtype": null
+  },
+  {
+    "name": "WEST GARAGE",
+    "bldgCode": "141D",
+    "rateSchedule": "CM",
+    "sector": "TMPE-C01",
+    "subtype": null
+  },
+  {
+    "name": "WEST HALL",
+    "bldgCode": "049",
+    "rateSchedule": "CM",
+    "sector": "TMPE-A01",
+    "subtype": null
+  },
+  {
+    "name": "WEST RESTROOMS",
+    "bldgCode": "R87D",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "WEST SOLAR GROUND MOUNT",
+    "bldgCode": "X49",
+    "rateSchedule": "CM",
+    "sector": "WEST-A01",
+    "subtype": null
+  },
+  {
+    "name": "WEST SOLAR PARKING 1, 2, & 3",
+    "bldgCode": "X48",
+    "rateSchedule": "CB",
+    "sector": "WEST-A01",
+    "subtype": null
+  },
+  {
+    "name": "WEST STORAGE",
+    "bldgCode": "X128D",
+    "rateSchedule": "CM",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "WEST SUB-STATION (METER AT CP)",
+    "bldgCode": "X40",
+    "rateSchedule": "CM",
+    "sector": "TMPE-A01",
+    "subtype": null
+  },
+  {
+    "name": "WEXLER HALL",
+    "bldgCode": "057A",
+    "rateSchedule": "CM",
+    "sector": "TMPE-B01",
+    "subtype": null
+  },
+  {
+    "name": "WHITEMAN TENNIS CENTER",
+    "bldgCode": "096",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C01",
+    "subtype": null
+  },
+  {
+    "name": "WILLIAMS COMMUNITY SCHOOL - BLDG A",
+    "bldgCode": "E800A",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "WILLIAMS COMMUNITY SCHOOL - BLDG B",
+    "bldgCode": "E800B",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "WILLIAMS COMMUNITY SCHOOL - BLDG C",
+    "bldgCode": "E800C",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "WILLIAMS COMMUNITY SCHOOL - BLDG D",
+    "bldgCode": "E800D",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "WILLIAMS COMMUNITY SCHOOL - BLDG E",
+    "bldgCode": "E800E",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "WILLIAMS COMMUNITY SCHOOL - BLDG J",
+    "bldgCode": "E800J",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "WILLIAMS COMMUNITY SCHOOL - BLDG L",
+    "bldgCode": "E800L",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "WILLIAMS COMMUNITY SCHOOL - BLDG M",
+    "bldgCode": "E800M",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "WILLIAMS COMMUNITY SCHOOL - BLDG T",
+    "bldgCode": "E800T",
+    "rateSchedule": "CM",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "WMS CAMPUS BOYS & GIRLS CLUB",
+    "bldgCode": "E104",
+    "rateSchedule": "CB",
+    "sector": "POLY-A01",
+    "subtype": null
+  },
+  {
+    "name": "WOMENS GYMNASTICS TRAINING FACILITY",
+    "bldgCode": "166",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "WRESTLING TRAINING FACILITY",
+    "bldgCode": "156",
+    "rateSchedule": "CB",
+    "sector": "TMPE-C02",
+    "subtype": null
+  },
+  {
+    "name": "ZERO WASTE OFFICE",
+    "bldgCode": "X86",
+    "rateSchedule": "CM",
+    "sector": "TMPE-C02",
+    "subtype": null
+  }
+]

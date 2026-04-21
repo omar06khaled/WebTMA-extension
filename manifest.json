@@ -1,0 +1,53 @@
+{
+  "manifest_version": 3,
+  "name": "WebTMA Assistant",
+  "version": "1.0.0",
+  "description": "ASU Facilities Management - auto-suggests Task Code, Task Description, and Trade Description from the Action Requested field.",
+
+  "permissions": [
+    "activeTab",
+    "sidePanel",
+    "storage"
+  ],
+
+  "host_permissions": [
+    "https://*.webtma.net/*",
+    "http://localhost:3000/*",
+    "http://localhost:8081/*"
+  ],
+
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.webtma.net/*",
+        "http://localhost:8081/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+
+  "action": {
+    "default_title": "WebTMA Assistant",
+    "default_icon": {
+      "16":  "icons/icon16.png",
+      "48":  "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+
+  "icons": {
+    "16":  "icons/icon16.png",
+    "48":  "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

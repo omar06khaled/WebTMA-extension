@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WebTMA Mock Work Order Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 720px;
+      margin: 40px auto;
+      padding: 0 24px;
+      background: #f4f6f9;
+      color: #333;
+    }
+    .notice {
+      background: #fff3cd;
+      border: 1px solid #ffc107;
+      border-radius: 6px;
+      padding: 10px 16px;
+      margin-bottom: 28px;
+      font-size: 13px;
+      color: #856404;
+    }
+    h1 {
+      font-size: 20px;
+      margin-bottom: 24px;
+      color: #1a3e6e;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: #444;
+    }
+    input[type="text"],
+    textarea {
+      width: 100%;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 8px 10px;
+      font-size: 14px;
+      background: #fff;
+      transition: border-color 0.15s;
+    }
+    input[type="text"]:focus,
+    textarea:focus {
+      outline: none;
+      border-color: #1a3e6e;
+      box-shadow: 0 0 0 2px rgba(26,62,110,0.12);
+    }
+    textarea {
+      height: 100px;
+      resize: vertical;
+    }
+    button[type="submit"] {
+      background: #1a3e6e;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 10px 28px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    button[type="submit"]:hover {
+      background: #15325a;
+    }
+    #submit-confirm {
+      display: none;
+      margin-top: 12px;
+      color: #155724;
+      background: #d4edda;
+      border: 1px solid #c3e6cb;
+      border-radius: 4px;
+      padding: 8px 14px;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <div class="notice">
+    &#9888; WebTMA Assistant Test Form — not a real WebTMA page
+  </div>
+
+  <h1>Work Order — New Request</h1>
+
+  <form id="workOrderForm">
+    <div class="form-group">
+      <label for="ActionRequired">Action Requested</label>
+      <textarea id="ActionRequired" name="ActionRequired" placeholder="Describe the maintenance action required…"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="TaskCode">Task Code</label>
+      <input type="text" id="TaskCode" name="TaskCode" placeholder="e.g. HVAC-001">
+    </div>
+
+    <div class="form-group">
+      <label for="TaskDescription">Task Description</label>
+      <input type="text" id="TaskDescription" name="TaskDescription" placeholder="e.g. HVAC Repair">
+    </div>
+
+    <div class="form-group">
+      <label for="TradeCode">Trade Description</label>
+      <input type="text" id="TradeCode" name="TradeCode" placeholder="e.g. Mechanical">
+    </div>
+
+    <button type="submit">Submit Work Order</button>
+    <div id="submit-confirm">&#10003; Work order submitted (test mode — page not reloaded)</div>
+  </form>
+
+  <script>
+    // Prevent form submission from reloading the page so fields stay intact
+    // for extension testing purposes.
+    document.getElementById("workOrderForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+      document.getElementById("submit-confirm").style.display = "block";
+    });
+  </script>
+</body>
+</html>
