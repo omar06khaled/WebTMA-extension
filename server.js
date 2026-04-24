@@ -22,6 +22,16 @@ const knowledgeEntries = Object.values(knowledgeBase).flatMap((category) => Obje
 const allDescriptions = knowledgeEntries.map(([description]) => description);
 const AUDIT_LOG_PATH = path.join(__dirname, "audit.log");
 
+const buildingsArray = JSON.parse(
+  fs.readFileSync(path.join(__dirname, "buildings_lookup.json"), "utf8")
+);
+const buildingsByCode = {};
+const buildingsByName = {};
+buildingsArray.forEach(b => {
+  if (b.bldgCode) buildingsByCode[b.bldgCode.toUpperCase()] = b;
+  if (b.name) buildingsByName[b.name.toUpperCase().trim()] = b;
+});
+
 const app = express();
 
 app.use(
@@ -368,6 +378,37 @@ app.post("/api/audit/applied", async (req, res) => {
   }
 
   return res.json({ ok: true });
+});
+
+app.get("/api/building-search", (req, res) => {
+  res.setHeader("Content-Type", "application/json");
+  try {
+    const q = (req.query.q || "").trim().toUpperCase();
+    console.log(`[WebTMA SERVER] building-search hit — q: ${q}`);
+    if (q.length < 2) return res.json([]);
+
+    if (buildingsByCode[q]) {
+      return res.json([buildingsByCode[q]]);
+    }
+
+    const results = buildingsArray
+      .filter(b => {
+        const nameMatch = b.name && b.name.toUpperCase().includes(q);
+        const codeMatch = b.bldgCode && b.bldgCode.toUpperCase().includes(q);
+        return nameMatch || codeMatch;
+      })
+      .slice(0, 8)
+      .map(b => ({
+        name: b.name,
+        bldgCode: b.bldgCode,
+        rateSchedule: b.rateSchedule,
+        sector: b.sector
+      }));
+
+    res.json(results);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
 });
 
 app.listen(3000, () => {

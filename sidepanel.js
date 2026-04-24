@@ -23,10 +23,14 @@ window.__WEBTMA_SIDEPANEL_BUILD__ = BUILD_MARKER;
 document.documentElement.dataset.webtmaBuild = BUILD_MARKER;
 console.log(`[WebTMA SP] loaded ${BUILD_MARKER}`);
 
+const SERVER_BASE_URL = "https://webtma-extension.onrender.com";
+
 let manualMode = false;
 
 /** @type {object|null} */
 let selectedSuggestion = null;
+let selectedBuilding = null;
+let buildingSearchTimeout = null;
 
 /** @type {{ key: string, trade: string }|null} */
 let selectedCampus = null;
@@ -177,7 +181,7 @@ async function postAppliedAudit(auditTimestamp, appliedSuggestion) {
   if (!auditTimestamp || !appliedSuggestion) return;
 
   try {
-    const response = await fetch("http://localhost:3000/api/audit/applied", {
+    const response = await fetch(`${SERVER_BASE_URL}/api/audit/applied`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -207,7 +211,7 @@ async function fetchSuggestions(actionText) {
   currentAuditTimestamp = null;
 
   try {
-    const response = await fetch("http://localhost:3000/api/suggest", {
+    const response = await fetch(`${SERVER_BASE_URL}/api/suggest`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ actionRequested: trimmedText }),
@@ -274,7 +278,9 @@ function renderSuggestions(suggestions, options = {}) {
   }
 
   for (const suggestion of suggestions) {
-    suggestionsDiv.appendChild(buildCard(suggestion));
+    const card = buildCard(suggestion);
+    suggestionsDiv.appendChild(card);
+    initBuildingSearch(card);
   }
 
   if (suggestions.length === 0) {
@@ -333,6 +339,34 @@ function buildCard(suggestion) {
     badge.textContent = "Low confidence - verify";
   }
   card.appendChild(badge);
+
+  const buildingSection = document.createElement("div");
+  buildingSection.className = "building-search-section";
+  buildingSection.style.cssText = "margin-bottom:14px;";
+  buildingSection.innerHTML = `
+    <label style="font-size:11px; font-weight:600; color:#666; text-transform:uppercase; letter-spacing:0.5px; display:block; margin-bottom:6px;">Building / Location</label>
+    <input
+      class="building-search-input"
+      type="text"
+      placeholder="Search by building name or code..."
+      style="width:100%; box-sizing:border-box; padding:8px 10px; border:1px solid #ddd; border-radius:6px; font-size:13px; outline:none;"
+    />
+    <div class="building-search-results" style="display:none; border:1px solid #ddd; border-radius:6px; margin-top:4px; background:#fff; max-height:200px; overflow-y:auto;"></div>
+    <div class="building-selected" style="display:none; margin-top:8px; padding:8px 10px; background:#f5f5f5; border-radius:6px; font-size:13px;">
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <div>
+          <span class="building-selected-name" style="font-weight:600; color:#1a1a1a;"></span>
+          <span class="building-selected-code" style="color:#888; margin-left:6px; font-size:12px;"></span>
+        </div>
+        <button class="building-clear-btn" style="background:none; border:none; cursor:pointer; color:#888; font-size:16px; padding:0 4px;">×</button>
+      </div>
+      <div style="margin-top:4px; display:flex; gap:12px;">
+        <span style="font-size:11px; color:#666;">Rate Schedule: <strong class="building-rate-schedule" style="color:#1a1a1a;"></strong></span>
+        <span style="font-size:11px; color:#666;">Sector: <strong class="building-sector" style="color:#1a1a1a;"></strong></span>
+      </div>
+    </div>
+  `;
+  card.appendChild(buildingSection);
 
   if (suggestion.tradeOptions && typeof suggestion.tradeOptions === "object") {
     const table = document.createElement("table");
@@ -399,6 +433,86 @@ function selectCard(suggestion, cardEl) {
   cardEl.classList.add("selected");
 
   btnApply.disabled = true; // campus row must also be selected
+}
+
+function initBuildingSearch(card) {
+  const section = card.querySelector(".building-search-section");
+  if (!section) return;
+
+  const input = section.querySelector(".building-search-input");
+  const results = section.querySelector(".building-search-results");
+  const selectedDiv = section.querySelector(".building-selected");
+
+  input.addEventListener("input", () => {
+    clearTimeout(buildingSearchTimeout);
+    const q = input.value.trim();
+    if (q.length < 2) {
+      results.style.display = "none";
+      results.innerHTML = "";
+      return;
+    }
+    buildingSearchTimeout = setTimeout(() => fetchBuildingResults(q, section), 250);
+  });
+
+  section.querySelector(".building-clear-btn").addEventListener("click", () => {
+    selectedBuilding = null;
+    input.value = "";
+    selectedDiv.style.display = "none";
+    results.style.display = "none";
+    results.innerHTML = "";
+    input.style.display = "block";
+  });
+}
+
+async function fetchBuildingResults(q, section) {
+  const results = section.querySelector(".building-search-results");
+  try {
+    const res = await fetch(`${SERVER_BASE_URL}/api/building-search?q=${encodeURIComponent(q)}`);
+    const data = await res.json();
+    if (data.length === 0) {
+      results.style.display = "none";
+      return;
+    }
+    results.innerHTML = data.map(b => `
+      <div class="building-result-item"
+        data-code="${b.bldgCode || ""}"
+        data-name="${b.name}"
+        data-rs="${b.rateSchedule || ""}"
+        data-sector="${b.sector || ""}">
+        ${b.name}<span class="building-result-code">${b.bldgCode || ""}</span>
+      </div>
+    `).join("");
+    results.style.display = "block";
+
+    results.querySelectorAll(".building-result-item").forEach(item => {
+      item.addEventListener("click", () => {
+        selectBuilding({
+          name: item.dataset.name,
+          bldgCode: item.dataset.code,
+          rateSchedule: item.dataset.rs || null,
+          sector: item.dataset.sector
+        }, section);
+      });
+    });
+  } catch (err) {
+    console.error("[WebTMA SP] Building search error:", err);
+  }
+}
+
+function selectBuilding(building, section) {
+  selectedBuilding = building;
+  const input = section.querySelector(".building-search-input");
+  const results = section.querySelector(".building-search-results");
+  const selectedDiv = section.querySelector(".building-selected");
+
+  input.style.display = "none";
+  results.style.display = "none";
+
+  section.querySelector(".building-selected-name").textContent = building.name;
+  section.querySelector(".building-selected-code").textContent = building.bldgCode ? `#${building.bldgCode}` : "";
+  section.querySelector(".building-rate-schedule").textContent = building.rateSchedule || "N/A";
+  section.querySelector(".building-sector").textContent = building.sector || "N/A";
+  selectedDiv.style.display = "block";
 }
 
 modeToggle.addEventListener("change", () => {
