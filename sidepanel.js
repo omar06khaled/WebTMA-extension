@@ -246,14 +246,24 @@ async function fetchSuggestions(actionText) {
 
     currentAuditTimestamp = data.auditTimestamp ?? null;
 
+    let layer2 = null;
+    if (data.layer2 !== undefined) {
+      if (isValidLayer2(data.layer2)) {
+        layer2 = data.layer2;
+      } else {
+        console.error(`[WebTMA SP] malformed layer2 in response, not shown: ${JSON.stringify(data.layer2)}`);
+      }
+    }
+
     if (data.noMatchFound === true) {
-      renderSuggestions([], { nextState: "no-match" });
+      renderSuggestions([], { nextState: "no-match", layer2 });
       return;
     }
 
     renderSuggestions(data.suggestions, {
       lowConfidence: data.lowConfidenceWarning === true,
       nextState: "results",
+      layer2,
     });
   } catch (error) {
     console.error(`[WebTMA SP] fetch failed: ${error.message}`);
@@ -266,7 +276,7 @@ async function fetchSuggestions(actionText) {
 }
 
 function renderSuggestions(suggestions, options = {}) {
-  const { lowConfidence = false, nextState = "results" } = options;
+  const { lowConfidence = false, nextState = "results", layer2 = null } = options;
 
   resetSelection();
   suggestionsDiv.innerHTML = "";
@@ -303,7 +313,66 @@ function renderSuggestions(suggestions, options = {}) {
     }
   }
 
+  if (layer2) {
+    const layer2Card = buildLayer2Card(layer2);
+    suggestionsDiv.appendChild(layer2Card);
+    if (layer2.suggestion) initBuildingSearch(layer2Card);
+  }
+
   setState(nextState);
+}
+
+function isValidLayer2(layer2) {
+  return (
+    layer2 !== null &&
+    typeof layer2 === "object" &&
+    typeof layer2.guidance === "string" &&
+    Array.isArray(layer2.citedSheets) &&
+    layer2.citedSheets.every((sheet) => typeof sheet === "string") &&
+    (layer2.suggestion === null || (typeof layer2.suggestion === "object" && !Array.isArray(layer2.suggestion)))
+  );
+}
+
+/**
+ * Layer 2 card: desk-manual guidance, kept visually separate from Layer 1 cards.
+ * With a validated suggestion it reuses buildCard(), so Apply is only enabled by
+ * clicking a campus row, same as Layer 1. Without one, the card has no Apply path.
+ */
+function buildLayer2Card(layer2) {
+  const card = layer2.suggestion ? buildCard(layer2.suggestion) : document.createElement("div");
+  card.classList.add("card", "layer2-card");
+  card.style.borderStyle = "dashed";
+  if (!layer2.suggestion) card.style.cursor = "default";
+
+  const section = document.createElement("div");
+  section.className = "layer2-section";
+  section.style.cssText = "margin-bottom:10px;";
+
+  const label = document.createElement("div");
+  label.className = "layer2-label";
+  label.style.cssText = "font-size:12px; font-weight:700; color:#7a5800; margin-bottom:6px;";
+  const icon = document.createElement("span");
+  icon.setAttribute("aria-hidden", "true");
+  icon.textContent = "\u{1F4D6} ";
+  label.appendChild(icon);
+  label.appendChild(document.createTextNode("Layer 2: from desk manual (verify)"));
+
+  const guidance = document.createElement("div");
+  guidance.className = "layer2-guidance";
+  guidance.style.cssText = "font-size:13px; color:#1a1a1a; line-height:1.45; margin-bottom:6px;";
+  guidance.textContent = layer2.guidance;
+
+  const source = document.createElement("div");
+  source.className = "layer2-source";
+  source.style.cssText = "font-size:11px; color:#666;";
+  source.textContent = `Source: ${layer2.citedSheets.length > 0 ? layer2.citedSheets.join(", ") : "no sheet cited"}`;
+
+  section.appendChild(label);
+  section.appendChild(guidance);
+  section.appendChild(source);
+  card.prepend(section);
+
+  return card;
 }
 
 function buildCard(suggestion) {
