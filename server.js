@@ -253,8 +253,34 @@ RULES - follow all of them exactly:
     });
   }
 
-  const rawText = claudeBody?.content?.[0]?.text ?? "";
-  const cleanedText = stripMarkdownFences(rawText);
+  // Adaptive thinking puts a thinking block ahead of the text, so find the text block by type.
+  const textBlock = Array.isArray(claudeBody?.content)
+    ? claudeBody.content.find((block) => block?.type === "text")
+    : undefined;
+
+  if (claudeBody?.stop_reason === "max_tokens") {
+    console.error(
+      "[WebTMA SERVER] Claude response cut off at max_tokens:",
+      JSON.stringify(claudeBody?.usage)
+    );
+    return res.status(502).json({
+      error: "Claude response was cut off before it finished",
+      detail: "The AI reply hit its length limit (max_tokens). Please select fields manually.",
+    });
+  }
+
+  if (!textBlock || typeof textBlock.text !== "string" || textBlock.text.trim() === "") {
+    console.error(
+      "[WebTMA SERVER] Claude response had no text block:",
+      JSON.stringify({ stop_reason: claudeBody?.stop_reason, content: claudeBody?.content })
+    );
+    return res.status(502).json({
+      error: "Claude returned no answer",
+      detail: `The AI reply contained no text (stop_reason: ${claudeBody?.stop_reason}). Please select fields manually.`,
+    });
+  }
+
+  const cleanedText = stripMarkdownFences(textBlock.text);
 
   let parsed;
   try {
@@ -263,6 +289,7 @@ RULES - follow all of them exactly:
     console.error("[WebTMA SERVER] JSON parse failed:", error, "raw:", cleanedText);
     return res.status(502).json({
       error: "Claude returned unparseable JSON",
+      detail: "The AI reply was not valid JSON. Please select fields manually.",
       raw: cleanedText,
     });
   }
@@ -275,6 +302,7 @@ RULES - follow all of them exactly:
     console.error("[WebTMA SERVER] Schema check failed:", parsed);
     return res.status(502).json({
       error: "Claude response failed schema check",
+      detail: "The AI reply did not match the expected format. Please select fields manually.",
       raw: parsed,
     });
   }
