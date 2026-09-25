@@ -55,6 +55,43 @@ If Claude returns anything outside this schema, the backend **rejects the
 response and returns a structured error** — it never passes malformed output
 to the UI.
 
+### 2a. Optional `layer2` Field (Desk Manual Fallback)
+
+The one permitted addition to the response above is an optional `layer2`
+object. It is present **only** when Layer 2 is enabled (`LAYER2_ENABLED=true`
+in `.env`), Layer 1 was weak (`noMatchFound: true`, `lowConfidenceWarning: true`,
+or top suggestion confidence < 0.80), and Layer 2 completed without error.
+When absent, the response is exactly the Layer 1 shape above.
+
+```json
+{
+  "suggestions": [ ... ],
+  "noMatchFound": false,
+  "lowConfidenceWarning": false,
+  "auditTimestamp": "ISO8601",
+  "layer2": {
+    "guidance": "At most 2 sentences, drawn only from the desk manual excerpts.",
+    "citedSheets": ["Shops Operating and Tools WOs"],
+    "suggestion": null
+  }
+}
+```
+
+- `guidance` — string, max 2 sentences, based only on the retrieved excerpts.
+  If the excerpts don't answer the work order, it says so.
+- `citedSheets` — every value must be the sheet name of an excerpt that was
+  actually sent to Claude; any other value is dropped by the backend.
+- `suggestion` — `null`, or one object in the exact §2 suggestion shape,
+  built from the `firstCallExamples_enriched.json` entry (never from Claude's
+  output) and passed through `validateSuggestion()`. It is `null` if the
+  description is not in the JSON, is ambiguous, cites no valid sheet, has
+  confidence < 0.50, or fails validation.
+
+If Layer 2 fails for any reason (search error or 8-second timeout, Claude
+error, schema failure), the backend logs it and returns the Layer 1 response
+unchanged, with no `layer2` field. The audit log entry records `"layer": 1`
+or `"layer": 2`.
+
 ---
 
 ## 3. Confidence Thresholds
