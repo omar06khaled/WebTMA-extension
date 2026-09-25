@@ -238,6 +238,8 @@ async function fetchSuggestions(actionText) {
       (data.auditTimestamp !== undefined && typeof data.auditTimestamp !== "string")
     ) {
       console.error(`[WebTMA SP] malformed response: ${JSON.stringify(data)}`);
+      suggestionsDiv.innerHTML = "";
+      renderEmptyState("Couldn't get suggestions", "Backend returned unexpected data shape - check server logs");
       setState("error", "Backend returned unexpected data shape - check server logs");
       return;
     }
@@ -257,10 +259,9 @@ async function fetchSuggestions(actionText) {
     console.error(`[WebTMA SP] fetch failed: ${error.message}`);
     currentAuditTimestamp = null;
     suggestionsDiv.innerHTML = "";
-    setState(
-      "error",
-      error.userMessage || "Backend unreachable - is the server running?"
-    );
+    const message = error.userMessage || "Backend unreachable - is the server running?";
+    renderEmptyState("Couldn't get suggestions", message);
+    setState("error", message);
   }
 }
 
