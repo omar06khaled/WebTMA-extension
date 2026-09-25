@@ -596,9 +596,18 @@ RULES - follow all of them exactly:
   const lowConfidenceWarning = noMatchFound ? false : parsed.lowConfidenceWarning === true;
   const suggestionsReturned = noMatchFound ? [] : validSuggestions;
 
+  const topLayer1Confidence = suggestionsReturned.reduce(
+    (max, suggestion) => Math.max(max, suggestion.confidence),
+    -Infinity
+  );
+  const layer1TopBelowThreshold = suggestionsReturned.length > 0 && topLayer1Confidence < 0.8;
+
   let layer2Result = null;
-  if (LAYER2_ENABLED && (noMatchFound || lowConfidenceWarning)) {
-    console.log("[WebTMA SERVER] Layer 1 weak result - running Layer 2");
+  if (LAYER2_ENABLED && (noMatchFound || lowConfidenceWarning || layer1TopBelowThreshold)) {
+    console.log(
+      `[WebTMA SERVER] Layer 1 weak result (noMatch=${noMatchFound}, lowConfidence=${lowConfidenceWarning}, ` +
+      `top=${suggestionsReturned.length > 0 ? topLayer1Confidence : "n/a"}) - running Layer 2`
+    );
     layer2Result = await runLayer2(actionRequested);
   }
 
