@@ -5,4 +5,4 @@ chunks.jsonl
 __pycache__/
 .venv/
 .pytest_cache/
-backend/eval_results.json
+backend/eval_results*.json

@@ -3,6 +3,7 @@
 Usage (from the repo root, with OPENAI_API_KEY in .env):
     python backend/eval_model.py                 # all cases in backend/eval_cases.json
     python backend/eval_model.py --limit 5       # quick smoke test
+    python backend/eval_model.py --holdout       # held-out cases: the honest score after prompt changes
 
 Each case lists the task descriptions that count as correct ("accept"). An empty list means
 the right answer is "no match". Results are also written to backend/eval_results.json.
@@ -54,12 +55,14 @@ def grade(case, body):
 def main_cli():
     parser = argparse.ArgumentParser()
     parser.add_argument("--limit", type=int)
+    parser.add_argument("--holdout", action="store_true", help="use eval_cases_holdout.json (don't tune the prompt on these)")
     args = parser.parse_args()
 
-    cases = json.loads((BACKEND / "eval_cases.json").read_text(encoding="utf-8"))[: args.limit]
+    case_file = "eval_cases_holdout.json" if args.holdout else "eval_cases.json"
+    cases = json.loads((BACKEND / case_file).read_text(encoding="utf-8"))[: args.limit]
     results, counts = [], {"PASS": 0, "PARTIAL": 0, "FAIL": 0, "ERROR": 0}
 
-    print(f"Model: {main.OPENAI_MODEL} | Layer 2: {'on' if main.LAYER2_ENABLED else 'off'} | {len(cases)} cases\n")
+    print(f"Model: {main.OPENAI_MODEL} | Layer 2: {'on' if main.LAYER2_ENABLED else 'off'} | {len(cases)} cases from {case_file}\n")
     # One TestClient for the whole run keeps one event loop, so the OpenAI connection is reused.
     with TestClient(main.app) as client:
         try:
@@ -83,8 +86,8 @@ def main_cli():
 
     print(f"\nPASS {counts['PASS']}/{len(results)}  PARTIAL {counts['PARTIAL']}  FAIL {counts['FAIL']}  ERROR {counts['ERROR']}")
     print(f"Tokens: {usage['prompt']:,} in / {usage['completion']:,} out over {usage['calls']} model calls")
-    (BACKEND / "eval_results.json").write_text(json.dumps(results, indent=2, ensure_ascii=False), encoding="utf-8")
-    print("Details written to backend/eval_results.json")
+    (BACKEND / case_file.replace("cases", "results")).write_text(json.dumps(results, indent=2, ensure_ascii=False), encoding="utf-8")
+    print(f"Details written to backend/{case_file.replace('cases', 'results')}")
 
 if __name__ == "__main__":
     main_cli()
