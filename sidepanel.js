@@ -543,27 +543,27 @@ async function fetchBuildingResults(q, section) {
       results.style.display = "none";
       return;
     }
-    results.innerHTML = data.map(b => `
-      <div class="building-result-item"
-        data-code="${b.bldgCode || ""}"
-        data-name="${b.name}"
-        data-rs="${b.rateSchedule || ""}"
-        data-sector="${b.sector || ""}">
-        ${b.name}<span class="building-result-code">${b.bldgCode || ""}</span>
-      </div>
-    `).join("");
-    results.style.display = "block";
-
-    results.querySelectorAll(".building-result-item").forEach(item => {
+    // Build result rows with DOM calls and textContent so building data is never parsed as HTML.
+    results.replaceChildren();
+    data.forEach((b) => {
+      const item = document.createElement("div");
+      item.className = "building-result-item";
+      item.appendChild(document.createTextNode(b.name || ""));
+      const codeEl = document.createElement("span");
+      codeEl.className = "building-result-code";
+      codeEl.textContent = b.bldgCode || "";
+      item.appendChild(codeEl);
       item.addEventListener("click", () => {
         selectBuilding({
-          name: item.dataset.name,
-          bldgCode: item.dataset.code,
-          rateSchedule: item.dataset.rs || null,
-          sector: item.dataset.sector
+          name: b.name,
+          bldgCode: b.bldgCode || "",
+          rateSchedule: b.rateSchedule || null,
+          sector: b.sector || "",
         }, section);
       });
+      results.appendChild(item);
     });
+    results.style.display = "block";
   } catch (err) {
     console.error("[WebTMA SP] Building search error:", err);
   }
