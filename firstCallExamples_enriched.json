@@ -66,10 +66,78 @@
         }
       },
       "custodial": false,
-      "notes": "ZONE"
+      "notes": null
     },
     "Storm Incident": {
       "taskCode": 10130,
+      "trade": {
+        "dtpc": {
+          "type": "ZONE",
+          "options": [
+            "DTPC-A01",
+            "DTPC-A02"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "poly": {
+          "type": "ZONE",
+          "options": [
+            "POLY-A01"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "tempe": {
+          "type": "ZONE",
+          "options": [
+            "TMPE-A",
+            "TMPE-B",
+            "TMPE-C"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "west": {
+          "type": "ZONE",
+          "options": [
+            "WEST-A01"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "rfmtDtpc": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-TRADE"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "rfmtPoly": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-POLY"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "rfmtTmpe": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-ZONE-1",
+            "RFMT-ZONE-2",
+            "RFMT-ZONE-3"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "rfmtWest": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-LSCS"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        }
+      },
+      "custodial": false,
+      "notes": null
+    },
+    "Invoice": {
+      "taskCode": 10030,
       "trade": {
         "dtpc": {
           "type": "ZONE",
@@ -262,7 +330,7 @@
         }
       },
       "custodial": false,
-      "notes": "This is for games, show at Gammage.  If an elevator is included, create a separate WO for the elevator."
+      "notes": "This is for games, show at Gammage. If an elevator is included, create a separate WO for the elevator."
     },
     "Graduation Support": {
       "taskCode": 10061,
@@ -322,10 +390,57 @@
         }
       },
       "custodial": false,
-      "notes": "The account # is auto-filled. Do not need Debbie's approval.  Rate schedule is CM."
+      "notes": null
     },
-    "Banners": {
-      "taskCode": null,
+    "Bluestake": {
+      "taskCode": 10040,
+      "trade": {
+        "dtpc": null,
+        "poly": null,
+        "tempe": null,
+        "west": null,
+        "rfmtDtpc": null,
+        "rfmtPoly": null,
+        "rfmtTmpe": null,
+        "rfmtWest": null
+      },
+      "custodial": false,
+      "notes": "Supervisor must submit a ticket to Arizona Bluestake, http://www.arizona811.com/? ASU and City of Tempe get their blue-staking tickets from that service."
+    }
+  },
+  "Lock Shop": {
+    "Hardware, Lock & Key": {
+      "taskCode": 11000,
+      "trade": {
+        "dtpc": "LOCK",
+        "poly": "LOCK",
+        "tempe": "LOCK",
+        "west": "LOCK",
+        "rfmtDtpc": "LOCK",
+        "rfmtPoly": "LOCK",
+        "rfmtTmpe": "LOCK",
+        "rfmtWest": "LOCK"
+      },
+      "custodial": false,
+      "notes": "GENERAL: Crash bars, door knobs, cores, levers, mullion rekey, knox box, lock issues, batteries for keypad, alarm lock not functioning, magnetic locks"
+    },
+    "Lock/Unlock Door": {
+      "taskCode": 11040,
+      "trade": {
+        "dtpc": "LOCK",
+        "poly": "LOCK",
+        "tempe": "LOCK",
+        "west": "LOCK",
+        "rfmtDtpc": "LOCK",
+        "rfmtPoly": "LOCK",
+        "rfmtTmpe": "LOCK",
+        "rfmtWest": "LOCK"
+      },
+      "custodial": false,
+      "notes": null
+    },
+    "Bike Lock": {
+      "taskCode": 11010,
       "trade": {
         "dtpc": {
           "type": "ZONE",
@@ -350,117 +465,13 @@
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
-        "rfmtDtpc": null,
-        "rfmtPoly": null,
-        "rfmtTmpe": null,
-        "rfmtWest": null
-      },
-      "custodial": false,
-      "notes": "TMPE- use brandguide.asu.edu"
-    },
-    "Bluestaking": {
-      "taskCode": 10040,
-      "trade": {
-        "dtpc": "supervisor must submitted a ticket to Arizona Bluestake, http://www.arizona811.com/? ASU and City of Tempe get their blue-staking tickets from that service",
-        "poly": null,
-        "tempe": null,
-        "west": null,
-        "rfmtDtpc": null,
-        "rfmtPoly": null,
-        "rfmtTmpe": null,
-        "rfmtWest": null
-      },
-      "custodial": false,
-      "notes": null
-    },
-    "Asbestos": {
-      "taskCode": "https://docs.google.com/spreadsheets/d/12jxoKDfhwbiH2fFxzYMThXNbDDsTGmF1OPqM8dsrdmI/edit#gid=1887898664",
-      "trade": {
-        "dtpc": null,
-        "poly": null,
-        "tempe": null,
-        "west": null,
-        "rfmtDtpc": null,
-        "rfmtPoly": null,
-        "rfmtTmpe": null,
-        "rfmtWest": null
-      },
-      "custodial": false,
-      "notes": null
-    }
-  },
-  "Lock Shop (critical/emergency) 480-965-1829": {
-    "Hardware, Lock & Key - GENERAL Crash Bars, Door knobs, cores, levers, mullion rekey, knox box, lock issues, batteries for keypad, alarm lock not functioning, magnetic locks": {
-      "taskCode": 11000,
-      "trade": {
-        "dtpc": "LOCK",
-        "poly": "LOCK",
-        "tempe": "LOCK",
-        "west": "LOCK",
         "rfmtDtpc": "LOCK",
         "rfmtPoly": "LOCK",
-        "rfmtTmpe": "LOCK",
+        "rfmtTmpe": "SEE NOTE",
         "rfmtWest": "LOCK"
       },
       "custodial": false,
-      "notes": "Requests for key requests or building access--do not process.  Refer to My Service now to submit a proper key request.  Document action taken and reject request."
-    },
-    "Lock/Unlock Door": {
-      "taskCode": 11040,
-      "trade": {
-        "dtpc": "LOCK",
-        "poly": "LOCK",
-        "tempe": "LOCK",
-        "west": "LOCK",
-        "rfmtDtpc": "LOCK",
-        "rfmtPoly": "LOCK",
-        "rfmtTmpe": "LOCK",
-        "rfmtWest": "LOCK"
-      },
-      "custodial": false,
-      "notes": "Change RC to TMPE if it is RFMT before processing (whatever campus the building is on)"
-    },
-    "Bike Lock": {
-      "taskCode": 11010,
-      "trade": {
-        "dtpc": {
-          "type": "ZONE",
-          "options": [
-            "DTPC-A01",
-            "DTPC-A02"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "poly": {
-          "type": "ZONE",
-          "options": [
-            "POLY-A01"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "tempe": {
-          "type": "ZONE",
-          "options": [
-            "TMPE-A",
-            "TMPE-B",
-            "TMPE-C"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "west": {
-          "type": "ZONE",
-          "options": [
-            "WEST-A01"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "rfmtDtpc": "LOCK",
-        "rfmtPoly": "LOCK",
-        "rfmtTmpe": "LOCK",
-        "rfmtWest": "LOCK"
-      },
-      "custodial": false,
-      "notes": "Requestor needs an affidavit from ASU PD, then they will go to the bike valet. Need to ask the bike valet to get their Supervisor to cut the lock.  3 locations: MU, Lyceum Theater, Noble Library"
+      "notes": "For TMPE: Requestor needs an affidavit from ASU PD, then they will go to the bike valet. Need to ask the bike valet to get their Supervisor to cut the lock. 3 locations: MU, Lyceum Theater, Noble Library"
     },
     "Lock Change": {
       "taskCode": 11050,
@@ -475,7 +486,7 @@
         "rfmtWest": "LOCK"
       },
       "custodial": false,
-      "notes": "Lantana and Century Hall - fob reader/card access are managed by Capstone. On the Work Order assign to RFMT-POLY"
+      "notes": null
     },
     "Desk/Cabinet Key": {
       "taskCode": 11032,
@@ -520,7 +531,7 @@
         "rfmtWest": "LOCK"
       },
       "custodial": false,
-      "notes": "The Zone mounts boxes, but they are not allowed to use for door keys."
+      "notes": null
     },
     "Dorm gates": {
       "taskCode": 27070,
@@ -543,12 +554,12 @@
         "rfmtWest": null
       },
       "custodial": false,
-      "notes": "ISAAC requests - refer student to their MyASU and press help.  There is a phone number, live chat or email and reject the request.  Do not email isaac-q@asu.edu"
+      "notes": null
     },
     "Burglar Alarm/ISAAC Card Readers": {
       "taskCode": "ISAAC",
       "trade": {
-        "dtpc": "https://docs.google.com/spreadsheets/d/1w66c7t8n5UjERBOtQdKWJRVdwYDBWEz_RekHXWGA2tU/edit#gid=1350099457",
+        "dtpc": null,
         "poly": null,
         "tempe": null,
         "west": null,
@@ -558,7 +569,7 @@
         "rfmtWest": null
       },
       "custodial": false,
-      "notes": "IT requests - have students log into their MyASU, select help on the top row of the home page, go to contact us and submit an email, live chat, or call 855-278-5080.   Reject the request."
+      "notes": null
     }
   },
   "Carpentry": {
@@ -696,9 +707,77 @@
         }
       },
       "custodial": false,
-      "notes": "ADA doors are critical and the Zone Supervisor should be called."
+      "notes": null
     },
-    "Board (Bulletin/Chalk/Cork/White)/ Framed Object/Wall Hanging  Billable": {
+    "Noise/Disturbance (rattling or humming)": {
+      "taskCode": 13020,
+      "trade": {
+        "dtpc": {
+          "type": "ZONE",
+          "options": [
+            "DTPC-A01",
+            "DTPC-A02"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "poly": {
+          "type": "ZONE",
+          "options": [
+            "POLY-A01"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "tempe": {
+          "type": "ZONE",
+          "options": [
+            "TMPE-A",
+            "TMPE-B",
+            "TMPE-C"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "west": {
+          "type": "ZONE",
+          "options": [
+            "WEST-A01"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "rfmtDtpc": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-TRADE"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "rfmtPoly": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-POLY"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "rfmtTmpe": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-ZONE-1",
+            "RFMT-ZONE-2",
+            "RFMT-ZONE-3"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "rfmtWest": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-LSCS"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        }
+      },
+      "custodial": false,
+      "notes": null
+    },
+    "Board (Bulletin/Chalk/Cork/White)/ Framed Object/Wall Hanging Billable": {
       "taskCode": 13030,
       "trade": {
         "dtpc": {
@@ -764,7 +843,7 @@
         }
       },
       "custodial": false,
-      "notes": "mullion removal goes to zone"
+      "notes": null
     },
     "Bollard": {
       "taskCode": 13040,
@@ -900,7 +979,7 @@
         }
       },
       "custodial": false,
-      "notes": "For RFMT: missing or damaged ceiling tiles, process to the correct zone, then go into the WO, enter the subtype of vandalism"
+      "notes": null
     },
     "Concrete/Masonry": {
       "taskCode": 13060,
@@ -968,7 +1047,7 @@
         }
       },
       "custodial": false,
-      "notes": "Requests for pavers:  go to Grounds.  (Per Katie 7/15/2025)"
+      "notes": "Requests for pavers: go to Grounds."
     },
     "Door/Opening/Hardware": {
       "taskCode": 13070,
@@ -1105,6 +1184,74 @@
       },
       "custodial": false,
       "notes": "Exterior concrete and trip hazards go to Todd Green"
+    },
+    "Leak": {
+      "taskCode": 13170,
+      "trade": {
+        "dtpc": {
+          "type": "ZONE",
+          "options": [
+            "DTPC-A01",
+            "DTPC-A02"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "poly": {
+          "type": "ZONE",
+          "options": [
+            "POLY-A01"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "tempe": {
+          "type": "ZONE",
+          "options": [
+            "TMPE-A",
+            "TMPE-B",
+            "TMPE-C"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "west": {
+          "type": "ZONE",
+          "options": [
+            "WEST-A01"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "rfmtDtpc": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-TRADE"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "rfmtPoly": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-POLY"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "rfmtTmpe": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-ZONE-1",
+            "RFMT-ZONE-2",
+            "RFMT-ZONE-3"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "rfmtWest": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-LSCS"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        }
+      },
+      "custodial": false,
+      "notes": null
     },
     "Gate/Fence": {
       "taskCode": 13100,
@@ -1274,7 +1421,7 @@
         "rfmtWest": "RFMT PC"
       },
       "custodial": false,
-      "notes": "All campuses: for classroom furniture, whiteboards--  Trade=UCL  assign to Barry"
+      "notes": "All campuses: for classroom furniture, whiteboards-- Trade=UCL assign to Barry"
     },
     "Walls (drywall repair, patch wall, etc.)": {
       "taskCode": 13140,
@@ -1410,235 +1557,7 @@
         }
       },
       "custodial": false,
-      "notes": "Per Jen/Michael:  Estimate for offices; UCL for classrooms; ResLife=Zone"
-    }
-  },
-  "Custodial/Porter": {
-    "Custodial/Porter Service - GENERAL (office trash, unlock bldg/classrooms, refill feminine dispensers/restroom products)": {
-      "taskCode": 14000,
-      "trade": {
-        "dtpc": "CUST",
-        "poly": "CUST",
-        "tempe": "CUST",
-        "west": "CUST",
-        "rfmtDtpc": "CUST",
-        "rfmtPoly": "CUST",
-        "rfmtTmpe": "CUST",
-        "rfmtWest": "CUST"
-      },
-      "custodial": true,
-      "notes": "Broken paper towel holders copy the request and send one to Olympus and one to the zone. Holder comes from Olympus and zone installs it.  Broken soap dispensers/needing batteries, paper seat covers go to Olympus.  Requests for new feminine product dispenser installed, process the request so Julie has a work order and they will order the item."
-    },
-    "Clean drinking fountains": {
-      "taskCode": null,
-      "trade": {
-        "dtpc": "CUST",
-        "poly": "CUST",
-        "tempe": "CUST",
-        "west": "CUST",
-        "rfmtDtpc": "CUST",
-        "rfmtPoly": "CUST",
-        "rfmtTmpe": "CUST",
-        "rfmtWest": "CUST"
-      },
-      "custodial": true,
-      "notes": "Olympus refills hand sanitizers only for health services and rooms classrooms for young kids."
-    },
-    "COVID-19 Cleaning": {
-      "taskCode": 14011,
-      "trade": {
-        "dtpc": "CUST",
-        "poly": "CUST",
-        "tempe": "CUST",
-        "west": "CUST",
-        "rfmtDtpc": "CUST",
-        "rfmtPoly": "CUST",
-        "rfmtTmpe": "CUST",
-        "rfmtWest": "CUST"
-      },
-      "custodial": true,
-      "notes": "Olympus does not clean the Poly houses.  Please direct to RFMT-Poly"
-    },
-    "Flooring (mop, vacuum, wax floors)": {
-      "taskCode": 14020,
-      "trade": {
-        "dtpc": "CUST",
-        "poly": "CUST",
-        "tempe": "CUST",
-        "west": "CUST",
-        "rfmtDtpc": "CUST",
-        "rfmtPoly": "CUST",
-        "rfmtTmpe": "CUST",
-        "rfmtWest": "CUST"
-      },
-      "custodial": true,
-      "notes": "Olympus will remove cobwebs on walls, ceiling corners up to 12 feet high. Clean light fixture diffusers within 10 feet."
-    },
-    "Exterior Window Cleaning": {
-      "taskCode": 14030,
-      "trade": {
-        "dtpc": {
-          "type": "ZONE",
-          "options": [
-            "DTPC-A01",
-            "DTPC-A02"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "poly": {
-          "type": "ZONE",
-          "options": [
-            "POLY-A01"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "tempe": {
-          "type": "ZONE",
-          "options": [
-            "TMPE-A",
-            "TMPE-B",
-            "TMPE-C"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "west": {
-          "type": "ZONE",
-          "options": [
-            "WEST-A01"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "rfmtDtpc": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-TRADE"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "rfmtPoly": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-POLY"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "rfmtTmpe": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-ZONE-1",
-            "RFMT-ZONE-2",
-            "RFMT-ZONE-3"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "rfmtWest": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-LSCS"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        }
-      },
-      "custodial": false,
-      "notes": "Zone needs to get a quote from VIP (window cleaning vendor)"
-    },
-    "Cleaning (non Olympus)": {
-      "taskCode": 27040,
-      "trade": {
-        "dtpc": {
-          "type": "ZONE",
-          "options": [
-            "DTPC-A01",
-            "DTPC-A02"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "poly": {
-          "type": "ZONE",
-          "options": [
-            "POLY-A01"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "tempe": {
-          "type": "ZONE",
-          "options": [
-            "TMPE-A",
-            "TMPE-B",
-            "TMPE-C"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "west": {
-          "type": "ZONE",
-          "options": [
-            "WEST-A01"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "rfmtDtpc": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-TRADE"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "rfmtPoly": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-POLY"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "rfmtTmpe": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-ZONE-1",
-            "RFMT-ZONE-2",
-            "RFMT-ZONE-3"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "rfmtWest": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-LSCS"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        }
-      },
-      "custodial": false,
-      "notes": "This is for move in only"
-    },
-    "Interior Window Cleaning (up to 12ft high)": {
-      "taskCode": 14031,
-      "trade": {
-        "dtpc": "CUST",
-        "poly": "CUST",
-        "tempe": "CUST",
-        "west": "CUST",
-        "rfmtDtpc": "CUST",
-        "rfmtPoly": "CUST",
-        "rfmtTmpe": "CUST",
-        "rfmtWest": "CUST"
-      },
-      "custodial": true,
-      "notes": "Any requests/calls regarding drugs, call ASU PD. If someone is needed for clean up, contact EHS on call 602-460-4720"
-    },
-    "Detail Clean (wipe boards/tables, water clean up, clean a/c vents)": {
-      "taskCode": 14040,
-      "trade": {
-        "dtpc": "CUST",
-        "poly": "CUST",
-        "tempe": "CUST",
-        "west": "CUST",
-        "rfmtDtpc": "CUST",
-        "rfmtPoly": "CUST",
-        "rfmtTmpe": "CUST",
-        "rfmtWest": "CUST"
-      },
-      "custodial": true,
-      "notes": null
+      "notes": "Per Jen/Michael: Estimate for offices; UCL for classrooms; ResLife=Zone"
     }
   },
   "Electrical": {
@@ -1690,15 +1609,7 @@
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
-        "rfmtTmpe": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-ZONE-1",
-            "RFMT-ZONE-2",
-            "RFMT-ZONE-3"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
+        "rfmtTmpe": "RFMT-Electrical",
         "rfmtWest": {
           "type": "ZONE",
           "options": [
@@ -1708,7 +1619,7 @@
         }
       },
       "custodial": false,
-      "notes": "R"
+      "notes": null
     },
     "Automatic Transfer Switch (ATS)": {
       "taskCode": 15110,
@@ -1750,15 +1661,7 @@
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
-        "rfmtTmpe": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-ZONE-1",
-            "RFMT-ZONE-2",
-            "RFMT-ZONE-3"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
+        "rfmtTmpe": "RFMT-Electrical",
         "rfmtWest": {
           "type": "ZONE",
           "options": [
@@ -1818,15 +1721,7 @@
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
-        "rfmtTmpe": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-ZONE-1",
-            "RFMT-ZONE-2",
-            "RFMT-ZONE-3"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
+        "rfmtTmpe": "RFMT-Electrical",
         "rfmtWest": {
           "type": "ZONE",
           "options": [
@@ -1836,7 +1731,7 @@
         }
       },
       "custodial": false,
-      "notes": "Blue Lights requests - send to the zone first. If they are LED style the zone will let us know to send to UTO.  Yellow boxes goes to UTO"
+      "notes": "- Blue Lights requests - send to the zone first. If they are LED style the zone will let us know to send to UTO. Yellow boxes goes to UTO. Parking lots do not need approval from parking - Light poles on ASU campus go to UDIST"
     },
     "Electrical Panel/Breaker (power outages)": {
       "taskCode": 15010,
@@ -1886,15 +1781,7 @@
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
-        "rfmtTmpe": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-ZONE-1",
-            "RFMT-ZONE-2",
-            "RFMT-ZONE-3"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
+        "rfmtTmpe": "RFMT-Electrical",
         "rfmtWest": {
           "type": "ZONE",
           "options": [
@@ -1946,15 +1833,7 @@
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
-        "rfmtTmpe": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-ZONE-1",
-            "RFMT-ZONE-2",
-            "RFMT-ZONE-3"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
+        "rfmtTmpe": "RFMT-Electrical",
         "rfmtWest": {
           "type": "ZONE",
           "options": [
@@ -1964,7 +1843,7 @@
         }
       },
       "custodial": false,
-      "notes": "Light poles on ASU campus go to UDIST"
+      "notes": null
     },
     "Solar": {
       "taskCode": 15060,
@@ -2014,15 +1893,7 @@
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
-        "rfmtTmpe": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-ZONE-1",
-            "RFMT-ZONE-2",
-            "RFMT-ZONE-3"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
+        "rfmtTmpe": "RFMT-Electrical",
         "rfmtWest": {
           "type": "ZONE",
           "options": [
@@ -2074,15 +1945,7 @@
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
-        "rfmtTmpe": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-ZONE-1",
-            "RFMT-ZONE-2",
-            "RFMT-ZONE-3"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
+        "rfmtTmpe": "RFMT-Electrical",
         "rfmtWest": {
           "type": "ZONE",
           "options": [
@@ -2142,15 +2005,7 @@
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
-        "rfmtTmpe": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-ZONE-1",
-            "RFMT-ZONE-2",
-            "RFMT-ZONE-3"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
+        "rfmtTmpe": "RFMT-Electrical",
         "rfmtWest": {
           "type": "ZONE",
           "options": [
@@ -2210,15 +2065,67 @@
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
-        "rfmtTmpe": {
+        "rfmtTmpe": "RFMT-Electrical",
+        "rfmtWest": {
           "type": "ZONE",
           "options": [
-            "RFMT-ZONE-1",
-            "RFMT-ZONE-2",
-            "RFMT-ZONE-3"
+            "RFMT-LSCS"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        }
+      },
+      "custodial": false,
+      "notes": null
+    },
+    "Power Outage": {
+      "taskCode": 15160,
+      "trade": {
+        "dtpc": {
+          "type": "ZONE",
+          "options": [
+            "DTPC-A01",
+            "DTPC-A02"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
+        "poly": {
+          "type": "ZONE",
+          "options": [
+            "POLY-A01"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "tempe": {
+          "type": "ZONE",
+          "options": [
+            "TMPE-A",
+            "TMPE-B",
+            "TMPE-C"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "west": {
+          "type": "ZONE",
+          "options": [
+            "WEST-A01"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "rfmtDtpc": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-TRADE"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "rfmtPoly": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-POLY"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "rfmtTmpe": "RFMT-Electrical",
         "rfmtWest": {
           "type": "ZONE",
           "options": [
@@ -2282,7 +2189,7 @@
         }
       },
       "custodial": false,
-      "notes": "TMPE-RFMT elevators--RC should be TMPE not RFMT"
+      "notes": "- TMPE-RFMT elevators--RC should be TMPE not RFMT - RACC building elevators=Trade is RACC not elevator"
     }
   },
   "Fire/Life Safety": {
@@ -2318,7 +2225,7 @@
         "rfmtWest": null
       },
       "custodial": false,
-      "notes": "For Fire Reports talking about Climatec records: send to TMPE-Fire"
+      "notes": null
     },
     "Fire Alarm & Life Safety System": {
       "taskCode": 17000,
@@ -2352,7 +2259,7 @@
         "rfmtWest": null
       },
       "custodial": false,
-      "notes": "For RFMT requests for TMPE-Fire, RC must be TMPE"
+      "notes": null
     },
     "Fire Panel Alarm/Trouble": {
       "taskCode": 17020,
@@ -2373,14 +2280,20 @@
           "instruction": "Check Zone Guide for correct zone"
         },
         "tempe": "TMPE-FIRE (Global)",
-        "west": "West-CPLNT",
+        "west": {
+          "type": "ZONE",
+          "options": [
+            "WEST-A01"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
         "rfmtDtpc": null,
         "rfmtPoly": null,
         "rfmtTmpe": null,
         "rfmtWest": null
       },
       "custodial": false,
-      "notes": "Requests for Fire alarms:  call ASU PD first 480-965-3456"
+      "notes": "Requests for Fire alarms: call ASU PD first 480-965-3456"
     },
     "Fire Suppression System": {
       "taskCode": 17040,
@@ -2565,7 +2478,7 @@
         "rfmtWest": null
       },
       "custodial": false,
-      "notes": "Fire extinguisher cases not being locked - send to EHS@asu.edu - per lock shop"
+      "notes": "Fire extinguishers and fire extinguisher cases not being locked - send to EHS@asu.edu"
     },
     "Escutcheon (cover plates)": {
       "taskCode": 17090,
@@ -2628,8 +2541,6 @@
       "notes": null
     }
   },
-  "Heath Futures Center, ISTB3, ISTB12, ISTB8 (Wexford)": {},
-  "Any requests for these buildings, please email them to  Erica Bowen @ Erica.Willms.Bowen@asu.edu": {},
   "HVAC": {
     "HVAC - GENERAL": {
       "taskCode": 18010,
@@ -2671,15 +2582,7 @@
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
-        "rfmtTmpe": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-ZONE-1",
-            "RFMT-ZONE-2",
-            "RFMT-ZONE-3"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
+        "rfmtTmpe": "RFMT-HVAC",
         "rfmtWest": {
           "type": "ZONE",
           "options": [
@@ -2689,7 +2592,7 @@
         }
       },
       "custodial": false,
-      "notes": "RR"
+      "notes": null
     },
     "Evaporator": {
       "taskCode": 18160,
@@ -2731,15 +2634,7 @@
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
-        "rfmtTmpe": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-ZONE-1",
-            "RFMT-ZONE-2",
-            "RFMT-ZONE-3"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
+        "rfmtTmpe": "RFMT-HVAC",
         "rfmtWest": {
           "type": "ZONE",
           "options": [
@@ -2749,7 +2644,7 @@
         }
       },
       "custodial": false,
-      "notes": "Requests"
+      "notes": null
     },
     "Chiller": {
       "taskCode": 18080,
@@ -2791,15 +2686,7 @@
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
-        "rfmtTmpe": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-ZONE-1",
-            "RFMT-ZONE-2",
-            "RFMT-ZONE-3"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
+        "rfmtTmpe": "RFMT-HVAC",
         "rfmtWest": {
           "type": "ZONE",
           "options": [
@@ -2851,15 +2738,7 @@
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
-        "rfmtTmpe": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-ZONE-1",
-            "RFMT-ZONE-2",
-            "RFMT-ZONE-3"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
+        "rfmtTmpe": "RFMT-HVAC",
         "rfmtWest": {
           "type": "ZONE",
           "options": [
@@ -2869,7 +2748,7 @@
         }
       },
       "custodial": false,
-      "notes": "Requests for adjusting the pool temps - go to EMS"
+      "notes": "$500.00 fee required"
     },
     "Insulation": {
       "taskCode": 18220,
@@ -2911,15 +2790,7 @@
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
-        "rfmtTmpe": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-ZONE-1",
-            "RFMT-ZONE-2",
-            "RFMT-ZONE-3"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
+        "rfmtTmpe": "RFMT-HVAC",
         "rfmtWest": {
           "type": "ZONE",
           "options": [
@@ -2971,15 +2842,7 @@
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
-        "rfmtTmpe": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-ZONE-1",
-            "RFMT-ZONE-2",
-            "RFMT-ZONE-3"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
+        "rfmtTmpe": "RFMT-HVAC",
         "rfmtWest": {
           "type": "ZONE",
           "options": [
@@ -3009,7 +2872,15 @@
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
-        "tempe": "HVAC",
+        "tempe": {
+          "type": "ZONE",
+          "options": [
+            "TMPE-A",
+            "TMPE-B",
+            "TMPE-C"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
         "west": {
           "type": "ZONE",
           "options": [
@@ -3031,15 +2902,7 @@
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
-        "rfmtTmpe": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-ZONE-1",
-            "RFMT-ZONE-2",
-            "RFMT-ZONE-3"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
+        "rfmtTmpe": "RFMT-HVAC",
         "rfmtWest": {
           "type": "ZONE",
           "options": [
@@ -3091,15 +2954,7 @@
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
-        "rfmtTmpe": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-ZONE-1",
-            "RFMT-ZONE-2",
-            "RFMT-ZONE-3"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
+        "rfmtTmpe": "EMS/RFMT-HVAC",
         "rfmtWest": {
           "type": "ZONE",
           "options": [
@@ -3109,10 +2964,10 @@
         }
       },
       "custodial": false,
-      "notes": "Hot/Cold calls for West Las Casas go to RFMT LSCS for GMM to troubleshoot"
+      "notes": "Hot/Cold calls for West Las Casas go to RFMT LSCS for GMM to troubleshoot Palo Verde East/West go to EMS. All other buildings go to RFMT Zone"
     },
-    "Cooling Tower": {
-      "taskCode": 18110,
+    "Event temp control": {
+      "taskCode": 18330,
       "trade": {
         "dtpc": {
           "type": "ZONE",
@@ -3129,7 +2984,15 @@
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
-        "tempe": "Central Plant",
+        "tempe": {
+          "type": "ZONE",
+          "options": [
+            "TMPE-A",
+            "TMPE-B",
+            "TMPE-C"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
         "west": {
           "type": "ZONE",
           "options": [
@@ -3151,135 +3014,7 @@
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
-        "rfmtTmpe": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-ZONE-1",
-            "RFMT-ZONE-2",
-            "RFMT-ZONE-3"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "rfmtWest": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-LSCS"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        }
-      },
-      "custodial": false,
-      "notes": "If the temperature is above 79-80 degrees=CRITICAL"
-    },
-    "Water Treatment": {
-      "taskCode": 18260,
-      "trade": {
-        "dtpc": {
-          "type": "ZONE",
-          "options": [
-            "DTPC-A01",
-            "DTPC-A02"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "poly": {
-          "type": "ZONE",
-          "options": [
-            "POLY-A01"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "tempe": "Central Plant",
-        "west": {
-          "type": "ZONE",
-          "options": [
-            "WEST-A01"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "rfmtDtpc": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-TRADE"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "rfmtPoly": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-POLY"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "rfmtTmpe": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-ZONE-1",
-            "RFMT-ZONE-2",
-            "RFMT-ZONE-3"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "rfmtWest": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-LSCS"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        }
-      },
-      "custodial": false,
-      "notes": "If the temperature is below that=EXPEDITED"
-    },
-    "Motor": {
-      "taskCode": 18230,
-      "trade": {
-        "dtpc": {
-          "type": "ZONE",
-          "options": [
-            "DTPC-A01",
-            "DTPC-A02"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "poly": {
-          "type": "ZONE",
-          "options": [
-            "POLY-A01"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "tempe": "HVAC",
-        "west": {
-          "type": "ZONE",
-          "options": [
-            "WEST-A01"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "rfmtDtpc": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-TRADE"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "rfmtPoly": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-POLY"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "rfmtTmpe": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-ZONE-1",
-            "RFMT-ZONE-2",
-            "RFMT-ZONE-3"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
+        "rfmtTmpe": "EMS Team (Global)",
         "rfmtWest": {
           "type": "ZONE",
           "options": [
@@ -3291,589 +3026,8 @@
       "custodial": false,
       "notes": null
     },
-    "Welding": {
-      "taskCode": 18270,
-      "trade": {
-        "dtpc": "TMPE-PM",
-        "poly": "TMPE-PM",
-        "tempe": "TMPE-PM",
-        "west": {
-          "type": "ZONE",
-          "options": [
-            "WEST-A01"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "rfmtDtpc": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-TRADE"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "rfmtPoly": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-POLY"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "rfmtTmpe": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-ZONE-1",
-            "RFMT-ZONE-2",
-            "RFMT-ZONE-3"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "rfmtWest": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-LSCS"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        }
-      },
-      "custodial": false,
-      "notes": null
-    },
-    "Air Filter": {
-      "taskCode": 18170,
-      "trade": {
-        "dtpc": {
-          "type": "ZONE",
-          "options": [
-            "DTPC-A01",
-            "DTPC-A02"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "poly": {
-          "type": "ZONE",
-          "options": [
-            "POLY-A01"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "tempe": "TMPE-PM",
-        "west": {
-          "type": "ZONE",
-          "options": [
-            "WEST-A01"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "rfmtDtpc": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-TRADE"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "rfmtPoly": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-POLY"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "rfmtTmpe": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-ZONE-1",
-            "RFMT-ZONE-2",
-            "RFMT-ZONE-3"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "rfmtWest": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-LSCS"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        }
-      },
-      "custodial": false,
-      "notes": "Las Casas Air filters are changed by Anthony Salazar with RFMT"
-    },
-    "Air Compressor": {
-      "taskCode": 18030,
-      "trade": {
-        "dtpc": {
-          "type": "ZONE",
-          "options": [
-            "DTPC-A01",
-            "DTPC-A02"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "poly": {
-          "type": "ZONE",
-          "options": [
-            "POLY-A01"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "tempe": "HVAC",
-        "west": {
-          "type": "ZONE",
-          "options": [
-            "WEST-A01"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "rfmtDtpc": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-TRADE"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "rfmtPoly": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-POLY"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "rfmtTmpe": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-ZONE-1",
-            "RFMT-ZONE-2",
-            "RFMT-ZONE-3"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "rfmtWest": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-LSCS"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        }
-      },
-      "custodial": false,
-      "notes": "Requests for Compressed air = TMPE-HVAC"
-    },
-    "Heat Exchanger": {
-      "taskCode": 18200,
-      "trade": {
-        "dtpc": {
-          "type": "ZONE",
-          "options": [
-            "DTPC-A01",
-            "DTPC-A02"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "poly": {
-          "type": "ZONE",
-          "options": [
-            "POLY-A01"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "tempe": "HVAC",
-        "west": {
-          "type": "ZONE",
-          "options": [
-            "WEST-A01"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "rfmtDtpc": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-TRADE"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "rfmtPoly": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-POLY"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "rfmtTmpe": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-ZONE-1",
-            "RFMT-ZONE-2",
-            "RFMT-ZONE-3"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "rfmtWest": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-LSCS"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        }
-      },
-      "custodial": false,
-      "notes": null
-    },
-    "Sheet Metal": {
-      "taskCode": 18250,
-      "trade": {
-        "dtpc": {
-          "type": "ZONE",
-          "options": [
-            "DTPC-A01",
-            "DTPC-A02"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "poly": {
-          "type": "ZONE",
-          "options": [
-            "POLY-A01"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "tempe": "TMPE-PM",
-        "west": {
-          "type": "ZONE",
-          "options": [
-            "WEST-A01"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "rfmtDtpc": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-TRADE"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "rfmtPoly": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-POLY"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "rfmtTmpe": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-ZONE-1",
-            "RFMT-ZONE-2",
-            "RFMT-ZONE-3"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "rfmtWest": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-LSCS"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        }
-      },
-      "custodial": false,
-      "notes": null
-    },
-    "Air Treatment": {
-      "taskCode": 18060,
-      "trade": {
-        "dtpc": {
-          "type": "ZONE",
-          "options": [
-            "DTPC-A01",
-            "DTPC-A02"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "poly": {
-          "type": "ZONE",
-          "options": [
-            "POLY-A01"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "tempe": null,
-        "west": null,
-        "rfmtDtpc": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-TRADE"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "rfmtPoly": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-POLY"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "rfmtTmpe": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-ZONE-1",
-            "RFMT-ZONE-2",
-            "RFMT-ZONE-3"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "rfmtWest": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-LSCS"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        }
-      },
-      "custodial": false,
-      "notes": null
-    },
-    "Exhaust Fan": {
-      "taskCode": 18160,
-      "trade": {
-        "dtpc": {
-          "type": "ZONE",
-          "options": [
-            "DTPC-A01",
-            "DTPC-A02"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "poly": {
-          "type": "ZONE",
-          "options": [
-            "POLY-A01"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "tempe": "HVAC",
-        "west": {
-          "type": "ZONE",
-          "options": [
-            "WEST-A01"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "rfmtDtpc": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-TRADE"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "rfmtPoly": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-POLY"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "rfmtTmpe": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-ZONE-1",
-            "RFMT-ZONE-2",
-            "RFMT-ZONE-3"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "rfmtWest": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-LSCS"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        }
-      },
-      "custodial": false,
-      "notes": null
-    },
-    "Cold Call": {
-      "taskCode": 18300,
-      "trade": {
-        "dtpc": {
-          "type": "ZONE",
-          "options": [
-            "DTPC-A01",
-            "DTPC-A02"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "poly": {
-          "type": "ZONE",
-          "options": [
-            "POLY-A01"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "tempe": "EMS Team (Global)",
-        "west": {
-          "type": "ZONE",
-          "options": [
-            "WEST-A01"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "rfmtDtpc": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-TRADE"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "rfmtPoly": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-POLY"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "rfmtTmpe": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-ZONE-1",
-            "RFMT-ZONE-2",
-            "RFMT-ZONE-3"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "rfmtWest": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-LSCS"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        }
-      },
-      "custodial": false,
-      "notes": null
-    },
-    "Leak-condensate": {
-      "taskCode": 18310,
-      "trade": {
-        "dtpc": {
-          "type": "ZONE",
-          "options": [
-            "DTPC-A01",
-            "DTPC-A02"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "poly": {
-          "type": "ZONE",
-          "options": [
-            "POLY-A01"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "tempe": "HVAC",
-        "west": {
-          "type": "ZONE",
-          "options": [
-            "WEST-A01"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "rfmtDtpc": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-TRADE"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "rfmtPoly": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-POLY"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "rfmtTmpe": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-ZONE-1",
-            "RFMT-ZONE-2",
-            "RFMT-ZONE-3"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "rfmtWest": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-LSCS"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        }
-      },
-      "custodial": false,
-      "notes": null
-    },
-    "Coils": {
-      "taskCode": 18090,
-      "trade": {
-        "dtpc": {
-          "type": "ZONE",
-          "options": [
-            "DTPC-A01",
-            "DTPC-A02"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "poly": {
-          "type": "ZONE",
-          "options": [
-            "POLY-A01"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "tempe": "HVAC",
-        "west": {
-          "type": "ZONE",
-          "options": [
-            "WEST-A01"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "rfmtDtpc": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-TRADE"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "rfmtPoly": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-POLY"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "rfmtTmpe": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-ZONE-1",
-            "RFMT-ZONE-2",
-            "RFMT-ZONE-3"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "rfmtWest": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-LSCS"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        }
-      },
-      "custodial": false,
-      "notes": "-80 degree freezers need $250 deposit"
-    },
-    "Odor/Smell": {
-      "taskCode": 18020,
+    "Noise/Disturbance (rattling or humming)": {
+      "taskCode": 18340,
       "trade": {
         "dtpc": {
           "type": "ZONE",
@@ -3938,6 +3092,775 @@
         }
       },
       "custodial": false,
+      "notes": null
+    },
+    "Cooling Tower": {
+      "taskCode": 18110,
+      "trade": {
+        "dtpc": {
+          "type": "ZONE",
+          "options": [
+            "DTPC-A01",
+            "DTPC-A02"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "poly": {
+          "type": "ZONE",
+          "options": [
+            "POLY-A01"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "tempe": "Central Plant",
+        "west": {
+          "type": "ZONE",
+          "options": [
+            "WEST-A01"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "rfmtDtpc": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-TRADE"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "rfmtPoly": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-POLY"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "rfmtTmpe": "RFMT-HVAC",
+        "rfmtWest": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-LSCS"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        }
+      },
+      "custodial": false,
+      "notes": null
+    },
+    "Water Treatment": {
+      "taskCode": 18260,
+      "trade": {
+        "dtpc": {
+          "type": "ZONE",
+          "options": [
+            "DTPC-A01",
+            "DTPC-A02"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "poly": {
+          "type": "ZONE",
+          "options": [
+            "POLY-A01"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "tempe": "Central Plant",
+        "west": {
+          "type": "ZONE",
+          "options": [
+            "WEST-A01"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "rfmtDtpc": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-TRADE"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "rfmtPoly": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-POLY"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "rfmtTmpe": "RFMT-HVAC",
+        "rfmtWest": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-LSCS"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        }
+      },
+      "custodial": false,
+      "notes": null
+    },
+    "Motor": {
+      "taskCode": 18230,
+      "trade": {
+        "dtpc": {
+          "type": "ZONE",
+          "options": [
+            "DTPC-A01",
+            "DTPC-A02"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "poly": {
+          "type": "ZONE",
+          "options": [
+            "POLY-A01"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "tempe": "HVAC",
+        "west": {
+          "type": "ZONE",
+          "options": [
+            "WEST-A01"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "rfmtDtpc": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-TRADE"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "rfmtPoly": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-POLY"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "rfmtTmpe": "RFMT-HVAC",
+        "rfmtWest": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-LSCS"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        }
+      },
+      "custodial": false,
+      "notes": null
+    },
+    "Welding": {
+      "taskCode": 18270,
+      "trade": {
+        "dtpc": "TMPE-PM",
+        "poly": "TMPE-PM",
+        "tempe": "TMPE-PM",
+        "west": {
+          "type": "ZONE",
+          "options": [
+            "WEST-A01"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "rfmtDtpc": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-TRADE"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "rfmtPoly": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-POLY"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "rfmtTmpe": "RFMT-HVAC",
+        "rfmtWest": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-LSCS"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        }
+      },
+      "custodial": false,
+      "notes": null
+    },
+    "Air Filter": {
+      "taskCode": 18170,
+      "trade": {
+        "dtpc": {
+          "type": "ZONE",
+          "options": [
+            "DTPC-A01",
+            "DTPC-A02"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "poly": {
+          "type": "ZONE",
+          "options": [
+            "POLY-A01"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "tempe": "TMPE-PM",
+        "west": {
+          "type": "ZONE",
+          "options": [
+            "WEST-A01"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "rfmtDtpc": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-TRADE"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "rfmtPoly": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-POLY"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "rfmtTmpe": "RFMT-HVAC",
+        "rfmtWest": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-LSCS"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        }
+      },
+      "custodial": false,
+      "notes": null
+    },
+    "Air Compressor": {
+      "taskCode": 18030,
+      "trade": {
+        "dtpc": {
+          "type": "ZONE",
+          "options": [
+            "DTPC-A01",
+            "DTPC-A02"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "poly": {
+          "type": "ZONE",
+          "options": [
+            "POLY-A01"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "tempe": "HVAC",
+        "west": {
+          "type": "ZONE",
+          "options": [
+            "WEST-A01"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "rfmtDtpc": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-TRADE"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "rfmtPoly": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-POLY"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "rfmtTmpe": "RFMT-HVAC",
+        "rfmtWest": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-LSCS"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        }
+      },
+      "custodial": false,
+      "notes": "Requests for Compressed air = TMPE-HVAC"
+    },
+    "Heat Exchanger": {
+      "taskCode": 18200,
+      "trade": {
+        "dtpc": {
+          "type": "ZONE",
+          "options": [
+            "DTPC-A01",
+            "DTPC-A02"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "poly": {
+          "type": "ZONE",
+          "options": [
+            "POLY-A01"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "tempe": "HVAC",
+        "west": {
+          "type": "ZONE",
+          "options": [
+            "WEST-A01"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "rfmtDtpc": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-TRADE"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "rfmtPoly": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-POLY"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "rfmtTmpe": "RFMT-HVAC",
+        "rfmtWest": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-LSCS"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        }
+      },
+      "custodial": false,
+      "notes": null
+    },
+    "Sheet Metal": {
+      "taskCode": 18250,
+      "trade": {
+        "dtpc": {
+          "type": "ZONE",
+          "options": [
+            "DTPC-A01",
+            "DTPC-A02"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "poly": {
+          "type": "ZONE",
+          "options": [
+            "POLY-A01"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "tempe": "TMPE-PM",
+        "west": {
+          "type": "ZONE",
+          "options": [
+            "WEST-A01"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "rfmtDtpc": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-TRADE"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "rfmtPoly": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-POLY"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "rfmtTmpe": "RFMT-HVAC",
+        "rfmtWest": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-LSCS"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        }
+      },
+      "custodial": false,
+      "notes": null
+    },
+    "Air Treatment": {
+      "taskCode": 18060,
+      "trade": {
+        "dtpc": {
+          "type": "ZONE",
+          "options": [
+            "DTPC-A01",
+            "DTPC-A02"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "poly": {
+          "type": "ZONE",
+          "options": [
+            "POLY-A01"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "tempe": null,
+        "west": null,
+        "rfmtDtpc": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-TRADE"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "rfmtPoly": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-POLY"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "rfmtTmpe": "RFMT-HVAC",
+        "rfmtWest": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-LSCS"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        }
+      },
+      "custodial": false,
+      "notes": null
+    },
+    "Exhaust Fan": {
+      "taskCode": 18160,
+      "trade": {
+        "dtpc": {
+          "type": "ZONE",
+          "options": [
+            "DTPC-A01",
+            "DTPC-A02"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "poly": {
+          "type": "ZONE",
+          "options": [
+            "POLY-A01"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "tempe": "HVAC",
+        "west": {
+          "type": "ZONE",
+          "options": [
+            "WEST-A01"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "rfmtDtpc": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-TRADE"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "rfmtPoly": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-POLY"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "rfmtTmpe": "RFMT-HVAC",
+        "rfmtWest": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-LSCS"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        }
+      },
+      "custodial": false,
+      "notes": null
+    },
+    "Vent": {
+      "taskCode": 18320,
+      "trade": {
+        "dtpc": {
+          "type": "ZONE",
+          "options": [
+            "DTPC-A01",
+            "DTPC-A02"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "poly": {
+          "type": "ZONE",
+          "options": [
+            "POLY-A01"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "tempe": "HVAC",
+        "west": {
+          "type": "ZONE",
+          "options": [
+            "WEST-A01"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "rfmtDtpc": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-TRADE"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "rfmtPoly": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-POLY"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "rfmtTmpe": "RFMT-HVAC",
+        "rfmtWest": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-LSCS"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        }
+      },
+      "custodial": false,
+      "notes": null
+    },
+    "Cold Call": {
+      "taskCode": 18300,
+      "trade": {
+        "dtpc": {
+          "type": "ZONE",
+          "options": [
+            "DTPC-A01",
+            "DTPC-A02"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "poly": {
+          "type": "ZONE",
+          "options": [
+            "POLY-A01"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "tempe": "EMS Team (Global)",
+        "west": {
+          "type": "ZONE",
+          "options": [
+            "WEST-A01"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "rfmtDtpc": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-TRADE"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "rfmtPoly": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-POLY"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "rfmtTmpe": "RFMT-HVAC",
+        "rfmtWest": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-LSCS"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        }
+      },
+      "custodial": false,
+      "notes": null
+    },
+    "Leak-condensate": {
+      "taskCode": 18310,
+      "trade": {
+        "dtpc": {
+          "type": "ZONE",
+          "options": [
+            "DTPC-A01",
+            "DTPC-A02"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "poly": {
+          "type": "ZONE",
+          "options": [
+            "POLY-A01"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "tempe": "HVAC",
+        "west": {
+          "type": "ZONE",
+          "options": [
+            "WEST-A01"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "rfmtDtpc": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-TRADE"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "rfmtPoly": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-POLY"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "rfmtTmpe": "RFMT-HVAC",
+        "rfmtWest": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-LSCS"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        }
+      },
+      "custodial": false,
+      "notes": null
+    },
+    "Coils": {
+      "taskCode": 18090,
+      "trade": {
+        "dtpc": {
+          "type": "ZONE",
+          "options": [
+            "DTPC-A01",
+            "DTPC-A02"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "poly": {
+          "type": "ZONE",
+          "options": [
+            "POLY-A01"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "tempe": "HVAC",
+        "west": {
+          "type": "ZONE",
+          "options": [
+            "WEST-A01"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "rfmtDtpc": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-TRADE"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "rfmtPoly": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-POLY"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "rfmtTmpe": "RFMT-HVAC",
+        "rfmtWest": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-LSCS"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        }
+      },
+      "custodial": false,
+      "notes": null
+    },
+    "Odor/Smell": {
+      "taskCode": 18020,
+      "trade": {
+        "dtpc": {
+          "type": "ZONE",
+          "options": [
+            "DTPC-A01",
+            "DTPC-A02"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "poly": {
+          "type": "ZONE",
+          "options": [
+            "POLY-A01"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "tempe": {
+          "type": "ZONE",
+          "options": [
+            "TMPE-A",
+            "TMPE-B",
+            "TMPE-C"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "west": {
+          "type": "ZONE",
+          "options": [
+            "WEST-A01"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "rfmtDtpc": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-TRADE"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "rfmtPoly": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-POLY"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "rfmtTmpe": "RFMT-HVAC",
+        "rfmtWest": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-LSCS"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        }
+      },
+      "custodial": false,
       "notes": "Possible gas leaks---call ASU PD and EH&S before notifying the zone"
     },
     "Freezer": {
@@ -3980,15 +3903,7 @@
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
-        "rfmtTmpe": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-ZONE-1",
-            "RFMT-ZONE-2",
-            "RFMT-ZONE-3"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
+        "rfmtTmpe": "RFMT-HVAC",
         "rfmtWest": {
           "type": "ZONE",
           "options": [
@@ -3998,7 +3913,7 @@
         }
       },
       "custodial": false,
-      "notes": null
+      "notes": "$500.00 fee required -80 degree freezers need $500 fee"
     },
     "Cooler": {
       "taskCode": 18100,
@@ -4040,15 +3955,7 @@
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
-        "rfmtTmpe": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-ZONE-1",
-            "RFMT-ZONE-2",
-            "RFMT-ZONE-3"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
+        "rfmtTmpe": "RFMT-HVAC",
         "rfmtWest": {
           "type": "ZONE",
           "options": [
@@ -4100,15 +4007,7 @@
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
-        "rfmtTmpe": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-ZONE-1",
-            "RFMT-ZONE-2",
-            "RFMT-ZONE-3"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
+        "rfmtTmpe": "RFMT-HVAC",
         "rfmtWest": {
           "type": "ZONE",
           "options": [
@@ -4160,15 +4059,7 @@
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
-        "rfmtTmpe": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-ZONE-1",
-            "RFMT-ZONE-2",
-            "RFMT-ZONE-3"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
+        "rfmtTmpe": "RFMT-HVAC",
         "rfmtWest": {
           "type": "ZONE",
           "options": [
@@ -4228,15 +4119,7 @@
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
-        "rfmtTmpe": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-ZONE-1",
-            "RFMT-ZONE-2",
-            "RFMT-ZONE-3"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
+        "rfmtTmpe": "RFMT-HVAC",
         "rfmtWest": {
           "type": "ZONE",
           "options": [
@@ -4246,7 +4129,7 @@
         }
       },
       "custodial": false,
-      "notes": null
+      "notes": "$500.00 fee required"
     },
     "Environmental Chamber": {
       "taskCode": 18140,
@@ -4280,6 +4163,319 @@
         "rfmtWest": null
       },
       "custodial": false,
+      "notes": "$500.00 Fee required"
+    }
+  },
+  "Janitorial": {
+    "Janitorial Service - General": {
+      "taskCode": 14000,
+      "trade": {
+        "dtpc": "JANI",
+        "poly": "JANI",
+        "tempe": "JANI",
+        "west": "JANI",
+        "rfmtDtpc": "JANI",
+        "rfmtPoly": "JANI",
+        "rfmtTmpe": "JANI",
+        "rfmtWest": "JANI"
+      },
+      "custodial": true,
+      "notes": null
+    },
+    "Refresh Agent - Fill Soap-paper towels-toilet paper": {
+      "taskCode": 14001,
+      "trade": {
+        "dtpc": "JANI",
+        "poly": "JANI",
+        "tempe": "JANI",
+        "west": "JANI",
+        "rfmtDtpc": "JANI",
+        "rfmtPoly": "JANI",
+        "rfmtTmpe": "JANI",
+        "rfmtWest": "JANI"
+      },
+      "custodial": true,
+      "notes": null
+    },
+    "Surfaces": {
+      "taskCode": 14010,
+      "trade": {
+        "dtpc": "JANI",
+        "poly": "JANI",
+        "tempe": "JANI",
+        "west": "JANI",
+        "rfmtDtpc": "JANI",
+        "rfmtPoly": "JANI",
+        "rfmtTmpe": "JANI",
+        "rfmtWest": "JANI"
+      },
+      "custodial": true,
+      "notes": "Work surfaces,walls,doors,partitions,light switch,handles,railings,vents,baseboards"
+    },
+    "Flooring -Hard Sweep/Mop/Vacuum": {
+      "taskCode": 14020,
+      "trade": {
+        "dtpc": "JANI",
+        "poly": "JANI",
+        "tempe": "JANI",
+        "west": "JANI",
+        "rfmtDtpc": "JANI",
+        "rfmtPoly": "JANI",
+        "rfmtTmpe": "JANI",
+        "rfmtWest": "JANI"
+      },
+      "custodial": true,
+      "notes": null
+    },
+    "Restrooms": {
+      "taskCode": 14030,
+      "trade": {
+        "dtpc": "JANI",
+        "poly": "JANI",
+        "tempe": "JANI",
+        "west": "JANI",
+        "rfmtDtpc": "JANI",
+        "rfmtPoly": "JANI",
+        "rfmtTmpe": "JANI",
+        "rfmtWest": "JANI"
+      },
+      "custodial": true,
+      "notes": "Clean fixtures, odor control"
+    },
+    "Interior Window Cleaning/exterior window (covered)": {
+      "taskCode": 14031,
+      "trade": {
+        "dtpc": "JANI",
+        "poly": "JANI",
+        "tempe": "JANI",
+        "west": "JANI",
+        "rfmtDtpc": "JANI",
+        "rfmtPoly": "JANI",
+        "rfmtTmpe": "JANI",
+        "rfmtWest": "JANI"
+      },
+      "custodial": true,
+      "notes": null
+    },
+    "Urinal cartridge": {
+      "taskCode": 14040,
+      "trade": {
+        "dtpc": "JANI",
+        "poly": "JANI",
+        "tempe": "JANI",
+        "west": "JANI",
+        "rfmtDtpc": "JANI",
+        "rfmtPoly": "JANI",
+        "rfmtTmpe": "JANI",
+        "rfmtWest": "JANI"
+      },
+      "custodial": true,
+      "notes": null
+    },
+    "Room Turn - Janitorial Cleaning": {
+      "taskCode": 14045,
+      "trade": {
+        "dtpc": "JANI",
+        "poly": "JANI",
+        "tempe": "JANI",
+        "west": "JANI",
+        "rfmtDtpc": "JANI",
+        "rfmtPoly": "JANI",
+        "rfmtTmpe": "JANI",
+        "rfmtWest": "JANI"
+      },
+      "custodial": true,
+      "notes": null
+    },
+    "Room Turn - Additional JANI Clean Go-back": {
+      "taskCode": 14050,
+      "trade": {
+        "dtpc": "JANI",
+        "poly": "JANI",
+        "tempe": "JANI",
+        "west": "JANI",
+        "rfmtDtpc": "JANI",
+        "rfmtPoly": "JANI",
+        "rfmtTmpe": "JANI",
+        "rfmtWest": "JANI"
+      },
+      "custodial": true,
+      "notes": null
+    },
+    "Event -Janitorial - billable": {
+      "taskCode": 14060,
+      "trade": {
+        "dtpc": "JANI",
+        "poly": "JANI",
+        "tempe": "JANI",
+        "west": "JANI",
+        "rfmtDtpc": "JANI",
+        "rfmtPoly": "JANI",
+        "rfmtTmpe": "JANI",
+        "rfmtWest": "JANI"
+      },
+      "custodial": true,
+      "notes": null
+    },
+    "Spot clean carpet/upholstry": {
+      "taskCode": 14070,
+      "trade": {
+        "dtpc": "JANI",
+        "poly": "JANI",
+        "tempe": "JANI",
+        "west": "JANI",
+        "rfmtDtpc": "JANI",
+        "rfmtPoly": "JANI",
+        "rfmtTmpe": "JANI",
+        "rfmtWest": "JANI"
+      },
+      "custodial": true,
+      "notes": null
+    },
+    "Event - Janitorial - non-billable": {
+      "taskCode": 14080,
+      "trade": {
+        "dtpc": "JANI",
+        "poly": "JANI",
+        "tempe": "JANI",
+        "west": "JANI",
+        "rfmtDtpc": "JANI",
+        "rfmtPoly": "JANI",
+        "rfmtTmpe": "JANI",
+        "rfmtWest": "JANI"
+      },
+      "custodial": true,
+      "notes": null
+    },
+    "Trash/Recycling": {
+      "taskCode": 14090,
+      "trade": {
+        "dtpc": "JANI",
+        "poly": "JANI",
+        "tempe": "JANI",
+        "west": "JANI",
+        "rfmtDtpc": "JANI",
+        "rfmtPoly": "JANI",
+        "rfmtTmpe": "JANI",
+        "rfmtWest": "JANI"
+      },
+      "custodial": true,
+      "notes": "Not for dorm rooms"
+    },
+    "Dusting & high areas": {
+      "taskCode": 14100,
+      "trade": {
+        "dtpc": "JANI",
+        "poly": "JANI",
+        "tempe": "JANI",
+        "west": "JANI",
+        "rfmtDtpc": "JANI",
+        "rfmtPoly": "JANI",
+        "rfmtTmpe": "JANI",
+        "rfmtWest": "JANI"
+      },
+      "custodial": true,
+      "notes": "dust vents, cobwebs, light fixtures. Not for dorm rooms"
+    },
+    "Entryways & common areas": {
+      "taskCode": 14110,
+      "trade": {
+        "dtpc": "JANI",
+        "poly": "JANI",
+        "tempe": "JANI",
+        "west": "JANI",
+        "rfmtDtpc": "JANI",
+        "rfmtPoly": "JANI",
+        "rfmtTmpe": "JANI",
+        "rfmtWest": "JANI"
+      },
+      "custodial": true,
+      "notes": "Dirty lobby, hallway, stairwell, elevator lobby, entrance"
+    },
+    "Flooring - additional (CB)": {
+      "taskCode": 14120,
+      "trade": {
+        "dtpc": "JANI",
+        "poly": "JANI",
+        "tempe": "JANI",
+        "west": "JANI",
+        "rfmtDtpc": "JANI",
+        "rfmtPoly": "JANI",
+        "rfmtTmpe": "JANI",
+        "rfmtWest": "JANI"
+      },
+      "custodial": true,
+      "notes": null
+    },
+    "Sanitary clean/mop up": {
+      "taskCode": 14140,
+      "trade": {
+        "dtpc": "JANI",
+        "poly": "JANI",
+        "tempe": "JANI",
+        "west": "JANI",
+        "rfmtDtpc": "JANI",
+        "rfmtPoly": "JANI",
+        "rfmtTmpe": "JANI",
+        "rfmtWest": "JANI"
+      },
+      "custodial": true,
+      "notes": null
+    },
+    "Door lock/unlock": {
+      "taskCode": 14150,
+      "trade": {
+        "dtpc": "JANI",
+        "poly": "JANI",
+        "tempe": "JANI",
+        "west": "JANI",
+        "rfmtDtpc": "JANI",
+        "rfmtPoly": "JANI",
+        "rfmtTmpe": "JANI",
+        "rfmtWest": "JANI"
+      },
+      "custodial": true,
+      "notes": null
+    },
+    "Broken paper towel/toilet paper dispenser": {
+      "taskCode": 14130,
+      "trade": {
+        "dtpc": "JANI",
+        "poly": "JANI",
+        "tempe": "JANI",
+        "west": "JANI",
+        "rfmtDtpc": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-TRADE"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "rfmtPoly": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-POLY"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "rfmtTmpe": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-ZONE-1",
+            "RFMT-ZONE-2",
+            "RFMT-ZONE-3"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "rfmtWest": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-LSCS"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        }
+      },
+      "custodial": true,
       "notes": null
     }
   },
@@ -4287,174 +4483,64 @@
     "Landscape/Grounds - OTHER": {
       "taskCode": 19001,
       "trade": {
-        "dtpc": {
-          "type": "ZONE",
-          "options": [
-            "DTPC-A01",
-            "DTPC-A02"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
+        "dtpc": "GRND",
         "poly": "POLY-GRND",
         "tempe": "TMPE-GRND",
         "west": "WEST-GRND",
-        "rfmtDtpc": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-TRADE"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
+        "rfmtDtpc": "GRND",
         "rfmtPoly": "POLY-GRND",
         "rfmtTmpe": "TMPE-GRND",
-        "rfmtWest": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-LSCS"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        }
+        "rfmtWest": "GRND"
       },
       "custodial": false,
-      "notes": "**RFMT work orders for POLY-GRNDS: RC must be POLY**"
+      "notes": null
     },
     "Recycling": {
       "taskCode": 19100,
       "trade": {
-        "dtpc": {
-          "type": "ZONE",
-          "options": [
-            "DTPC-A01",
-            "DTPC-A02"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
+        "dtpc": "GRND",
         "poly": "POLY-GRND",
         "tempe": "TMPE-GRND",
         "west": "WEST-GRND",
-        "rfmtDtpc": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-TRADE"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
+        "rfmtDtpc": "GRND",
         "rfmtPoly": "POLY-GRND",
         "rfmtTmpe": "TMPE-GRND",
-        "rfmtWest": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-LSCS"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        }
+        "rfmtWest": "GRND"
       },
       "custodial": false,
-      "notes": "Requests for pavers:  go to Grounds.  (Per Katie 7/15/2025) TRIP HAZARDS and exterior concrete go to Todd Green"
-    },
-    "Trash/Recycle Receptacle": {
-      "taskCode": 19130,
-      "trade": {
-        "dtpc": {
-          "type": "ZONE",
-          "options": [
-            "DTPC-A01",
-            "DTPC-A02"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "poly": "POLY-GRND",
-        "tempe": "TMPE-GRND",
-        "west": "WEST-GRND",
-        "rfmtDtpc": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-TRADE"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "rfmtPoly": "POLY-GRND",
-        "rfmtTmpe": "TMPE-GRND",
-        "rfmtWest": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-LSCS"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        }
-      },
-      "custodial": false,
-      "notes": "Requests for bird poo:  ground level:  Grounds; if any other level can go to Olympus. Do not send to the Zone."
+      "notes": null
     },
     "Mowing": {
       "taskCode": 19070,
       "trade": {
-        "dtpc": {
-          "type": "ZONE",
-          "options": [
-            "DTPC-A01",
-            "DTPC-A02"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
+        "dtpc": "GRND",
         "poly": "POLY-GRND",
         "tempe": "TMPE-GRND",
         "west": "WEST-GRND",
-        "rfmtDtpc": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-TRADE"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
+        "rfmtDtpc": "GRND",
         "rfmtPoly": "POLY-GRND",
         "rfmtTmpe": "TMPE-GRND",
-        "rfmtWest": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-LSCS"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        }
+        "rfmtWest": "GRND"
       },
       "custodial": false,
-      "notes": "EMERGENCY PEST CONTROL CALLS:"
+      "notes": null
     },
     "Debris Collection & Removal": {
       "taskCode": 19132,
       "trade": {
-        "dtpc": {
-          "type": "ZONE",
-          "options": [
-            "DTPC-A01",
-            "DTPC-A02"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
+        "dtpc": "GRND",
         "poly": "POLY-GRND",
         "tempe": "TMPE-GRND",
         "west": "WEST-GRND",
-        "rfmtDtpc": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-TRADE"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
+        "rfmtDtpc": "GRND",
         "rfmtPoly": "POLY-GRND",
         "rfmtTmpe": "TMPE-GRND",
-        "rfmtWest": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-LSCS"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        }
+        "rfmtWest": "GRND"
       },
       "custodial": false,
-      "notes": "Guillermo Legarda \u2013 (480) 692-9565"
+      "notes": null
     },
-    "Pest Control": {
+    "Interior Pest Control": {
       "taskCode": 19080,
       "trade": {
         "dtpc": {
@@ -4485,14 +4571,14 @@
           "options": [
             "RFMT-TRADE"
           ],
-          "instruction": "Check RFMT Zone Guide"
+          "instruction": "Check Zone Guide for correct zone"
         },
         "rfmtPoly": {
           "type": "ZONE",
           "options": [
             "RFMT-POLY"
           ],
-          "instruction": "Check RFMT Zone Guide"
+          "instruction": "Check Zone Guide for correct zone"
         },
         "rfmtTmpe": {
           "type": "ZONE",
@@ -4501,259 +4587,113 @@
             "RFMT-ZONE-2",
             "RFMT-ZONE-3"
           ],
-          "instruction": "Check RFMT Zone Guide"
+          "instruction": "Check Zone Guide for correct zone"
         },
         "rfmtWest": {
           "type": "ZONE",
           "options": [
             "RFMT-LSCS"
           ],
-          "instruction": "Check RFMT Zone Guide"
+          "instruction": "Check Zone Guide for correct zone"
         }
       },
       "custodial": false,
-      "notes": "Kevin Kasper \u2013 (856) 834-0282"
+      "notes": "- Biodesign--Grounds does not handle. Send to the zone. Biodesign handles their own. - Athletics buildings--they use Truly Nolan. Send screenshot of request to Debbie Tomah for her to contact them. If there are bees on a field, send to GRNDS since that is more of an emergency. Pest control for Res life: Priority is Routine always. A vendor comes every Wednesday, EMERGENCY PEST CONTROL CALLS - Guillermo Legarda – (480) 692-9565 - Kevin Kasper – (856) 834-0282"
+    },
+    "Exterior Pest Control": {
+      "taskCode": 19145,
+      "trade": {
+        "dtpc": "GRND",
+        "poly": "POLY-GRND",
+        "tempe": "TMPE-GRND",
+        "west": "WEST-GRND",
+        "rfmtDtpc": "GRND",
+        "rfmtPoly": "POLY-GRND",
+        "rfmtTmpe": "TMPE-GRND",
+        "rfmtWest": "GRND"
+      },
+      "custodial": false,
+      "notes": null
     },
     "Litter Removal": {
       "taskCode": 19131,
       "trade": {
-        "dtpc": {
-          "type": "ZONE",
-          "options": [
-            "DTPC-A01",
-            "DTPC-A02"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
+        "dtpc": "GRND",
         "poly": "POLY-GRND",
         "tempe": "TMPE-GRND",
         "west": "WEST-GRND",
-        "rfmtDtpc": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-TRADE"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
+        "rfmtDtpc": "GRND",
         "rfmtPoly": "POLY-GRND",
         "rfmtTmpe": "TMPE-GRND",
-        "rfmtWest": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-LSCS"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        }
+        "rfmtWest": "GRND"
       },
       "custodial": false,
-      "notes": "Pest control--Biodesign--Grounds does not handle.  Send to the zone. Biodesign handles their own"
+      "notes": null
     },
     "Flags": {
       "taskCode": 19050,
       "trade": {
-        "dtpc": {
-          "type": "ZONE",
-          "options": [
-            "DTPC-A01",
-            "DTPC-A02"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
+        "dtpc": "GRND",
         "poly": "POLY-GRND",
-        "tempe": "TMPE-GRND",
-        "west": {
+        "tempe": {
           "type": "ZONE",
           "options": [
-            "WEST-A01"
+            "TMPE-A",
+            "TMPE-B",
+            "TMPE-C"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
-        "rfmtDtpc": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-TRADE"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "rfmtPoly": "POLY-GRND",
-        "rfmtTmpe": "TMPE-GRND",
-        "rfmtWest": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-LSCS"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        }
-      },
-      "custodial": false,
-      "notes": "Pest control --Athletics buildings--they use Truly Nolan. Send screenshot of request to Debbie Tomah for her to contact them. If there are bees on a field, send to TMPE-GRNDS since that is more of an emergency."
-    },
-    "Compactor/Dumpster": {
-      "taskCode": 19020,
-      "trade": {
-        "dtpc": {
-          "type": "ZONE",
-          "options": [
-            "DTPC-A01",
-            "DTPC-A02"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "poly": "POLY-GRND",
-        "tempe": "TMPE-GRND",
         "west": "WEST-GRND",
-        "rfmtDtpc": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-TRADE"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
+        "rfmtDtpc": "GRND",
         "rfmtPoly": "POLY-GRND",
         "rfmtTmpe": "TMPE-GRND",
-        "rfmtWest": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-LSCS"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        }
+        "rfmtWest": "GRND"
       },
       "custodial": false,
-      "notes": "These work orders are critical--per Katie."
+      "notes": null
     },
     "Salvage": {
       "taskCode": 19110,
       "trade": {
-        "dtpc": {
-          "type": "ZONE",
-          "options": [
-            "DTPC-A01",
-            "DTPC-A02"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
+        "dtpc": "GRND",
         "poly": "POLY-GRND",
         "tempe": "TMPE-GRND",
         "west": "WEST-GRND",
-        "rfmtDtpc": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-TRADE"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
+        "rfmtDtpc": "GRND",
         "rfmtPoly": "POLY-GRND",
         "rfmtTmpe": "TMPE-GRND",
-        "rfmtWest": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-LSCS"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        }
+        "rfmtWest": "GRND"
       },
       "custodial": false,
-      "notes": "Cleaning blood off of concrete - goes to EHS"
-    },
-    "Solid Waste": {
-      "taskCode": 19120,
-      "trade": {
-        "dtpc": {
-          "type": "ZONE",
-          "options": [
-            "DTPC-A01",
-            "DTPC-A02"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "poly": "POLY-GRND",
-        "tempe": "TMPE-GRND",
-        "west": "WEST-GRND",
-        "rfmtDtpc": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-TRADE"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "rfmtPoly": "POLY-GRND",
-        "rfmtTmpe": "TMPE-GRND",
-        "rfmtWest": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-LSCS"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        }
-      },
-      "custodial": false,
-      "notes": "Katie Wiser-Krizek --480-965-9498"
+      "notes": null
     },
     "Power Wash": {
       "taskCode": 19090,
       "trade": {
-        "dtpc": {
-          "type": "ZONE",
-          "options": [
-            "DTPC-A01",
-            "DTPC-A02"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
+        "dtpc": "GRND",
         "poly": "POLY-GRND",
         "tempe": "TMPE-GRND",
         "west": "WEST-GRND",
-        "rfmtDtpc": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-TRADE"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
+        "rfmtDtpc": "GRND",
         "rfmtPoly": "POLY-GRND",
         "rfmtTmpe": "TMPE-GRND",
-        "rfmtWest": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-LSCS"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        }
+        "rfmtWest": "GRND"
       },
       "custodial": false,
-      "notes": "Administrative Associate- Grounds"
+      "notes": null
     },
     "Trees": {
       "taskCode": 19140,
       "trade": {
-        "dtpc": {
-          "type": "ZONE",
-          "options": [
-            "DTPC-A01",
-            "DTPC-A02"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
+        "dtpc": "GRND",
         "poly": "POLY-GRND",
         "tempe": "TMPE-GRND",
         "west": "WEST-GRND",
-        "rfmtDtpc": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-TRADE"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
+        "rfmtDtpc": "GRND",
         "rfmtPoly": "POLY-GRND",
         "rfmtTmpe": "TMPE-GRND",
-        "rfmtWest": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-LSCS"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        }
+        "rfmtWest": "GRND"
       },
       "custodial": false,
       "notes": null
@@ -4761,67 +4701,29 @@
     "Hardscape Maintenance": {
       "taskCode": 19091,
       "trade": {
-        "dtpc": {
-          "type": "ZONE",
-          "options": [
-            "DTPC-A01",
-            "DTPC-A02"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
+        "dtpc": "GRND",
         "poly": "POLY-GRND",
         "tempe": "TMPE-GRND",
         "west": "WEST-GRND",
-        "rfmtDtpc": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-TRADE"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
+        "rfmtDtpc": "GRND",
         "rfmtPoly": "POLY-GRND",
         "rfmtTmpe": "TMPE-GRND",
-        "rfmtWest": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-LSCS"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        }
+        "rfmtWest": "GRND"
       },
       "custodial": false,
-      "notes": "POLY-GRNDS: Dispatch Jesus Vasquez (602-418-9651) or Ruben Camacho (602-329-7365)"
+      "notes": "Requests for pavers: go to Grounds. TRIP HAZARDS and exterior concrete go to Todd Green"
     },
     "Drywell/Water Interceptor": {
       "taskCode": 19040,
       "trade": {
-        "dtpc": {
-          "type": "ZONE",
-          "options": [
-            "DTPC-A01",
-            "DTPC-A02"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
+        "dtpc": "GRND",
         "poly": "POLY-GRND",
         "tempe": "TMPE-GRND",
         "west": "WEST-GRND",
-        "rfmtDtpc": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-TRADE"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
+        "rfmtDtpc": "GRND",
         "rfmtPoly": "POLY-GRND",
         "rfmtTmpe": "TMPE-GRND",
-        "rfmtWest": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-LSCS"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        }
+        "rfmtWest": "GRND"
       },
       "custodial": false,
       "notes": null
@@ -4829,67 +4731,29 @@
     "Irrigation": {
       "taskCode": 19060,
       "trade": {
-        "dtpc": {
-          "type": "ZONE",
-          "options": [
-            "DTPC-A01",
-            "DTPC-A02"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
+        "dtpc": "GRND",
         "poly": "POLY-GRND",
         "tempe": "TMPE-GRND",
         "west": "WEST-GRND",
-        "rfmtDtpc": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-TRADE"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
+        "rfmtDtpc": "GRND",
         "rfmtPoly": "POLY-GRND",
         "rfmtTmpe": "TMPE-GRND",
-        "rfmtWest": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-LSCS"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        }
+        "rfmtWest": "GRND"
       },
       "custodial": false,
-      "notes": "Fountains and bird baths(fountains) go to Zone D"
+      "notes": null
     },
     "Drainage": {
       "taskCode": 19030,
       "trade": {
-        "dtpc": {
-          "type": "ZONE",
-          "options": [
-            "DTPC-A01",
-            "DTPC-A02"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
+        "dtpc": "GRND",
         "poly": "POLY-GRND",
         "tempe": "TMPE-GRND",
         "west": "WEST-GRND",
-        "rfmtDtpc": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-TRADE"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
+        "rfmtDtpc": "GRND",
         "rfmtPoly": "POLY-GRND",
         "rfmtTmpe": "TMPE-GRND",
-        "rfmtWest": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-LSCS"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        }
+        "rfmtWest": "GRND"
       },
       "custodial": false,
       "notes": null
@@ -4897,33 +4761,14 @@
     "Shrub Care": {
       "taskCode": 19143,
       "trade": {
-        "dtpc": {
-          "type": "ZONE",
-          "options": [
-            "DTPC-A01",
-            "DTPC-A02"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
+        "dtpc": "GRND",
         "poly": "POLY-GRND",
         "tempe": "TMPE-GRND",
         "west": "WEST-GRND",
-        "rfmtDtpc": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-TRADE"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
+        "rfmtDtpc": "GRND",
         "rfmtPoly": "POLY-GRND",
         "rfmtTmpe": "TMPE-GRND",
-        "rfmtWest": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-LSCS"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        }
+        "rfmtWest": "GRND"
       },
       "custodial": false,
       "notes": null
@@ -4931,33 +4776,14 @@
     "Arbor Care": {
       "taskCode": 19141,
       "trade": {
-        "dtpc": {
-          "type": "ZONE",
-          "options": [
-            "DTPC-A01",
-            "DTPC-A02"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
+        "dtpc": "GRND",
         "poly": "POLY-GRND",
         "tempe": "TMPE-GRND",
         "west": "WEST-GRND",
-        "rfmtDtpc": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-TRADE"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
+        "rfmtDtpc": "GRND",
         "rfmtPoly": "POLY-GRND",
         "rfmtTmpe": "TMPE-GRND",
-        "rfmtWest": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-LSCS"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        }
+        "rfmtWest": "GRND"
       },
       "custodial": false,
       "notes": null
@@ -4965,33 +4791,14 @@
     "Turf Care": {
       "taskCode": 19071,
       "trade": {
-        "dtpc": {
-          "type": "ZONE",
-          "options": [
-            "DTPC-A01",
-            "DTPC-A02"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
+        "dtpc": "GRND",
         "poly": "POLY-GRND",
         "tempe": "TMPE-GRND",
         "west": "WEST-GRND",
-        "rfmtDtpc": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-TRADE"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
+        "rfmtDtpc": "GRND",
         "rfmtPoly": "POLY-GRND",
         "rfmtTmpe": "TMPE-GRND",
-        "rfmtWest": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-LSCS"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        }
+        "rfmtWest": "GRND"
       },
       "custodial": false,
       "notes": null
@@ -4999,85 +4806,40 @@
     "Weed Control": {
       "taskCode": 19072,
       "trade": {
-        "dtpc": {
-          "type": "ZONE",
-          "options": [
-            "DTPC-A01",
-            "DTPC-A02"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
+        "dtpc": "GRND",
         "poly": "POLY-GRND",
         "tempe": "TMPE-GRND",
         "west": "WEST-GRND",
-        "rfmtDtpc": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-TRADE"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
+        "rfmtDtpc": "GRND",
         "rfmtPoly": "POLY-GRND",
         "rfmtTmpe": "TMPE-GRND",
-        "rfmtWest": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-LSCS"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        }
+        "rfmtWest": "GRND"
       },
       "custodial": false,
       "notes": null
     },
-    "Bike Rack": {
-      "taskCode": 19010,
-      "trade": {
-        "dtpc": {
-          "type": "ZONE",
-          "options": [
-            "DTPC-A01",
-            "DTPC-A02"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "poly": "POLY-GRND",
-        "tempe": null,
-        "west": "WEST-GRND",
-        "rfmtDtpc": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-TRADE"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
-        "rfmtPoly": "POLY-GRND",
-        "rfmtTmpe": null,
-        "rfmtWest": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-LSCS"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        }
-      },
-      "custodial": false,
-      "notes": "TEMPE-requests for bike racks go to Parking and Transit.  Email parking@asu.edu"
-    },
     "Annual Flowers": {
       "taskCode": 19142,
       "trade": {
-        "dtpc": {
-          "type": "ZONE",
-          "options": [
-            "DTPC-A01",
-            "DTPC-A02"
-          ],
-          "instruction": "Check Zone Guide for correct zone"
-        },
+        "dtpc": "GRND",
         "poly": "POLY-GRND",
         "tempe": "TMPE-GRND",
         "west": "WEST-GRND",
+        "rfmtDtpc": "GRND",
+        "rfmtPoly": "POLY-GRND",
+        "rfmtTmpe": "TMPE-GRND",
+        "rfmtWest": "GRND"
+      },
+      "custodial": false,
+      "notes": null
+    },
+    "Exterior Window Cleaning": {
+      "taskCode": 19144,
+      "trade": {
+        "dtpc": "Estimate",
+        "poly": "Estimate",
+        "tempe": "Estimate",
+        "west": "Estimate",
         "rfmtDtpc": {
           "type": "ZONE",
           "options": [
@@ -5085,8 +4847,22 @@
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
-        "rfmtPoly": "POLY-GRND",
-        "rfmtTmpe": "TMPE-GRND",
+        "rfmtPoly": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-POLY"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "rfmtTmpe": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-ZONE-1",
+            "RFMT-ZONE-2",
+            "RFMT-ZONE-3"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
         "rfmtWest": {
           "type": "ZONE",
           "options": [
@@ -5191,6 +4967,40 @@
       },
       "custodial": false,
       "notes": "For Tempe Res Life: RFMT Paint (no estimate needed)"
+    },
+    "Graffiti": {
+      "taskCode": null,
+      "trade": {
+        "dtpc": {
+          "type": "ZONE",
+          "options": [
+            "DTPC-A01",
+            "DTPC-A02"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "poly": {
+          "type": "ZONE",
+          "options": [
+            "POLY-A01"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "tempe": "Paint",
+        "west": {
+          "type": "ZONE",
+          "options": [
+            "WEST-A01"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "rfmtDtpc": null,
+        "rfmtPoly": null,
+        "rfmtTmpe": null,
+        "rfmtWest": null
+      },
+      "custodial": false,
+      "notes": null
     }
   },
   "Plumbing": {
@@ -5228,13 +5038,25 @@
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
-        "rfmtDtpc": null,
-        "rfmtPoly": null,
-        "rfmtTmpe": null,
-        "rfmtWest": null
+        "rfmtDtpc": "CAPSTONE",
+        "rfmtPoly": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-POLY"
+          ],
+          "instruction": "Check RFMT Zone Guide"
+        },
+        "rfmtTmpe": "RFMT-Plumbing",
+        "rfmtWest": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-LSCS"
+          ],
+          "instruction": "Check RFMT Zone Guide"
+        }
       },
       "custodial": false,
-      "notes": null
+      "notes": "- DTPC Res Life = Capstone email: living@asu.edu - Hose bibs and outside plumbing issues go to the zone - Spigots attached to the building go to the zone; others go to Grounds"
     },
     "Eyewash Station": {
       "taskCode": 23060,
@@ -5270,10 +5092,22 @@
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
-        "rfmtDtpc": null,
-        "rfmtPoly": null,
-        "rfmtTmpe": null,
-        "rfmtWest": null
+        "rfmtDtpc": "CAPSTONE",
+        "rfmtPoly": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-POLY"
+          ],
+          "instruction": "Check RFMT Zone Guide"
+        },
+        "rfmtTmpe": "RFMT-Plumbing",
+        "rfmtWest": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-LSCS"
+          ],
+          "instruction": "Check RFMT Zone Guide"
+        }
       },
       "custodial": false,
       "notes": null
@@ -5312,13 +5146,25 @@
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
-        "rfmtDtpc": null,
-        "rfmtPoly": null,
-        "rfmtTmpe": null,
-        "rfmtWest": null
+        "rfmtDtpc": "CAPSTONE",
+        "rfmtPoly": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-POLY"
+          ],
+          "instruction": "Check RFMT Zone Guide"
+        },
+        "rfmtTmpe": "RFMT-Plumbing",
+        "rfmtWest": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-LSCS"
+          ],
+          "instruction": "Check RFMT Zone Guide"
+        }
       },
       "custodial": false,
-      "notes": "Hose bibs and outside plumbing issues go to the zone"
+      "notes": null
     },
     "Drain": {
       "taskCode": 23050,
@@ -5354,13 +5200,25 @@
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
-        "rfmtDtpc": null,
-        "rfmtPoly": null,
-        "rfmtTmpe": null,
-        "rfmtWest": null
+        "rfmtDtpc": "CAPSTONE",
+        "rfmtPoly": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-POLY"
+          ],
+          "instruction": "Check RFMT Zone Guide"
+        },
+        "rfmtTmpe": "RFMT-Plumbing",
+        "rfmtWest": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-LSCS"
+          ],
+          "instruction": "Check RFMT Zone Guide"
+        }
       },
       "custodial": false,
-      "notes": "Spigots attached to the building go to the zone; others go to Grounds"
+      "notes": null
     },
     "Water Heater": {
       "taskCode": 23190,
@@ -5396,10 +5254,22 @@
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
-        "rfmtDtpc": null,
-        "rfmtPoly": null,
-        "rfmtTmpe": null,
-        "rfmtWest": null
+        "rfmtDtpc": "CAPSTONE",
+        "rfmtPoly": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-POLY"
+          ],
+          "instruction": "Check RFMT Zone Guide"
+        },
+        "rfmtTmpe": "RFMT-Plumbing",
+        "rfmtWest": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-LSCS"
+          ],
+          "instruction": "Check RFMT Zone Guide"
+        }
       },
       "custodial": false,
       "notes": null
@@ -5438,10 +5308,22 @@
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
-        "rfmtDtpc": null,
-        "rfmtPoly": null,
-        "rfmtTmpe": null,
-        "rfmtWest": null
+        "rfmtDtpc": "CAPSTONE",
+        "rfmtPoly": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-POLY"
+          ],
+          "instruction": "Check RFMT Zone Guide"
+        },
+        "rfmtTmpe": "RFMT-Plumbing",
+        "rfmtWest": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-LSCS"
+          ],
+          "instruction": "Check RFMT Zone Guide"
+        }
       },
       "custodial": false,
       "notes": null
@@ -5480,10 +5362,22 @@
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
-        "rfmtDtpc": null,
-        "rfmtPoly": null,
-        "rfmtTmpe": null,
-        "rfmtWest": null
+        "rfmtDtpc": "CAPSTONE",
+        "rfmtPoly": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-POLY"
+          ],
+          "instruction": "Check RFMT Zone Guide"
+        },
+        "rfmtTmpe": "RFMT-Plumbing",
+        "rfmtWest": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-LSCS"
+          ],
+          "instruction": "Check RFMT Zone Guide"
+        }
       },
       "custodial": false,
       "notes": null
@@ -5514,10 +5408,22 @@
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
-        "rfmtDtpc": null,
-        "rfmtPoly": null,
-        "rfmtTmpe": null,
-        "rfmtWest": null
+        "rfmtDtpc": "CAPSTONE",
+        "rfmtPoly": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-POLY"
+          ],
+          "instruction": "Check RFMT Zone Guide"
+        },
+        "rfmtTmpe": "RFMT-Plumbing",
+        "rfmtWest": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-LSCS"
+          ],
+          "instruction": "Check RFMT Zone Guide"
+        }
       },
       "custodial": false,
       "notes": null
@@ -5556,10 +5462,22 @@
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
-        "rfmtDtpc": null,
-        "rfmtPoly": null,
-        "rfmtTmpe": null,
-        "rfmtWest": null
+        "rfmtDtpc": "CAPSTONE",
+        "rfmtPoly": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-POLY"
+          ],
+          "instruction": "Check RFMT Zone Guide"
+        },
+        "rfmtTmpe": "RFMT-Plumbing",
+        "rfmtWest": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-LSCS"
+          ],
+          "instruction": "Check RFMT Zone Guide"
+        }
       },
       "custodial": false,
       "notes": null
@@ -5590,13 +5508,25 @@
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
-        "rfmtDtpc": null,
-        "rfmtPoly": null,
-        "rfmtTmpe": null,
-        "rfmtWest": null
+        "rfmtDtpc": "CAPSTONE",
+        "rfmtPoly": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-POLY"
+          ],
+          "instruction": "Check RFMT Zone Guide"
+        },
+        "rfmtTmpe": "RFMT-Plumbing",
+        "rfmtWest": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-LSCS"
+          ],
+          "instruction": "Check RFMT Zone Guide"
+        }
       },
       "custodial": false,
-      "notes": "Per Brad Kruse:  if steam is not in the tunnel, call the zone."
+      "notes": "Per Brad Kruse: if steam is not in the tunnel, call the zone."
     },
     "Strainer": {
       "taskCode": 23150,
@@ -5632,10 +5562,22 @@
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
-        "rfmtDtpc": null,
-        "rfmtPoly": null,
-        "rfmtTmpe": null,
-        "rfmtWest": null
+        "rfmtDtpc": "CAPSTONE",
+        "rfmtPoly": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-POLY"
+          ],
+          "instruction": "Check RFMT Zone Guide"
+        },
+        "rfmtTmpe": "RFMT-Plumbing",
+        "rfmtWest": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-LSCS"
+          ],
+          "instruction": "Check RFMT Zone Guide"
+        }
       },
       "custodial": false,
       "notes": null
@@ -5674,10 +5616,22 @@
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
-        "rfmtDtpc": null,
-        "rfmtPoly": null,
-        "rfmtTmpe": null,
-        "rfmtWest": null
+        "rfmtDtpc": "CAPSTONE",
+        "rfmtPoly": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-POLY"
+          ],
+          "instruction": "Check RFMT Zone Guide"
+        },
+        "rfmtTmpe": "RFMT-Plumbing",
+        "rfmtWest": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-LSCS"
+          ],
+          "instruction": "Check RFMT Zone Guide"
+        }
       },
       "custodial": false,
       "notes": null
@@ -5716,10 +5670,22 @@
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
-        "rfmtDtpc": null,
-        "rfmtPoly": null,
-        "rfmtTmpe": null,
-        "rfmtWest": null
+        "rfmtDtpc": "CAPSTONE",
+        "rfmtPoly": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-POLY"
+          ],
+          "instruction": "Check RFMT Zone Guide"
+        },
+        "rfmtTmpe": "RFMT-Plumbing",
+        "rfmtWest": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-LSCS"
+          ],
+          "instruction": "Check RFMT Zone Guide"
+        }
       },
       "custodial": false,
       "notes": null
@@ -5758,10 +5724,22 @@
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
-        "rfmtDtpc": null,
-        "rfmtPoly": null,
-        "rfmtTmpe": null,
-        "rfmtWest": null
+        "rfmtDtpc": "CAPSTONE",
+        "rfmtPoly": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-POLY"
+          ],
+          "instruction": "Check RFMT Zone Guide"
+        },
+        "rfmtTmpe": "RFMT-Plumbing",
+        "rfmtWest": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-LSCS"
+          ],
+          "instruction": "Check RFMT Zone Guide"
+        }
       },
       "custodial": false,
       "notes": null
@@ -5800,18 +5778,22 @@
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
-        "rfmtDtpc": null,
-        "rfmtPoly": null,
-        "rfmtTmpe": {
+        "rfmtDtpc": "CAPSTONE",
+        "rfmtPoly": {
           "type": "ZONE",
           "options": [
-            "RFMT-ZONE-1",
-            "RFMT-ZONE-2",
-            "RFMT-ZONE-3"
+            "RFMT-POLY"
           ],
           "instruction": "Check RFMT Zone Guide"
         },
-        "rfmtWest": null
+        "rfmtTmpe": "RFMT-Plumbing",
+        "rfmtWest": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-LSCS"
+          ],
+          "instruction": "Check RFMT Zone Guide"
+        }
       },
       "custodial": false,
       "notes": null
@@ -5850,15 +5832,135 @@
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
-        "rfmtDtpc": null,
-        "rfmtPoly": null,
-        "rfmtTmpe": null,
-        "rfmtWest": null
+        "rfmtDtpc": "CAPSTONE",
+        "rfmtPoly": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-POLY"
+          ],
+          "instruction": "Check RFMT Zone Guide"
+        },
+        "rfmtTmpe": "RFMT-Plumbing",
+        "rfmtWest": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-LSCS"
+          ],
+          "instruction": "Check RFMT Zone Guide"
+        }
       },
       "custodial": false,
       "notes": null
     },
-    "Fixture": {
+    "Urinal": {
+      "taskCode": 23250,
+      "trade": {
+        "dtpc": {
+          "type": "ZONE",
+          "options": [
+            "DTPC-A01",
+            "DTPC-A02"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "poly": {
+          "type": "ZONE",
+          "options": [
+            "POLY-A01"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "tempe": {
+          "type": "ZONE",
+          "options": [
+            "TMPE-A",
+            "TMPE-B",
+            "TMPE-C"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "west": {
+          "type": "ZONE",
+          "options": [
+            "WEST-A01"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "rfmtDtpc": "CAPSTONE",
+        "rfmtPoly": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-POLY"
+          ],
+          "instruction": "Check RFMT Zone Guide"
+        },
+        "rfmtTmpe": "RFMT-Plumbing",
+        "rfmtWest": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-LSCS"
+          ],
+          "instruction": "Check RFMT Zone Guide"
+        }
+      },
+      "custodial": false,
+      "notes": null
+    },
+    "Sink": {
+      "taskCode": 23240,
+      "trade": {
+        "dtpc": {
+          "type": "ZONE",
+          "options": [
+            "DTPC-A01",
+            "DTPC-A02"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "poly": {
+          "type": "ZONE",
+          "options": [
+            "POLY-A01"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "tempe": {
+          "type": "ZONE",
+          "options": [
+            "TMPE-A",
+            "TMPE-B",
+            "TMPE-C"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "west": {
+          "type": "ZONE",
+          "options": [
+            "WEST-A01"
+          ],
+          "instruction": "Check Zone Guide for correct zone"
+        },
+        "rfmtDtpc": "CAPSTONE",
+        "rfmtPoly": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-POLY"
+          ],
+          "instruction": "Check RFMT Zone Guide"
+        },
+        "rfmtTmpe": "RFMT-Plumbing",
+        "rfmtWest": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-LSCS"
+          ],
+          "instruction": "Check RFMT Zone Guide"
+        }
+      },
+      "custodial": false,
+      "notes": null
+    },
+    "Toilet": {
       "taskCode": 23070,
       "trade": {
         "dtpc": {
@@ -5892,13 +5994,25 @@
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
-        "rfmtDtpc": null,
-        "rfmtPoly": null,
-        "rfmtTmpe": null,
-        "rfmtWest": null
+        "rfmtDtpc": "CAPSTONE",
+        "rfmtPoly": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-POLY"
+          ],
+          "instruction": "Check RFMT Zone Guide"
+        },
+        "rfmtTmpe": "RFMT-Plumbing",
+        "rfmtWest": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-LSCS"
+          ],
+          "instruction": "Check RFMT Zone Guide"
+        }
       },
       "custodial": false,
-      "notes": "Clogged or continual flushing fixtures:  Priority = Expedite  ** Please dispatch**"
+      "notes": "Clogged or continual flushing fixtures: Priority = Expedite ** Please dispatch**"
     },
     "Trap": {
       "taskCode": 23170,
@@ -5934,10 +6048,22 @@
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
-        "rfmtDtpc": null,
-        "rfmtPoly": null,
-        "rfmtTmpe": null,
-        "rfmtWest": null
+        "rfmtDtpc": "CAPSTONE",
+        "rfmtPoly": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-POLY"
+          ],
+          "instruction": "Check RFMT Zone Guide"
+        },
+        "rfmtTmpe": "RFMT-Plumbing",
+        "rfmtWest": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-LSCS"
+          ],
+          "instruction": "Check RFMT Zone Guide"
+        }
       },
       "custodial": false,
       "notes": null
@@ -5976,10 +6102,22 @@
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
-        "rfmtDtpc": null,
-        "rfmtPoly": null,
-        "rfmtTmpe": null,
-        "rfmtWest": null
+        "rfmtDtpc": "CAPSTONE",
+        "rfmtPoly": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-POLY"
+          ],
+          "instruction": "Check RFMT Zone Guide"
+        },
+        "rfmtTmpe": "RFMT-Plumbing",
+        "rfmtWest": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-LSCS"
+          ],
+          "instruction": "Check RFMT Zone Guide"
+        }
       },
       "custodial": false,
       "notes": null
@@ -6018,10 +6156,22 @@
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
-        "rfmtDtpc": null,
-        "rfmtPoly": null,
-        "rfmtTmpe": null,
-        "rfmtWest": null
+        "rfmtDtpc": "CAPSTONE",
+        "rfmtPoly": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-POLY"
+          ],
+          "instruction": "Check RFMT Zone Guide"
+        },
+        "rfmtTmpe": "RFMT-Plumbing",
+        "rfmtWest": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-LSCS"
+          ],
+          "instruction": "Check RFMT Zone Guide"
+        }
       },
       "custodial": false,
       "notes": null
@@ -6060,10 +6210,22 @@
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
-        "rfmtDtpc": null,
-        "rfmtPoly": null,
-        "rfmtTmpe": null,
-        "rfmtWest": null
+        "rfmtDtpc": "CAPSTONE",
+        "rfmtPoly": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-POLY"
+          ],
+          "instruction": "Check RFMT Zone Guide"
+        },
+        "rfmtTmpe": "RFMT-Plumbing",
+        "rfmtWest": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-LSCS"
+          ],
+          "instruction": "Check RFMT Zone Guide"
+        }
       },
       "custodial": false,
       "notes": null
@@ -6102,10 +6264,22 @@
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
-        "rfmtDtpc": null,
-        "rfmtPoly": null,
-        "rfmtTmpe": null,
-        "rfmtWest": null
+        "rfmtDtpc": "CAPSTONE",
+        "rfmtPoly": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-POLY"
+          ],
+          "instruction": "Check RFMT Zone Guide"
+        },
+        "rfmtTmpe": "RFMT-Plumbing",
+        "rfmtWest": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-LSCS"
+          ],
+          "instruction": "Check RFMT Zone Guide"
+        }
       },
       "custodial": false,
       "notes": null
@@ -6144,10 +6318,22 @@
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
-        "rfmtDtpc": null,
-        "rfmtPoly": null,
-        "rfmtTmpe": null,
-        "rfmtWest": null
+        "rfmtDtpc": "CAPSTONE",
+        "rfmtPoly": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-POLY"
+          ],
+          "instruction": "Check RFMT Zone Guide"
+        },
+        "rfmtTmpe": "RFMT-Plumbing",
+        "rfmtWest": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-LSCS"
+          ],
+          "instruction": "Check RFMT Zone Guide"
+        }
       },
       "custodial": false,
       "notes": null
@@ -6186,10 +6372,22 @@
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
-        "rfmtDtpc": null,
-        "rfmtPoly": null,
-        "rfmtTmpe": null,
-        "rfmtWest": null
+        "rfmtDtpc": "CAPSTONE",
+        "rfmtPoly": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-POLY"
+          ],
+          "instruction": "Check RFMT Zone Guide"
+        },
+        "rfmtTmpe": "RFMT-Plumbing",
+        "rfmtWest": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-LSCS"
+          ],
+          "instruction": "Check RFMT Zone Guide"
+        }
       },
       "custodial": false,
       "notes": null
@@ -6228,10 +6426,22 @@
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
-        "rfmtDtpc": null,
-        "rfmtPoly": null,
-        "rfmtTmpe": null,
-        "rfmtWest": null
+        "rfmtDtpc": "CAPSTONE",
+        "rfmtPoly": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-POLY"
+          ],
+          "instruction": "Check RFMT Zone Guide"
+        },
+        "rfmtTmpe": "RFMT-Plumbing",
+        "rfmtWest": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-LSCS"
+          ],
+          "instruction": "Check RFMT Zone Guide"
+        }
       },
       "custodial": false,
       "notes": null
@@ -6243,13 +6453,7 @@
         "poly": "EHS",
         "tempe": "EHS",
         "west": "EHS",
-        "rfmtDtpc": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-TRADE"
-          ],
-          "instruction": "Check RFMT Zone Guide"
-        },
+        "rfmtDtpc": "CAPSTONE",
         "rfmtPoly": {
           "type": "ZONE",
           "options": [
@@ -6257,15 +6461,7 @@
           ],
           "instruction": "Check RFMT Zone Guide"
         },
-        "rfmtTmpe": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-ZONE-1",
-            "RFMT-ZONE-2",
-            "RFMT-ZONE-3"
-          ],
-          "instruction": "Check RFMT Zone Guide"
-        },
+        "rfmtTmpe": "RFMT-Plumbing",
         "rfmtWest": {
           "type": "ZONE",
           "options": [
@@ -6275,7 +6471,7 @@
         }
       },
       "custodial": false,
-      "notes": "Requests for mold checks in academic buildings:  Screenshot the request, email EHS@asu.edu and reject the request."
+      "notes": "- Requests for mold checks in academic buildings: Screenshot the request, email EHS@asu.edu and reject the request. - Requests for mold checks in res life buildings: send to the RFMT zone."
     }
   },
   "Pool": {
@@ -6313,10 +6509,30 @@
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
-        "rfmtDtpc": null,
-        "rfmtPoly": null,
-        "rfmtTmpe": null,
-        "rfmtWest": null
+        "rfmtDtpc": "CAPSTONE",
+        "rfmtPoly": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-POLY"
+          ],
+          "instruction": "Check RFMT Zone Guide"
+        },
+        "rfmtTmpe": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-ZONE-1",
+            "RFMT-ZONE-2",
+            "RFMT-ZONE-3"
+          ],
+          "instruction": "Check RFMT Zone Guide"
+        },
+        "rfmtWest": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-LSCS"
+          ],
+          "instruction": "Check RFMT Zone Guide"
+        }
       },
       "custodial": false,
       "notes": null
@@ -6355,10 +6571,30 @@
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
-        "rfmtDtpc": null,
-        "rfmtPoly": null,
-        "rfmtTmpe": null,
-        "rfmtWest": null
+        "rfmtDtpc": "CAPSTONE",
+        "rfmtPoly": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-POLY"
+          ],
+          "instruction": "Check RFMT Zone Guide"
+        },
+        "rfmtTmpe": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-ZONE-1",
+            "RFMT-ZONE-2",
+            "RFMT-ZONE-3"
+          ],
+          "instruction": "Check RFMT Zone Guide"
+        },
+        "rfmtWest": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-LSCS"
+          ],
+          "instruction": "Check RFMT Zone Guide"
+        }
       },
       "custodial": false,
       "notes": "RFMT cleans pool weekly"
@@ -6381,30 +6617,17 @@
       "notes": null
     }
   },
-  "Estimates": {},
-  "Residential Facilites": {
-    "Raise/lower beds, Dorm furniture": {
+  "Residential Facilities": {
+    "Raise/lower beds,furniture moves": {
       "taskCode": 27020,
       "trade": {
         "dtpc": null,
         "poly": null,
         "tempe": null,
         "west": null,
-        "rfmtDtpc": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-TRADE"
-          ],
-          "instruction": "Check RFMT Zone Guide"
-        },
-        "rfmtPoly": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-POLY"
-          ],
-          "instruction": "Check RFMT Zone Guide"
-        },
-        "rfmtTmpe": "RFMT PC",
+        "rfmtDtpc": null,
+        "rfmtPoly": "MVRS (Global)",
+        "rfmtTmpe": "MVRS (Global)",
         "rfmtWest": {
           "type": "ZONE",
           "options": [
@@ -6414,24 +6637,16 @@
         }
       },
       "custodial": false,
-      "notes": "Cabinets with missing/broken keys--send to Property Control"
-    }
-  },
-  "Broken or missing blinds": {
-    "Smoke Detector": {
-      "taskCode": 27030,
+      "notes": null
+    },
+    "Thermostat": {
+      "taskCode": 27080,
       "trade": {
         "dtpc": null,
         "poly": null,
         "tempe": null,
         "west": null,
-        "rfmtDtpc": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-TRADE"
-          ],
-          "instruction": "Check RFMT Zone Guide"
-        },
+        "rfmtDtpc": "CAPSTONE",
         "rfmtPoly": {
           "type": "ZONE",
           "options": [
@@ -6457,7 +6672,42 @@
         }
       },
       "custodial": false,
-      "notes": "Per University Housing: There are to be no bidet, water cooler, shower head replacements, or any type of domestic water modifications to the dorm rooms."
+      "notes": null
+    },
+    "Broken or missing blinds": {
+      "taskCode": 27070,
+      "trade": {
+        "dtpc": null,
+        "poly": null,
+        "tempe": null,
+        "west": null,
+        "rfmtDtpc": "CAPSTONE",
+        "rfmtPoly": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-POLY"
+          ],
+          "instruction": "Check RFMT Zone Guide"
+        },
+        "rfmtTmpe": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-ZONE-1",
+            "RFMT-ZONE-2",
+            "RFMT-ZONE-3"
+          ],
+          "instruction": "Check RFMT Zone Guide"
+        },
+        "rfmtWest": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-LSCS"
+          ],
+          "instruction": "Check RFMT Zone Guide"
+        }
+      },
+      "custodial": false,
+      "notes": null
     },
     "Stove, dishwasher, refrigerator": {
       "taskCode": 27010,
@@ -6466,13 +6716,7 @@
         "poly": null,
         "tempe": null,
         "west": null,
-        "rfmtDtpc": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-TRADE"
-          ],
-          "instruction": "Check RFMT Zone Guide"
-        },
+        "rfmtDtpc": "CAPSTONE",
         "rfmtPoly": {
           "type": "ZONE",
           "options": [
@@ -6498,7 +6742,7 @@
         }
       },
       "custodial": false,
-      "notes": "If you receive a workorder requesting any type of modification, please notify University Housing."
+      "notes": null
     },
     "Washer/Dryer Services": {
       "taskCode": 27000,
@@ -6507,13 +6751,7 @@
         "poly": null,
         "tempe": null,
         "west": null,
-        "rfmtDtpc": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-TRADE"
-          ],
-          "instruction": "Check RFMT Zone Guide"
-        },
+        "rfmtDtpc": "CAPSTONE",
         "rfmtPoly": {
           "type": "ZONE",
           "options": [
@@ -6521,7 +6759,7 @@
           ],
           "instruction": "Check RFMT Zone Guide"
         },
-        "rfmtTmpe": "See note",
+        "rfmtTmpe": "SEE NOTE",
         "rfmtWest": {
           "type": "ZONE",
           "options": [
@@ -6531,7 +6769,7 @@
         }
       },
       "custodial": false,
-      "notes": "Washer/Dryer Services:  Send to the zone for leaks, otherwise tell requestor to follow the instructions on the wall for service."
+      "notes": "Washer/Dryer Services: Send to the zone for leaks, otherwise tell requestor to follow the instructions on the wall for service."
     },
     "Smoke detector battery": {
       "taskCode": 27050,
@@ -6540,13 +6778,7 @@
         "poly": null,
         "tempe": null,
         "west": null,
-        "rfmtDtpc": {
-          "type": "ZONE",
-          "options": [
-            "RFMT-TRADE"
-          ],
-          "instruction": "Check RFMT Zone Guide"
-        },
+        "rfmtDtpc": "CAPSTONE",
         "rfmtPoly": {
           "type": "ZONE",
           "options": [
@@ -6572,7 +6804,7 @@
         }
       },
       "custodial": false,
-      "notes": "Zone does not work on big water jug fillers."
+      "notes": null
     },
     "Garbage Disposal": {
       "taskCode": 23090,
@@ -6581,6 +6813,41 @@
         "poly": null,
         "tempe": null,
         "west": null,
+        "rfmtDtpc": "CAPSTONE",
+        "rfmtPoly": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-POLY"
+          ],
+          "instruction": "Check RFMT Zone Guide"
+        },
+        "rfmtTmpe": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-ZONE-1",
+            "RFMT-ZONE-2",
+            "RFMT-ZONE-3"
+          ],
+          "instruction": "Check RFMT Zone Guide"
+        },
+        "rfmtWest": {
+          "type": "ZONE",
+          "options": [
+            "RFMT-LSCS"
+          ],
+          "instruction": "Check RFMT Zone Guide"
+        }
+      },
+      "custodial": false,
+      "notes": null
+    },
+    "Mold check": {
+      "taskCode": 27060,
+      "trade": {
+        "dtpc": null,
+        "poly": null,
+        "tempe": null,
+        "west": null,
         "rfmtDtpc": {
           "type": "ZONE",
           "options": [
@@ -6613,23 +6880,10 @@
         }
       },
       "custodial": false,
-      "notes": "No cleaning of refrigerators in the dorm rooms or lounges"
-    },
-    "Signage/Wayfinding": {
-      "taskCode": "Sign requests should not go to estimates",
-      "trade": {
-        "dtpc": null,
-        "poly": null,
-        "tempe": null,
-        "west": null,
-        "rfmtDtpc": null,
-        "rfmtPoly": null,
-        "rfmtTmpe": null,
-        "rfmtWest": null
-      },
-      "custodial": false,
       "notes": null
-    },
+    }
+  },
+  "Signage/Wayfinding": {
     "Sign Hardware": {
       "taskCode": 25020,
       "trade": {
@@ -6643,7 +6897,7 @@
         "rfmtWest": "SIGN (Global)"
       },
       "custodial": false,
-      "notes": "Calls for needing approval to hang signs on campus:  refer to brandguide.asu.edu/requests/approvals/signage"
+      "notes": null
     },
     "Regulatory Signage": {
       "taskCode": 25010,
@@ -6673,7 +6927,7 @@
         "rfmtWest": "SIGN (Global)"
       },
       "custodial": false,
-      "notes": "RC would need to be TMPE if Res Life"
+      "notes": null
     },
     "Decals": {
       "taskCode": 25030,
@@ -6691,11 +6945,111 @@
       "notes": null
     }
   },
-  "Zero Waste": {},
-  "Blue Bag": {},
-  "Hamper": {},
-  "Pallets": {},
-  "Desk Side Recycle Bins": {},
-  "96 Gal Toter": {},
-  "Cardboard": {}
+  "Zero Waste": {
+    "Compactor/dumpster": {
+      "taskCode": 29040,
+      "trade": {
+        "dtpc": "ZERO",
+        "poly": "ZERO",
+        "tempe": "ZERO",
+        "west": "ZERO",
+        "rfmtDtpc": "SSC",
+        "rfmtPoly": "SSC",
+        "rfmtTmpe": "SSC",
+        "rfmtWest": "SSC"
+      },
+      "custodial": false,
+      "notes": "Priority = Critical"
+    },
+    "Solid Waste": {
+      "taskCode": 29050,
+      "trade": {
+        "dtpc": "ZERO",
+        "poly": "ZERO",
+        "tempe": "ZERO",
+        "west": "ZERO",
+        "rfmtDtpc": "ZERO",
+        "rfmtPoly": "ZERO",
+        "rfmtTmpe": "ZERO",
+        "rfmtWest": "ZERO"
+      },
+      "custodial": false,
+      "notes": null
+    },
+    "Trash/recycle exterior": {
+      "taskCode": 29060,
+      "trade": {
+        "dtpc": "ZERO",
+        "poly": "ZERO",
+        "tempe": "ZERO",
+        "west": "ZERO",
+        "rfmtDtpc": "ZERO",
+        "rfmtPoly": "ZERO",
+        "rfmtTmpe": "ZERO",
+        "rfmtWest": "ZERO"
+      },
+      "custodial": false,
+      "notes": null
+    },
+    "Deliver Recycling Bin": {
+      "taskCode": 29000,
+      "trade": {
+        "dtpc": "ZERO",
+        "poly": "ZERO",
+        "tempe": "ZERO",
+        "west": "ZERO",
+        "rfmtDtpc": "ZERO",
+        "rfmtPoly": "ZERO",
+        "rfmtTmpe": "ZERO",
+        "rfmtWest": "ZERO"
+      },
+      "custodial": false,
+      "notes": null
+    },
+    "Empty and return recycling bin": {
+      "taskCode": 29010,
+      "trade": {
+        "dtpc": "ZERO",
+        "poly": "ZERO",
+        "tempe": "ZERO",
+        "west": "ZERO",
+        "rfmtDtpc": "ZERO",
+        "rfmtPoly": "ZERO",
+        "rfmtTmpe": "ZERO",
+        "rfmtWest": "ZERO"
+      },
+      "custodial": false,
+      "notes": null
+    },
+    "Remove recycling bin": {
+      "taskCode": 29020,
+      "trade": {
+        "dtpc": "ZERO",
+        "poly": "ZERO",
+        "tempe": "ZERO",
+        "west": "ZERO",
+        "rfmtDtpc": "ZERO",
+        "rfmtPoly": "ZERO",
+        "rfmtTmpe": "ZERO",
+        "rfmtWest": "ZERO"
+      },
+      "custodial": false,
+      "notes": null
+    },
+    "Pick up Specialty Recycling item": {
+      "taskCode": 29030,
+      "trade": {
+        "dtpc": "ZERO",
+        "poly": "ZERO",
+        "tempe": "ZERO",
+        "west": "ZERO",
+        "rfmtDtpc": "ZERO",
+        "rfmtPoly": "ZERO",
+        "rfmtTmpe": "ZERO",
+        "rfmtWest": "ZERO"
+      },
+      "custodial": false,
+      "notes": null
+    }
+  }
 }

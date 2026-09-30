@@ -1,11 +1,13 @@
 // load_chunks.mjs - one-time Layer 2 load. Node 18+, no dependencies.
 // Usage (PowerShell):
 //   $env:SUPABASE_ANON_KEY="<legacy anon key>"; node load_chunks.mjs chunks.jsonl
+//   (or, to use the key already in .env: node --env-file=.env load_chunks.mjs chunks.jsonl)
 // Usage (bash):
 //   SUPABASE_ANON_KEY="<legacy anon key>" node load_chunks.mjs chunks.jsonl
 import { readFileSync } from "node:fs";
 
-const FN_URL = "https://absylmqaiibsjemqecyy.supabase.co/functions/v1/layer2";
+// Loads into the 2027 table by default. Override with LAYER2_INGEST_URL to target another function.
+const FN_URL = process.env.LAYER2_INGEST_URL ?? "https://absylmqaiibsjemqecyy.supabase.co/functions/v1/layer2-2027";
 const KEY = process.env.SUPABASE_ANON_KEY;
 if (!KEY) { console.error("Set SUPABASE_ANON_KEY first."); process.exit(1); }
 
