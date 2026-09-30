@@ -69,6 +69,11 @@ def kb_suggestion(module, description, confidence=0.9):
     raise KeyError(description)
 
 
+def pick(description, category=None, confidence=0.9, **extra):
+    """What the model returns for one suggestion. The backend builds the rest from the knowledge base."""
+    return {"taskDescription": description, "category": category, "confidence": confidence, "matchedOn": "keyword: test", **extra}
+
+
 # ------------------------------------------------------------------ /api/suggest
 
 
@@ -84,7 +89,7 @@ def test_rejects_missing_or_short_input(load_app):
 def test_valid_suggestion_passes_and_is_audited(load_app, monkeypatch):
     module, client = load_app()
     good = kb_suggestion(module, "Lighting")
-    calls = queue_model_replies(module, monkeypatch, {"suggestions": [good], "noMatchFound": False, "lowConfidenceWarning": False})
+    calls = queue_model_replies(module, monkeypatch, {"suggestions": [pick("Lighting", "Electrical")], "noMatchFound": False, "lowConfidenceWarning": False})
 
     body = client.post("/api/suggest", json={"actionRequested": "lightbulb burnt out in room 101"}).json()
 
@@ -93,6 +98,9 @@ def test_valid_suggestion_passes_and_is_audited(load_app, monkeypatch):
     assert isinstance(body["auditTimestamp"], str) and "layer2" not in body
     assert calls[0]["model"] == "gpt-4o-mini"
     assert calls[0]["response_format"] == {"type": "json_object"}
+    prompt = calls[0]["messages"][1]["content"]
+    assert '"trade"' not in prompt and "RFMT-ZONE-1" not in prompt  # trades never go to the model
+    assert len(prompt) < 20000
 
     entry = json.loads(module.AUDIT_LOG_PATH.read_text().strip())
     assert entry["suggestionsReturned"] == ["Lighting"] and entry["layer"] == 1 and entry["appliedSuggestion"] is None
@@ -106,22 +114,54 @@ def test_model_env_var_overrides_default(load_app, monkeypatch):
     assert calls[0]["model"] == "gpt-4.1-mini"
 
 
-def test_invented_or_mismatched_suggestions_are_dropped(load_app, monkeypatch):
+def test_invented_or_malformed_picks_are_dropped(load_app, monkeypatch):
     module, client = load_app()
-    good = kb_suggestion(module, "Toilet")
-    wrong_code = {**kb_suggestion(module, "Sink"), "taskCode": 99999}
-    invented = {**kb_suggestion(module, "Drain"), "taskDescription": "Clogged Sink Special"}
-    wrong_trade = kb_suggestion(module, "Drain")
-    wrong_trade["tradeOptions"]["tempe"] = "HVAC"
-    queue_model_replies(module, monkeypatch, {"suggestions": [good, wrong_code, invented, wrong_trade], "noMatchFound": False})
+    picks = [
+        pick("Toilet", "Plumbing"),
+        pick("Clogged Sink Special", "Plumbing"),
+        pick("Sink", "Plumbing", confidence=1.5),
+        {"taskDescription": "Drain", "category": "Plumbing", "confidence": 0.8},  # no matchedOn
+    ]
+    queue_model_replies(module, monkeypatch, {"suggestions": picks, "noMatchFound": False})
 
     body = client.post("/api/suggest", json={"actionRequested": "toilet keeps running"}).json()
 
     assert [s["taskDescription"] for s in body["suggestions"]] == ["Toilet"]
     errors = json.loads(module.AUDIT_LOG_PATH.read_text().strip())["validationErrors"]
-    assert any("taskCode mismatch" in e for e in errors)
     assert any("not found in knowledge base" in e for e in errors)
-    assert any('trade mismatch for campus "tempe"' in e for e in errors)
+    assert any("confidence must be a number between 0 and 1" in e for e in errors)
+    assert any("matchedOn" in e for e in errors)
+
+
+def test_codes_and_trades_always_come_from_the_knowledge_base(load_app, monkeypatch):
+    """Whatever the model says about codes or trades is ignored (this is what broke 'Thermostat')."""
+    module, client = load_app()
+    garbage = pick("Thermostat", "Residential Facilities", taskCode=99999, tradeOptions={"rfmtPoly": {"type": "ZONE"}})
+    queue_model_replies(module, monkeypatch, {"suggestions": [garbage], "noMatchFound": False})
+
+    body = client.post("/api/suggest", json={"actionRequested": "dorm thermostat broken"}).json()
+
+    expected = kb_suggestion(module, "Thermostat")
+    got = body["suggestions"][0]
+    assert got["taskCode"] == expected["taskCode"] and got["tradeOptions"] == expected["tradeOptions"]
+    assert all(v is None or isinstance(v, str) for v in got["tradeOptions"].values())
+
+
+def test_category_picks_between_shared_descriptions(load_app, monkeypatch):
+    module, client = load_app()
+    shared = next(d for d in module.ALL_DESCRIPTIONS if sum(d in t for t in module.KNOWLEDGE_BASE.values()) > 1)
+    categories = [c for c, t in module.KNOWLEDGE_BASE.items() if shared in t]
+    unique = "Toilet"
+    queue_model_replies(
+        module,
+        monkeypatch,
+        {"suggestions": [pick(shared, categories[1]), pick(shared, None), pick(unique, "Wrong Category"), pick(unique, "Plumbing")], "noMatchFound": False},
+    )
+
+    body = client.post("/api/suggest", json={"actionRequested": "something shared"}).json()
+
+    got = [(s["category"], s["taskDescription"]) for s in body["suggestions"]]
+    assert got == [(categories[1], shared), ("Plumbing", unique)]  # ambiguous one dropped, wrong category fixed, repeat removed
 
 
 def test_all_invalid_means_no_match(load_app, monkeypatch):
@@ -176,7 +216,7 @@ def test_layer2_runs_when_layer1_is_weak(load_app, monkeypatch):
     queue_model_replies(
         module,
         monkeypatch,
-        {"suggestions": [kb_suggestion(module, "Lighting", confidence=0.6)], "noMatchFound": False},
+        {"suggestions": [pick("Lighting", "Electrical", confidence=0.6)], "noMatchFound": False},
         {"guidance": "Send it to the zone.", "citedSheets": ["TMPE Zone Guide", "Made Up Sheet"], "taskDescription": "Lighting", "confidence": 0.7},
     )
 
@@ -192,7 +232,7 @@ def test_layer2_runs_when_layer1_is_weak(load_app, monkeypatch):
 def test_layer2_skipped_when_layer1_is_confident(load_app, monkeypatch):
     module, client = load_app(layer2=True)
     enable_fake_search(module, monkeypatch)
-    calls = queue_model_replies(module, monkeypatch, {"suggestions": [kb_suggestion(module, "Lighting", 0.95)], "noMatchFound": False})
+    calls = queue_model_replies(module, monkeypatch, {"suggestions": [pick("Lighting", "Electrical", 0.95)], "noMatchFound": False})
     body = client.post("/api/suggest", json={"actionRequested": "light out"}).json()
     assert "layer2" not in body and len(calls) == 1
 
@@ -231,7 +271,7 @@ def test_layer2_ambiguous_description_gives_no_suggestion(load_app, monkeypatch)
 
 def test_audit_applied_updates_matching_entry(load_app, monkeypatch):
     module, client = load_app()
-    queue_model_replies(module, monkeypatch, {"suggestions": [kb_suggestion(module, "Lighting")], "noMatchFound": False})
+    queue_model_replies(module, monkeypatch, {"suggestions": [pick("Lighting", "Electrical")], "noMatchFound": False})
     timestamp = client.post("/api/suggest", json={"actionRequested": "light out"}).json()["auditTimestamp"]
 
     assert client.post("/api/audit/applied", json={"auditTimestamp": timestamp, "appliedSuggestion": "Lighting"}).json() == {"ok": True}
