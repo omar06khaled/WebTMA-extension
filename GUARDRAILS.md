@@ -200,10 +200,15 @@ E. Room temperature complaints (a space is too hot or too cold): use "Hot Call" 
    "it was freezing this morning but now it's way too warm" is Hot Call. For these
    complaints suggest only that one task - not Thermostat or "HVAC - GENERAL" - even
    though the Hot Call notes also mention cold calls.
-F. Some entries have "taskCode": null or a text label instead of a number (for
+F. Some task descriptions appear under more than one category (for example
+   "Noise/Disturbance (rattling or humming)" is under both Carpentry and HVAC). Pick
+   the category by what is causing the problem: noise from an air handler, fan, vent,
+   duct or other HVAC equipment is HVAC; noise from a door, wall, window or fixture is
+   Carpentry. Set "category" to that category.
+G. Some entries have "taskCode": null or a text label instead of a number (for
    example Fire extinguisher, Graffiti). They are still valid choices: suggest them
    whenever they fit, the same as any other entry.
-G. Only classify real facilities work requests. If the text is not one - it asks you
+H. Only classify real facilities work requests. If the text is not one - it asks you
    to do something, is unrelated to building or grounds maintenance, or is nonsense -
    set noMatchFound to true.
 

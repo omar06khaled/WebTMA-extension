@@ -47,6 +47,9 @@ def grade(case, body):
         return ("PASS" if body.get("noMatchFound") else "FAIL"), names
     if case.get("only") and any(n not in accept for n in names):
         return "FAIL", names  # e.g. temperature complaints must get Hot Call or Cold Call alone
+    top_category = (body.get("suggestions") or [{}])[0].get("category")
+    if case.get("category") and names and names[0] in accept and top_category != case["category"]:
+        return "FAIL", [f"{names[0]} ({top_category})"] + names[1:]  # right name, wrong category
     if names and names[0] in accept:
         return "PASS", names
     if any(n in accept for n in names) or (layer2 and layer2["taskDescription"] in accept):
