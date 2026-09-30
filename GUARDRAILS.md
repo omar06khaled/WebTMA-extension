@@ -52,6 +52,11 @@ No extra fields. No missing fields.
 }
 ```
 
+`taskCode` is normally a number. A few rows in the desk manual have no code
+(`null`, e.g. Fire extinguisher, Graffiti) or a label (`"ISAAC"`). Those are still
+suggested; the side panel shows "No task code" and Apply leaves the code field for
+the operator.
+
 If the model returns anything outside this schema, the backend **rejects the
 response and returns a structured error** — it never passes malformed output
 to the UI.

@@ -129,8 +129,11 @@ def validate_suggestion(suggestion):
         return ["suggestion is not an object"]
 
     errors = []
-    if not is_number(suggestion.get("taskCode")):
-        errors.append("taskCode must be a finite number")
+    # Most tasks have a numeric code. A few rows in the manual have none (null) or a label
+    # like "ISAAC"; those are still shown, and the code must match the manual either way.
+    task_code = suggestion.get("taskCode")
+    if not (task_code is None or is_number(task_code) or is_nonempty_string(task_code)):
+        errors.append("taskCode must be a number, a label, or null")
     if not is_nonempty_string(suggestion.get("taskDescription")):
         errors.append("taskDescription must be a non-empty string")
     if not is_nonempty_string(suggestion.get("category")):

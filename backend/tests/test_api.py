@@ -147,6 +147,19 @@ def test_codes_and_trades_always_come_from_the_knowledge_base(load_app, monkeypa
     assert all(v is None or isinstance(v, str) for v in got["tradeOptions"].values())
 
 
+def test_task_without_a_code_is_still_suggested(load_app, monkeypatch):
+    module, client = load_app()
+    no_code = [(c, d) for c, t in module.KNOWLEDGE_BASE.items() for d, e in t.items() if e["taskCode"] is None]
+    assert no_code, "expected some tasks with no code in the manual (e.g. Fire extinguisher)"
+    category, description = no_code[0]
+    queue_model_replies(module, monkeypatch, {"suggestions": [pick(description, category)], "noMatchFound": False})
+
+    body = client.post("/api/suggest", json={"actionRequested": "anything"}).json()
+
+    assert body["suggestions"][0]["taskDescription"] == description
+    assert body["suggestions"][0]["taskCode"] is None
+
+
 def test_category_picks_between_shared_descriptions(load_app, monkeypatch):
     module, client = load_app()
     shared = next(d for d in module.ALL_DESCRIPTIONS if sum(d in t for t in module.KNOWLEDGE_BASE.values()) > 1)
@@ -298,13 +311,11 @@ def test_cors_allows_only_the_extension(load_app):
 
 
 def test_every_knowledge_base_entry_validates_against_itself(load_app):
-    """Guards the manual-to-JSON conversion: each entry with a numeric code must pass validation."""
+    """Guards the manual-to-JSON conversion: every entry, with or without a code, must pass validation."""
     module, _ = load_app()
     failures = {}
     for tasks in module.KNOWLEDGE_BASE.values():
         for description, entry in tasks.items():
-            if not module.is_number(entry["taskCode"]):
-                continue
             if sum(description in t for t in module.KNOWLEDGE_BASE.values()) > 1:
                 continue  # duplicates across categories are checked by the Layer 2 ambiguity test
             errors = module.validate_suggestion(kb_suggestion(module, description))

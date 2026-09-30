@@ -173,7 +173,7 @@ chrome.runtime.onMessage.addListener((message) => {
 
   const { taskCode, taskDescription, tradeDescription } = message.payload ?? {};
 
-  if (taskCode !== undefined) {
+  if (Number.isFinite(taskCode)) {
     setFieldValue(findField(...SELECTORS.taskCode), String(taskCode));
   }
 

@@ -388,7 +388,12 @@ function buildCard(suggestion) {
 
   const codeEl = document.createElement("span");
   codeEl.className = "card-task-code";
-  codeEl.textContent = `#${suggestion.taskCode}`;
+  // A few manual rows have no numeric code (e.g. Fire extinguisher, or "ISAAC"). Say so in words.
+  codeEl.textContent = Number.isFinite(suggestion.taskCode)
+    ? `#${suggestion.taskCode}`
+    : typeof suggestion.taskCode === "string" && suggestion.taskCode.trim() !== ""
+      ? `${suggestion.taskCode} (no task code)`
+      : "No task code";
 
   header.appendChild(descEl);
   header.appendChild(codeEl);
@@ -623,7 +628,8 @@ btnApply.addEventListener("click", async () => {
     await chrome.runtime.sendMessage({
       type: "FILL_FIELDS",
       payload: {
-        taskCode: selectedSuggestion.taskCode,
+        // Only real numeric codes go into the form; otherwise the field is left for the operator.
+        taskCode: Number.isFinite(selectedSuggestion.taskCode) ? selectedSuggestion.taskCode : undefined,
         taskDescription: selectedSuggestion.taskDescription,
         campusKey: selectedCampus?.key ?? null,
         trade: selectedCampus?.trade ?? null,
@@ -636,7 +642,9 @@ btnApply.addEventListener("click", async () => {
   }
 
   btnApply.disabled = true;
-  statusBar.textContent = "Applied task fields - verify the form and choose trade manually";
+  statusBar.textContent = Number.isFinite(selectedSuggestion.taskCode)
+    ? "Applied task fields - verify the form and choose trade manually"
+    : "Applied task description - no task code in the desk manual, enter it manually";
 
   await postAppliedAudit(auditTimestamp, appliedSuggestion);
 });
