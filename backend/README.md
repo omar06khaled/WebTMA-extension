@@ -42,10 +42,12 @@ The eval costs a few cents per full run (each Layer 1 call sends the whole knowl
 pip install openpyxl
 python tools/build_knowledge_base.py "Desk Manual 2027.xlsx"   # -> firstCallExamples_enriched.json
 python tools/build_chunks.py "Desk Manual 2027.xlsx"           # -> chunks.jsonl (phones/emails redacted)
+python tools/build_buildings.py "Desk Manual 2027.xlsx"        # -> buildings_lookup.json zones from the zone guides
 node --env-file=.env load_chunks.mjs chunks.jsonl              # embeds into desk_manual_chunks_2027
 ```
 
 `build_knowledge_base.py` prints anything it couldn't map cleanly. Read that list before shipping.
+When a manual renames zones, update `ZONE_OPTIONS` in `build_knowledge_base.py` and the zone headers in `build_buildings.py` (`GUIDES`).
 
 ## Render
 

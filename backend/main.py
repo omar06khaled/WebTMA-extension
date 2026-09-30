@@ -680,6 +680,7 @@ async def building_search(q: str = ""):
                 "bldgCode": code,
                 "rateSchedule": building.get("rateSchedule"),
                 "sector": building.get("sector"),
+                "campus": building.get("campus"),  # lets the side panel narrow that campus's zone
             })
             if len(results) == 8:
                 break

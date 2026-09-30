@@ -23,10 +23,12 @@ import openpyxl
 
 CAMPUSES = ["dtpc", "poly", "tempe", "west", "rfmtDtpc", "rfmtPoly", "rfmtTmpe", "rfmtWest"]
 
+# Zones per campus as the 2027 zone guides name them (Tempe's A/B/C zones and DTPC-A02 were
+# retired). Update these when a new manual renames zones.
 ZONE_OPTIONS = {
-    "dtpc": ["DTPC-A01", "DTPC-A02"],
+    "dtpc": ["DTPC-A01"],
     "poly": ["POLY-A01"],
-    "tempe": ["TMPE-A", "TMPE-B", "TMPE-C"],
+    "tempe": ["ACAD A", "ACAD B", "ATHL", "RSCH A", "RSCH B"],
     "west": ["WEST-A01"],
     "rfmtDtpc": ["RFMT-TRADE"],
     "rfmtPoly": ["RFMT-POLY"],

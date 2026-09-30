@@ -299,7 +299,13 @@ def test_building_search(load_app):
     code = module.BUILDINGS[0]["bldgCode"]
     assert client.get("/api/building-search", params={"q": code.lower()}).json()[0]["bldgCode"] == code
     results = client.get("/api/building-search", params={"q": "hall"}).json()
-    assert 0 < len(results) <= 8 and set(results[0]) == {"name", "bldgCode", "rateSchedule", "sector"}
+    assert 0 < len(results) <= 8 and set(results[0]) == {"name", "bldgCode", "rateSchedule", "sector", "campus"}
+
+
+def test_building_zones_come_from_the_2027_guide(load_app):
+    _, client = load_app()
+    bulldog = client.get("/api/building-search", params={"q": "bulldog"}).json()[0]
+    assert (bulldog["sector"], bulldog["campus"]) == ("ACAD A", "tempe")  # was TMPE-B02 before the 2027 guide
 
 
 def test_cors_allows_only_the_extension(load_app):

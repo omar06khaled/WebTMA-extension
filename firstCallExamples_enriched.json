@@ -6,8 +6,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -21,9 +20,11 @@
         "tempe": {
           "type": "ZONE",
           "options": [
-            "TMPE-A",
-            "TMPE-B",
-            "TMPE-C"
+            "ACAD A",
+            "ACAD B",
+            "ATHL",
+            "RSCH A",
+            "RSCH B"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -74,8 +75,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -89,9 +89,11 @@
         "tempe": {
           "type": "ZONE",
           "options": [
-            "TMPE-A",
-            "TMPE-B",
-            "TMPE-C"
+            "ACAD A",
+            "ACAD B",
+            "ATHL",
+            "RSCH A",
+            "RSCH B"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -142,8 +144,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -157,9 +158,11 @@
         "tempe": {
           "type": "ZONE",
           "options": [
-            "TMPE-A",
-            "TMPE-B",
-            "TMPE-C"
+            "ACAD A",
+            "ACAD B",
+            "ATHL",
+            "RSCH A",
+            "RSCH B"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -210,8 +213,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -225,9 +227,11 @@
         "tempe": {
           "type": "ZONE",
           "options": [
-            "TMPE-A",
-            "TMPE-B",
-            "TMPE-C"
+            "ACAD A",
+            "ACAD B",
+            "ATHL",
+            "RSCH A",
+            "RSCH B"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -278,8 +282,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -338,8 +341,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -445,8 +447,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -579,8 +580,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -594,9 +594,11 @@
         "tempe": {
           "type": "ZONE",
           "options": [
-            "TMPE-A",
-            "TMPE-B",
-            "TMPE-C"
+            "ACAD A",
+            "ACAD B",
+            "ATHL",
+            "RSCH A",
+            "RSCH B"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -647,8 +649,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -662,9 +663,11 @@
         "tempe": {
           "type": "ZONE",
           "options": [
-            "TMPE-A",
-            "TMPE-B",
-            "TMPE-C"
+            "ACAD A",
+            "ACAD B",
+            "ATHL",
+            "RSCH A",
+            "RSCH B"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -715,8 +718,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -730,9 +732,11 @@
         "tempe": {
           "type": "ZONE",
           "options": [
-            "TMPE-A",
-            "TMPE-B",
-            "TMPE-C"
+            "ACAD A",
+            "ACAD B",
+            "ATHL",
+            "RSCH A",
+            "RSCH B"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -783,8 +787,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -798,9 +801,11 @@
         "tempe": {
           "type": "ZONE",
           "options": [
-            "TMPE-A",
-            "TMPE-B",
-            "TMPE-C"
+            "ACAD A",
+            "ACAD B",
+            "ATHL",
+            "RSCH A",
+            "RSCH B"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -851,8 +856,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -866,9 +870,11 @@
         "tempe": {
           "type": "ZONE",
           "options": [
-            "TMPE-A",
-            "TMPE-B",
-            "TMPE-C"
+            "ACAD A",
+            "ACAD B",
+            "ATHL",
+            "RSCH A",
+            "RSCH B"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -919,8 +925,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -934,9 +939,11 @@
         "tempe": {
           "type": "ZONE",
           "options": [
-            "TMPE-A",
-            "TMPE-B",
-            "TMPE-C"
+            "ACAD A",
+            "ACAD B",
+            "ATHL",
+            "RSCH A",
+            "RSCH B"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -987,8 +994,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -1002,9 +1008,11 @@
         "tempe": {
           "type": "ZONE",
           "options": [
-            "TMPE-A",
-            "TMPE-B",
-            "TMPE-C"
+            "ACAD A",
+            "ACAD B",
+            "ATHL",
+            "RSCH A",
+            "RSCH B"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -1055,8 +1063,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -1070,9 +1077,11 @@
         "tempe": {
           "type": "ZONE",
           "options": [
-            "TMPE-A",
-            "TMPE-B",
-            "TMPE-C"
+            "ACAD A",
+            "ACAD B",
+            "ATHL",
+            "RSCH A",
+            "RSCH B"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -1123,8 +1132,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -1138,9 +1146,11 @@
         "tempe": {
           "type": "ZONE",
           "options": [
-            "TMPE-A",
-            "TMPE-B",
-            "TMPE-C"
+            "ACAD A",
+            "ACAD B",
+            "ATHL",
+            "RSCH A",
+            "RSCH B"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -1191,8 +1201,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -1206,9 +1215,11 @@
         "tempe": {
           "type": "ZONE",
           "options": [
-            "TMPE-A",
-            "TMPE-B",
-            "TMPE-C"
+            "ACAD A",
+            "ACAD B",
+            "ATHL",
+            "RSCH A",
+            "RSCH B"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -1259,8 +1270,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -1274,9 +1284,11 @@
         "tempe": {
           "type": "ZONE",
           "options": [
-            "TMPE-A",
-            "TMPE-B",
-            "TMPE-C"
+            "ACAD A",
+            "ACAD B",
+            "ATHL",
+            "RSCH A",
+            "RSCH B"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -1327,8 +1339,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -1387,8 +1398,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -1402,9 +1412,11 @@
         "tempe": {
           "type": "ZONE",
           "options": [
-            "TMPE-A",
-            "TMPE-B",
-            "TMPE-C"
+            "ACAD A",
+            "ACAD B",
+            "ATHL",
+            "RSCH A",
+            "RSCH B"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -1429,8 +1441,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -1444,9 +1455,11 @@
         "tempe": {
           "type": "ZONE",
           "options": [
-            "TMPE-A",
-            "TMPE-B",
-            "TMPE-C"
+            "ACAD A",
+            "ACAD B",
+            "ATHL",
+            "RSCH A",
+            "RSCH B"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -1497,8 +1510,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -1512,9 +1524,11 @@
         "tempe": {
           "type": "ZONE",
           "options": [
-            "TMPE-A",
-            "TMPE-B",
-            "TMPE-C"
+            "ACAD A",
+            "ACAD B",
+            "ATHL",
+            "RSCH A",
+            "RSCH B"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -1567,8 +1581,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -1582,9 +1595,11 @@
         "tempe": {
           "type": "ZONE",
           "options": [
-            "TMPE-A",
-            "TMPE-B",
-            "TMPE-C"
+            "ACAD A",
+            "ACAD B",
+            "ATHL",
+            "RSCH A",
+            "RSCH B"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -1627,8 +1642,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -1679,8 +1693,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -1694,9 +1707,11 @@
         "tempe": {
           "type": "ZONE",
           "options": [
-            "TMPE-A",
-            "TMPE-B",
-            "TMPE-C"
+            "ACAD A",
+            "ACAD B",
+            "ATHL",
+            "RSCH A",
+            "RSCH B"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -1739,8 +1754,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -1754,9 +1768,11 @@
         "tempe": {
           "type": "ZONE",
           "options": [
-            "TMPE-A",
-            "TMPE-B",
-            "TMPE-C"
+            "ACAD A",
+            "ACAD B",
+            "ATHL",
+            "RSCH A",
+            "RSCH B"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -1799,8 +1815,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -1851,8 +1866,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -1866,9 +1880,11 @@
         "tempe": {
           "type": "ZONE",
           "options": [
-            "TMPE-A",
-            "TMPE-B",
-            "TMPE-C"
+            "ACAD A",
+            "ACAD B",
+            "ATHL",
+            "RSCH A",
+            "RSCH B"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -1911,8 +1927,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -1963,8 +1978,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -1978,9 +1992,11 @@
         "tempe": {
           "type": "ZONE",
           "options": [
-            "TMPE-A",
-            "TMPE-B",
-            "TMPE-C"
+            "ACAD A",
+            "ACAD B",
+            "ATHL",
+            "RSCH A",
+            "RSCH B"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -2023,8 +2039,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -2038,9 +2053,11 @@
         "tempe": {
           "type": "ZONE",
           "options": [
-            "TMPE-A",
-            "TMPE-B",
-            "TMPE-C"
+            "ACAD A",
+            "ACAD B",
+            "ATHL",
+            "RSCH A",
+            "RSCH B"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -2083,8 +2100,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -2098,9 +2114,11 @@
         "tempe": {
           "type": "ZONE",
           "options": [
-            "TMPE-A",
-            "TMPE-B",
-            "TMPE-C"
+            "ACAD A",
+            "ACAD B",
+            "ATHL",
+            "RSCH A",
+            "RSCH B"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -2145,8 +2163,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -2199,8 +2216,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -2233,8 +2249,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -2267,8 +2282,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -2301,8 +2315,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -2335,8 +2348,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -2369,8 +2381,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -2403,8 +2414,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -2437,8 +2447,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -2486,8 +2495,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -2548,8 +2556,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -2600,8 +2607,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -2652,8 +2658,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -2704,8 +2709,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -2756,8 +2760,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -2808,8 +2811,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -2860,8 +2862,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -2875,9 +2876,11 @@
         "tempe": {
           "type": "ZONE",
           "options": [
-            "TMPE-A",
-            "TMPE-B",
-            "TMPE-C"
+            "ACAD A",
+            "ACAD B",
+            "ATHL",
+            "RSCH A",
+            "RSCH B"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -2920,8 +2923,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -2972,8 +2974,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -2987,9 +2988,11 @@
         "tempe": {
           "type": "ZONE",
           "options": [
-            "TMPE-A",
-            "TMPE-B",
-            "TMPE-C"
+            "ACAD A",
+            "ACAD B",
+            "ATHL",
+            "RSCH A",
+            "RSCH B"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -3032,8 +3035,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -3047,9 +3049,11 @@
         "tempe": {
           "type": "ZONE",
           "options": [
-            "TMPE-A",
-            "TMPE-B",
-            "TMPE-C"
+            "ACAD A",
+            "ACAD B",
+            "ATHL",
+            "RSCH A",
+            "RSCH B"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -3100,8 +3104,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -3152,8 +3155,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -3204,8 +3206,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -3295,8 +3296,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -3347,8 +3347,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -3399,8 +3398,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -3451,8 +3449,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -3503,8 +3500,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -3549,8 +3545,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -3601,8 +3596,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -3653,8 +3647,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -3705,8 +3698,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -3757,8 +3749,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -3809,8 +3800,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -3824,9 +3814,11 @@
         "tempe": {
           "type": "ZONE",
           "options": [
-            "TMPE-A",
-            "TMPE-B",
-            "TMPE-C"
+            "ACAD A",
+            "ACAD B",
+            "ATHL",
+            "RSCH A",
+            "RSCH B"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -3869,8 +3861,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -3921,8 +3912,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -3973,8 +3963,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -4025,8 +4014,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -4077,8 +4065,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -4092,9 +4079,11 @@
         "tempe": {
           "type": "ZONE",
           "options": [
-            "TMPE-A",
-            "TMPE-B",
-            "TMPE-C"
+            "ACAD A",
+            "ACAD B",
+            "ATHL",
+            "RSCH A",
+            "RSCH B"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -4137,8 +4126,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -4546,8 +4534,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -4638,9 +4625,11 @@
         "tempe": {
           "type": "ZONE",
           "options": [
-            "TMPE-A",
-            "TMPE-B",
-            "TMPE-C"
+            "ACAD A",
+            "ACAD B",
+            "ATHL",
+            "RSCH A",
+            "RSCH B"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -4974,8 +4963,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -5010,8 +4998,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -5025,9 +5012,11 @@
         "tempe": {
           "type": "ZONE",
           "options": [
-            "TMPE-A",
-            "TMPE-B",
-            "TMPE-C"
+            "ACAD A",
+            "ACAD B",
+            "ATHL",
+            "RSCH A",
+            "RSCH B"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -5064,8 +5053,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -5079,9 +5067,11 @@
         "tempe": {
           "type": "ZONE",
           "options": [
-            "TMPE-A",
-            "TMPE-B",
-            "TMPE-C"
+            "ACAD A",
+            "ACAD B",
+            "ATHL",
+            "RSCH A",
+            "RSCH B"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -5118,8 +5108,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -5133,9 +5122,11 @@
         "tempe": {
           "type": "ZONE",
           "options": [
-            "TMPE-A",
-            "TMPE-B",
-            "TMPE-C"
+            "ACAD A",
+            "ACAD B",
+            "ATHL",
+            "RSCH A",
+            "RSCH B"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -5172,8 +5163,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -5187,9 +5177,11 @@
         "tempe": {
           "type": "ZONE",
           "options": [
-            "TMPE-A",
-            "TMPE-B",
-            "TMPE-C"
+            "ACAD A",
+            "ACAD B",
+            "ATHL",
+            "RSCH A",
+            "RSCH B"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -5226,8 +5218,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -5241,9 +5232,11 @@
         "tempe": {
           "type": "ZONE",
           "options": [
-            "TMPE-A",
-            "TMPE-B",
-            "TMPE-C"
+            "ACAD A",
+            "ACAD B",
+            "ATHL",
+            "RSCH A",
+            "RSCH B"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -5280,8 +5273,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -5295,9 +5287,11 @@
         "tempe": {
           "type": "ZONE",
           "options": [
-            "TMPE-A",
-            "TMPE-B",
-            "TMPE-C"
+            "ACAD A",
+            "ACAD B",
+            "ATHL",
+            "RSCH A",
+            "RSCH B"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -5334,8 +5328,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -5349,9 +5342,11 @@
         "tempe": {
           "type": "ZONE",
           "options": [
-            "TMPE-A",
-            "TMPE-B",
-            "TMPE-C"
+            "ACAD A",
+            "ACAD B",
+            "ATHL",
+            "RSCH A",
+            "RSCH B"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -5388,8 +5383,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -5434,8 +5428,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -5449,9 +5442,11 @@
         "tempe": {
           "type": "ZONE",
           "options": [
-            "TMPE-A",
-            "TMPE-B",
-            "TMPE-C"
+            "ACAD A",
+            "ACAD B",
+            "ATHL",
+            "RSCH A",
+            "RSCH B"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -5488,8 +5483,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -5534,8 +5528,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -5549,9 +5542,11 @@
         "tempe": {
           "type": "ZONE",
           "options": [
-            "TMPE-A",
-            "TMPE-B",
-            "TMPE-C"
+            "ACAD A",
+            "ACAD B",
+            "ATHL",
+            "RSCH A",
+            "RSCH B"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -5588,8 +5583,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -5603,9 +5597,11 @@
         "tempe": {
           "type": "ZONE",
           "options": [
-            "TMPE-A",
-            "TMPE-B",
-            "TMPE-C"
+            "ACAD A",
+            "ACAD B",
+            "ATHL",
+            "RSCH A",
+            "RSCH B"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -5642,8 +5638,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -5657,9 +5652,11 @@
         "tempe": {
           "type": "ZONE",
           "options": [
-            "TMPE-A",
-            "TMPE-B",
-            "TMPE-C"
+            "ACAD A",
+            "ACAD B",
+            "ATHL",
+            "RSCH A",
+            "RSCH B"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -5696,8 +5693,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -5711,9 +5707,11 @@
         "tempe": {
           "type": "ZONE",
           "options": [
-            "TMPE-A",
-            "TMPE-B",
-            "TMPE-C"
+            "ACAD A",
+            "ACAD B",
+            "ATHL",
+            "RSCH A",
+            "RSCH B"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -5750,8 +5748,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -5765,9 +5762,11 @@
         "tempe": {
           "type": "ZONE",
           "options": [
-            "TMPE-A",
-            "TMPE-B",
-            "TMPE-C"
+            "ACAD A",
+            "ACAD B",
+            "ATHL",
+            "RSCH A",
+            "RSCH B"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -5804,8 +5803,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -5819,9 +5817,11 @@
         "tempe": {
           "type": "ZONE",
           "options": [
-            "TMPE-A",
-            "TMPE-B",
-            "TMPE-C"
+            "ACAD A",
+            "ACAD B",
+            "ATHL",
+            "RSCH A",
+            "RSCH B"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -5858,8 +5858,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -5873,9 +5872,11 @@
         "tempe": {
           "type": "ZONE",
           "options": [
-            "TMPE-A",
-            "TMPE-B",
-            "TMPE-C"
+            "ACAD A",
+            "ACAD B",
+            "ATHL",
+            "RSCH A",
+            "RSCH B"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -5912,8 +5913,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -5927,9 +5927,11 @@
         "tempe": {
           "type": "ZONE",
           "options": [
-            "TMPE-A",
-            "TMPE-B",
-            "TMPE-C"
+            "ACAD A",
+            "ACAD B",
+            "ATHL",
+            "RSCH A",
+            "RSCH B"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -5966,8 +5968,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -5981,9 +5982,11 @@
         "tempe": {
           "type": "ZONE",
           "options": [
-            "TMPE-A",
-            "TMPE-B",
-            "TMPE-C"
+            "ACAD A",
+            "ACAD B",
+            "ATHL",
+            "RSCH A",
+            "RSCH B"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -6020,8 +6023,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -6035,9 +6037,11 @@
         "tempe": {
           "type": "ZONE",
           "options": [
-            "TMPE-A",
-            "TMPE-B",
-            "TMPE-C"
+            "ACAD A",
+            "ACAD B",
+            "ATHL",
+            "RSCH A",
+            "RSCH B"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -6074,8 +6078,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -6089,9 +6092,11 @@
         "tempe": {
           "type": "ZONE",
           "options": [
-            "TMPE-A",
-            "TMPE-B",
-            "TMPE-C"
+            "ACAD A",
+            "ACAD B",
+            "ATHL",
+            "RSCH A",
+            "RSCH B"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -6128,8 +6133,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -6143,9 +6147,11 @@
         "tempe": {
           "type": "ZONE",
           "options": [
-            "TMPE-A",
-            "TMPE-B",
-            "TMPE-C"
+            "ACAD A",
+            "ACAD B",
+            "ATHL",
+            "RSCH A",
+            "RSCH B"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -6182,8 +6188,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -6197,9 +6202,11 @@
         "tempe": {
           "type": "ZONE",
           "options": [
-            "TMPE-A",
-            "TMPE-B",
-            "TMPE-C"
+            "ACAD A",
+            "ACAD B",
+            "ATHL",
+            "RSCH A",
+            "RSCH B"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -6236,8 +6243,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -6251,9 +6257,11 @@
         "tempe": {
           "type": "ZONE",
           "options": [
-            "TMPE-A",
-            "TMPE-B",
-            "TMPE-C"
+            "ACAD A",
+            "ACAD B",
+            "ATHL",
+            "RSCH A",
+            "RSCH B"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -6290,8 +6298,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -6305,9 +6312,11 @@
         "tempe": {
           "type": "ZONE",
           "options": [
-            "TMPE-A",
-            "TMPE-B",
-            "TMPE-C"
+            "ACAD A",
+            "ACAD B",
+            "ATHL",
+            "RSCH A",
+            "RSCH B"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -6344,8 +6353,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -6359,9 +6367,11 @@
         "tempe": {
           "type": "ZONE",
           "options": [
-            "TMPE-A",
-            "TMPE-B",
-            "TMPE-C"
+            "ACAD A",
+            "ACAD B",
+            "ATHL",
+            "RSCH A",
+            "RSCH B"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -6398,8 +6408,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -6413,9 +6422,11 @@
         "tempe": {
           "type": "ZONE",
           "options": [
-            "TMPE-A",
-            "TMPE-B",
-            "TMPE-C"
+            "ACAD A",
+            "ACAD B",
+            "ATHL",
+            "RSCH A",
+            "RSCH B"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -6481,8 +6492,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -6496,9 +6506,11 @@
         "tempe": {
           "type": "ZONE",
           "options": [
-            "TMPE-A",
-            "TMPE-B",
-            "TMPE-C"
+            "ACAD A",
+            "ACAD B",
+            "ATHL",
+            "RSCH A",
+            "RSCH B"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -6543,8 +6555,7 @@
         "dtpc": {
           "type": "ZONE",
           "options": [
-            "DTPC-A01",
-            "DTPC-A02"
+            "DTPC-A01"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },
@@ -6558,9 +6569,11 @@
         "tempe": {
           "type": "ZONE",
           "options": [
-            "TMPE-A",
-            "TMPE-B",
-            "TMPE-C"
+            "ACAD A",
+            "ACAD B",
+            "ATHL",
+            "RSCH A",
+            "RSCH B"
           ],
           "instruction": "Check Zone Guide for correct zone"
         },

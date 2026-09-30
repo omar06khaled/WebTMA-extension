@@ -437,7 +437,7 @@ function buildCard(suggestion) {
       </div>
       <div style="margin-top:4px; display:flex; gap:12px;">
         <span style="font-size:11px; color:#666;">Rate Schedule: <strong class="building-rate-schedule" style="color:#1a1a1a;"></strong></span>
-        <span style="font-size:11px; color:#666;">Sector: <strong class="building-sector" style="color:#1a1a1a;"></strong></span>
+        <span style="font-size:11px; color:#666;">Zone: <strong class="building-sector" style="color:#1a1a1a;"></strong></span>
       </div>
     </div>
   `;
@@ -461,11 +461,15 @@ function buildCard(suggestion) {
     for (const [key, value] of Object.entries(suggestion.tradeOptions)) {
       const row = document.createElement("tr");
       row.className = "campus-row";
+      row.dataset.key = key;
+      row.dataset.origTrade = String(value);
+      row.dataset.trade = String(value);
 
       const campusTd = document.createElement("td");
       campusTd.textContent = CAMPUS_LABELS[key] ?? key;
 
       const tradeTd = document.createElement("td");
+      tradeTd.className = "trade-cell";
       tradeTd.textContent = String(value);
 
       row.appendChild(campusTd);
@@ -479,7 +483,7 @@ function buildCard(suggestion) {
         card.classList.add("selected");
         row.classList.add("campus-selected");
         selectedSuggestion = suggestion;
-        selectedCampus = { key, trade: String(value) };
+        selectedCampus = { key, trade: row.dataset.trade };
         btnApply.disabled = false;
       });
     }
@@ -531,6 +535,7 @@ function initBuildingSearch(card) {
 
   section.querySelector(".building-clear-btn").addEventListener("click", () => {
     selectedBuilding = null;
+    narrowZoneRows(card, null);
     input.value = "";
     selectedDiv.style.display = "none";
     results.style.display = "none";
@@ -564,6 +569,7 @@ async function fetchBuildingResults(q, section) {
           bldgCode: b.bldgCode || "",
           rateSchedule: b.rateSchedule || null,
           sector: b.sector || "",
+          campus: b.campus || null,
         }, section);
       });
       results.appendChild(item);
@@ -588,6 +594,43 @@ function selectBuilding(building, section) {
   section.querySelector(".building-rate-schedule").textContent = building.rateSchedule || "N/A";
   section.querySelector(".building-sector").textContent = building.sector || "N/A";
   selectedDiv.style.display = "block";
+  const card = section.closest(".card");
+  if (card) narrowZoneRows(card, building);
+}
+
+/**
+ * The building's zone for its own campus row, without any RFMT sector in front
+ * ("RFMT-S2 / ACAD B" -> "ACAD B"). Null when the 2027 zone guide doesn't list it.
+ */
+function zoneForBuilding(building) {
+  const sector = building?.sector || "";
+  if (!sector || sector.startsWith("Not in")) return null;
+  const zones = sector.split(" / ").filter((part) => !part.startsWith("RFMT"));
+  return zones.length > 0 ? zones.join(" / ") : null;
+}
+
+/**
+ * With a building picked, the row for its campus shows that building's zone instead of
+ * every zone on the campus ("ACAD A - zone for BULLDOG HALL"). Only rows that say
+ * "(Check Zone Guide)" change; JANI, LOCK etc. stay as they are. building = null restores.
+ */
+function narrowZoneRows(card, building) {
+  const zone = building ? zoneForBuilding(building) : null;
+  card.querySelectorAll(".campus-row").forEach((row) => {
+    const cell = row.querySelector(".trade-cell");
+    const original = row.dataset.origTrade ?? "";
+    let trade = original;
+    let shown = original;
+    if (zone && row.dataset.key === building.campus && original.includes("(Check Zone Guide)")) {
+      trade = zone;
+      shown = `${zone} - zone for ${building.name}`;
+    }
+    row.dataset.trade = trade;
+    if (cell) cell.textContent = shown;
+    if (row.classList.contains("campus-selected") && selectedCampus?.key === row.dataset.key) {
+      selectedCampus = { key: row.dataset.key, trade };
+    }
+  });
 }
 
 modeToggle.addEventListener("change", () => {
