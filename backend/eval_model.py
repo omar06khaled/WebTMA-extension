@@ -45,6 +45,8 @@ def grade(case, body):
     layer2 = (body.get("layer2") or {}).get("suggestion")
     if not accept:
         return ("PASS" if body.get("noMatchFound") else "FAIL"), names
+    if case.get("only") and any(n not in accept for n in names):
+        return "FAIL", names  # e.g. temperature complaints must get Hot Call or Cold Call alone
     if names and names[0] in accept:
         return "PASS", names
     if any(n in accept for n in names) or (layer2 and layer2["taskDescription"] in accept):
