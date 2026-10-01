@@ -7,7 +7,11 @@ Reads the task-code sheet (columns: Task Description, Task Code, DTPC, POLY, TEM
 RFMT-DTPC, RFMT-POLY, RFMT-TMPE, RFMT-WEST, Notes) and writes the same JSON shape the
 backend already uses:
 
-    { "<Category>": { "<Task Description>": { "taskCode", "trade", "custodial", "notes" } } }
+    { "<Category>": { "<Task Description>": { "taskCode", "trade", "custodial", "notes", "sectionNote"? } } }
+
+A note written on a section's heading row (e.g. Lock Shop: "All requests go to TMPE-POLY-WEST-DTPC
+not RFMT") is copied onto every task in that section as "sectionNote". The backend shows it with
+the task's own notes but leaves it out of the model prompt.
 
 Anything it could not map cleanly is printed as a warning at the end so a person can check it.
 Requires: pip install openpyxl
@@ -135,6 +139,7 @@ def build(path, sheet_name):
     warnings = collections.defaultdict(list)  # message -> rows it applies to
     general_notes = []
     category = None
+    section_note = None
     seen_codes = {}
 
     for row_number, row in enumerate(workbook[sheet_name].iter_rows(values_only=True), start=1):
@@ -150,6 +155,7 @@ def build(path, sheet_name):
         if description in CATEGORY_ROWS or (description and not any(cells[1:11])):
             category = description
             knowledge_base.setdefault(category, {})
+            section_note = " | ".join(cell for cell in cells[1:11] if cell) or None
             continue
         if category is None:
             warnings["task appears before any category; skipped"].append(f"row {row_number} {description!r}")
@@ -163,6 +169,8 @@ def build(path, sheet_name):
             "custodial": any(value in ("CUST", "JANI") for value in trade.values()),
             "notes": notes or None,
         }
+        if section_note:
+            entry["sectionNote"] = section_note
 
         existing = knowledge_base[category].get(description)
         if existing is not None:

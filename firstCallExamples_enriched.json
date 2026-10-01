@@ -424,7 +424,8 @@
         "rfmtWest": "LOCK"
       },
       "custodial": false,
-      "notes": "GENERAL: Crash bars, door knobs, cores, levers, mullion rekey, knox box, lock issues, batteries for keypad, alarm lock not functioning, magnetic locks"
+      "notes": "GENERAL: Crash bars, door knobs, cores, levers, mullion rekey, knox box, lock issues, batteries for keypad, alarm lock not functioning, magnetic locks",
+      "sectionNote": "All requests go to TMPE-POLY-WEST-DTPC not RFMT | Critical/emergency 480-965-1829"
     },
     "Lock/Unlock Door": {
       "taskCode": 11040,
@@ -439,7 +440,8 @@
         "rfmtWest": "LOCK"
       },
       "custodial": false,
-      "notes": null
+      "notes": null,
+      "sectionNote": "All requests go to TMPE-POLY-WEST-DTPC not RFMT | Critical/emergency 480-965-1829"
     },
     "Bike Lock": {
       "taskCode": 11010,
@@ -472,7 +474,8 @@
         "rfmtWest": "LOCK"
       },
       "custodial": false,
-      "notes": "For TMPE: Requestor needs an affidavit from ASU PD, then they will go to the bike valet. Need to ask the bike valet to get their Supervisor to cut the lock. 3 locations: MU, Lyceum Theater, Noble Library"
+      "notes": "For TMPE: Requestor needs an affidavit from ASU PD, then they will go to the bike valet. Need to ask the bike valet to get their Supervisor to cut the lock. 3 locations: MU, Lyceum Theater, Noble Library",
+      "sectionNote": "All requests go to TMPE-POLY-WEST-DTPC not RFMT | Critical/emergency 480-965-1829"
     },
     "Lock Change": {
       "taskCode": 11050,
@@ -487,7 +490,8 @@
         "rfmtWest": "LOCK"
       },
       "custodial": false,
-      "notes": null
+      "notes": null,
+      "sectionNote": "All requests go to TMPE-POLY-WEST-DTPC not RFMT | Critical/emergency 480-965-1829"
     },
     "Desk/Cabinet Key": {
       "taskCode": 11032,
@@ -502,7 +506,8 @@
         "rfmtWest": "LOCK"
       },
       "custodial": false,
-      "notes": null
+      "notes": null,
+      "sectionNote": "All requests go to TMPE-POLY-WEST-DTPC not RFMT | Critical/emergency 480-965-1829"
     },
     "Knox box": {
       "taskCode": null,
@@ -517,7 +522,8 @@
         "rfmtWest": "LOCK"
       },
       "custodial": false,
-      "notes": "Zone installs the Knox box"
+      "notes": "Zone installs the Knox box",
+      "sectionNote": "All requests go to TMPE-POLY-WEST-DTPC not RFMT | Critical/emergency 480-965-1829"
     },
     "Re-cut key": {
       "taskCode": 11036,
@@ -532,7 +538,8 @@
         "rfmtWest": "LOCK"
       },
       "custodial": false,
-      "notes": null
+      "notes": null,
+      "sectionNote": "All requests go to TMPE-POLY-WEST-DTPC not RFMT | Critical/emergency 480-965-1829"
     },
     "Dorm gates": {
       "taskCode": 27070,
@@ -555,7 +562,8 @@
         "rfmtWest": null
       },
       "custodial": false,
-      "notes": null
+      "notes": null,
+      "sectionNote": "All requests go to TMPE-POLY-WEST-DTPC not RFMT | Critical/emergency 480-965-1829"
     },
     "Burglar Alarm/ISAAC Card Readers": {
       "taskCode": "ISAAC",
@@ -570,7 +578,8 @@
         "rfmtWest": null
       },
       "custodial": false,
-      "notes": null
+      "notes": null,
+      "sectionNote": "All requests go to TMPE-POLY-WEST-DTPC not RFMT | Critical/emergency 480-965-1829"
     }
   },
   "Carpentry": {

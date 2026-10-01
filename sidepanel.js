@@ -439,6 +439,7 @@ function buildCard(suggestion) {
         <span style="font-size:11px; color:#666;">Rate Schedule: <strong class="building-rate-schedule" style="color:#1a1a1a;"></strong></span>
         <span style="font-size:11px; color:#666;">Zone: <strong class="building-sector" style="color:#1a1a1a;"></strong></span>
       </div>
+      <ul class="building-notes" style="display:none; margin:6px 0 0; padding:6px 8px 6px 22px; background:#fff8e1; border-left:3px solid var(--asu-gold); border-radius:2px; font-size:12px; color:#1a1a1a;"></ul>
     </div>
   `;
   card.appendChild(buildingSection);
@@ -570,6 +571,7 @@ async function fetchBuildingResults(q, section) {
           rateSchedule: b.rateSchedule || null,
           sector: b.sector || "",
           campus: b.campus || null,
+          notes: Array.isArray(b.notes) ? b.notes : [],
         }, section);
       });
       results.appendChild(item);
@@ -593,6 +595,15 @@ function selectBuilding(building, section) {
   section.querySelector(".building-selected-code").textContent = building.bldgCode ? `#${building.bldgCode}` : "";
   section.querySelector(".building-rate-schedule").textContent = building.rateSchedule || "N/A";
   section.querySelector(".building-sector").textContent = building.sector || "N/A";
+  // Building notes from the zone/RFMT guides, as text (never HTML).
+  const notesList = section.querySelector(".building-notes");
+  const notes = Array.isArray(building.notes) ? building.notes : [];
+  notesList.replaceChildren(...notes.map((note) => {
+    const li = document.createElement("li");
+    li.textContent = note;
+    return li;
+  }));
+  notesList.style.display = notes.length > 0 ? "block" : "none";
   selectedDiv.style.display = "block";
   const card = section.closest(".card");
   if (card) narrowZoneRows(card, building);

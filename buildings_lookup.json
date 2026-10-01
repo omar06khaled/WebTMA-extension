@@ -14,7 +14,10 @@
     "sector": "ACAD A",
     "subtype": "Residential Facilities",
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "Dining areas are run by Aramark and overseen by Andy Zeek under EOSS."
+    ]
   },
   {
     "name": "(POLYTECHNIC MATERIALS STORAGE FACILITY AND UTILITY YARD)",
@@ -80,7 +83,10 @@
     "sector": "DTPC-A01",
     "subtype": null,
     "campus": "dtpc",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "PTS owned -operated"
+    ]
   },
   {
     "name": "64 E. BROADWAY ROAD. - WELLS FARGO",
@@ -97,7 +103,10 @@
     "sector": "ACAD B",
     "subtype": null,
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "See notes"
+    ]
   },
   {
     "name": "A. E. ENGLAND BLDG.",
@@ -106,7 +115,10 @@
     "sector": "DTPC-A01",
     "subtype": null,
     "campus": "dtpc",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "Building is owned by the City of Phoenix and maintains the building (CB). Contact the people below. Chris Yanez christopher.r.yanez@phoenix.gov 602-377-6591 Benjamin Chavarria Benjamin.Chavarria@phoenix.gov Angel Munguia Angel.Munguia@phoenix.gov Julie Ebersole, Park Supervisor julie.ebersole@phoenix.gov 602-262-6412"
+    ]
   },
   {
     "name": "ACADEMIC CENTER",
@@ -124,7 +136,10 @@
     "sector": "RFMT-S1 / ACAD B",
     "subtype": "Residential Facilities",
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "All calls go to RFMT first"
+    ]
   },
   {
     "name": "ADELPHI COMMONS (Mail Facility)",
@@ -133,7 +148,10 @@
     "sector": "RFMT-S1 / ACAD B",
     "subtype": "Residential Facilities",
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "All calls go to RFMT first"
+    ]
   },
   {
     "name": "ADELPHI COMMONS (Northeast)",
@@ -142,7 +160,10 @@
     "sector": "RFMT-S1 / ACAD B",
     "subtype": "Residential Facilities",
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "All calls go to RFMT first"
+    ]
   },
   {
     "name": "ADELPHI COMMONS (Northwest)",
@@ -151,7 +172,10 @@
     "sector": "RFMT-S1 / ACAD B",
     "subtype": "Residential Facilities",
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "All calls go to RFMT first"
+    ]
   },
   {
     "name": "ADELPHI COMMONS (South)",
@@ -160,7 +184,10 @@
     "sector": "RFMT-S1 / ACAD B",
     "subtype": "Residential Facilities",
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "All calls go to RFMT first"
+    ]
   },
   {
     "name": "ADELPHI COMMONS (Southwest)",
@@ -169,7 +196,10 @@
     "sector": "RFMT-S1 / ACAD B",
     "subtype": "Residential Facilities",
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "All calls go to RFMT first"
+    ]
   },
   {
     "name": "ADELPHI II COMMONS COMMUNITY CENTER",
@@ -178,7 +208,10 @@
     "sector": "RFMT-S1 / ACAD B",
     "subtype": "Residential Facilities",
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "All calls go to RFMT first"
+    ]
   },
   {
     "name": "ADELPHI II COMMONS EAST",
@@ -187,7 +220,10 @@
     "sector": "RFMT-S1 / ACAD B",
     "subtype": "Residential Facilities",
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "All calls go to RFMT first"
+    ]
   },
   {
     "name": "ADELPHI II COMMONS WEST",
@@ -196,7 +232,10 @@
     "sector": "RFMT-S1 / ACAD B",
     "subtype": "Residential Facilities",
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "All calls go to RFMT first"
+    ]
   },
   {
     "name": "ADMINISTRATION",
@@ -223,7 +262,10 @@
     "sector": "ACAD B",
     "subtype": null,
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "ASUPD first responder for security alarm. They will investigate the issue and verify area is okay.Stanley Security are the owners of security system, contact 1-877-476-4968."
+    ]
   },
   {
     "name": "ALTITUDE CHAMBER",
@@ -267,7 +309,10 @@
     "sector": "ACAD A",
     "subtype": null,
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "Contact for approval: Frank Castro Frank.G.Castro.III@asu.edu"
+    ]
   },
   {
     "name": "APPLIED ARTS PAVILION",
@@ -276,7 +321,10 @@
     "sector": "POLY-A01",
     "subtype": null,
     "campus": "poly",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "Lock Shop: Exterior restrooms - ISAAC lock"
+    ]
   },
   {
     "name": "AQUATIC COMPLEX - MAIN AREA",
@@ -302,7 +350,10 @@
     "sector": "DTPC-A01",
     "subtype": null,
     "campus": "dtpc",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "DTPC FACMAN handles locks and key only and moving by request only."
+    ]
   },
   {
     "name": "ARIZONA CENTER TOWER",
@@ -319,7 +370,10 @@
     "sector": "ACAD A",
     "subtype": null,
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "See Aramark Retail/Dining document for billable rooms."
+    ]
   },
   {
     "name": "ART BLDG.",
@@ -346,7 +400,10 @@
     "sector": "ACAD B",
     "subtype": null,
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "AC issues go to EMS (All spaces)"
+    ]
   },
   {
     "name": "ASU AT ST. LUKE’S MEDICAL PAVILION",
@@ -420,7 +477,10 @@
     "sector": "DTPC-A01",
     "subtype": null,
     "campus": "dtpc",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "DTPC Zones do not handle maintenance. Email the person below and reject the request. These buildings are leased from Phoenix Elementary. Financial responsibility for approval is: Leah Lommel, Leah.Lommel@asu.edu, (480)965-7484"
+    ]
   },
   {
     "name": "ASU PPA - MUSIC",
@@ -429,7 +489,10 @@
     "sector": "DTPC-A01",
     "subtype": null,
     "campus": "dtpc",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "DTPC Zones do not handle maintenance. Email the person below and reject the request. These buildings are leased from Phoenix Elementary. Financial responsibility for approval is: Leah Lommel, Leah.Lommel@asu.edu, (480)965-7484"
+    ]
   },
   {
     "name": "ASU PREP POLY STEM HS",
@@ -438,7 +501,10 @@
     "sector": "POLY-A01",
     "subtype": null,
     "campus": "poly",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "Lock Shop: Prep Academy HS /Billable"
+    ]
   },
   {
     "name": "ASU PREPARATORY ACADEMY SOUTH PHOENIX - HIGH SCHOOL",
@@ -564,7 +630,10 @@
     "sector": "ACAD B",
     "subtype": null,
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "AC issues go to EMS (All spaces)"
+    ]
   },
   {
     "name": "BANK OF AMERICA ATM",
@@ -588,7 +657,10 @@
     "sector": "ACAD A",
     "subtype": "Residential Facilities",
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "All calls go to ACC first"
+    ]
   },
   {
     "name": "BARRETT COLLEGE CEREUS HALL",
@@ -597,7 +669,10 @@
     "sector": "ACAD A",
     "subtype": "Residential Facilities",
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "All calls go to ACC first"
+    ]
   },
   {
     "name": "BARRETT COLLEGE COTTONWOOD HALL",
@@ -606,7 +681,10 @@
     "sector": "ACAD A",
     "subtype": "Residential Facilities",
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "All calls go to ACC first"
+    ]
   },
   {
     "name": "BARRETT COLLEGE FIRE PUMP HOUSE",
@@ -615,7 +693,10 @@
     "sector": "ACAD A",
     "subtype": "Residential Facilities",
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "All calls go to ACC first"
+    ]
   },
   {
     "name": "BARRETT COLLEGE HONORS HALL",
@@ -624,7 +705,10 @@
     "sector": "ACAD A",
     "subtype": "Residential Facilities",
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "All calls go to ACC first"
+    ]
   },
   {
     "name": "BARRETT COLLEGE JUNIPER HALL",
@@ -633,7 +717,10 @@
     "sector": "ACAD A",
     "subtype": "Residential Facilities",
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "All calls go to ACC first"
+    ]
   },
   {
     "name": "BARRETT COLLEGE ROSEWOOD HALL",
@@ -642,7 +729,10 @@
     "sector": "ACAD A",
     "subtype": "Residential Facilities",
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "All calls go to ACC first"
+    ]
   },
   {
     "name": "BARRETT COLLEGE SAGE HALL",
@@ -651,7 +741,10 @@
     "sector": "ACAD A",
     "subtype": "Residential Facilities",
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "All calls go to ACC first"
+    ]
   },
   {
     "name": "BARRETT COLLEGE WILLOW HALL",
@@ -660,7 +753,10 @@
     "sector": "ACAD A",
     "subtype": "Residential Facilities",
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "All calls go to ACC first/Except dining Dining Hall: Willow Email : Wade Noon noon-wade@aramark.com"
+    ]
   },
   {
     "name": "BATEMAN CHEMICAL STORAGE BUILDING (G)",
@@ -740,7 +836,10 @@
     "sector": "POLY-A01",
     "subtype": null,
     "campus": "poly",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "Lock Shop: FM not responsible"
+    ]
   },
   {
     "name": "BAYLOR HALL SOUTH",
@@ -785,7 +884,10 @@
     "sector": "POLY-A01",
     "subtype": null,
     "campus": "poly",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "Lock Shop: this is POLY not RFMT"
+    ]
   },
   {
     "name": "BEST HALL A",
@@ -840,7 +942,10 @@
     "sector": "RSCH B",
     "subtype": null,
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "See Aramark Retail/Dining document for billable rooms. Charlie's Cafe does not need approval. (Biodesign only)"
+    ]
   },
   {
     "name": "BIODESIGN INSTITUTE BLDG C",
@@ -867,7 +972,10 @@
     "sector": "ACAD A",
     "subtype": null,
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "Get approval from Tanya Maifield ( tanya.maifield@asu.edu) or Eleanor Brogdon (480-727-0591 Elanor.M.Brogdon@asu.edu) Starbucks Approval: Wade Noon noon-wade@aramark.com"
+    ]
   },
   {
     "name": "BOX OFFICE/TEAM SHOP",
@@ -892,7 +1000,10 @@
     "sector": "ACAD B",
     "subtype": null,
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "Contact for approval (email all 3)Janice Santiesteban Janice.Santiesteban@avisonyoung.com; Natalie Adams natalie.adams3@asu.edu; Megan Dugan megan.dugan@asu.edu"
+    ]
   },
   {
     "name": "BULLDOG HALL",
@@ -919,7 +1030,10 @@
     "sector": "ACAD A",
     "subtype": null,
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "See Aramark Retail/Dining document for billable rooms. Approvals required by Wade Noon Email : noon-wade@aramark.com"
+    ]
   },
   {
     "name": "CARRIAGE HOUSE (MARLIN/DOLPHIN/BONITA/PORPOISE RESIDENCE)",
@@ -935,7 +1049,10 @@
     "sector": "ATHL",
     "subtype": null,
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "Football locker room is charged to Athletics account (CM). All other areas are charged to the FDM site manager account"
+    ]
   },
   {
     "name": "CASA DE ORO",
@@ -943,7 +1060,10 @@
     "rateSchedule": "CB",
     "sector": "WEST-A01",
     "subtype": "Residential Facilities",
-    "campus": "west"
+    "campus": "west",
+    "notes": [
+      "RACC"
+    ]
   },
   {
     "name": "CASA LINDA (RESIDENCE)",
@@ -976,7 +1096,10 @@
     "sector": "POLY-A01",
     "subtype": null,
     "campus": "poly",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "Lock Shop: Prep Academy HS /Billable"
+    ]
   },
   {
     "name": "CENTER FOR FAMILY STUDIES",
@@ -1003,7 +1126,10 @@
     "sector": "ACAD A",
     "subtype": null,
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "(Only work orders such as lighting repairs, ceiling tile, and drain issues would come to the zone)"
+    ]
   },
   {
     "name": "CENTRAL PLANT - 902",
@@ -1043,7 +1169,13 @@
     "rateSchedule": "CB",
     "sector": "POLY-A01",
     "subtype": "Residential Facilities",
-    "campus": "poly"
+    "campus": "poly",
+    "notes": [
+      "Lock Shop: RFMT (RC = Poly)",
+      "assign to Rene Arrieta",
+      "Pest Control: Burns Pest--every 2nd Friday of the month",
+      "Lantana and Century Hall - fob reader/card access are managed by Capstone. On the Work Order assign to RFMT-POLY"
+    ]
   },
   {
     "name": "CHASE TOWER OFFICE SPACE",
@@ -1074,7 +1206,10 @@
     "sector": "POLY-A01",
     "subtype": null,
     "campus": "poly",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "Lock Shop: Trade = CPLNT"
+    ]
   },
   {
     "name": "CHILLED WATER PLANT 2",
@@ -1083,7 +1218,10 @@
     "sector": "POLY-A01",
     "subtype": null,
     "campus": "poly",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "Lock Shop: Trade = CPLNT"
+    ]
   },
   {
     "name": "CHOLLA BALLFIELD",
@@ -1100,7 +1238,10 @@
     "sector": "POLY-A01",
     "subtype": null,
     "campus": "poly",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "Lock Shop: ARAMARK (BILLABLE)"
+    ]
   },
   {
     "name": "CITY OF PHOENIX COMMUNICATIONS SITE",
@@ -1142,7 +1283,10 @@
     "sector": "DTPC-A01",
     "subtype": null,
     "campus": "dtpc",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "FACMAN handles -Clinic on south side of bldg, Concho room and office space on 1st floor"
+    ]
   },
   {
     "name": "COLLEGE AVENUE COMMONS",
@@ -1151,7 +1295,10 @@
     "sector": "ACAD B",
     "subtype": null,
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "Venezias: Rooms 221 and 221A are billable to Follet. Receive approval from Eleanor Brogdon (480-727-0591 Elanor.M.Brogdon@asu.edu)"
+    ]
   },
   {
     "name": "COLLEGE AVENUE MARKET PLACE",
@@ -1160,7 +1307,10 @@
     "sector": "ACAD B",
     "subtype": null,
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "This is NOT Sun Devil Marketplace located on the first floor of the Helmick Center. These are the restaurants located on the west side of the Fulton Parking Structure. Do not charge Follet for work done here"
+    ]
   },
   {
     "name": "COMBINED HEAT AND POWER FACILITY",
@@ -1274,7 +1424,10 @@
     "sector": "DTPC-A01",
     "subtype": null,
     "campus": "dtpc",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "See Aramark Retail/Dining document for specific billable rooms."
+    ]
   },
   {
     "name": "DANFORTH CHAPEL",
@@ -1333,7 +1486,10 @@
     "sector": "ATHL",
     "subtype": null,
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "Court and locker rooms are charged to Athletics account (CM). All concourse and all other areas are charged to the FMD site manager account"
+    ]
   },
   {
     "name": "DESIGN NORTH",
@@ -1342,7 +1498,10 @@
     "sector": "ACAD A",
     "subtype": null,
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "See Aramark Retail/Dining document for billable rooms."
+    ]
   },
   {
     "name": "DESIGN SOUTH",
@@ -1377,7 +1536,10 @@
     "sector": "ACAD A",
     "subtype": null,
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "Secret Garden"
+    ]
   },
   {
     "name": "DOWNTOWN YMCA",
@@ -1402,7 +1564,10 @@
     "sector": "ACAD A",
     "subtype": null,
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "See Aramark Retail/Dining document for billable rooms."
+    ]
   },
   {
     "name": "EAGLE RESIDENCE HALL",
@@ -1411,7 +1576,10 @@
     "sector": "POLY-A01",
     "subtype": "Residential Facilities",
     "campus": "poly",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "Lock Shop: RFMT"
+    ]
   },
   {
     "name": "ECET RESEARCH",
@@ -1731,7 +1899,10 @@
     "sector": "POLY-A01",
     "subtype": "Residential Facilities",
     "campus": "poly",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "Lock Shop: RFMT"
+    ]
   },
   {
     "name": "FARMER EDUCATION BLDG.",
@@ -1799,7 +1970,10 @@
     "sector": "ACAD B",
     "subtype": null,
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "Call Jake Horner for any issues"
+    ]
   },
   {
     "name": "FULTON CENTER PARKING STRUCTURE",
@@ -1808,7 +1982,10 @@
     "sector": "ACAD B",
     "subtype": null,
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "Contact for approval: Frank Castro Frank.G.Castro.III@asu.edu"
+    ]
   },
   {
     "name": "FUSION ON FIRST",
@@ -1817,7 +1994,10 @@
     "sector": "DTPC-A01",
     "subtype": null,
     "campus": "dtpc",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "1-3 Floors is Facman; 4th and above is Capstone (living@asu.edu)"
+    ]
   },
   {
     "name": "GAMMAGE PKWY SOLAR",
@@ -1834,7 +2014,10 @@
     "sector": "DTPC-A01",
     "subtype": null,
     "campus": "dtpc",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "Submit all requests to FM DTPC-A01. They will investigate issue and determine if Realestate is responsble or FM. Lock shop does cut keys. Custodial requests handled through Pro-Serv. Please email: Phyllis Minzer, pminzer@reliancemgmt.com Alana Borie, aborie@reliancemgmt.com."
+    ]
   },
   {
     "name": "GAZEBO AT E633",
@@ -1877,7 +2060,10 @@
     "sector": "RFMT-S1 / ACAD B",
     "subtype": "Residential Facilities",
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "Email : Wade Noon noon-wade@aramark.com for approval"
+    ]
   },
   {
     "name": "GOLDWATER CENTER FOR SCIENCE & ENGINEERING",
@@ -1912,7 +2098,10 @@
     "sector": "DTPC-A01",
     "subtype": "Residential Facilities",
     "campus": "dtpc",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "This building is managed by Capstone. 602-543-4361 living@asu.edu"
+    ]
   },
   {
     "name": "GORDON COMMONS (SOUTH TOWER)",
@@ -1921,7 +2110,10 @@
     "sector": "DTPC-A01",
     "subtype": "Residential Facilities",
     "campus": "dtpc",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "This building is managed by Capstone. 602-543-4361 living@asu.edu"
+    ]
   },
   {
     "name": "GRADY GAMMAGE MEMORIAL AUDITORIUM",
@@ -1930,7 +2122,10 @@
     "sector": "ACAD A",
     "subtype": null,
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "Theater seating, stage area and box office are CB and all other areas are CM"
+    ]
   },
   {
     "name": "GRANT STREET STUDIOS",
@@ -1966,7 +2161,10 @@
     "sector": "ACAD B",
     "subtype": "Residential Facilities",
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "All calls ACC first/ except: ARAMARK-TMPE"
+    ]
   },
   {
     "name": "GREEK LEADERSHIP VILLAGE - BLDG B",
@@ -1975,7 +2173,10 @@
     "sector": "ACAD B",
     "subtype": "Residential Facilities",
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "All calls ACC first/ except: ARAMARK-TMPE"
+    ]
   },
   {
     "name": "GREEK LEADERSHIP VILLAGE - BLDG C",
@@ -1984,7 +2185,10 @@
     "sector": "ACAD B",
     "subtype": "Residential Facilities",
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "All calls ACC first/ except: ARAMARK-TMPE"
+    ]
   },
   {
     "name": "GREEK LEADERSHIP VILLAGE - BLDG D",
@@ -1993,7 +2197,10 @@
     "sector": "ACAD B",
     "subtype": "Residential Facilities",
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "All calls ACC first/ except: ARAMARK-TMPE"
+    ]
   },
   {
     "name": "GREENHOUSE",
@@ -2063,7 +2270,10 @@
     "sector": "RFMT-S3 / ACAD A",
     "subtype": "Residential Facilities",
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "All calls go to RFMT first"
+    ]
   },
   {
     "name": "HAV- ACOURTIA HALL",
@@ -2072,7 +2282,10 @@
     "sector": "RFMT-S3 / ACAD A",
     "subtype": "Residential Facilities",
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "All calls go to RFMT first"
+    ]
   },
   {
     "name": "HAV- ARROYO HALL",
@@ -2081,7 +2294,10 @@
     "sector": "RFMT-S3 / ACAD A",
     "subtype": "Residential Facilities",
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "All calls go to RFMT first"
+    ]
   },
   {
     "name": "HAV- CHUPAROSA HALL",
@@ -2090,7 +2306,10 @@
     "sector": "RFMT-S3 / ACAD A",
     "subtype": "Residential Facilities",
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "All calls go to RFMT first"
+    ]
   },
   {
     "name": "HAV- JOJOBA HALL",
@@ -2099,7 +2318,10 @@
     "sector": "RFMT-S3 / ACAD A",
     "subtype": "Residential Facilities",
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "All calls go to RFMT first"
+    ]
   },
   {
     "name": "HAV- MESQUITE HALL",
@@ -2108,7 +2330,10 @@
     "sector": "RFMT-S3 / ACAD A",
     "subtype": "Residential Facilities",
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "For 1st & 2nd floors--hot calls go to EMS; RFMT handles everything else"
+    ]
   },
   {
     "name": "HAV- MESQUITE OUTDOOR ROOM",
@@ -2117,7 +2342,10 @@
     "sector": "ACAD A",
     "subtype": null,
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "CALLS FIRST GO TO Grounds"
+    ]
   },
   {
     "name": "HAV- MOHAVE HALL",
@@ -2126,7 +2354,10 @@
     "sector": "RFMT-S3 / ACAD A",
     "subtype": "Residential Facilities",
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "All calls go to RFMT first"
+    ]
   },
   {
     "name": "HAV- VERBENA HALL",
@@ -2135,7 +2366,11 @@
     "sector": "RFMT-S3 / ACAD A",
     "subtype": "Residential Facilities",
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "All calls go to RFMT first/ except Dining",
+      "Dining Hall"
+    ]
   },
   {
     "name": "HAYDEN HALL EAST",
@@ -2158,7 +2393,10 @@
     "sector": "ACAD A",
     "subtype": null,
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "Email BOTH: Wade Noon noon-wade@aramark.com Owners and manager: Candia Grunwald candia@crgcpa.com Eliz Christy eliz@charliesasu.com"
+    ]
   },
   {
     "name": "HEADHOUSE",
@@ -2203,7 +2441,10 @@
     "sector": "ACAD A",
     "subtype": null,
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "See map for billable spaces"
+    ]
   },
   {
     "name": "HEALTH SOUTH",
@@ -2341,7 +2582,10 @@
     "sector": "DTPC-A01",
     "subtype": null,
     "campus": "dtpc",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "Not handled by FM. Wexford Property Mgmt. Valerie is POC vkharris@asu.edu"
+    ]
   },
   {
     "name": "INTERDISCIPLINARY SCIENCE AND TECHNOLOGY BUILDING I",
@@ -2377,7 +2621,10 @@
     "sector": "RSCH B",
     "subtype": null,
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "52 (lower level); 105 (half of the room); 105A; 121; 122; 122A; 122B; 122C; 123; 124; 125; 200; 200A; 209; 209A; 211; 212; 216; 216U3; 218; 220; 223; 239; 251; 251A; 259; 260; 261; 261A; 263; 263A; 265; 265A; 267; 267A; 269"
+    ]
   },
   {
     "name": "IRISH HALL A (ACADEMIC OFFICES)",
@@ -2425,7 +2672,10 @@
     "sector": "ACAD B",
     "subtype": null,
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "For approval: Tracey.Mason@asu.edu"
+    ]
   },
   {
     "name": "KERR CULTURAL CENTER B - STUDIO",
@@ -2434,7 +2684,10 @@
     "sector": "ACAD B",
     "subtype": null,
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "For approval: Tracey.Mason@asu.edu"
+    ]
   },
   {
     "name": "LANGTON VILLA (RESIDENCE)",
@@ -2450,7 +2703,13 @@
     "sector": "POLY-A01",
     "subtype": "Residential Facilities",
     "campus": "poly",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "Lock Shop: Room 100-120 are FM responsiblity. ALL other calls go to RFMT (RC = Poly)",
+      "assign to Nicholas Murray",
+      "Pest Control: Burns Pest--every 2nd Friday of the month",
+      "Lantana and Century Hall - fob reader/card access are managed by Capstone. On the Work Order assign to RFMT-POLY"
+    ]
   },
   {
     "name": "LAS CASAS - A WING (SE)",
@@ -2458,7 +2717,10 @@
     "rateSchedule": "CM",
     "sector": "WEST-A01",
     "subtype": "Residential Facilities",
-    "campus": "west"
+    "campus": "west",
+    "notes": [
+      "RFMT-LSCS"
+    ]
   },
   {
     "name": "LAS CASAS - B WING (NE)",
@@ -2466,7 +2728,10 @@
     "rateSchedule": "CM",
     "sector": "WEST-A01",
     "subtype": "Residential Facilities",
-    "campus": "west"
+    "campus": "west",
+    "notes": [
+      "RFMT-LSCS"
+    ]
   },
   {
     "name": "LAS CASAS - POOL",
@@ -2474,7 +2739,10 @@
     "rateSchedule": "CM",
     "sector": "WEST-A01",
     "subtype": "Residential Facilities",
-    "campus": "west"
+    "campus": "west",
+    "notes": [
+      "RFMT-LSCS"
+    ]
   },
   {
     "name": "LAS CASAS COMMUNITY CENTER",
@@ -2482,7 +2750,10 @@
     "rateSchedule": "CM",
     "sector": "WEST-A01",
     "subtype": "Residential Facilities",
-    "campus": "west"
+    "campus": "west",
+    "notes": [
+      "RFMT-LSCS"
+    ]
   },
   {
     "name": "LECTURE HALL",
@@ -2560,7 +2831,10 @@
     "sector": "ACAD B",
     "subtype": "Residential Facilities",
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "All calls ACC first/ except: ARAMARK-TMPE Wade Noon for approvals noon-wade@aramark.com"
+    ]
   },
   {
     "name": "MANZY CAFE",
@@ -2569,7 +2843,10 @@
     "sector": "ACAD B",
     "subtype": null,
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "Approvals Wade Noon noon-wade@aramark.com All calls go to TMPE"
+    ]
   },
   {
     "name": "MARINE OPERATIONS BUILDING",
@@ -2612,7 +2889,11 @@
     "sector": "RFMT-S2 / ACAD A",
     "subtype": "Residential Facilities",
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "All calls for McClintock Hall (even 1st floor offices) should go to the RFMT repair center",
+      "All calls go to RFMT first"
+    ]
   },
   {
     "name": "MCCORD HALL",
@@ -2621,7 +2902,10 @@
     "sector": "ACAD A",
     "subtype": null,
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "See Aramark Retail/Dining document for billable rooms."
+    ]
   },
   {
     "name": "MEDIA AND IMMERSIVE EXPERIENCE CENTER",
@@ -2630,7 +2914,10 @@
     "sector": "ACAD B",
     "subtype": null,
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "Aramark Crepe Club"
+    ]
   },
   {
     "name": "MEMORIAL UNION",
@@ -2639,7 +2926,10 @@
     "sector": "ACAD A",
     "subtype": "Residential Facilities",
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "Work Orders should be sent to FM Memorial Union trade for general maintenance issues. HVAC, ELEV, FIRE, GRND, etc. issues go to appropriate trades. MU Manager: Andrew Zeek:480-203-5418"
+    ]
   },
   {
     "name": "MERCADO A",
@@ -2738,7 +3028,10 @@
     "sector": "ATHL",
     "subtype": null,
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "Primary Contact: Amber Musgrave, GM: 480.798.5242, AMusgrave@MullettArena.com Sr. Director of Operations: Craig Jankowski, 215-601-6225, CJankowski@MullettArena.com"
+    ]
   },
   {
     "name": "MURDOCK LECTURE HALL",
@@ -2765,7 +3058,10 @@
     "sector": "POLY-A01",
     "subtype": "Residential Facilities",
     "campus": "poly",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "Lock Shop: RFMT"
+    ]
   },
   {
     "name": "MYRTLE AVENUE PARKING STRUCTURE",
@@ -2774,7 +3070,10 @@
     "sector": "ACAD A",
     "subtype": null,
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "Contact for approval: Frank Castro Frank.G.Castro.III@asu.edu"
+    ]
   },
   {
     "name": "N.E. FIELDS - BAND PRACTICE FIELD",
@@ -3856,7 +4155,10 @@
     "sector": "ACAD A",
     "subtype": null,
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "See Aramark Retail/Dining document for billable rooms."
+    ]
   },
   {
     "name": "NORTH SERVICES BUILDING",
@@ -3890,7 +4192,10 @@
     "sector": "ACAD B",
     "subtype": null,
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "Contact for approval: Frank Castro Frank.G.Castro.III@asu.edu"
+    ]
   },
   {
     "name": "OFFICE & STORAGE CONTAINERS",
@@ -3931,7 +4236,10 @@
     "sector": "ACAD B",
     "subtype": null,
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "A/C calls = EMS. DO NOT DISPATCH FACMAN for RES LIFE CALLS Floors 2-7 and P1 .Dick Norman Kinney Management Services 480-820-3451x404 dick@kinneymanagement.com"
+    ]
   },
   {
     "name": "PACKARD BASEBALL STADIUM",
@@ -3949,7 +4257,10 @@
     "sector": "ATHL",
     "subtype": null,
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "Contact for approval: Frank Castro Frank.G.Castro.III@asu.edu"
+    ]
   },
   {
     "name": "PACKARD STADIUM SHED (NW)",
@@ -3966,7 +4277,10 @@
     "sector": "POLY-A01",
     "subtype": "Residential Facilities",
     "campus": "poly",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "Lock Shop: RFMT (RC=RFMT)"
+    ]
   },
   {
     "name": "PALO VERDE EAST (F)",
@@ -3975,7 +4289,10 @@
     "sector": "RFMT-S2 / ACAD B",
     "subtype": "Residential Facilities",
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "See Aramark Retail/Dining document for billable rooms."
+    ]
   },
   {
     "name": "PALO VERDE WEST (G)",
@@ -3984,7 +4301,10 @@
     "sector": "RFMT-S2 / ACAD B",
     "subtype": "Residential Facilities",
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "See Aramark Retail/Dining document for billable rooms."
+    ]
   },
   {
     "name": "PAPAGO GOLF HOUSE",
@@ -4090,7 +4410,10 @@
     "sector": "POLY-A01",
     "subtype": null,
     "campus": "poly",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "Lock Shop: ISAAC unlocks doors 7am-10:30pm including restrooms"
+    ]
   },
   {
     "name": "PHANTOM RESIDENCE HALL",
@@ -4099,7 +4422,10 @@
     "sector": "POLY-A01",
     "subtype": null,
     "campus": "poly",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "Lock Shop: RFMT"
+    ]
   },
   {
     "name": "PHOENIX MUNICIPAL BALLFIELD",
@@ -4142,7 +4468,10 @@
     "sector": "ACAD A",
     "subtype": null,
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "CALLS FIRST GO TO Grounds"
+    ]
   },
   {
     "name": "PICACHO HALL",
@@ -4311,7 +4640,10 @@
     "sector": "POLY-A01",
     "subtype": null,
     "campus": "poly",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "Lock Shop: Prep Academy HS /Billable"
+    ]
   },
   {
     "name": "ROBSON FAMILY PLAYER FACILITY",
@@ -4346,7 +4678,10 @@
     "sector": "ACAD A",
     "subtype": null,
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "Contact for approval: Frank Castro Frank.G.Castro.III@asu.edu"
+    ]
   },
   {
     "name": "SACATON HALL",
@@ -4355,7 +4690,10 @@
     "sector": "POLY-A01",
     "subtype": null,
     "campus": "poly",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "Lock Shop: Prep Academy HS /Billable"
+    ]
   },
   {
     "name": "SAN PABLO RESIDENCE HALL",
@@ -4364,7 +4702,10 @@
     "sector": "RFMT-S2 / ACAD B",
     "subtype": null,
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "All calls go to RFMT first"
+    ]
   },
   {
     "name": "SAN PABLO RESIDENCE HALL (CLASSROOM)",
@@ -4373,7 +4714,10 @@
     "sector": "RFMT-S2 / ACAD B",
     "subtype": null,
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "FACMAN/classroom support"
+    ]
   },
   {
     "name": "SANDS CLASSROOM & LECTURE HALL",
@@ -4390,7 +4734,10 @@
     "sector": "POLY-A01",
     "subtype": null,
     "campus": "poly",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "Lock Shop: Exterior restroom doors the door handle is locked. Pull door open."
+    ]
   },
   {
     "name": "SANTAN HALL",
@@ -4399,7 +4746,10 @@
     "sector": "POLY-A01",
     "subtype": null,
     "campus": "poly",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "Lock Shop: ISAAC unlocks doors 7am-10:30pm"
+    ]
   },
   {
     "name": "SCHOOL OF HUMAN EVOLUTION AND SOCIAL CHANGE",
@@ -4426,7 +4776,10 @@
     "sector": "ACAD A",
     "subtype": null,
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "CALLS FIRST GO TO Grounds"
+    ]
   },
   {
     "name": "SDFC INTRAMURAL FIELDS",
@@ -7473,7 +7826,10 @@
     "sector": "RFMT-S1 / ACAD B",
     "subtype": "Residential Facilities",
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "All calls RFMT first/ except: ARAMARK-TMPE Wade Noon for approvals noon-wade@aramark.com"
+    ]
   },
   {
     "name": "SONORA CENTER",
@@ -7482,7 +7838,10 @@
     "sector": "RFMT-S1 / ACAD B",
     "subtype": "Residential Facilities",
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "All calls RFMT first"
+    ]
   },
   {
     "name": "SONORAN ARROYO MALL",
@@ -7547,7 +7906,10 @@
     "sector": "ATHL",
     "subtype": null,
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "Contact for approval: Frank Castro Frank.G.Castro.III@asu.edu"
+    ]
   },
   {
     "name": "STADIUM SUPPORT",
@@ -7606,7 +7968,10 @@
     "sector": "ACAD A",
     "subtype": "Residential Facilities",
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "See Aramark Retail/Dining document for billable rooms. Trade needs to be FM Memorial Union"
+    ]
   },
   {
     "name": "STUDENT SERVICES BLDG.",
@@ -7624,7 +7989,10 @@
     "sector": "POLY-A01",
     "subtype": null,
     "campus": "poly",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "Lock Shop: ARAMARK (BILLABLE)"
+    ]
   },
   {
     "name": "STUDENT UNION ANNEX",
@@ -7668,7 +8036,10 @@
     "sector": "ATHL",
     "subtype": null,
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "See Sun Devil Fitness Complex map for billable areas"
+    ]
   },
   {
     "name": "SUN DEVIL FITNESS COMPLEX - 308",
@@ -7756,7 +8127,10 @@
     "sector": "POLY-A01",
     "subtype": null,
     "campus": "poly",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "Lock Shop: Trade = CPLNT"
+    ]
   },
   {
     "name": "SUTTON HALL",
@@ -7774,7 +8148,10 @@
     "sector": "POLY-A01",
     "subtype": "Residential Facilities",
     "campus": "poly",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "Lock Shop: RFMT"
+    ]
   },
   {
     "name": "TAYLOR HALL",
@@ -7799,7 +8176,10 @@
     "sector": "DTPC-A01",
     "subtype": null,
     "campus": "dtpc",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "Email Frank Castro for approval"
+    ]
   },
   {
     "name": "TEACHING GREENHOUSE",
@@ -7862,7 +8242,10 @@
     "sector": "ACAD B",
     "subtype": null,
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "59 E. 1ST STREET; MESA; AZ; 85201 This building is next to R77 - Media and Immersie eXperience Center"
+    ]
   },
   {
     "name": "THERMAL ENERGY STORAGE",
@@ -7888,7 +8271,10 @@
     "sector": "DTPC-A01",
     "subtype": null,
     "campus": "dtpc",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "See Aramark Retail/Dining document for specific billable rooms. Email Wade Noon for approval"
+    ]
   },
   {
     "name": "TICKET TRAILER/SUN DEVIL STADIUM-N",
@@ -8073,7 +8459,10 @@
     "sector": "ACAD B",
     "subtype": "Residential Facilities",
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "ASU Point of Contact for Aramark Jeffrey Rensel Office – 480-965-8715 Cell – 480-577-1502"
+    ]
   },
   {
     "name": "TOOKER HOUSE B",
@@ -8082,7 +8471,10 @@
     "sector": "ACAD B",
     "subtype": "Residential Facilities",
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "ASU Point of Contact for Aramark Jeffrey Rensel Office – 480-965-8715 Cell – 480-577-1502"
+    ]
   },
   {
     "name": "TOOKER HOUSE C",
@@ -8091,7 +8483,10 @@
     "sector": "ACAD B",
     "subtype": "Residential Facilities",
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "ASU Point of Contact for Aramark Jeffrey Rensel Office – 480-965-8715 Cell – 480-577-1502"
+    ]
   },
   {
     "name": "TOOKER HOUSE DINING",
@@ -8100,7 +8495,10 @@
     "sector": "ACAD B",
     "subtype": "Residential Facilities",
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "All calls ACC first/ except: ARAMARK-TMPE Approvals: Wade Noon noon-wade@aramark.com"
+    ]
   },
   {
     "name": "TOPSIDE/BELOW (RESIDENCE)",
@@ -8132,7 +8530,10 @@
     "sector": "ACAD A",
     "subtype": null,
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "Email : Wade Noon noon-wade@aramark.com for approval"
+    ]
   },
   {
     "name": "TYLER STREET PARKING STRUCTURE (McALLISTER & TYLER)",
@@ -8141,7 +8542,10 @@
     "sector": "ACAD A",
     "subtype": null,
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "Contact for approval: Frank Castro Frank.G.Castro.III@asu.edu For cleaning PTS handles"
+    ]
   },
   {
     "name": "UA COLLEGE OF MEDICINE - PHOENIX (ADMINISTRATION)",
@@ -8150,7 +8554,10 @@
     "sector": "DTPC-A01",
     "subtype": null,
     "campus": "dtpc",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "DTPC FACMAN handles locks and key only and moving by request only."
+    ]
   },
   {
     "name": "UA COLLEGE OF MEDICINE - PHOENIX (AUDITORIUM)",
@@ -8159,7 +8566,10 @@
     "sector": "DTPC-A01",
     "subtype": null,
     "campus": "dtpc",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "DTPC FACMAN handles locks and key only"
+    ]
   },
   {
     "name": "UA COLLEGE OF MEDICINE - PHOENIX (STUDENT BLDG)",
@@ -8168,7 +8578,10 @@
     "sector": "DTPC-A01",
     "subtype": null,
     "campus": "dtpc",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "DTPC FACMAN handles locks and key only:"
+    ]
   },
   {
     "name": "UNDERGROUND THERMAL STORAGE",
@@ -8185,7 +8598,10 @@
     "sector": "DTPC-A01",
     "subtype": null,
     "campus": "dtpc",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "See Aramark Retail/Dining document for specific billable rooms."
+    ]
   },
   {
     "name": "UNIVERSITY CENTER - 903",
@@ -8202,7 +8618,10 @@
     "sector": "ACAD B",
     "subtype": null,
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "suite 120: Ski Vascular is billable. Structural issues are FM responsibility."
+    ]
   },
   {
     "name": "UNIVERSITY CENTER BLDG. B",
@@ -8229,7 +8648,10 @@
     "sector": "ACAD A",
     "subtype": null,
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "Approval needed from Lisa Heisler 965-0701 or Avery Romero"
+    ]
   },
   {
     "name": "UNIVERSITY LIBRARY ARCHIVES",
@@ -8256,7 +8678,10 @@
     "sector": "RFMT-S2 / ACAD B",
     "subtype": "Residential Facilities",
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "FACMAN handles 1st floor (only rooms 101-109 and 111. Rooms 110 & 112-124 are RFMT)/all other areas go to RFMT"
+    ]
   },
   {
     "name": "UNIVERSITY TOWERS PARKING STRUCTURE (TOWERS)",
@@ -8265,7 +8690,10 @@
     "sector": "ACAD B",
     "subtype": null,
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "Contact for approval: Frank Castro Frank.G.Castro.III@asu.edu"
+    ]
   },
   {
     "name": "UNIVERSITY TUNNEL NETWORK - 015A",
@@ -8324,7 +8752,10 @@
     "sector": "ACAD B",
     "subtype": "Residential Facilities",
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "All calls go to ACC first"
+    ]
   },
   {
     "name": "VISITOR LOCKER/CONCESSIONS",
@@ -8341,7 +8772,10 @@
     "sector": "ACAD B",
     "subtype": "Residential Facilities",
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "All calls go to ACC first"
+    ]
   },
   {
     "name": "VISTA DEL SOL C",
@@ -8350,7 +8784,10 @@
     "sector": "ACAD B",
     "subtype": "Residential Facilities",
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "All calls go to ACC first"
+    ]
   },
   {
     "name": "VISTA DEL SOL CABANA/PUMP HOUSE",
@@ -8359,7 +8796,10 @@
     "sector": "ACAD B",
     "subtype": "Residential Facilities",
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "All calls go to ACC first"
+    ]
   },
   {
     "name": "VISTA DEL SOL COMMUNITY CENTER (A)",
@@ -8368,7 +8808,10 @@
     "sector": "ACAD B",
     "subtype": "Residential Facilities",
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "All calls go to ACC first"
+    ]
   },
   {
     "name": "VISTA DEL SOL D",
@@ -8377,7 +8820,10 @@
     "sector": "ACAD B",
     "subtype": "Residential Facilities",
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "All calls go to ACC first"
+    ]
   },
   {
     "name": "VISTA DEL SOL DOME",
@@ -8394,7 +8840,10 @@
     "sector": "ACAD B",
     "subtype": "Residential Facilities",
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "All calls go to ACC first"
+    ]
   },
   {
     "name": "VISTA DEL SOL F",
@@ -8403,7 +8852,10 @@
     "sector": "ACAD B",
     "subtype": "Residential Facilities",
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "All calls go to ACC first"
+    ]
   },
   {
     "name": "VISTA DEL SOL G",
@@ -8412,7 +8864,10 @@
     "sector": "ACAD B",
     "subtype": "Residential Facilities",
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "All calls go to ACC first"
+    ]
   },
   {
     "name": "VISTA DEL SOL H",
@@ -8421,7 +8876,10 @@
     "sector": "ACAD B",
     "subtype": "Residential Facilities",
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "All calls go to ACC first"
+    ]
   },
   {
     "name": "VISTA DEL SOL I",
@@ -8430,7 +8888,10 @@
     "sector": "ACAD B",
     "subtype": "Residential Facilities",
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "All calls go to ACC first"
+    ]
   },
   {
     "name": "VISTA DEL SOL J - WEST TOWER",
@@ -8439,7 +8900,10 @@
     "sector": "ACAD B",
     "subtype": "Residential Facilities",
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "All calls go to ACC first"
+    ]
   },
   {
     "name": "VISTA DEL SOL JACUZZI",
@@ -8456,7 +8920,10 @@
     "sector": "ACAD B",
     "subtype": "Residential Facilities",
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "All calls go to ACC first"
+    ]
   },
   {
     "name": "VISTA DEL SOL PARKING STRUCTURE",
@@ -8489,7 +8956,10 @@
     "sector": "RSCH A",
     "subtype": null,
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "Floor Plan"
+    ]
   },
   {
     "name": "WANNER HALL",
@@ -9303,7 +9773,10 @@
     "sector": "ACAD B",
     "subtype": null,
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "All calls go to Facman (per Jason Miller)"
+    ]
   },
   {
     "name": "CAMPUS CHILDREN'S CENTER",
@@ -9357,7 +9830,10 @@
     "sector": "ACAD A",
     "subtype": null,
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "Retail/Restaurant: before accepting the request, get approval from Natalie Adams (natalie.adams3@asu.edu). CC Megan Dugan (megan.dugan@asu.edu) & Paige Radziszewski (paige.radz@asu.edu)"
+    ]
   },
   {
     "name": "UNIVERSITY SERVICES ANNEX",
@@ -9393,7 +9869,10 @@
     "sector": "DTPC-A01",
     "subtype": null,
     "campus": "dtpc",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "FACMAN responsible for landscaping, graffiti removal and locks"
+    ]
   },
   {
     "name": "WATER TOWER MAINTENANCE BLDG.",
@@ -9429,7 +9908,10 @@
     "sector": "POLY-A01",
     "subtype": null,
     "campus": "poly",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "Lock Shop: this is POLY not RFMT"
+    ]
   },
   {
     "name": "FACILITIES SERVICE YARD",
@@ -9447,7 +9929,10 @@
     "sector": "ACAD A",
     "subtype": null,
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "Contact both for approval: Frank Castro Frank.G.Castro.III@asu.edu"
+    ]
   },
   {
     "name": "922 PLACE",
@@ -9456,7 +9941,10 @@
     "sector": "ACAD B",
     "subtype": null,
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "All calls go to RACC"
+    ]
   },
   {
     "name": "FIRST CHRISTIAN CHURCH OF TEMPE",
@@ -9474,7 +9962,10 @@
     "sector": "ACAD B",
     "subtype": null,
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "Facman handles all general maint. HVAC thru URED"
+    ]
   },
   {
     "name": "HANGAR",
@@ -9492,7 +9983,10 @@
     "sector": "ACAD A",
     "subtype": null,
     "campus": "tempe",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "1st floor only - FM responsible (see map)"
+    ]
   },
   {
     "name": "BEACH VOLLEYBALL SHED",
@@ -9510,7 +10004,10 @@
     "sector": "POLY-A01",
     "subtype": null,
     "campus": "poly",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "Lock Shop: FM not responsible"
+    ]
   },
   {
     "name": "EAST VALLEY INSTITUTE OF TECHNOLOGY BUILDING 2",
@@ -9519,7 +10016,10 @@
     "sector": "POLY-A01",
     "subtype": null,
     "campus": "poly",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "Lock Shop: FM not responsible"
+    ]
   },
   {
     "name": "EAST VALLEY INSTITUTE OF TECHNOLOGY BUILDING 3",
@@ -9528,7 +10028,10 @@
     "sector": "POLY-A01",
     "subtype": null,
     "campus": "poly",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "Lock Shop: FM not responsible"
+    ]
   },
   {
     "name": "EVIT PARKING STRUCTURE BUILDING 4",
@@ -9537,7 +10040,10 @@
     "sector": "POLY-A01",
     "subtype": null,
     "campus": "poly",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "Lock Shop: FM not responsible"
+    ]
   },
   {
     "name": "EVIT AVIATION EDUCATION BUILDING 5",
@@ -9546,7 +10052,10 @@
     "sector": "POLY-A01",
     "subtype": null,
     "campus": "poly",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "Lock Shop: FM not responsible"
+    ]
   },
   {
     "name": "EVIT VETERINARIAN ASSISTANT BUILDING 6 (BUILDING A)",
@@ -9555,7 +10064,10 @@
     "sector": "POLY-A01",
     "subtype": null,
     "campus": "poly",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "Lock Shop: FM not responsible"
+    ]
   },
   {
     "name": "EVIT ENGINEERING BUILDING 7 (BUILDING B)",
@@ -9564,7 +10076,10 @@
     "sector": "POLY-A01",
     "subtype": null,
     "campus": "poly",
-    "zoneSource": "2027 zone guide"
+    "zoneSource": "2027 zone guide",
+    "notes": [
+      "Lock Shop: FM not responsible"
+    ]
   },
   {
     "name": "GAZEBO AT E754",

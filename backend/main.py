@@ -409,6 +409,13 @@ async def ask_layer2_model(action_requested, chunks):
     return parsed
 
 
+def combined_notes(entry):
+    """The task's own notes plus its section's heading note (e.g. Lock Shop's "not RFMT" rule)."""
+    parts = [entry.get("sectionNote"), entry.get("notes")]
+    parts = [part for part in parts if isinstance(part, str) and part]
+    return "\n".join(parts) or None
+
+
 def build_suggestion(task_description, category, confidence, matched_on):
     """Builds a full suggestion from the knowledge base entry. The model only names the task;
     task code, category, trades and notes always come from the JSON. Returns (suggestion, errors).
@@ -442,7 +449,7 @@ def build_suggestion(task_description, category, confidence, matched_on):
         "taskDescription": task_description,
         "category": found_category,
         "tradeOptions": trade_options,
-        "notes": entry["notes"] if isinstance(entry.get("notes"), str) else None,
+        "notes": combined_notes(entry),
         "confidence": confidence,
         "matchedOn": matched_on,
     }
@@ -681,6 +688,7 @@ async def building_search(q: str = ""):
                 "rateSchedule": building.get("rateSchedule"),
                 "sector": building.get("sector"),
                 "campus": building.get("campus"),  # lets the side panel narrow that campus's zone
+                "notes": building.get("notes") or [],  # zone/RFMT guide notes shown under the zone
             })
             if len(results) == 8:
                 break

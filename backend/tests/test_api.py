@@ -62,7 +62,7 @@ def kb_suggestion(module, description, confidence=0.9):
                 "taskDescription": description,
                 "category": category,
                 "tradeOptions": {c: module.format_trade_for_suggestion(t) for c, t in entry["trade"].items()},
-                "notes": entry["notes"],
+                "notes": module.combined_notes(entry),
                 "confidence": confidence,
                 "matchedOn": "keyword: test",
             }
@@ -299,13 +299,32 @@ def test_building_search(load_app):
     code = module.BUILDINGS[0]["bldgCode"]
     assert client.get("/api/building-search", params={"q": code.lower()}).json()[0]["bldgCode"] == code
     results = client.get("/api/building-search", params={"q": "hall"}).json()
-    assert 0 < len(results) <= 8 and set(results[0]) == {"name", "bldgCode", "rateSchedule", "sector", "campus"}
+    assert 0 < len(results) <= 8 and set(results[0]) == {"name", "bldgCode", "rateSchedule", "sector", "campus", "notes"}
 
 
 def test_building_zones_come_from_the_2027_guide(load_app):
     _, client = load_app()
     bulldog = client.get("/api/building-search", params={"q": "bulldog"}).json()[0]
     assert (bulldog["sector"], bulldog["campus"]) == ("ACAD A", "tempe")  # was TMPE-B02 before the 2027 guide
+
+
+def test_building_notes_come_from_the_zone_and_rfmt_guides(load_app):
+    _, client = load_app()
+    bell = client.get("/api/building-search", params={"q": "bell hall"}).json()[0]
+    assert "Lock Shop: this is POLY not RFMT" in bell["notes"]  # from the POLY zone guide's Lock Shop section
+    towers = client.get("/api/building-search", params={"q": "university towers"}).json()[0]
+    assert any("FACMAN handles 1st floor" in note for note in towers["notes"])  # from the TMPE RFMT guide
+
+
+def test_lock_shop_section_note_is_shown_but_not_sent_to_the_model(load_app, monkeypatch):
+    """The Lock Shop heading says lock requests go to TMPE/POLY/WEST/DTPC, not RFMT."""
+    module, client = load_app()
+    calls = queue_model_replies(module, monkeypatch, {"suggestions": [pick("Lock Change", "Lock Shop")], "noMatchFound": False})
+
+    body = client.post("/api/suggest", json={"actionRequested": "need the lock changed on my dorm room"}).json()
+
+    assert "not RFMT" in body["suggestions"][0]["notes"]
+    assert "TMPE-POLY-WEST-DTPC" not in "".join(m["content"] for m in calls[0]["messages"])
 
 
 def test_cors_allows_only_the_extension(load_app):

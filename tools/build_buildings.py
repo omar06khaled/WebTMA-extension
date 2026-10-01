@@ -10,6 +10,8 @@ zone guide lists, sets:
     rateSchedule  from the guide when it gives one
     campus        tempe | dtpc | poly | west (the side panel uses it to narrow the trade)
     zoneSource    "2027 zone guide" (the guide's year is taken from --label)
+    notes         the building's notes from the zone guide and the RFMT guides (list of strings;
+                  shown under the zone when the building is picked)
 Buildings a guide lists that the old file doesn't have are added. Buildings whose old sector
 was a zone the new guide renamed (TMPE-A/B/C/E.., DTPC-A02) but that the guide no longer
 lists get sector "Not in <label> - check" so a stale zone is never shown.
@@ -33,6 +35,8 @@ GUIDES = {
     "POLY Zone Guide": ("poly", [("POLY A-01", "POLY-A01"), ("LOCK SHOP", None), ("RESEARCH A", "RSCH A")]),
     "West Zone Guide": ("west", [("WEST - ZONE A", "WEST-A01"), ("WEST-GRNDS", None)]),
 }
+# Building notes found under a shop section of a zone guide, filled by read_guides.
+SHOP_NOTES = {}
 # Old sectors that name a zone the 2027 guides replaced.
 RENAMED_SECTOR = re.compile(r"^(TMPE-[ABCE]\d*|DTPC-A02.*)$")
 
@@ -57,7 +61,7 @@ def read_guides(path):
     for sheet, (campus, headers) in GUIDES.items():
         if sheet not in workbook.sheetnames:
             raise SystemExit(f"Sheet {sheet!r} not found - check for a rename")
-        zone = None
+        zone, section = None, None
         for row in workbook[sheet].iter_rows(values_only=True):
             cells = [clean(c) for c in row] + [""] * 6
             rate, code, name = cells[0], cells[1], cells[2]
@@ -65,16 +69,79 @@ def read_guides(path):
                 joined = " ".join(cells).upper()
                 for text, label in headers:
                     if text in joined:
-                        zone = label
+                        zone, section = label, (None if label else text.title())
                 continue
-            if zone is None or not name or code.upper().startswith("BLDG"):
+            if not name or code.upper().startswith("BLDG"):
                 continue
-            entry = found.setdefault(norm_code(code), {"name": name, "rate": "", "campus": campus, "zones": []})
+            note = " | ".join(cell for cell in cells[3:] if cell)
+            if zone is None:
+                # A shop section (e.g. POLY "Lock Shop"): keep its building notes, but it's not a zone.
+                if section and note:
+                    line = f"{section}: {note}"
+                    entry = SHOP_NOTES.setdefault(norm_code(code), [])
+                    if line not in entry:
+                        entry.append(line)
+                continue
+            entry = found.setdefault(norm_code(code), {"name": name, "rate": "", "campus": campus, "zones": [], "notes": []})
             if zone not in entry["zones"]:
                 entry["zones"].append(zone)
+            if note and note not in entry["notes"]:
+                entry["notes"].append(note)
             if rate in ("CM", "CB", "CM/CB") and not entry["rate"]:
                 entry["rate"] = rate
     return found
+
+
+# RFMT guides: sheet -> (column with the building code, column with the note). Rows whose code
+# column isn't a building code (contact tables, headers) are skipped.
+RFMT_GUIDES = {"TMPE RFMT Guide": (0, 3), "WEST RFMT Guide": (0, 2)}
+CODE_PATTERN = re.compile(r"^[A-Z]?\d{2,4}[A-Z]?$")
+# The POLY RFMT guide lists buildings by name, not code: (name in the guide, note columns).
+POLY_RFMT_SHEET = "POLY RFMT Guide"
+
+
+def read_rfmt_notes(path, buildings):
+    """Returns {code: [note, ..]} from the RFMT guides."""
+    workbook = openpyxl.load_workbook(path, read_only=True, data_only=True)
+    notes = collections.defaultdict(list)
+    for sheet, (code_col, note_col) in RFMT_GUIDES.items():
+        if sheet not in workbook.sheetnames:
+            raise SystemExit(f"Sheet {sheet!r} not found - check for a rename")
+        for row in workbook[sheet].iter_rows(values_only=True):
+            cells = [clean(c) for c in row] + [""] * 6
+            code = norm_code(cells[code_col])
+            note = cells[note_col]
+            if CODE_PATTERN.match(code) and note and note not in notes[code]:
+                notes[code].append(note)
+
+    if POLY_RFMT_SHEET in workbook.sheetnames:
+        poly = [b for b in buildings if b.get("campus") == "poly" or (b.get("sector") or "").startswith("POLY")]
+        section = "Assign"
+        for row in workbook[POLY_RFMT_SHEET].iter_rows(values_only=True):
+            cells = [clean(c) for c in row] + [""] * 6
+            if not cells[0] and cells[1]:
+                section = cells[1]  # e.g. "Pest Control"
+                continue
+            name, text = cells[0], cells[1]
+            if not name or name.lower() in ("name", "building name"):
+                continue
+            if not text:
+                # A sentence about named halls, e.g. "Lantana and Century Hall - fob reader/card
+                # access are managed by Capstone...": attach it to each residence hall it names.
+                for building in poly:
+                    first_word = (building.get("name") or "").split(" ")[0]
+                    if building.get("subtype") and len(first_word) >= 5 and first_word in name.upper():
+                        code = norm_code(building["bldgCode"])
+                        if name not in notes[code]:
+                            notes[code].append(name)
+                continue
+            for building in poly:
+                if name.upper() == (building.get("name") or "").upper():
+                    code = norm_code(building["bldgCode"])
+                    line = f"{section}: {text}" if section != "Assign" else text
+                    if line not in notes[code]:
+                        notes[code].append(line)
+    return notes
 
 
 def main():
@@ -88,6 +155,7 @@ def main():
     guide = read_guides(args.workbook)
     with open(args.buildings, encoding="utf-8") as handle:
         buildings = json.load(handle)
+    rfmt_notes = read_rfmt_notes(args.workbook, buildings)
 
     seen, stats = set(), collections.Counter()
     for building in buildings:
@@ -100,6 +168,8 @@ def main():
             building["rateSchedule"] = info["rate"] or building.get("rateSchedule")
             building["campus"] = info["campus"]
             building["zoneSource"] = args.label
+            if info["notes"]:
+                building["notes"] = list(info["notes"])
             seen.add(code)
             stats["updated from guide"] += 1
         elif RENAMED_SECTOR.match(old):
@@ -124,8 +194,17 @@ def main():
             "subtype": None,
             "campus": info["campus"],
             "zoneSource": args.label,
+            **({"notes": list(info["notes"])} if info["notes"] else {}),
         })
         stats["added from guide"] += 1
+
+    for building in buildings:
+        code = norm_code(building.get("bldgCode") or "")
+        extra = [note for note in SHOP_NOTES.get(code, []) + rfmt_notes.get(code, []) if note not in building.get("notes", [])]
+        if extra:
+            building["notes"] = building.get("notes", []) + extra
+            stats["shop / RFMT guide notes added"] += 1
+    stats["buildings with notes"] = sum(1 for b in buildings if b.get("notes"))
 
     with open(args.out, "w", encoding="utf-8") as handle:
         json.dump(buildings, handle, indent=2, ensure_ascii=False)
