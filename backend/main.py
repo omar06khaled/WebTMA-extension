@@ -255,7 +255,12 @@ B. Match on that meaning, not on shared words. The same word can point to differ
 C. Pick by the task description first. Notes are extra dispatch instructions for an
    entry; they do not make that entry cover other problems.
 D. Prefer the most specific task description that fits. Use a "GENERAL" or "OTHER"
-   entry only when no more specific entry matches.
+   entry only when no more specific entry matches. When the request names a fixture or
+   piece of equipment that has its own entry (shower, sink/faucet, toilet, urinal,
+   drinking fountain, etc.), suggest that entry - even if the symptom (no water
+   pressure, leak, discoloration, debris) sounds system-wide. If it names several such
+   fixtures, suggest each one (up to the 3-suggestion limit), the fixture named first
+   ranked first; a GENERAL entry may come after them, never before.
 E. Room temperature complaints (a space is too hot or too cold): use "Hot Call" when
    the space is too hot or too warm right now, and "Cold Call" when it is too cold
    right now. Decide by the condition being reported now, not by any temperature word

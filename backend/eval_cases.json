@@ -285,5 +285,12 @@
    "Door/Opening/Hardware"
   ],
   "category": "Carpentry"
+ },
+ {
+  "text": "Priority: True\nFACMAN- no water pressure, beads coming out of shower and faucet",
+  "accept": [
+   "Shower",
+   "Sink"
+  ]
  }
 ]
