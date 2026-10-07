@@ -23,7 +23,7 @@ window.__WEBTMA_SIDEPANEL_BUILD__ = BUILD_MARKER;
 document.documentElement.dataset.webtmaBuild = BUILD_MARKER;
 console.log(`[WebTMA SP] loaded ${BUILD_MARKER}`);
 
-const SERVER_BASE_URL = "https://webtma-backend.onrender.com"; // FastAPI backend (was webtma-extension = old Node server)
+const SERVER_BASE_URL = "http://localhost:3000"; // Local FastAPI backend (VS Code Run and Debug). Render was https://webtma-backend.onrender.com
 
 let manualMode = false;
 
