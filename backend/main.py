@@ -39,6 +39,9 @@ OPENAI_API_KEY = (os.getenv("OPENAI_API_KEY") or "").lstrip("=").strip()
 if not OPENAI_API_KEY:
     raise RuntimeError("OPENAI_API_KEY is not set - server cannot start")
 OPENAI_MODEL = (os.getenv("OPENAI_MODEL") or "gpt-4o-mini").strip()
+# Empty = OpenAI directly. ASU CreateAI (OpenAI-compatible): https://api-main-poc.aiml.asu.edu/v1
+# with the CreateAI token as OPENAI_API_KEY and OPENAI_MODEL like "openai/gpt4_1".
+OPENAI_BASE_URL = (os.getenv("OPENAI_BASE_URL") or "").strip() or None
 
 LAYER2_ENABLED = (os.getenv("LAYER2_ENABLED") or "").strip().lower() == "true"
 LAYER2_URL = (os.getenv("LAYER2_URL") or "").strip()
@@ -50,7 +53,7 @@ LAYER1_MODEL_TIMEOUT_S = 60
 
 if LAYER2_ENABLED and (not LAYER2_URL or not SUPABASE_ANON_KEY):
     raise RuntimeError("LAYER2_ENABLED is true but LAYER2_URL or SUPABASE_ANON_KEY is not set - server cannot start")
-log.info(f"[WebTMA SERVER] model {OPENAI_MODEL}, Layer 2 {'enabled' if LAYER2_ENABLED else 'disabled'}")
+log.info(f"[WebTMA SERVER] model {OPENAI_MODEL} via {OPENAI_BASE_URL or 'OpenAI'}, Layer 2 {'enabled' if LAYER2_ENABLED else 'disabled'}")
 
 AUDIT_LOG_PATH = Path(os.getenv("AUDIT_LOG_PATH") or ROOT / "audit.log")
 
@@ -78,7 +81,7 @@ with open(ROOT / "buildings_lookup.json", encoding="utf-8") as handle:
     BUILDINGS = json.load(handle)
 BUILDINGS_BY_CODE = {b["bldgCode"].upper(): b for b in BUILDINGS if b.get("bldgCode")}
 
-openai_client = AsyncOpenAI(api_key=OPENAI_API_KEY, max_retries=3)
+openai_client = AsyncOpenAI(api_key=OPENAI_API_KEY, base_url=OPENAI_BASE_URL, max_retries=3)
 
 app = FastAPI(title="WebTMA Assistant backend")
 # Only the extension may call this from a browser. Requests with no Origin (curl, server-to-server)
