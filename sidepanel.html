@@ -41,6 +41,35 @@
       background: var(--asu-maroon);
       color: #fff;
       padding: 12px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Reset button (Manual mode only). White on maroon, labeled with text, not color. */
+    #btn-reset {
+      display: none;
+      flex-shrink: 0;
+      padding: 5px 10px;
+      font-family: inherit;
+      font-size: 12px;
+      font-weight: 600;
+      color: #fff;
+      background: transparent;
+      border: 2px solid #fff;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    #btn-reset:hover {
+      color: var(--asu-maroon);
+      background: #fff;
+    }
+
+    #btn-reset:focus-visible {
+      outline: 3px solid #fff;
+      outline-offset: 2px;
     }
 
     .header__title {
@@ -559,8 +588,11 @@
 
   <!-- 1. Header -->
   <header class="header">
-    <div class="header__title">WebTMA Assistant</div>
-    <div class="header__subtitle">ASU Facilities Management</div>
+    <div>
+      <div class="header__title">WebTMA Assistant</div>
+      <div class="header__subtitle">ASU Facilities Management</div>
+    </div>
+    <button id="btn-reset" type="button" title="Clear the input and results">&#x21BA; Reset</button>
   </header>
 
   <!-- 2. Action Requested display -->

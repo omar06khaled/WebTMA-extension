@@ -18,6 +18,7 @@ const labelAuto = document.getElementById("label-auto");
 const labelManual = document.getElementById("label-manual");
 const actionLabel = document.getElementById("action-label");
 const testerInput = document.getElementById("tester-name");
+const btnReset = document.getElementById("btn-reset");
 const BUILD_MARKER = "sidepanel-build-2026-04-13-1426";
 
 window.__WEBTMA_SIDEPANEL_BUILD__ = BUILD_MARKER;
@@ -38,6 +39,9 @@ let selectedCampus = null;
 
 /** @type {string|null} */
 let currentAuditTimestamp = null;
+
+/** Bumped on every request and on Reset, so a reply that arrives after Reset is ignored. */
+let requestSeq = 0;
 
 /** @type {chrome.runtime.Port | null} */
 let port = null;
@@ -80,6 +84,7 @@ function updateModeUI() {
     actionLabel.textContent = "Manual Input - Action Requested";
     actionTextarea.placeholder = "Paste or type Action Requested here...";
     btnSuggest.style.display = "block";
+    btnReset.style.display = "block";
     labelAuto.classList.remove("active");
     labelManual.classList.add("active");
   } else {
@@ -87,6 +92,7 @@ function updateModeUI() {
     actionLabel.textContent = "Detected - Action Requested";
     actionTextarea.placeholder = "Waiting for WebTMA form...";
     btnSuggest.style.display = "none";
+    btnReset.style.display = "none";
     labelAuto.classList.add("active");
     labelManual.classList.remove("active");
   }
@@ -219,6 +225,7 @@ async function fetchSuggestions(actionText) {
   }
 
   currentAuditTimestamp = null;
+  const thisRequest = ++requestSeq;
 
   try {
     const response = await fetch(`${SERVER_BASE_URL}/api/suggest`, {
@@ -234,6 +241,8 @@ async function fetchSuggestions(actionText) {
       const raw = await response.text().catch(() => "<unreadable>");
       throw new Error(`Backend returned unparseable data: ${raw}`);
     }
+
+    if (thisRequest !== requestSeq) return; // Reset (or a newer request) happened while waiting
 
     if (!response.ok) {
       const detail = data?.detail || data?.error || `HTTP ${response.status}`;
@@ -276,6 +285,7 @@ async function fetchSuggestions(actionText) {
       layer2,
     });
   } catch (error) {
+    if (thisRequest !== requestSeq) return;
     console.error(`[WebTMA SP] fetch failed: ${error.message}`);
     currentAuditTimestamp = null;
     suggestionsDiv.innerHTML = "";
@@ -819,6 +829,14 @@ function narrowZoneRows(card, building) {
 modeToggle.addEventListener("change", () => {
   manualMode = modeToggle.checked;
   updateModeUI();
+});
+
+btnReset.addEventListener("click", () => {
+  requestSeq++; // drop any reply still in flight
+  currentAuditTimestamp = null;
+  actionTextarea.value = "";
+  renderSuggestions([], { nextState: "idle" }); // clears cards and selection, shows the waiting state
+  actionTextarea.focus();
 });
 
 btnSuggest.addEventListener("click", () => {
