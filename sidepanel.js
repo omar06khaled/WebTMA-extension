@@ -17,6 +17,7 @@ const btnSuggest = document.getElementById("btn-suggest");
 const labelAuto = document.getElementById("label-auto");
 const labelManual = document.getElementById("label-manual");
 const actionLabel = document.getElementById("action-label");
+const testerInput = document.getElementById("tester-name");
 const BUILD_MARKER = "sidepanel-build-2026-04-13-1426";
 
 window.__WEBTMA_SIDEPANEL_BUILD__ = BUILD_MARKER;
@@ -40,6 +41,15 @@ let currentAuditTimestamp = null;
 
 /** @type {chrome.runtime.Port | null} */
 let port = null;
+
+/** Preset reasons for a wrong suggestion. Keys must match FEEDBACK_REASONS in backend/main.py. */
+const FEEDBACK_REASONS = [
+  ["wrong_task", "Wrong task"],
+  ["wrong_trade", "Wrong trade"],
+  ["wrong_campus_zone", "Wrong campus / zone"],
+  ["other", "Other"],
+];
+const TESTER_STORAGE_KEY = "betaTesterName";
 
 /** @type {"idle"|"loading"|"results"|"no-match"|"error"} */
 let state = "idle";
@@ -275,6 +285,164 @@ async function fetchSuggestions(actionText) {
   }
 }
 
+// ---------------------------------------------------------------- beta feedback
+
+function loadTesterName() {
+  try {
+    chrome.storage.local.get(TESTER_STORAGE_KEY, (items) => {
+      if (typeof items?.[TESTER_STORAGE_KEY] === "string") testerInput.value = items[TESTER_STORAGE_KEY];
+    });
+  } catch (error) {
+    console.error(`[WebTMA SP] could not load tester name: ${error.message}`);
+  }
+  testerInput.addEventListener("change", () => {
+    try {
+      chrome.storage.local.set({ [TESTER_STORAGE_KEY]: testerInput.value.trim() });
+    } catch (error) {
+      console.error(`[WebTMA SP] could not save tester name: ${error.message}`);
+    }
+  });
+}
+
+async function postFeedback(payload) {
+  const response = await fetch(`${SERVER_BASE_URL}/api/feedback`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  });
+  if (!response.ok) {
+    const data = await response.json().catch(() => null);
+    throw new Error(data?.error || data?.detail || `HTTP ${response.status}`);
+  }
+}
+
+/**
+ * Correct / Wrong controls for one suggestion card. Every submission is appended server-side,
+ * so changing an answer adds a new line and the latest one counts.
+ * @param {object} suggestion
+ * @param {"layer1"|"layer2"} source
+ * @param {string|null} auditTimestamp  captured when the cards were rendered
+ */
+function buildFeedbackSection(suggestion, source, auditTimestamp) {
+  const section = document.createElement("div");
+  section.className = "feedback";
+  // Keep clicks and typing in here from selecting the card.
+  section.addEventListener("click", (e) => e.stopPropagation());
+
+  const question = document.createElement("div");
+  question.className = "feedback-q";
+  question.textContent = "Beta: was this suggestion right?";
+
+  const buttons = document.createElement("div");
+  buttons.className = "feedback-buttons";
+  const btnCorrect = document.createElement("button");
+  btnCorrect.type = "button";
+  btnCorrect.className = "fb-btn";
+  btnCorrect.textContent = "\u2713 Correct";
+  btnCorrect.setAttribute("aria-pressed", "false");
+  const btnWrong = document.createElement("button");
+  btnWrong.type = "button";
+  btnWrong.className = "fb-btn";
+  btnWrong.textContent = "\u2717 Wrong";
+  btnWrong.setAttribute("aria-pressed", "false");
+  buttons.append(btnCorrect, btnWrong);
+
+  const form = document.createElement("div");
+  form.className = "feedback-form";
+  form.hidden = true;
+  const fieldset = document.createElement("fieldset");
+  const legend = document.createElement("legend");
+  legend.textContent = "What was wrong? (pick at least one)";
+  fieldset.appendChild(legend);
+  for (const [key, label] of FEEDBACK_REASONS) {
+    const row = document.createElement("label");
+    const box = document.createElement("input");
+    box.type = "checkbox";
+    box.value = key;
+    row.append(box, document.createTextNode(` ${label}`));
+    fieldset.appendChild(row);
+  }
+  const note = document.createElement("textarea");
+  note.maxLength = 500;
+  note.placeholder = "Optional note - what should it have been?";
+  note.setAttribute("aria-label", "Optional note");
+  const btnSubmit = document.createElement("button");
+  btnSubmit.type = "button";
+  btnSubmit.className = "fb-submit";
+  btnSubmit.textContent = "Submit feedback";
+  form.append(fieldset, note, btnSubmit);
+
+  const status = document.createElement("div");
+  status.className = "feedback-status";
+  status.setAttribute("role", "status");
+
+  section.append(question, buttons, form, status);
+
+  if (!auditTimestamp) {
+    btnCorrect.disabled = btnWrong.disabled = true;
+    status.textContent = "\u26A0 Feedback unavailable for this result (no audit ID)";
+    return section;
+  }
+
+  const setPressed = (verdict) => {
+    btnCorrect.setAttribute("aria-pressed", String(verdict === "correct"));
+    btnWrong.setAttribute("aria-pressed", String(verdict === "wrong"));
+  };
+
+  const send = async (verdict, reasons, noteText) => {
+    btnCorrect.disabled = btnWrong.disabled = btnSubmit.disabled = true;
+    status.textContent = "Saving...";
+    try {
+      await postFeedback({
+        auditTimestamp,
+        suggestion: {
+          taskDescription: suggestion.taskDescription,
+          category: suggestion.category ?? null,
+          taskCode: suggestion.taskCode ?? null,
+          source,
+        },
+        verdict,
+        reasons,
+        note: noteText || null,
+        tester: testerInput.value.trim() || null,
+      });
+      setPressed(verdict);
+      section.dataset.saved = verdict;
+      form.hidden = true;
+      const reasonLabels = FEEDBACK_REASONS.filter(([key]) => reasons.includes(key)).map(([, label]) => label.toLowerCase());
+      status.textContent = verdict === "correct"
+        ? "Saved: \u2713 Correct"
+        : `Saved: \u2717 Wrong (${reasonLabels.join(", ")})`;
+    } catch (error) {
+      console.error(`[WebTMA SP] feedback failed: ${error.message}`);
+      status.textContent = `\u26A0 Not saved: ${error.message}`;
+    } finally {
+      btnCorrect.disabled = btnWrong.disabled = btnSubmit.disabled = false;
+    }
+  };
+
+  btnCorrect.addEventListener("click", () => {
+    if (section.dataset.saved === "correct") return; // already recorded
+    send("correct", [], null);
+  });
+
+  btnWrong.addEventListener("click", () => {
+    form.hidden = !form.hidden;
+    if (!form.hidden) fieldset.querySelector("input")?.focus();
+  });
+
+  btnSubmit.addEventListener("click", () => {
+    const reasons = [...fieldset.querySelectorAll("input:checked")].map((box) => box.value);
+    if (reasons.length === 0) {
+      status.textContent = "\u26A0 Pick at least one reason";
+      return;
+    }
+    send("wrong", reasons, note.value.trim());
+  });
+
+  return section;
+}
+
 function renderSuggestions(suggestions, options = {}) {
   const { lowConfidence = false, nextState = "results", layer2 = null } = options;
 
@@ -290,6 +458,7 @@ function renderSuggestions(suggestions, options = {}) {
 
   for (const suggestion of suggestions) {
     const card = buildCard(suggestion);
+    card.appendChild(buildFeedbackSection(suggestion, "layer1", currentAuditTimestamp));
     suggestionsDiv.appendChild(card);
     initBuildingSearch(card);
   }
@@ -315,6 +484,9 @@ function renderSuggestions(suggestions, options = {}) {
 
   if (layer2) {
     const layer2Card = buildLayer2Card(layer2);
+    if (layer2.suggestion) {
+      layer2Card.appendChild(buildFeedbackSection(layer2.suggestion, "layer2", currentAuditTimestamp));
+    }
     suggestionsDiv.appendChild(layer2Card);
     if (layer2.suggestion) initBuildingSearch(layer2Card);
   }
@@ -668,6 +840,7 @@ actionTextarea.addEventListener("keydown", (event) => {
 
 updateModeUI();
 connectPort();
+loadTesterName();
 
 btnApply.addEventListener("click", async () => {
   if (selectedSuggestion === null) {

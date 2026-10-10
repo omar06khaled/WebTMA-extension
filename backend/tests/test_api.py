@@ -293,6 +293,40 @@ def test_audit_applied_updates_matching_entry(load_app, monkeypatch):
     assert client.post("/api/audit/applied", json={"appliedSuggestion": "x"}).status_code == 400
 
 
+def test_feedback_is_appended_and_validated(load_app, monkeypatch, tmp_path):
+    monkeypatch.setenv("FEEDBACK_LOG_PATH", str(tmp_path / "feedback.jsonl"))
+    module, client = load_app()
+    queue_model_replies(module, monkeypatch, {"suggestions": [pick("Lighting", "Electrical")], "noMatchFound": False})
+    timestamp = client.post("/api/suggest", json={"actionRequested": "light out in 101"}).json()["auditTimestamp"]
+    lighting = {"taskDescription": "Lighting", "category": "Electrical", "taskCode": 123, "source": "layer1"}
+
+    ok = {"auditTimestamp": timestamp, "suggestion": lighting, "verdict": "wrong",
+          "reasons": ["wrong_trade"], "note": "  should be RFMT  ", "tester": "Omar"}
+    assert client.post("/api/feedback", json=ok).json()["ok"] is True
+    # changing the answer appends a second line instead of overwriting
+    assert client.post("/api/feedback", json={"auditTimestamp": timestamp, "suggestion": lighting, "verdict": "correct"}).status_code == 200
+
+    lines = [json.loads(l) for l in module.FEEDBACK_LOG_PATH.read_text().splitlines()]
+    assert len(lines) == 2
+    assert lines[0]["actionRequested"] == "light out in 101" and lines[0]["note"] == "should be RFMT"
+    assert lines[0]["reasons"] == ["wrong_trade"] and lines[0]["tester"] == "Omar"
+    assert lines[1]["verdict"] == "correct" and lines[1]["reasons"] == [] and lines[1]["tester"] is None
+
+    bad = [
+        {**ok, "verdict": "maybe"},
+        {**ok, "reasons": ["made_up"]},
+        {**ok, "reasons": []},                       # wrong needs a reason
+        {**ok, "verdict": "correct"},                # correct can't carry reasons
+        {**ok, "suggestion": {"source": "layer1"}},
+        {**ok, "suggestion": {**lighting, "source": "layer3"}},
+        {k: v for k, v in ok.items() if k != "auditTimestamp"},
+    ]
+    for body in bad:
+        assert client.post("/api/feedback", json=body).status_code == 400, body
+    assert client.post("/api/feedback", json={**ok, "auditTimestamp": "nope"}).status_code == 404
+    assert len(module.FEEDBACK_LOG_PATH.read_text().splitlines()) == 2
+
+
 def test_building_search(load_app):
     module, client = load_app()
     assert client.get("/api/building-search", params={"q": "a"}).json() == []

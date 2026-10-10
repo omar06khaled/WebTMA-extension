@@ -5,6 +5,7 @@ response shapes, so the Chrome extension works unchanged:
 
     POST /api/suggest          Layer 1 classification, with optional Layer 2 desk manual fallback
     POST /api/audit/applied    record which suggestion the operator applied
+    POST /api/feedback         beta testers rate a suggestion correct/wrong (appended to feedback.jsonl)
     GET  /api/building-search  building lookup by name or code
 
 Model calls go to OpenAI (default gpt-4o-mini, override with OPENAI_MODEL).
@@ -56,6 +57,12 @@ if LAYER2_ENABLED and (not LAYER2_URL or not SUPABASE_ANON_KEY):
 log.info(f"[WebTMA SERVER] model {OPENAI_MODEL} via {OPENAI_BASE_URL or 'OpenAI'}, Layer 2 {'enabled' if LAYER2_ENABLED else 'disabled'}")
 
 AUDIT_LOG_PATH = Path(os.getenv("AUDIT_LOG_PATH") or ROOT / "audit.log")
+FEEDBACK_LOG_PATH = Path(os.getenv("FEEDBACK_LOG_PATH") or ROOT / "feedback.jsonl")
+
+# Preset reasons a tester can pick when a suggestion is wrong. Keep in sync with FEEDBACK_REASONS in sidepanel.js.
+FEEDBACK_REASONS = {"wrong_task", "wrong_trade", "wrong_campus_zone", "other"}
+FEEDBACK_NOTE_MAX = 500
+FEEDBACK_TESTER_MAX = 60
 
 with open(ROOT / "firstCallExamples_enriched.json", encoding="utf-8") as handle:
     KNOWLEDGE_BASE = json.load(handle)
@@ -675,6 +682,91 @@ async def audit_applied(request: Request):
         log.error(f"[WebTMA SERVER] Failed to write audit.log: {exc}")
         return error(500, "Could not write audit log", str(exc))
     return {"ok": True}
+
+
+def find_audit_entry(audit_timestamp):
+    """Return the audit.log entry with this timestamp, or None. Raises OSError if the log can't be read."""
+    if not AUDIT_LOG_PATH.exists():
+        return None
+    for line in AUDIT_LOG_PATH.read_text(encoding="utf-8").split("\n"):
+        if not line.strip():
+            continue
+        try:
+            entry = json.loads(line)
+        except json.JSONDecodeError:
+            continue
+        if isinstance(entry, dict) and entry.get("timestamp") == audit_timestamp:
+            return entry
+    return None
+
+
+@app.post("/api/feedback")
+async def feedback(request: Request):
+    """Append one tester rating per line. A changed answer is a new line; the latest line per
+    (auditTimestamp, source, taskDescription, tester) is the current answer."""
+    body = await read_json_body(request) or {}
+    audit_timestamp = body.get("auditTimestamp")
+    suggestion = body.get("suggestion")
+    verdict = body.get("verdict")
+    reasons = body.get("reasons", [])
+    note = body.get("note")
+    tester = body.get("tester")
+
+    if not isinstance(audit_timestamp, str) or not audit_timestamp:
+        return error(400, "auditTimestamp is required and must be a string")
+    if not isinstance(suggestion, dict) or not is_nonempty_string(suggestion.get("taskDescription")):
+        return error(400, "suggestion.taskDescription is required")
+    source = suggestion.get("source", "layer1")
+    if source not in ("layer1", "layer2"):
+        return error(400, "suggestion.source must be layer1 or layer2")
+    if verdict not in ("correct", "wrong"):
+        return error(400, "verdict must be 'correct' or 'wrong'")
+    if not isinstance(reasons, list) or not all(isinstance(r, str) and r in FEEDBACK_REASONS for r in reasons):
+        return error(400, f"reasons must be a list drawn from {sorted(FEEDBACK_REASONS)}")
+    if verdict == "correct" and reasons:
+        return error(400, "reasons are only allowed when verdict is 'wrong'")
+    if verdict == "wrong" and not reasons:
+        return error(400, "pick at least one reason when verdict is 'wrong'")
+    if note is not None and not isinstance(note, str):
+        return error(400, "note must be a string")
+    if tester is not None and not isinstance(tester, str):
+        return error(400, "tester must be a string")
+
+    note = (note or "").strip()[:FEEDBACK_NOTE_MAX] or None
+    tester = (tester or "").strip()[:FEEDBACK_TESTER_MAX] or None
+
+    try:
+        audit_entry = find_audit_entry(audit_timestamp)
+    except OSError as exc:
+        log.error(f"[WebTMA SERVER] Failed to read audit.log: {exc}")
+        return error(500, "Could not read audit log", str(exc))
+    if audit_entry is None:
+        return error(404, "audit entry not found")
+
+    task_code = suggestion.get("taskCode")
+    entry = {
+        "timestamp": now_iso(),
+        "auditTimestamp": audit_timestamp,
+        "actionRequested": audit_entry.get("actionRequested"),
+        "model": audit_entry.get("model"),
+        "source": source,
+        "taskDescription": suggestion["taskDescription"],
+        "category": suggestion.get("category") if isinstance(suggestion.get("category"), str) else None,
+        "taskCode": task_code if is_number(task_code) or isinstance(task_code, str) else None,
+        "verdict": verdict,
+        "reasons": sorted(set(reasons)),
+        "note": note,
+        "tester": tester,
+    }
+    try:
+        with open(FEEDBACK_LOG_PATH, "a", encoding="utf-8") as handle:
+            handle.write(json.dumps(entry, ensure_ascii=False, separators=(",", ":")) + "\n")
+    except OSError as exc:
+        log.error(f"[WebTMA SERVER] Failed to write feedback.jsonl: {exc}")
+        return error(500, "Could not write feedback log", str(exc))
+
+    log.info(f"[WebTMA SERVER] feedback - {verdict} - {entry['taskDescription']} - tester {tester or 'anon'}")
+    return {"ok": True, "timestamp": entry["timestamp"]}
 
 
 @app.get("/api/building-search")

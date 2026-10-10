@@ -426,6 +426,133 @@
     #btn-suggest:hover {
       opacity: 0.85;
     }
+    /* ── 8. Beta feedback ────────────────────────────────────────────────────
+       Colorblind-safe: state is shown with symbols, text and filled vs outlined
+       buttons, never by color alone. */
+    .tester-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 8px;
+      font-size: 12px;
+      color: #444;
+    }
+
+    .tester-row input {
+      flex: 1;
+      padding: 5px 8px;
+      border: 1px solid #bbb;
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 12px;
+    }
+
+    .feedback {
+      margin-top: 10px;
+      padding-top: 8px;
+      border-top: 1px dashed #bbb;
+      cursor: default;
+    }
+
+    .feedback-q {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #444;
+      margin-bottom: 6px;
+    }
+
+    .feedback-buttons {
+      display: flex;
+      gap: 8px;
+    }
+
+    .fb-btn {
+      flex: 1;
+      padding: 6px 8px;
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 600;
+      color: #1a1a1a;
+      background: #fff;
+      border: 2px solid #1a1a1a;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .fb-btn[aria-pressed="true"] {
+      color: #fff;
+      background: #1a1a1a;
+    }
+
+    .fb-btn:focus-visible,
+    .fb-submit:focus-visible {
+      outline: 3px solid #1a1a1a;
+      outline-offset: 2px;
+    }
+
+    .feedback-form {
+      margin-top: 8px;
+    }
+
+    .feedback-form fieldset {
+      border: none;
+      margin: 0 0 6px;
+      padding: 0;
+    }
+
+    .feedback-form legend {
+      font-size: 12px;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin-bottom: 4px;
+    }
+
+    .feedback-form label {
+      display: block;
+      font-size: 13px;
+      padding: 2px 0;
+      cursor: pointer;
+    }
+
+    .feedback-form textarea {
+      width: 100%;
+      box-sizing: border-box;
+      min-height: 48px;
+      padding: 6px 8px;
+      border: 1px solid #bbb;
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 12px;
+      resize: vertical;
+    }
+
+    .fb-submit {
+      margin-top: 6px;
+      width: 100%;
+      padding: 6px;
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 600;
+      color: #fff;
+      background: #1a1a1a;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .fb-submit:disabled {
+      opacity: 0.5;
+      cursor: default;
+    }
+
+    .feedback-status {
+      margin-top: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #1a1a1a;
+    }
   </style>
 </head>
 <body>
@@ -455,6 +582,10 @@
       placeholder="Waiting for WebTMA form..."
     ></textarea>
     <button id="btn-suggest">Get Suggestions</button>
+    <div class="tester-row">
+      <label for="tester-name">Beta tester</label>
+      <input id="tester-name" type="text" maxlength="60" placeholder="Your name (optional)" autocomplete="off" />
+    </div>
   </section>
 
   <!-- 3. Suggestion cards area -->
