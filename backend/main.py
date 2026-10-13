@@ -685,11 +685,32 @@ async def audit_applied(request: Request):
     return {"ok": True}
 
 
+def iter_lines_reversed(path, block_size=64 * 1024):
+    """Yield the lines of a UTF-8 file last to first, reading fixed-size blocks from the end,
+    so a lookup near the end costs O(1) instead of reading the whole file."""
+    with open(path, "rb") as handle:
+        handle.seek(0, os.SEEK_END)
+        position = handle.tell()
+        leftover = b""
+        while position > 0:
+            step = min(block_size, position)
+            position -= step
+            handle.seek(position)
+            lines = (handle.read(step) + leftover).split(b"\n")
+            leftover = lines.pop(0)  # may be cut mid-line; finish it with the next block
+            for line in reversed(lines):
+                yield line.decode("utf-8", errors="replace")
+        yield leftover.decode("utf-8", errors="replace")
+
+
 def find_audit_entry(audit_timestamp):
-    """Return the audit.log entry with this timestamp, or None. Raises OSError if the log can't be read."""
+    """Return the audit.log entry with this timestamp, or None. Raises OSError if the log can't be read.
+
+    Scans from the end: feedback almost always rates a request made moments ago, so the match is
+    in the last few lines. Worst case (an old or unknown timestamp) is still a full O(n) scan."""
     if not AUDIT_LOG_PATH.exists():
         return None
-    for line in AUDIT_LOG_PATH.read_text(encoding="utf-8").split("\n"):
+    for line in iter_lines_reversed(AUDIT_LOG_PATH):
         if not line.strip():
             continue
         try:

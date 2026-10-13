@@ -418,3 +418,24 @@ def test_every_knowledge_base_entry_validates_against_itself(load_app):
             if errors:
                 failures[description] = errors
     assert failures == {}
+
+
+def test_iter_lines_reversed_handles_block_boundaries(load_app, tmp_path):
+    module, _ = load_app()
+    lines = [f'{{"timestamp":"t{i}","pad":"{"x" * (i % 7)}é"}}' for i in range(200)]
+    path = tmp_path / "audit.log"
+    path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    for block in (1, 3, 16, 64 * 1024):  # tiny blocks force lines and UTF-8 chars to split across reads
+        got = [l for l in module.iter_lines_reversed(path, block_size=block) if l]
+        assert got == lines[::-1], block
+
+
+def test_find_audit_entry_prefers_latest_and_finds_old(load_app, monkeypatch, tmp_path):
+    module, _ = load_app()
+    path = tmp_path / "audit.log"
+    path.write_text('{"timestamp":"old","actionRequested":"first"}\nnot json\n'
+                    '{"timestamp":"new","actionRequested":"second"}\n', encoding="utf-8")
+    monkeypatch.setattr(module, "AUDIT_LOG_PATH", path)
+    assert module.find_audit_entry("new")["actionRequested"] == "second"
+    assert module.find_audit_entry("old")["actionRequested"] == "first"
+    assert module.find_audit_entry("missing") is None
