@@ -653,34 +653,19 @@ async def audit_applied(request: Request):
     if not isinstance(applied_suggestion, str) or not applied_suggestion:
         return error(400, "appliedSuggestion is required and must be a string")
 
+    # Append-only: the request line is never rewritten. An "applied" event line points back to it
+    # by auditTimestamp; the latest one wins. find_audit_entry() folds it back in for readers.
     try:
-        lines = [line for line in AUDIT_LOG_PATH.read_text(encoding="utf-8").split("\n") if line.strip()]
+        if find_audit_entry(audit_timestamp) is None:
+            return error(404, "audit entry not found")
+        append_audit_entry({
+            "type": "applied",
+            "timestamp": now_iso(),
+            "auditTimestamp": audit_timestamp,
+            "appliedSuggestion": applied_suggestion,
+        })
     except OSError as exc:
-        log.error(f"[WebTMA SERVER] Failed to read audit.log: {exc}")
-        return error(500, "Could not read audit log", str(exc))
-
-    matched = False
-    updated = []
-    for line in lines:
-        try:
-            entry = json.loads(line)
-        except json.JSONDecodeError:
-            updated.append(line)
-            continue
-        if isinstance(entry, dict) and entry.get("timestamp") == audit_timestamp:
-            matched = True
-            entry["appliedSuggestion"] = applied_suggestion
-            updated.append(json.dumps(entry, ensure_ascii=False, separators=(",", ":")))
-        else:
-            updated.append(line)
-
-    if not matched:
-        return error(404, "audit entry not found")
-
-    try:
-        AUDIT_LOG_PATH.write_text("\n".join(updated) + "\n", encoding="utf-8")
-    except OSError as exc:
-        log.error(f"[WebTMA SERVER] Failed to write audit.log: {exc}")
+        log.error(f"[WebTMA SERVER] Failed to update audit.log: {exc}")
         return error(500, "Could not write audit log", str(exc))
     return {"ok": True}
 
@@ -704,12 +689,17 @@ def iter_lines_reversed(path, block_size=64 * 1024):
 
 
 def find_audit_entry(audit_timestamp):
-    """Return the audit.log entry with this timestamp, or None. Raises OSError if the log can't be read.
+    """Return the request entry with this timestamp, or None. Raises OSError if the log can't be read.
 
-    Scans from the end: feedback almost always rates a request made moments ago, so the match is
-    in the last few lines. Worst case (an old or unknown timestamp) is still a full O(n) scan."""
+    audit.log is append-only and holds two kinds of line: request entries (one per /api/suggest
+    call) and "applied" events that point back to one by auditTimestamp. The returned entry has
+    appliedSuggestion set from its latest applied event, if any.
+
+    Scans from the end: feedback and Apply almost always refer to a request made moments ago, so
+    the match is in the last few lines. Worst case (an old or unknown timestamp) is a full O(n) scan."""
     if not AUDIT_LOG_PATH.exists():
         return None
+    latest_applied = None
     for line in iter_lines_reversed(AUDIT_LOG_PATH):
         if not line.strip():
             continue
@@ -717,7 +707,16 @@ def find_audit_entry(audit_timestamp):
             entry = json.loads(line)
         except json.JSONDecodeError:
             continue
-        if isinstance(entry, dict) and entry.get("timestamp") == audit_timestamp:
+        if not isinstance(entry, dict):
+            continue
+        if entry.get("type") == "applied":
+            # Reading backwards, the first event seen for this request is its latest one.
+            if latest_applied is None and entry.get("auditTimestamp") == audit_timestamp:
+                latest_applied = entry.get("appliedSuggestion")
+            continue
+        if entry.get("timestamp") == audit_timestamp:
+            if latest_applied is not None:
+                entry["appliedSuggestion"] = latest_applied
             return entry
     return None
 

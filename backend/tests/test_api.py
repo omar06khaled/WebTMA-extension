@@ -288,7 +288,17 @@ def test_audit_applied_updates_matching_entry(load_app, monkeypatch):
     timestamp = client.post("/api/suggest", json={"actionRequested": "light out"}).json()["auditTimestamp"]
 
     assert client.post("/api/audit/applied", json={"auditTimestamp": timestamp, "appliedSuggestion": "Lighting"}).json() == {"ok": True}
-    assert json.loads(module.AUDIT_LOG_PATH.read_text().strip())["appliedSuggestion"] == "Lighting"
+    assert module.find_audit_entry(timestamp)["appliedSuggestion"] == "Lighting"
+
+    # append-only: the request line is untouched, each Apply adds an event, the latest wins
+    request_line = module.AUDIT_LOG_PATH.read_text().splitlines()[0]
+    assert client.post("/api/audit/applied", json={"auditTimestamp": timestamp, "appliedSuggestion": "Exit signs"}).status_code == 200
+    lines = module.AUDIT_LOG_PATH.read_text().splitlines()
+    assert lines[0] == request_line and json.loads(request_line)["appliedSuggestion"] is None
+    events = [json.loads(l) for l in lines[1:]]
+    assert [e["type"] for e in events] == ["applied", "applied"]
+    assert all(e["auditTimestamp"] == timestamp for e in events)
+    assert module.find_audit_entry(timestamp)["appliedSuggestion"] == "Exit signs"
     assert client.post("/api/audit/applied", json={"auditTimestamp": "nope", "appliedSuggestion": "x"}).status_code == 404
     assert client.post("/api/audit/applied", json={"appliedSuggestion": "x"}).status_code == 400
 
