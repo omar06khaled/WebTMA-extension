@@ -272,11 +272,12 @@ LANGUAGE sql STABLE AS $$
     JOIN staging.zone z     ON z.code = bz.zone_code AND NOT z.active
     WHERE bz.active
     UNION ALL
-    -- the same WebTMA task code on two active tasks (e.g. 27070)
+    -- one WebTMA task code on two different active tasks. The same task listed under two
+    -- categories (Garbage Disposal 23090, Mold check 27060: academic vs residential) is fine.
     SELECT 'warning', 'task code used twice',
-           t.task_code || ': ' || string_agg(t.description, ' | ' ORDER BY t.description)
+           t.task_code || ': ' || string_agg(DISTINCT t.description, ' | ')
     FROM staging.task t WHERE t.active AND t.task_code IS NOT NULL
-    GROUP BY t.task_code HAVING count(*) > 1
+    GROUP BY t.task_code HAVING count(DISTINCT t.description) > 1
     UNION ALL
     -- an active building with no zone at all
     SELECT 'warning', 'building has no zone', b.code || ' ' || b.name

@@ -611,11 +611,11 @@ function selectBuilding(building, section) {
 
 /**
  * The building's zone for its own campus row, without any RFMT sector in front
- * ("RFMT-S2 / ACAD B" -> "ACAD B"). Null when the 2027 zone guide doesn't list it.
+ * ("RFMT-ZONE-2 / ACAD B" -> "ACAD B"). Null when the 2027 zone guide doesn't list it.
  */
 function zoneForBuilding(building) {
   const sector = building?.sector || "";
-  if (!sector || sector.startsWith("Not in")) return null;
+  if (!sector || sector.startsWith("Not in") || sector === "Check current zone guide") return null;
   const zones = sector.split(" / ").filter((part) => !part.startsWith("RFMT"));
   return zones.length > 0 ? zones.join(" / ") : null;
 }

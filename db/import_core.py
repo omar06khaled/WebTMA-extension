@@ -38,16 +38,19 @@ ZONES = {
     "RFMT-TRADE": ("dtpc", True), "RFMT-POLY": ("poly", True), "RFMT-LSCS": ("west", True),
     "RFMT-ZONE-1": ("tempe", True), "RFMT-ZONE-2": ("tempe", True), "RFMT-ZONE-3": ("tempe", True),
 }
-# Names that appear only in the zone guides. Imported as-is and flagged, not merged.
+# Older zone-guide names for the same zones (confirmed Oct 13: RFMT-S1/2/3 = RFMT-ZONE-1/2/3).
+ZONE_ALIASES = {"RFMT-S1": "RFMT-ZONE-1", "RFMT-S2": "RFMT-ZONE-2", "RFMT-S3": "RFMT-ZONE-3"}
+# Tasks dropped from the import (confirmed Oct 13): their task code belongs to another task.
+#   27070 is Blinds only; 18160 is Exhaust Fan only.
+DROPPED_TASKS = {("Lock Shop", "Dorm gates"), ("HVAC", "Evaporator")}
+# Zones with no campus in the manual. Imported and flagged.
 ZONE_GUIDE_ONLY = {
-    "RFMT-S1": ("tempe", True, "Name from the TMPE zone guide. Same zone as RFMT-ZONE-1? Check."),
-    "RFMT-S2": ("tempe", True, "Name from the TMPE zone guide. Same zone as RFMT-ZONE-2? Check."),
-    "RFMT-S3": ("tempe", True, "Name from the TMPE zone guide. Same zone as RFMT-ZONE-3? Check."),
     "BIOS": (None, False, "No campus in the manual. Check."),
     "LACA": (None, False, "No campus in the manual. Check."),
     "WADC": (None, False, "No campus in the manual. Check."),
 }
-NOT_IN_GUIDE = "Not in 2027 zone guide - check"
+NOT_IN_GUIDE = "Check current zone guide"
+OLD_NOT_IN_GUIDE = "Not in 2027 zone guide - check"  # buildings_lookup.json before Oct 13
 
 
 def load(name):
@@ -106,14 +109,15 @@ def main():
                 (code, b["name"], b.get("campus"), b.get("rateSchedule"), b.get("subtype"), IMPORT_USER)).fetchone()[0]
 
             sector = (b.get("sector") or "").strip()
-            if not sector or sector == NOT_IN_GUIDE:
+            if not sector or sector in (NOT_IN_GUIDE, OLD_NOT_IN_GUIDE):
                 no_zone += 1
                 old = sorted({s.replace("old sector ", "") for s in b["_sources"] if s and s.startswith("old sector")})
                 if old:
                     cur.execute("INSERT INTO staging.building_note (building_id, note, updated_by) VALUES (%s,%s,%s)",
-                                (building_id, f"Not in the 2027 zone guide. Old sector(s): {', '.join(old)}", IMPORT_USER))
+                                (building_id, f"{NOT_IN_GUIDE}. Old sector(s): {', '.join(old)}", IMPORT_USER))
             else:
-                for zone in (z.strip() for z in sector.split("/")):
+                zones = dict.fromkeys(ZONE_ALIASES.get(z.strip(), z.strip()) for z in sector.split("/"))
+                for zone in zones:
                     if zone not in known_zones:
                         questions.append(f"Building {code}: unknown zone {zone!r}. Skipped.")
                         continue
@@ -137,7 +141,7 @@ def main():
                         (code, "(Global)" in code, IMPORT_USER))
 
         counts = {"zone": 0, "trade": 0, "see_note": 0, "not_handled": 0}
-        task_total = 0
+        task_total, dropped = 0, 0
         for cat_order, (category, tasks) in enumerate(knowledge.items()):
             section_note = next((t["sectionNote"] for t in tasks.values() if t.get("sectionNote")), None)
             category_id = cur.execute(
@@ -145,6 +149,9 @@ def main():
                 "VALUES (%s,%s,%s,%s) RETURNING id", (category, section_note, cat_order, IMPORT_USER)).fetchone()[0]
 
             for task_order, (description, t) in enumerate(tasks.items()):
+                if (category, description) in DROPPED_TASKS:
+                    dropped += 1
+                    continue
                 code, notes = t["taskCode"], t.get("notes")
                 if code is not None and not isinstance(code, int):
                     questions.append(f"Task {description!r} has {code!r} as its task code, not a number. "
@@ -176,7 +183,8 @@ def main():
                         (task_id, campus, rfmt, kind, trade, instruction, IMPORT_USER))
 
         print(f"buildings: {len(merged)} ({dupes} duplicate rows merged, {no_zone} with no 2027 zone)")
-        print(f"zones: {len(known_zones)}   trades: {len(trades)}   categories: {len(knowledge)}   tasks: {task_total}")
+        print(f"zones: {len(known_zones)}   trades: {len(trades)}   categories: {len(knowledge)}   "
+              f"tasks: {task_total} ({dropped} dropped)")
         print("routing rules: " + ", ".join(f"{k} {v}" for k, v in counts.items()))
 
         print("\nChecks on the imported data:")

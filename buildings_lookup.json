@@ -64,7 +64,7 @@
     "name": "2055 CENTENNIAL DR. - RESEARCH PARK",
     "bldgCode": "X21",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-C02"
   },
@@ -72,7 +72,7 @@
     "name": "213/215 E. SIXTH ST.",
     "bldgCode": "L167",
     "rateSchedule": "CM",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-C02"
   },
@@ -92,7 +92,7 @@
     "name": "64 E. BROADWAY ROAD. - WELLS FARGO",
     "bldgCode": "R39",
     "rateSchedule": "CM",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-C02"
   },
@@ -133,7 +133,7 @@
     "name": "ADELPHI COMMONS (East)",
     "bldgCode": "157A",
     "rateSchedule": "CB",
-    "sector": "RFMT-S1 / ACAD B",
+    "sector": "RFMT-ZONE-1 / ACAD B",
     "subtype": "Residential Facilities",
     "campus": "tempe",
     "zoneSource": "2027 zone guide",
@@ -145,7 +145,7 @@
     "name": "ADELPHI COMMONS (Mail Facility)",
     "bldgCode": "157F",
     "rateSchedule": "CB",
-    "sector": "RFMT-S1 / ACAD B",
+    "sector": "RFMT-ZONE-1 / ACAD B",
     "subtype": "Residential Facilities",
     "campus": "tempe",
     "zoneSource": "2027 zone guide",
@@ -157,7 +157,7 @@
     "name": "ADELPHI COMMONS (Northeast)",
     "bldgCode": "157B",
     "rateSchedule": "CB",
-    "sector": "RFMT-S1 / ACAD B",
+    "sector": "RFMT-ZONE-1 / ACAD B",
     "subtype": "Residential Facilities",
     "campus": "tempe",
     "zoneSource": "2027 zone guide",
@@ -169,7 +169,7 @@
     "name": "ADELPHI COMMONS (Northwest)",
     "bldgCode": "157C",
     "rateSchedule": "CB",
-    "sector": "RFMT-S1 / ACAD B",
+    "sector": "RFMT-ZONE-1 / ACAD B",
     "subtype": "Residential Facilities",
     "campus": "tempe",
     "zoneSource": "2027 zone guide",
@@ -181,7 +181,7 @@
     "name": "ADELPHI COMMONS (South)",
     "bldgCode": "157E",
     "rateSchedule": "CB",
-    "sector": "RFMT-S1 / ACAD B",
+    "sector": "RFMT-ZONE-1 / ACAD B",
     "subtype": "Residential Facilities",
     "campus": "tempe",
     "zoneSource": "2027 zone guide",
@@ -193,7 +193,7 @@
     "name": "ADELPHI COMMONS (Southwest)",
     "bldgCode": "157D",
     "rateSchedule": "CB",
-    "sector": "RFMT-S1 / ACAD B",
+    "sector": "RFMT-ZONE-1 / ACAD B",
     "subtype": "Residential Facilities",
     "campus": "tempe",
     "zoneSource": "2027 zone guide",
@@ -205,7 +205,7 @@
     "name": "ADELPHI II COMMONS COMMUNITY CENTER",
     "bldgCode": "159C",
     "rateSchedule": "CB",
-    "sector": "RFMT-S1 / ACAD B",
+    "sector": "RFMT-ZONE-1 / ACAD B",
     "subtype": "Residential Facilities",
     "campus": "tempe",
     "zoneSource": "2027 zone guide",
@@ -217,7 +217,7 @@
     "name": "ADELPHI II COMMONS EAST",
     "bldgCode": "159A",
     "rateSchedule": "CB",
-    "sector": "RFMT-S1 / ACAD B",
+    "sector": "RFMT-ZONE-1 / ACAD B",
     "subtype": "Residential Facilities",
     "campus": "tempe",
     "zoneSource": "2027 zone guide",
@@ -229,7 +229,7 @@
     "name": "ADELPHI II COMMONS WEST",
     "bldgCode": "159B",
     "rateSchedule": "CB",
-    "sector": "RFMT-S1 / ACAD B",
+    "sector": "RFMT-ZONE-1 / ACAD B",
     "subtype": "Residential Facilities",
     "campus": "tempe",
     "zoneSource": "2027 zone guide",
@@ -298,7 +298,7 @@
     "name": "ANTENNA - STAUFFER HALL WEST",
     "bldgCode": "L01",
     "rateSchedule": "CM",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-A01"
   },
@@ -330,7 +330,7 @@
     "name": "AQUATIC COMPLEX - MAIN AREA",
     "bldgCode": "L03",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-C01"
   },
@@ -409,7 +409,7 @@
     "name": "ASU AT ST. LUKE’S MEDICAL PAVILION",
     "bldgCode": "R103",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-C02"
   },
@@ -546,7 +546,7 @@
     "name": "ASU SCOTTSDALE INNOVATION CENTER BUILDING FIVE",
     "bldgCode": "R79",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-E04"
   },
@@ -554,7 +554,7 @@
     "name": "ASU SCOTTSDALE INNOVATION CENTER BUILDING FOUR",
     "bldgCode": "R93",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-E04"
   },
@@ -562,7 +562,7 @@
     "name": "ASU SCOTTSDALE INNOVATION CENTER BUILDING ONE",
     "bldgCode": "R50",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-C02"
   },
@@ -570,7 +570,7 @@
     "name": "ASU SCOTTSDALE INNOVATION CENTER BUILDING ONE",
     "bldgCode": "R50",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-E04"
   },
@@ -578,7 +578,7 @@
     "name": "ASU SCOTTSDALE INNOVATION CENTER BUILDING THREE",
     "bldgCode": "R72",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-C02"
   },
@@ -586,7 +586,7 @@
     "name": "ASU SCOTTSDALE INNOVATION CENTER BUILDING TWO",
     "bldgCode": "R100",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-C02"
   },
@@ -594,7 +594,7 @@
     "name": "ASU SCOTTSDALE INNOVATION CENTER BUILDING TWO",
     "bldgCode": "R100",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-E04"
   },
@@ -639,7 +639,7 @@
     "name": "BANK OF AMERICA ATM",
     "bldgCode": "X93",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector DTPC-A02"
   },
@@ -825,7 +825,7 @@
     "name": "BATTING TUNNELS @ PACKARD STADIUM",
     "bldgCode": "X24",
     "rateSchedule": "CM",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-C01"
   },
@@ -893,21 +893,21 @@
     "name": "BEST HALL A",
     "bldgCode": "038A",
     "rateSchedule": "CB",
-    "sector": "RFMT-S1",
+    "sector": "RFMT-ZONE-1",
     "subtype": "Residential Facilities"
   },
   {
     "name": "BEST HALL B",
     "bldgCode": "038B",
     "rateSchedule": "CB",
-    "sector": "RFMT-S1",
+    "sector": "RFMT-ZONE-1",
     "subtype": "Residential Facilities"
   },
   {
     "name": "BEST HALL C",
     "bldgCode": "038C",
     "rateSchedule": "CB",
-    "sector": "RFMT-S1",
+    "sector": "RFMT-ZONE-1",
     "subtype": "Residential Facilities"
   },
   {
@@ -981,7 +981,7 @@
     "name": "BOX OFFICE/TEAM SHOP",
     "bldgCode": "R87E",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-C02"
   },
@@ -1159,7 +1159,7 @@
     "name": "CENTRAL UTILITIES BLDG FOR MTW",
     "bldgCode": "576",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-C02"
   },
@@ -1181,7 +1181,7 @@
     "name": "CHASE TOWER OFFICE SPACE",
     "bldgCode": "R73",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector DTPC-A02"
   },
@@ -1343,7 +1343,7 @@
     "name": "COMMUNITY SERVICES CENTER-MAINTENANCE BLDG",
     "bldgCode": "668",
     "rateSchedule": "CM",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-C02"
   },
@@ -1351,7 +1351,7 @@
     "name": "COMMUNITY SERVICES STORAGE BLDG. NO. 2",
     "bldgCode": "146",
     "rateSchedule": "CM",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-C02"
   },
@@ -1359,7 +1359,7 @@
     "name": "COMMUNITY SERVICES STORAGE BLDG. NO. 3",
     "bldgCode": "539",
     "rateSchedule": "CM",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-C02"
   },
@@ -1516,7 +1516,7 @@
     "name": "DIGITAL REALTY TRUST",
     "bldgCode": "R46",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector DTPC-A02"
   },
@@ -1545,7 +1545,7 @@
     "name": "DOWNTOWN YMCA",
     "bldgCode": "R63",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector DTPC-A02"
   },
@@ -1675,7 +1675,7 @@
     "name": "ENGINEERING GAS CANISTER STOR.",
     "bldgCode": "L14",
     "rateSchedule": "CM",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-B02"
   },
@@ -2003,7 +2003,7 @@
     "name": "GAMMAGE PKWY SOLAR",
     "bldgCode": "X72",
     "rateSchedule": "CM",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-A02"
   },
@@ -2057,7 +2057,7 @@
     "name": "GLV COMMUNITY CENTER",
     "bldgCode": "182",
     "rateSchedule": "CB",
-    "sector": "RFMT-S1 / ACAD B",
+    "sector": "RFMT-ZONE-1 / ACAD B",
     "subtype": "Residential Facilities",
     "campus": "tempe",
     "zoneSource": "2027 zone guide",
@@ -2078,7 +2078,7 @@
     "name": "GOLF PERFORMANCE CENTER",
     "bldgCode": "128G",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-C02"
   },
@@ -2223,7 +2223,7 @@
     "name": "GROUNDS DEPARTMENT AGRICULTURAL CHEMICAL STORAGE",
     "bldgCode": "X39",
     "rateSchedule": "CM",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-C02"
   },
@@ -2267,7 +2267,7 @@
     "name": "HAV- ACACIA HALL",
     "bldgCode": "160E",
     "rateSchedule": "CB",
-    "sector": "RFMT-S3 / ACAD A",
+    "sector": "RFMT-ZONE-3 / ACAD A",
     "subtype": "Residential Facilities",
     "campus": "tempe",
     "zoneSource": "2027 zone guide",
@@ -2279,7 +2279,7 @@
     "name": "HAV- ACOURTIA HALL",
     "bldgCode": "163C",
     "rateSchedule": "CB",
-    "sector": "RFMT-S3 / ACAD A",
+    "sector": "RFMT-ZONE-3 / ACAD A",
     "subtype": "Residential Facilities",
     "campus": "tempe",
     "zoneSource": "2027 zone guide",
@@ -2291,7 +2291,7 @@
     "name": "HAV- ARROYO HALL",
     "bldgCode": "160B",
     "rateSchedule": "CB",
-    "sector": "RFMT-S3 / ACAD A",
+    "sector": "RFMT-ZONE-3 / ACAD A",
     "subtype": "Residential Facilities",
     "campus": "tempe",
     "zoneSource": "2027 zone guide",
@@ -2303,7 +2303,7 @@
     "name": "HAV- CHUPAROSA HALL",
     "bldgCode": "160D",
     "rateSchedule": "CB",
-    "sector": "RFMT-S3 / ACAD A",
+    "sector": "RFMT-ZONE-3 / ACAD A",
     "subtype": "Residential Facilities",
     "campus": "tempe",
     "zoneSource": "2027 zone guide",
@@ -2315,7 +2315,7 @@
     "name": "HAV- JOJOBA HALL",
     "bldgCode": "160C",
     "rateSchedule": "CB",
-    "sector": "RFMT-S3 / ACAD A",
+    "sector": "RFMT-ZONE-3 / ACAD A",
     "subtype": "Residential Facilities",
     "campus": "tempe",
     "zoneSource": "2027 zone guide",
@@ -2327,7 +2327,7 @@
     "name": "HAV- MESQUITE HALL",
     "bldgCode": "163A",
     "rateSchedule": "CB",
-    "sector": "RFMT-S3 / ACAD A",
+    "sector": "RFMT-ZONE-3 / ACAD A",
     "subtype": "Residential Facilities",
     "campus": "tempe",
     "zoneSource": "2027 zone guide",
@@ -2351,7 +2351,7 @@
     "name": "HAV- MOHAVE HALL",
     "bldgCode": "160A",
     "rateSchedule": "CB",
-    "sector": "RFMT-S3 / ACAD A",
+    "sector": "RFMT-ZONE-3 / ACAD A",
     "subtype": "Residential Facilities",
     "campus": "tempe",
     "zoneSource": "2027 zone guide",
@@ -2363,7 +2363,7 @@
     "name": "HAV- VERBENA HALL",
     "bldgCode": "163B",
     "rateSchedule": "CB",
-    "sector": "RFMT-S3 / ACAD A",
+    "sector": "RFMT-ZONE-3 / ACAD A",
     "subtype": "Residential Facilities",
     "campus": "tempe",
     "zoneSource": "2027 zone guide",
@@ -2376,14 +2376,14 @@
     "name": "HAYDEN HALL EAST",
     "bldgCode": "014E",
     "rateSchedule": "CB",
-    "sector": "RFMT-S1",
+    "sector": "RFMT-ZONE-1",
     "subtype": "Residential Facilities"
   },
   {
     "name": "HAYDEN HALL WEST",
     "bldgCode": "014W",
     "rateSchedule": "CB",
-    "sector": "RFMT-S1",
+    "sector": "RFMT-ZONE-1",
     "subtype": "Residential Facilities"
   },
   {
@@ -2459,7 +2459,7 @@
     "name": "HELIUM RECOVERY SHED - ADJ 57B&C",
     "bldgCode": "X18",
     "rateSchedule": "CM",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-A01"
   },
@@ -2491,7 +2491,7 @@
     "name": "HOLBROOK WAREHOUSE",
     "bldgCode": "R61",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-C02"
   },
@@ -2499,7 +2499,7 @@
     "name": "HOME LOCKER/CONCESSIONS",
     "bldgCode": "R87A",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-C02"
   },
@@ -2630,7 +2630,7 @@
     "name": "IRISH HALL A (ACADEMIC OFFICES)",
     "bldgCode": "026A",
     "rateSchedule": "CM",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-A02"
   },
@@ -2638,14 +2638,14 @@
     "name": "IRISH HALL B (NORTHWEST)",
     "bldgCode": "026B",
     "rateSchedule": "CB",
-    "sector": "RFMT-S1",
+    "sector": "RFMT-ZONE-1",
     "subtype": "Residential Facilities"
   },
   {
     "name": "IRISH HALL C (SOUTHWEST)",
     "bldgCode": "026C",
     "rateSchedule": "CB",
-    "sector": "RFMT-S1",
+    "sector": "RFMT-ZONE-1",
     "subtype": "Residential Facilities"
   },
   {
@@ -2661,7 +2661,7 @@
     "name": "KAET TRANSMITTER @ SOUTH MT.",
     "bldgCode": "R35",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-C02"
   },
@@ -2886,7 +2886,7 @@
     "name": "MCCLINTOCK HALL",
     "bldgCode": "028",
     "rateSchedule": "CM/CB",
-    "sector": "RFMT-S2 / ACAD A",
+    "sector": "RFMT-ZONE-2 / ACAD A",
     "subtype": "Residential Facilities",
     "campus": "tempe",
     "zoneSource": "2027 zone guide",
@@ -3079,7 +3079,7 @@
     "name": "N.E. FIELDS - BAND PRACTICE FIELD",
     "bldgCode": "L05",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-C02"
   },
@@ -3087,7 +3087,7 @@
     "name": "N.E. FIELDS - KAJIKAWA FOOTBALL PRACTICE FIELDS",
     "bldgCode": "L04",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-C02"
   },
@@ -3095,7 +3095,7 @@
     "name": "N.E. FIELDS - SOFTBALL",
     "bldgCode": "L07",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-C02"
   },
@@ -4172,7 +4172,7 @@
     "name": "NORTH SUB-STATION (METER #E68972)",
     "bldgCode": "X41",
     "rateSchedule": "CM",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-C01"
   },
@@ -4208,7 +4208,7 @@
     "name": "OFFICIAL'S LOCKER/MAINTENANCE",
     "bldgCode": "R87M",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-C02"
   },
@@ -4225,7 +4225,7 @@
     "name": "ORANGE - CADY MALLS SOLAR",
     "bldgCode": "X73",
     "rateSchedule": "CM",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-A02"
   },
@@ -4266,7 +4266,7 @@
     "name": "PACKARD STADIUM SHED (NW)",
     "bldgCode": "627",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-C01"
   },
@@ -4286,7 +4286,7 @@
     "name": "PALO VERDE EAST (F)",
     "bldgCode": "051F",
     "rateSchedule": "CB",
-    "sector": "RFMT-S2 / ACAD B",
+    "sector": "RFMT-ZONE-2 / ACAD B",
     "subtype": "Residential Facilities",
     "campus": "tempe",
     "zoneSource": "2027 zone guide",
@@ -4298,7 +4298,7 @@
     "name": "PALO VERDE WEST (G)",
     "bldgCode": "051G",
     "rateSchedule": "CB",
-    "sector": "RFMT-S2 / ACAD B",
+    "sector": "RFMT-ZONE-2 / ACAD B",
     "subtype": "Residential Facilities",
     "campus": "tempe",
     "zoneSource": "2027 zone guide",
@@ -4326,7 +4326,7 @@
     "name": "PARKING LOT 11 SOLAR",
     "bldgCode": "X74",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-A01"
   },
@@ -4334,7 +4334,7 @@
     "name": "PARKING LOT 19 SOLAR",
     "bldgCode": "X75",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-B02"
   },
@@ -4342,7 +4342,7 @@
     "name": "PARKING LOT 41 SOLAR",
     "bldgCode": "X76",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-B02"
   },
@@ -4350,7 +4350,7 @@
     "name": "PARKING LOT 45 SOLAR",
     "bldgCode": "X80",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-C02"
   },
@@ -4358,7 +4358,7 @@
     "name": "PARKING LOT 55 EAST SOLAR",
     "bldgCode": "X81",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-C02"
   },
@@ -4366,7 +4366,7 @@
     "name": "PARKING LOT 55 WEST SOLAR",
     "bldgCode": "X82",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-C02"
   },
@@ -4374,7 +4374,7 @@
     "name": "PARKING LOT 58 SOLAR",
     "bldgCode": "X77",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-C01"
   },
@@ -4382,7 +4382,7 @@
     "name": "PARKING LOT 59 NORTH SOLAR",
     "bldgCode": "X63",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-C01"
   },
@@ -4390,7 +4390,7 @@
     "name": "PARKING LOT 59 SOUTH SOLAR",
     "bldgCode": "X78",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-C01"
   },
@@ -4431,7 +4431,7 @@
     "name": "PHOENIX MUNICIPAL BALLFIELD",
     "bldgCode": "L87A",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-C02"
   },
@@ -4439,7 +4439,7 @@
     "name": "PHOENIX MUNICIPAL EAST PRACTICE BALLFIELD",
     "bldgCode": "L87B",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-C02"
   },
@@ -4495,7 +4495,7 @@
     "name": "PITCHING LAB",
     "bldgCode": "R87H",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-C02"
   },
@@ -4699,7 +4699,7 @@
     "name": "SAN PABLO RESIDENCE HALL",
     "bldgCode": "151",
     "rateSchedule": "CB",
-    "sector": "RFMT-S2 / ACAD B",
+    "sector": "RFMT-ZONE-2 / ACAD B",
     "subtype": null,
     "campus": "tempe",
     "zoneSource": "2027 zone guide",
@@ -4711,7 +4711,7 @@
     "name": "SAN PABLO RESIDENCE HALL (CLASSROOM)",
     "bldgCode": "151A",
     "rateSchedule": "CB",
-    "sector": "RFMT-S2 / ACAD B",
+    "sector": "RFMT-ZONE-2 / ACAD B",
     "subtype": null,
     "campus": "tempe",
     "zoneSource": "2027 zone guide",
@@ -4785,7 +4785,7 @@
     "name": "SDFC INTRAMURAL FIELDS",
     "bldgCode": "L46",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-B02"
   },
@@ -7763,7 +7763,7 @@
     "name": "SKYSPACE RAMADA",
     "bldgCode": "X62",
     "rateSchedule": "CM",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-B02"
   },
@@ -7771,7 +7771,7 @@
     "name": "SOCCER & LACROSSE FIELD",
     "bldgCode": "L19",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-C02"
   },
@@ -7815,7 +7815,7 @@
     "name": "SONORA - EAST AREA",
     "bldgCode": "L16",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": "Residential Facilities",
     "zoneSource": "old sector TMPE-C02"
   },
@@ -7823,7 +7823,7 @@
     "name": "SONORA ANNEX",
     "bldgCode": "138",
     "rateSchedule": "CB",
-    "sector": "RFMT-S1 / ACAD B",
+    "sector": "RFMT-ZONE-1 / ACAD B",
     "subtype": "Residential Facilities",
     "campus": "tempe",
     "zoneSource": "2027 zone guide",
@@ -7835,7 +7835,7 @@
     "name": "SONORA CENTER",
     "bldgCode": "139",
     "rateSchedule": "CB",
-    "sector": "RFMT-S1 / ACAD B",
+    "sector": "RFMT-ZONE-1 / ACAD B",
     "subtype": "Residential Facilities",
     "campus": "tempe",
     "zoneSource": "2027 zone guide",
@@ -7863,7 +7863,7 @@
     "name": "SOUTH RESTROOMS",
     "bldgCode": "R87B",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-C02"
   },
@@ -7871,7 +7871,7 @@
     "name": "SOUTH STORAGE",
     "bldgCode": "128H",
     "rateSchedule": "CM",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-C02"
   },
@@ -7879,7 +7879,7 @@
     "name": "SOUTH SUB-STATION (METER #J77961)",
     "bldgCode": "X42",
     "rateSchedule": "CM",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-B02"
   },
@@ -7887,7 +7887,7 @@
     "name": "SRC PUMP HOUSE",
     "bldgCode": "X28",
     "rateSchedule": "CM",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-B02"
   },
@@ -7895,7 +7895,7 @@
     "name": "STADIUM MANAGEMENT",
     "bldgCode": "R87C",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-C02"
   },
@@ -7915,7 +7915,7 @@
     "name": "STADIUM SUPPORT",
     "bldgCode": "R87G",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-C02"
   },
@@ -8016,7 +8016,7 @@
     "name": "SUN ANGEL STADIUM - YARD",
     "bldgCode": "L09",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-C02"
   },
@@ -8165,7 +8165,7 @@
     "name": "TAYLOR MALL",
     "bldgCode": "306M",
     "rateSchedule": null,
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector DTPC-A02"
   },
@@ -8251,7 +8251,7 @@
     "name": "THERMAL ENERGY STORAGE",
     "bldgCode": "X01",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-B02"
   },
@@ -8280,7 +8280,7 @@
     "name": "TICKET TRAILER/SUN DEVIL STADIUM-N",
     "bldgCode": "R23",
     "rateSchedule": "CM",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-C01"
   },
@@ -8304,7 +8304,7 @@
     "name": "T-MOBILE MONOPALM AT KARSTEN GC",
     "bldgCode": "L31",
     "rateSchedule": "CM",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-C02"
   },
@@ -8312,7 +8312,7 @@
     "name": "TONTOZONA - CARETAKERS CABIN",
     "bldgCode": "522",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-C02"
   },
@@ -8320,7 +8320,7 @@
     "name": "TONTOZONA - CREEKSIDE CABIN",
     "bldgCode": "523",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-C02"
   },
@@ -8328,7 +8328,7 @@
     "name": "TONTOZONA - DINING HALL",
     "bldgCode": "506",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-C02"
   },
@@ -8336,7 +8336,7 @@
     "name": "TONTOZONA - EXECUTIVE LODGE",
     "bldgCode": "507",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-C02"
   },
@@ -8344,7 +8344,7 @@
     "name": "TONTOZONA - HILLTOP DORMITORY",
     "bldgCode": "508",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-C02"
   },
@@ -8352,7 +8352,7 @@
     "name": "TONTOZONA - LITTLE CREEK LODGE",
     "bldgCode": "524",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-C02"
   },
@@ -8360,7 +8360,7 @@
     "name": "TONTOZONA - METAL STORAGE SHED",
     "bldgCode": "X19",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-C02"
   },
@@ -8368,7 +8368,7 @@
     "name": "TONTOZONA - PUMP HOUSE",
     "bldgCode": "512",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-C02"
   },
@@ -8376,7 +8376,7 @@
     "name": "TONTOZONA - SPARKYS DEN",
     "bldgCode": "509",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-C02"
   },
@@ -8384,7 +8384,7 @@
     "name": "TONTOZONA - SUN ANGEL LODGE",
     "bldgCode": "521",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-C02"
   },
@@ -8392,7 +8392,7 @@
     "name": "TONTOZONA - SUN DEVIL LODGE",
     "bldgCode": "511",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-C02"
   },
@@ -8400,7 +8400,7 @@
     "name": "TONTOZONA - TALL PINES LODGE",
     "bldgCode": "525",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-C02"
   },
@@ -8408,7 +8408,7 @@
     "name": "TONTOZONA - UNITS C,D,E,F",
     "bldgCode": "505",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-C02"
   },
@@ -8416,7 +8416,7 @@
     "name": "TONTOZONA - VALVE HOUSE",
     "bldgCode": "513",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-C02"
   },
@@ -8424,7 +8424,7 @@
     "name": "TONTOZONA - WELL #2 - PUMP HOUSE",
     "bldgCode": "526",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-C02"
   },
@@ -8432,7 +8432,7 @@
     "name": "TONTOZONA - WORKSHOP",
     "bldgCode": "510",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-C02"
   },
@@ -8440,7 +8440,7 @@
     "name": "TONTOZONA FOOTBALL FIELD 1",
     "bldgCode": "L517",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-C02"
   },
@@ -8448,7 +8448,7 @@
     "name": "TONTOZONA FOOTBALL FIELD 2",
     "bldgCode": "L518",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-C02"
   },
@@ -8675,7 +8675,7 @@
     "name": "UNIVERSITY TOWERS",
     "bldgCode": "142",
     "rateSchedule": "CB",
-    "sector": "RFMT-S2 / ACAD B",
+    "sector": "RFMT-ZONE-2 / ACAD B",
     "subtype": "Residential Facilities",
     "campus": "tempe",
     "zoneSource": "2027 zone guide",
@@ -8699,7 +8699,7 @@
     "name": "UNIVERSITY TUNNEL NETWORK - 015A",
     "bldgCode": "015A",
     "rateSchedule": "CM",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-A02"
   },
@@ -8724,7 +8724,7 @@
     "name": "US WEATHER STATION",
     "bldgCode": "L28",
     "rateSchedule": "CM",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-C02"
   },
@@ -8761,7 +8761,7 @@
     "name": "VISITOR LOCKER/CONCESSIONS",
     "bldgCode": "R87F",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-C02"
   },
@@ -8829,7 +8829,7 @@
     "name": "VISTA DEL SOL DOME",
     "bldgCode": "X33",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": "Residential Facilities",
     "zoneSource": "old sector TMPE-C02"
   },
@@ -8909,7 +8909,7 @@
     "name": "VISTA DEL SOL JACUZZI",
     "bldgCode": "X30",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": "Residential Facilities",
     "zoneSource": "old sector TMPE-C02"
   },
@@ -8929,7 +8929,7 @@
     "name": "VISTA DEL SOL PARKING STRUCTURE",
     "bldgCode": "RP03",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": "Residential Facilities",
     "zoneSource": "old sector TMPE-C02"
   },
@@ -8937,7 +8937,7 @@
     "name": "VISTA DEL SOL PAVILION",
     "bldgCode": "X31",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": "Residential Facilities",
     "zoneSource": "old sector TMPE-C02"
   },
@@ -8945,7 +8945,7 @@
     "name": "VISTA DEL SOL TRASH COMPACTION",
     "bldgCode": "X32",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": "Residential Facilities",
     "zoneSource": "old sector TMPE-C02"
   },
@@ -9578,7 +9578,7 @@
     "name": "WEST GARAGE",
     "bldgCode": "141D",
     "rateSchedule": "CM",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-C01"
   },
@@ -9595,7 +9595,7 @@
     "name": "WEST RESTROOMS",
     "bldgCode": "R87D",
     "rateSchedule": "CB",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-C02"
   },
@@ -9619,7 +9619,7 @@
     "name": "WEST STORAGE",
     "bldgCode": "X128D",
     "rateSchedule": "CM",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-C02"
   },
@@ -9627,7 +9627,7 @@
     "name": "WEST SUB-STATION (METER AT CP)",
     "bldgCode": "X40",
     "rateSchedule": "CM",
-    "sector": "Not in 2027 zone guide - check",
+    "sector": "Check current zone guide",
     "subtype": null,
     "zoneSource": "old sector TMPE-A01"
   },

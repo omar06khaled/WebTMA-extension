@@ -14,7 +14,7 @@ zone guide lists, sets:
                   shown under the zone when the building is picked)
 Buildings a guide lists that the old file doesn't have are added. Buildings whose old sector
 was a zone the new guide renamed (TMPE-A/B/C/E.., DTPC-A02) but that the guide no longer
-lists get sector "Not in <label> - check" so a stale zone is never shown.
+lists get sector "Check current zone guide" so a stale zone is never shown.
 Requires: pip install openpyxl
 """
 
@@ -35,6 +35,8 @@ GUIDES = {
     "POLY Zone Guide": ("poly", [("POLY A-01", "POLY-A01"), ("LOCK SHOP", None), ("RESEARCH A", "RSCH A")]),
     "West Zone Guide": ("west", [("WEST - ZONE A", "WEST-A01"), ("WEST-GRNDS", None)]),
 }
+# Older TMPE zone-guide names for the RFMT zones (same zones, confirmed Oct 13).
+RFMT_RENAMES = {"RFMT-S1": "RFMT-ZONE-1", "RFMT-S2": "RFMT-ZONE-2", "RFMT-S3": "RFMT-ZONE-3"}
 # Building notes found under a shop section of a zone guide, filled by read_guides.
 SHOP_NOTES = {}
 # Old sectors that name a zone the 2027 guides replaced.
@@ -164,6 +166,7 @@ def main():
         if code in guide:
             info = guide[code]
             zone = " / ".join(info["zones"])
+            old = RFMT_RENAMES.get(old, old)
             building["sector"] = f"{old} / {zone}" if old.startswith("RFMT") else zone
             building["rateSchedule"] = info["rate"] or building.get("rateSchedule")
             building["campus"] = info["campus"]
@@ -173,7 +176,7 @@ def main():
             seen.add(code)
             stats["updated from guide"] += 1
         elif RENAMED_SECTOR.match(old):
-            building["sector"] = f"Not in {args.label} - check"
+            building["sector"] = "Check current zone guide"
             building["zoneSource"] = f"old sector {old}"
             stats["renamed zone, not in guide"] += 1
         else:
