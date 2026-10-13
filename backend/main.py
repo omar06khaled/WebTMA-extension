@@ -5,7 +5,7 @@ response shapes, so the Chrome extension works unchanged:
 
     POST /api/suggest          Layer 1 classification, with optional Layer 2 desk manual fallback
     POST /api/audit/applied    record which suggestion the operator applied
-    POST /api/feedback         beta testers rate a suggestion correct/wrong (appended to feedback.jsonl)
+    POST /api/feedback         beta testers rate a suggestion or a no-match result (appended to feedback.jsonl)
     GET  /api/building-search  building lookup by name or code
 
 Model calls go to OpenAI (default gpt-4o-mini, override with OPENAI_MODEL).
@@ -62,6 +62,7 @@ FEEDBACK_LOG_PATH = Path(os.getenv("FEEDBACK_LOG_PATH") or ROOT / "feedback.json
 # Preset reasons a tester can pick when a suggestion is wrong. Keep in sync with FEEDBACK_REASONS in sidepanel.js.
 FEEDBACK_REASONS = {"wrong_task", "wrong_trade", "wrong_campus_zone", "other"}
 FEEDBACK_NOTE_MAX = 500
+FEEDBACK_EXPECTED_MAX = 120
 FEEDBACK_TESTER_MAX = 60
 
 with open(ROOT / "firstCallExamples_enriched.json", encoding="utf-8") as handle:
@@ -703,35 +704,57 @@ def find_audit_entry(audit_timestamp):
 @app.post("/api/feedback")
 async def feedback(request: Request):
     """Append one tester rating per line. A changed answer is a new line; the latest line per
-    (auditTimestamp, source, taskDescription, tester) is the current answer."""
+    (auditTimestamp, kind, source, taskDescription, tester) is the current answer.
+
+    kind "suggestion" rates one suggestion card. kind "no_match" rates a "no match found" result:
+    correct means nothing in the manual fits, wrong means it should have matched something."""
     body = await read_json_body(request) or {}
     audit_timestamp = body.get("auditTimestamp")
+    kind = body.get("kind", "suggestion")
     suggestion = body.get("suggestion")
     verdict = body.get("verdict")
     reasons = body.get("reasons", [])
+    expected = body.get("expected")
     note = body.get("note")
     tester = body.get("tester")
 
     if not isinstance(audit_timestamp, str) or not audit_timestamp:
         return error(400, "auditTimestamp is required and must be a string")
-    if not isinstance(suggestion, dict) or not is_nonempty_string(suggestion.get("taskDescription")):
-        return error(400, "suggestion.taskDescription is required")
-    source = suggestion.get("source", "layer1")
-    if source not in ("layer1", "layer2"):
-        return error(400, "suggestion.source must be layer1 or layer2")
+    if kind not in ("suggestion", "no_match"):
+        return error(400, "kind must be 'suggestion' or 'no_match'")
     if verdict not in ("correct", "wrong"):
         return error(400, "verdict must be 'correct' or 'wrong'")
     if not isinstance(reasons, list) or not all(isinstance(r, str) and r in FEEDBACK_REASONS for r in reasons):
         return error(400, f"reasons must be a list drawn from {sorted(FEEDBACK_REASONS)}")
-    if verdict == "correct" and reasons:
-        return error(400, "reasons are only allowed when verdict is 'wrong'")
-    if verdict == "wrong" and not reasons:
-        return error(400, "pick at least one reason when verdict is 'wrong'")
+
+    if kind == "suggestion":
+        if not isinstance(suggestion, dict) or not is_nonempty_string(suggestion.get("taskDescription")):
+            return error(400, "suggestion.taskDescription is required")
+        source = suggestion.get("source", "layer1")
+        if source not in ("layer1", "layer2"):
+            return error(400, "suggestion.source must be layer1 or layer2")
+        if verdict == "correct" and reasons:
+            return error(400, "reasons are only allowed when verdict is 'wrong'")
+        if verdict == "wrong" and not reasons:
+            return error(400, "pick at least one reason when verdict is 'wrong'")
+    else:
+        if suggestion is not None:
+            return error(400, "suggestion must be omitted for a no_match rating")
+        if reasons:
+            return error(400, "reasons are not used for a no_match rating")
+        source = None
+        suggestion = {}
+
+    if expected is not None and not isinstance(expected, str):
+        return error(400, "expected must be a string")
     if note is not None and not isinstance(note, str):
         return error(400, "note must be a string")
     if tester is not None and not isinstance(tester, str):
         return error(400, "tester must be a string")
 
+    expected = (expected or "").strip()[:FEEDBACK_EXPECTED_MAX] or None
+    if verdict == "correct" and expected:
+        return error(400, "expected is only allowed when verdict is 'wrong'")
     note = (note or "").strip()[:FEEDBACK_NOTE_MAX] or None
     tester = (tester or "").strip()[:FEEDBACK_TESTER_MAX] or None
 
@@ -749,12 +772,14 @@ async def feedback(request: Request):
         "auditTimestamp": audit_timestamp,
         "actionRequested": audit_entry.get("actionRequested"),
         "model": audit_entry.get("model"),
+        "kind": kind,
         "source": source,
-        "taskDescription": suggestion["taskDescription"],
+        "taskDescription": suggestion.get("taskDescription"),
         "category": suggestion.get("category") if isinstance(suggestion.get("category"), str) else None,
         "taskCode": task_code if is_number(task_code) or isinstance(task_code, str) else None,
         "verdict": verdict,
         "reasons": sorted(set(reasons)),
+        "expected": expected,
         "note": note,
         "tester": tester,
     }
@@ -765,7 +790,8 @@ async def feedback(request: Request):
         log.error(f"[WebTMA SERVER] Failed to write feedback.jsonl: {exc}")
         return error(500, "Could not write feedback log", str(exc))
 
-    log.info(f"[WebTMA SERVER] feedback - {verdict} - {entry['taskDescription']} - tester {tester or 'anon'}")
+    label = entry["taskDescription"] or "no match"
+    log.info(f"[WebTMA SERVER] feedback - {verdict} - {label} - tester {tester or 'anon'}")
     return {"ok": True, "timestamp": entry["timestamp"]}
 
 

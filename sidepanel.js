@@ -327,60 +327,86 @@ async function postFeedback(payload) {
 }
 
 /**
- * Correct / Wrong controls for one suggestion card. Every submission is appended server-side,
- * so changing an answer adds a new line and the latest one counts.
- * @param {object} suggestion
- * @param {"layer1"|"layer2"} source
+ * Correct / Wrong controls. Every submission is appended server-side, so changing an answer
+ * adds a new line and the latest one counts.
+ *
+ * kind "suggestion": rates one suggestion card (wrong needs a reason).
+ * kind "no_match":   rates a "no match found" result. Correct = nothing in the manual fits,
+ *                    wrong = it should have matched; the tester types what it should have been.
+ * @param {object|null} suggestion  null for kind "no_match"
+ * @param {"layer1"|"layer2"|null} source
  * @param {string|null} auditTimestamp  captured when the cards were rendered
+ * @param {"suggestion"|"no_match"} kind
  */
-function buildFeedbackSection(suggestion, source, auditTimestamp) {
+function buildFeedbackSection(suggestion, source, auditTimestamp, kind = "suggestion") {
+  const isNoMatch = kind === "no_match";
+  const labels = isNoMatch
+    ? { question: "Beta: was “no match” right?", correct: "✓ Right, nothing fits", wrong: "✗ Should have matched" }
+    : { question: "Beta: was this suggestion right?", correct: "✓ Correct", wrong: "✗ Wrong" };
+
   const section = document.createElement("div");
-  section.className = "feedback";
+  section.className = isNoMatch ? "feedback feedback--no-match" : "feedback";
   // Keep clicks and typing in here from selecting the card.
   section.addEventListener("click", (e) => e.stopPropagation());
 
   const question = document.createElement("div");
   question.className = "feedback-q";
-  question.textContent = "Beta: was this suggestion right?";
+  question.textContent = labels.question;
 
   const buttons = document.createElement("div");
   buttons.className = "feedback-buttons";
   const btnCorrect = document.createElement("button");
   btnCorrect.type = "button";
   btnCorrect.className = "fb-btn";
-  btnCorrect.textContent = "\u2713 Correct";
+  btnCorrect.textContent = labels.correct;
   btnCorrect.setAttribute("aria-pressed", "false");
   const btnWrong = document.createElement("button");
   btnWrong.type = "button";
   btnWrong.className = "fb-btn";
-  btnWrong.textContent = "\u2717 Wrong";
+  btnWrong.textContent = labels.wrong;
   btnWrong.setAttribute("aria-pressed", "false");
   buttons.append(btnCorrect, btnWrong);
 
   const form = document.createElement("div");
   form.className = "feedback-form";
   form.hidden = true;
-  const fieldset = document.createElement("fieldset");
-  const legend = document.createElement("legend");
-  legend.textContent = "What was wrong? (pick at least one)";
-  fieldset.appendChild(legend);
-  for (const [key, label] of FEEDBACK_REASONS) {
-    const row = document.createElement("label");
-    const box = document.createElement("input");
-    box.type = "checkbox";
-    box.value = key;
-    row.append(box, document.createTextNode(` ${label}`));
-    fieldset.appendChild(row);
+
+  let fieldset = null;
+  if (!isNoMatch) {
+    fieldset = document.createElement("fieldset");
+    const legend = document.createElement("legend");
+    legend.textContent = "What was wrong? (pick at least one)";
+    fieldset.appendChild(legend);
+    for (const [key, label] of FEEDBACK_REASONS) {
+      const row = document.createElement("label");
+      const box = document.createElement("input");
+      box.type = "checkbox";
+      box.value = key;
+      row.append(box, document.createTextNode(` ${label}`));
+      fieldset.appendChild(row);
+    }
+    form.appendChild(fieldset);
   }
+
+  const expectedLabel = document.createElement("label");
+  expectedLabel.className = "fb-expected-label";
+  expectedLabel.textContent = isNoMatch ? "What should it have matched?" : "What should it have been? (optional)";
+  const expected = document.createElement("input");
+  expected.type = "text";
+  expected.className = "fb-expected";
+  expected.maxLength = 120;
+  expected.placeholder = "Task and/or code, e.g. Lighting 15040";
+  expectedLabel.appendChild(expected);
+
   const note = document.createElement("textarea");
   note.maxLength = 500;
-  note.placeholder = "Optional note - what should it have been?";
+  note.placeholder = "Optional note";
   note.setAttribute("aria-label", "Optional note");
   const btnSubmit = document.createElement("button");
   btnSubmit.type = "button";
   btnSubmit.className = "fb-submit";
   btnSubmit.textContent = "Submit feedback";
-  form.append(fieldset, note, btnSubmit);
+  form.append(expectedLabel, note, btnSubmit);
 
   const status = document.createElement("div");
   status.className = "feedback-status";
@@ -390,7 +416,7 @@ function buildFeedbackSection(suggestion, source, auditTimestamp) {
 
   if (!auditTimestamp) {
     btnCorrect.disabled = btnWrong.disabled = true;
-    status.textContent = "\u26A0 Feedback unavailable for this result (no audit ID)";
+    status.textContent = "⚠ Feedback unavailable for this result (no audit ID)";
     return section;
   }
 
@@ -399,33 +425,41 @@ function buildFeedbackSection(suggestion, source, auditTimestamp) {
     btnWrong.setAttribute("aria-pressed", String(verdict === "wrong"));
   };
 
-  const send = async (verdict, reasons, noteText) => {
+  const send = async (verdict, reasons, expectedText, noteText) => {
     btnCorrect.disabled = btnWrong.disabled = btnSubmit.disabled = true;
     status.textContent = "Saving...";
     try {
-      await postFeedback({
+      const payload = {
         auditTimestamp,
-        suggestion: {
+        kind,
+        verdict,
+        reasons,
+        expected: expectedText || null,
+        note: noteText || null,
+        tester: testerInput.value.trim() || null,
+      };
+      if (!isNoMatch) {
+        payload.suggestion = {
           taskDescription: suggestion.taskDescription,
           category: suggestion.category ?? null,
           taskCode: suggestion.taskCode ?? null,
           source,
-        },
-        verdict,
-        reasons,
-        note: noteText || null,
-        tester: testerInput.value.trim() || null,
-      });
+        };
+      }
+      await postFeedback(payload);
       setPressed(verdict);
       section.dataset.saved = verdict;
       form.hidden = true;
-      const reasonLabels = FEEDBACK_REASONS.filter(([key]) => reasons.includes(key)).map(([, label]) => label.toLowerCase());
-      status.textContent = verdict === "correct"
-        ? "Saved: \u2713 Correct"
-        : `Saved: \u2717 Wrong (${reasonLabels.join(", ")})`;
+      if (verdict === "correct") {
+        status.textContent = `Saved: ${labels.correct}`;
+      } else {
+        const parts = FEEDBACK_REASONS.filter(([key]) => reasons.includes(key)).map(([, label]) => label.toLowerCase());
+        if (expectedText) parts.push(`should be “${expectedText}”`);
+        status.textContent = parts.length ? `Saved: ${labels.wrong} (${parts.join(", ")})` : `Saved: ${labels.wrong}`;
+      }
     } catch (error) {
       console.error(`[WebTMA SP] feedback failed: ${error.message}`);
-      status.textContent = `\u26A0 Not saved: ${error.message}`;
+      status.textContent = `⚠ Not saved: ${error.message}`;
     } finally {
       btnCorrect.disabled = btnWrong.disabled = btnSubmit.disabled = false;
     }
@@ -433,21 +467,21 @@ function buildFeedbackSection(suggestion, source, auditTimestamp) {
 
   btnCorrect.addEventListener("click", () => {
     if (section.dataset.saved === "correct") return; // already recorded
-    send("correct", [], null);
+    send("correct", [], null, null);
   });
 
   btnWrong.addEventListener("click", () => {
     form.hidden = !form.hidden;
-    if (!form.hidden) fieldset.querySelector("input")?.focus();
+    if (!form.hidden) (fieldset?.querySelector("input") || expected).focus();
   });
 
   btnSubmit.addEventListener("click", () => {
-    const reasons = [...fieldset.querySelectorAll("input:checked")].map((box) => box.value);
-    if (reasons.length === 0) {
-      status.textContent = "\u26A0 Pick at least one reason";
+    const reasons = fieldset ? [...fieldset.querySelectorAll("input:checked")].map((box) => box.value) : [];
+    if (fieldset && reasons.length === 0) {
+      status.textContent = "⚠ Pick at least one reason";
       return;
     }
-    send("wrong", reasons, note.value.trim());
+    send("wrong", reasons, expected.value.trim(), note.value.trim());
   });
 
   return section;
@@ -479,6 +513,7 @@ function renderSuggestions(suggestions, options = {}) {
         "No matching suggestion found",
         "Try different wording, add more detail, or choose the work-order fields manually."
       );
+      suggestionsDiv.appendChild(buildFeedbackSection(null, null, currentAuditTimestamp, "no_match"));
     } else if (nextState === "idle") {
       renderEmptyState(
         "Waiting for input",

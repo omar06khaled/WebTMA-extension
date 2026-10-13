@@ -327,6 +327,43 @@ def test_feedback_is_appended_and_validated(load_app, monkeypatch, tmp_path):
     assert len(module.FEEDBACK_LOG_PATH.read_text().splitlines()) == 2
 
 
+def test_feedback_no_match_and_expected(load_app, monkeypatch, tmp_path):
+    monkeypatch.setenv("FEEDBACK_LOG_PATH", str(tmp_path / "feedback.jsonl"))
+    module, client = load_app()
+    queue_model_replies(module, monkeypatch, {"suggestions": [], "noMatchFound": True})
+    timestamp = client.post("/api/suggest", json={"actionRequested": "sewer ejector pump alarm"}).json()["auditTimestamp"]
+
+    wrong = {"auditTimestamp": timestamp, "kind": "no_match", "verdict": "wrong",
+             "expected": "  Sewer 23120  ", "tester": "Omar"}
+    assert client.post("/api/feedback", json=wrong).status_code == 200
+    right = {"auditTimestamp": timestamp, "kind": "no_match", "verdict": "correct"}
+    assert client.post("/api/feedback", json=right).status_code == 200
+
+    lines = [json.loads(l) for l in module.FEEDBACK_LOG_PATH.read_text().splitlines()]
+    assert lines[0]["kind"] == "no_match" and lines[0]["source"] is None and lines[0]["taskDescription"] is None
+    assert lines[0]["expected"] == "Sewer 23120" and lines[0]["actionRequested"] == "sewer ejector pump alarm"
+    assert lines[1]["verdict"] == "correct" and lines[1]["expected"] is None
+
+    bad = [
+        {**wrong, "kind": "maybe"},
+        {**wrong, "suggestion": {"taskDescription": "Sewer", "source": "layer1"}},  # no_match has no suggestion
+        {**wrong, "reasons": ["wrong_task"]},                                       # no reasons for no_match
+        {**right, "expected": "Sewer"},                                             # correct can't carry expected
+        {**wrong, "expected": 23120},
+    ]
+    for body in bad:
+        assert client.post("/api/feedback", json=body).status_code == 400, body
+
+    # expected also works on a wrong suggestion, and is trimmed to 120 chars
+    queue_model_replies(module, monkeypatch, {"suggestions": [pick("Pump", "Plumbing")], "noMatchFound": False})
+    ts2 = client.post("/api/suggest", json={"actionRequested": "lift station pump"}).json()["auditTimestamp"]
+    body = {"auditTimestamp": ts2, "suggestion": {"taskDescription": "Pump", "source": "layer1"},
+            "verdict": "wrong", "reasons": ["wrong_task"], "expected": "x" * 300}
+    assert client.post("/api/feedback", json=body).status_code == 200
+    last = json.loads(module.FEEDBACK_LOG_PATH.read_text().splitlines()[-1])
+    assert last["kind"] == "suggestion" and len(last["expected"]) == 120
+
+
 def test_building_search(load_app):
     module, client = load_app()
     assert client.get("/api/building-search", params={"q": "a"}).json() == []
