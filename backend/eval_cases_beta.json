@@ -1,0 +1,144 @@
+[
+ {
+  "text": "Please repair the handrail lighting at the NW stair of Hayden Library. Please assign to the zone. Pics attached.",
+  "accept": [
+   "Lighting"
+  ],
+  "note": "Oct 13 miss: 4o-mini said no match"
+ },
+ {
+  "text": "sewer ejector pump",
+  "accept": [
+   "Sewer",
+   "Pump"
+  ],
+  "note": "Oct 12 miss: no match"
+ },
+ {
+  "text": "First floor, Student Pavilion, there is a piece of green sticker/tape on the Senita BC doorway near the building manager desk that is high up and out of reach to take down. I just need someone with a ladder than could help take this sticker/tape off. Thank you!",
+  "accept": [
+   "Dusting & high areas"
+  ],
+  "note": "Oct 9 miss: no match. Graffiti is arguable if the sticker counts as defacement"
+ },
+ {
+  "text": "Restroom exhaust vent needs cleaning, strong urinal smell in the men's room. Send to Tommy Z.",
+  "accept": [
+   "Urinal",
+   "Exhaust Fan",
+   "Odor/Smell"
+  ],
+  "note": "Oct 6 #1 (Biodesign B): got Leak-fixture/Shower. reconstructed from the Oct 6 screenshot log; original wording unknown"
+ },
+ {
+  "text": "PCI to replace the blinds in the office. Assign to David Cavazos.",
+  "accept": [
+   "Window/Blind/Covering Billable"
+  ],
+  "category": "Carpentry",
+  "note": "Oct 6 #2 (University Center C, academic): got Residential 'Broken or missing blinds'. reconstructed from the Oct 6 screenshot log; original wording unknown"
+ },
+ {
+  "text": "ADA stall is continually flushing and won't stop. Assign to Dustin Gross.",
+  "accept": [
+   "Toilet"
+  ],
+  "note": "Oct 6 #3 (Farrington Stadium): got Plumbing - GENERAL. Toilet notes carry the Expedite flag. reconstructed from the Oct 6 screenshot log; original wording unknown"
+ },
+ {
+  "text": "Unable to access lab room 174 since 10/3. Card reader won't let us in, already called the lock shop.",
+  "accept": [
+   "Burglar Alarm/ISAAC Card Readers"
+  ],
+  "only": true,
+  "note": "Oct 6 #4 (ISTB V): got Lock/Unlock Door. Lock Shop doesn't do ISAAC doors; refer to ISAAC Services. reconstructed from the Oct 6 screenshot log; original wording unknown"
+ },
+ {
+  "text": "Good morning, There has been a leak in my office over the weekend, and I am requesting ceiling tile replacements. Please let me know if this is possible. Thank you in advance!",
+  "accept": [
+   "Leak-fixture"
+  ],
+  "note": "tester: got Leak, should have been Leak-fixture"
+ },
+ {
+  "text": "At entryway to Alameda door W3 that goes into 100L2 lobby there were two concrete ashtrays.  They were moved today to behind the wall of the adjacent courtyard closer to the surplus area because of a high profile visit today.  They are filled with wet trash and cigarette butts.  May we have these permanently removed since there is no smoking on campus and people use the ashtrays and as trash receptacles.  Thanks",
+  "accept": [
+   "Concrete/Masonry"
+  ],
+  "note": "tester: got Debris Collection & Removal, should be concrete/masonry"
+ },
+ {
+  "text": "Additional contact name: Jake Thompson\nContact email: thompson-jake@aramark.com\nContact phone: 4806629580\nOther Funding: \nChoolaah has no cold water. Only hot water is coming out.",
+  "accept": [
+   "Water Heater"
+  ],
+  "note": "tester: got Plumbing - GENERAL, should be water heater"
+ },
+ {
+  "text": "Priority: True\nWe are experiencing a roof leak in Bio A , staircase A260. Can we please have custodial clean up the water on the stairs and place out wet floor signs. Thank you!",
+  "accept": [
+   "Flooring -Hard Sweep/Mop/Vacuum",
+   "Leak"
+  ],
+  "note": "tester: Restrooms wrong (should be flooring for custodial), Leak correct"
+ },
+ {
+  "text": "During these recent rains, the office of LSC L1-52B has stained ceiling tiles again.  This happens often when it rains, and the occupants have taken to keeping plastic coverings over their belongings so they don't get damaged.  Can it be determined why it leaks so often into the LSC L1-52A and B offices and remedy it so they don't need to work with plastic covering their computers and have to constantly have their ceiling tiles changed out?\nCan we also have the stained ceiling tiles changed out in the LSC L1-52B office.\nThanks",
+  "accept": [
+   "Leak",
+   "Ceiling"
+  ],
+  "note": "tester: Leak correct, Walls wrong. Ceiling not rated, accepted since tiles are named"
+ },
+ {
+  "text": "Priority: True\nPlease repair the embedded lighting around the accent columns in the Student Services courtyard. Some covers are missing creating an extreme tripping/fall hazard. Please assign to the zone. Pics attached.",
+  "accept": [
+   "Lighting"
+  ],
+  "note": "Oct 9: no match on the first try, Lighting on the retry"
+ },
+ {
+  "text": "Exterior loading dock pac light\nNeeds ballast",
+  "accept": [
+   "Lighting"
+  ],
+  "note": "Oct 9 no match. Building-mounted fixture, so Lighting/ZONE (not UDIST)"
+ },
+ {
+  "text": "Additional contact name: Chad Price\nContact email: \nContact phone: 480-727-7381\nRequesting installation of a 3' x 4' dry erase board on the wall to the right of the entry of 158A.1 area.  (Image attached of both dry erase board and area where we are requesting it to be mounted.)  We no longer have the \"L\" or \"Z\" brackets and can order but would need vendor information and part information. \n\nThis area is our departments Testing Services are which administers exams to students with testing accommodations.  Testing hours are 7:30am-7pm, Monday through Friday.  Fridays are typically the slowest exam day however can coordinate a date and time in advance notice.  contact either Christine Espericueta or Chad Price.",
+  "accept": [
+   "Board (Bulletin/Chalk/Cork/White)/ Framed Object/Wall Hanging Billable"
+  ],
+  "note": "Oct 13 no match: dry erase board install"
+ },
+ {
+  "text": "Clock in North hallway not working",
+  "accept": null,
+  "note": "UNKEYED - fill in accept ([] = no match is right). Oct 9 no match. Electrical - GENERAL? Or not FM?"
+ },
+ {
+  "text": "There is an issue with the TV in our lobby. The TV in the lobby no longer has a signal. It just stopped working one day. The TV works, but I believe it might be a network/connection issue. I asked our IT rep and he stated it would be a FACMAN request.",
+  "accept": null,
+  "note": "UNKEYED - fill in accept ([] = no match is right). Oct 9 no match. Likely IT, not FM, so no match may be correct"
+ },
+ {
+  "text": "Priority: True\nDeionize water purifier has stopped working again. Please repair.",
+  "accept": null,
+  "note": "UNKEYED - fill in accept ([] = no match is right). Oct 9 no match. Water Filter?"
+ },
+ {
+  "text": "Additional contact name: Sabrina Ebel\nContact email: sebel1@asu.edu\nWe need to secure a power source on Taylor St. and 2nd St.  (Taylor Mall) directly in front of Chick-fil-A. This power source will allow for the operation of the photo booth for the Employee Appreciation BBQ at Downtown Phoenix scheduled for Thursday, December 3, 2026.",
+  "accept": null,
+  "note": "UNKEYED - fill in accept ([] = no match is right). Oct 9 no match. Outlets? Or an event request outside WebTMA?"
+ },
+ {
+  "text": "Sun shade came down again at wrestling and gymnastics, needs to be repaired and hung back up, in the meantime it needs to be moved out of the way until it is fixed. Please contact Jadon with any questions at 307-630-9276",
+  "accept": null,
+  "note": "UNKEYED - fill in accept ([] = no match is right). Oct 12 no match. Which code covers shade structures?"
+ },
+ {
+  "text": "Priority: True\nRequesting assistance with the ceiling router box in room 103. Appears to have fallen open and there are now errors with the network. The lock is in the \"locked\" position. Thank you!",
+  "accept": null,
+  "note": "UNKEYED - fill in accept ([] = no match is right). Oct 12 no match. Ceiling? Or IT?"
+ }
+]

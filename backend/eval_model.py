@@ -4,9 +4,11 @@ Usage (from the repo root, with OPENAI_API_KEY in .env):
     python backend/eval_model.py                 # all cases in backend/eval_cases.json
     python backend/eval_model.py --limit 5       # quick smoke test
     python backend/eval_model.py --holdout       # held-out cases: the honest score after prompt changes
+    python backend/eval_model.py --beta          # real misses from beta testing (eval_cases_beta.json)
 
 Each case lists the task descriptions that count as correct ("accept"). An empty list means
-the right answer is "no match". Results are also written to backend/eval_results.json.
+the right answer is "no match". "accept": null means the answer isn't decided yet: the case
+is run and reported as REVIEW but not scored. Results are also written to backend/eval_results.json.
 The expected answers are a starting point: review and edit eval_cases.json to match desk practice.
 """
 
@@ -43,6 +45,8 @@ def grade(case, body):
     accept = case["accept"]
     names = [s["taskDescription"] for s in body.get("suggestions", [])]
     layer2 = (body.get("layer2") or {}).get("suggestion")
+    if accept is None:
+        return "REVIEW", names  # answer key not filled in yet
     if not accept:
         return ("PASS" if body.get("noMatchFound") else "FAIL"), names
     if case.get("only") and any(n not in accept for n in names):
@@ -60,12 +64,14 @@ def grade(case, body):
 def main_cli():
     parser = argparse.ArgumentParser()
     parser.add_argument("--limit", type=int)
-    parser.add_argument("--holdout", action="store_true", help="use eval_cases_holdout.json (don't tune the prompt on these)")
+    which = parser.add_mutually_exclusive_group()
+    which.add_argument("--holdout", action="store_true", help="use eval_cases_holdout.json (don't tune the prompt on these)")
+    which.add_argument("--beta", action="store_true", help="use eval_cases_beta.json (misses logged during beta testing)")
     args = parser.parse_args()
 
-    case_file = "eval_cases_holdout.json" if args.holdout else "eval_cases.json"
+    case_file = "eval_cases_holdout.json" if args.holdout else "eval_cases_beta.json" if args.beta else "eval_cases.json"
     cases = json.loads((BACKEND / case_file).read_text(encoding="utf-8"))[: args.limit]
-    results, counts = [], {"PASS": 0, "PARTIAL": 0, "FAIL": 0, "ERROR": 0}
+    results, counts = [], {"PASS": 0, "PARTIAL": 0, "FAIL": 0, "ERROR": 0, "REVIEW": 0}
 
     print(f"Model: {main.OPENAI_MODEL} | Layer 2: {'on' if main.LAYER2_ENABLED else 'off'} | {len(cases)} cases from {case_file}\n")
     # One TestClient for the whole run keeps one event loop, so the OpenAI connection is reused.
@@ -83,13 +89,17 @@ def main_cli():
                 counts[verdict] += 1
                 layer2 = " +L2" if "layer2" in body else ""
                 print(f"{number:>2}. {verdict:<7} {seconds:4.1f}s{layer2}  {case['text'][:55]!r}")
-                if verdict != "PASS":
+                if verdict == "REVIEW":
+                    print(f"      got: {names or 'no match'} | expected: not decided - {case.get('note', '')}")
+                elif verdict != "PASS":
                     print(f"      got: {names or 'no match'} | expected: {case['accept'] or 'no match'}")
                 results.append({**case, "verdict": verdict, "got": names, "status": response.status_code, "seconds": round(seconds, 2), "response": body})
         except KeyboardInterrupt:
             print("\nStopped early - scoring the cases that finished.")
 
-    print(f"\nPASS {counts['PASS']}/{len(results)}  PARTIAL {counts['PARTIAL']}  FAIL {counts['FAIL']}  ERROR {counts['ERROR']}")
+    scored = len(results) - counts["REVIEW"]
+    print(f"\nPASS {counts['PASS']}/{scored}  PARTIAL {counts['PARTIAL']}  FAIL {counts['FAIL']}  ERROR {counts['ERROR']}"
+          + (f"  REVIEW {counts['REVIEW']} (not scored)" if counts["REVIEW"] else ""))
     print(f"Tokens: {usage['prompt']:,} in / {usage['completion']:,} out over {usage['calls']} model calls")
     (BACKEND / case_file.replace("cases", "results")).write_text(json.dumps(results, indent=2, ensure_ascii=False), encoding="utf-8")
     print(f"Details written to backend/{case_file.replace('cases', 'results')}")
