@@ -6,7 +6,8 @@ Reads the cleaned files the existing tools already produce (decision 9):
 
 Usage (from the repo root, after running db/schema.sql on an empty database):
     python db/import_core.py --dsn "postgresql://user:pass@localhost:5432/deskmanual"
-    python db/import_core.py --dsn ... --publish-as <your ASURITE>   # also publishes v1
+
+Normally run through db/setup.py, which also imports the prose sheets and publishes v1.
 
 DATABASE_URL works instead of --dsn. Requires: pip install "psycopg[binary]"
 
@@ -61,7 +62,6 @@ def load(name):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--dsn", default=os.environ.get("DATABASE_URL"))
-    ap.add_argument("--publish-as", help="ASURITE of an approver/admin: publish the import as v1")
     args = ap.parse_args()
     if not args.dsn:
         sys.exit("Give --dsn or set DATABASE_URL")
@@ -196,10 +196,6 @@ def main():
         if not rows:
             print("  none")
 
-        if args.publish_as:
-            version = cur.execute("SELECT public.publish(%s, %s)",
-                                  (args.publish_as, "Initial import from Desk Manual 2027")).fetchone()[0]
-            print(f"\nPublished v{version}.")
 
     if questions:
         print("\nQUESTIONS (not guessed):")
