@@ -1,0 +1,191 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="900" viewBox="0 0 1500 900" role="img">
+<title>Desk manual database: the full picture</title>
+<desc>One Postgres database with three schemas. The staging schema holds the next version of the manual, the live schema holds the published version, and the public schema holds the workflow tables. The web app edits staging, two approvers publish staging to live, and the assistant backend reads only live.</desc>
+<style>
+text{font-family:"Segoe UI",Arial,sans-serif}
+.h{font-size:18px;font-weight:600;fill:#2C2C2A}
+.t{font-size:13px;font-weight:600}
+.s{font-size:10.5px}
+.lab{font-size:12px;fill:#5F5E5A}
+.gl{font-size:11.5px;font-weight:600;fill:#5F5E5A;letter-spacing:.4px}
+.pt{font-size:15px;font-weight:600}
+.arr{stroke:#5F5E5A;stroke-width:1.5;fill:none}
+.dash{stroke-dasharray:4 4}
+.m rect{fill:#EEEDFE;stroke:#534AB7;stroke-width:1}.m .t{fill:#26215C}.m .s{fill:#534AB7}
+.l rect{fill:#CECBF6;stroke:#534AB7;stroke-width:1}.l .t{fill:#26215C}
+.v rect{fill:#AFA9EC;stroke:#3C3489;stroke-width:1}.v .t{fill:#26215C}.v .s{fill:#26215C}
+.w rect{fill:#E1F5EE;stroke:#0F6E56;stroke-width:1}.w .t{fill:#085041}.w .s{fill:#0F6E56}
+.x rect{fill:#F1EFE8;stroke:#5F5E5A;stroke-width:1}.x .t{fill:#444441}.x .s{fill:#5F5E5A}
+.u rect{stroke-dasharray:4 4}
+.pn-m{fill:#FAFAFE;stroke:#534AB7;stroke-width:1.5}
+.pn-d{fill:#FAFAFE;stroke:#534AB7;stroke-width:1.5;stroke-dasharray:6 4}
+.pn-w{fill:#F6FCFA;stroke:#0F6E56;stroke-width:1.5}
+</style>
+<defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#5F5E5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<rect width="1500" height="900" fill="#ffffff"/>
+<text class="h" x="40" y="30">Desk manual database: the full picture (planned, none created yet)</text>
+<text class="lab" x="40" y="50">One Postgres database, three schemas. An arrow inside a box (→) marks a foreign key.</text>
+<g class="x u"><rect x="250" y="70" width="240" height="52" rx="8"/><text class="t" x="370" y="88" text-anchor="middle" dominant-baseline="central">Web app</text><text class="s" x="370" y="106" text-anchor="middle" dominant-baseline="central">Design mockups only</text></g>
+<g class="x"><rect x="1000" y="70" width="240" height="52" rx="8"/><text class="t" x="1120" y="88" text-anchor="middle" dominant-baseline="central">Assistant backend</text><text class="s" x="1120" y="106" text-anchor="middle" dominant-baseline="central">Runs today, not on the DB yet</text></g>
+<rect x="20" y="150" width="1460" height="720" rx="14" fill="none" stroke="#B4B2A9" stroke-width="1" stroke-dasharray="4 4"/>
+<text class="lab" x="36" y="172">Postgres database</text>
+<line class="arr dash" x1="370" y1="124" x2="370" y2="188" marker-end="url(#a)"/>
+<text class="lab" x="382" y="160">edit, review, publish (role deskmanual_app, through functions)</text>
+<line class="arr dash" x1="1120" y1="124" x2="1120" y2="188" marker-end="url(#a)"/>
+<text class="lab" x="1132" y="160">read-only (role deskmanual_reader)</text>
+<rect class="pn-d" x="40" y="190" width="660" height="320" rx="10"/>
+<text class="pt" x="56" y="214" fill="#26215C">staging schema</text>
+<text class="lab" x="170" y="214">The next version of the manual. Editing happens here.</text>
+<text class="gl" x="56" y="250">PLACES</text>
+<g class="m"><rect x="56" y="260" width="200" height="42" rx="6"/>
+<text class="t" x="66" y="276">zone</text>
+<text class="s" x="66" y="292">campus_code → campus</text></g>
+<g class="m"><rect x="56" y="308" width="200" height="42" rx="6"/>
+<text class="t" x="66" y="324">building</text>
+<text class="s" x="66" y="340">code · campus_code → campus</text></g>
+<g class="m"><rect x="56" y="356" width="200" height="42" rx="6"/>
+<text class="t" x="66" y="372">building_zone</text>
+<text class="s" x="66" y="388">→ building · → zone</text></g>
+<g class="m"><rect x="56" y="404" width="200" height="42" rx="6"/>
+<text class="t" x="66" y="420">building_note</text>
+<text class="s" x="66" y="436">→ building · note</text></g>
+<text class="gl" x="270" y="250">TASKS AND ARTICLES</text>
+<g class="m"><rect x="270" y="260" width="200" height="42" rx="6"/>
+<text class="t" x="280" y="276">task_category</text>
+<text class="s" x="280" y="292">name · section_note</text></g>
+<g class="m"><rect x="270" y="308" width="200" height="42" rx="6"/>
+<text class="t" x="280" y="324">task</text>
+<text class="s" x="280" y="340">task_code · → task_category</text></g>
+<g class="m"><rect x="270" y="356" width="200" height="42" rx="6"/>
+<text class="t" x="280" y="372">trade</text>
+<text class="s" x="280" y="388">code · is_global</text></g>
+<g class="m"><rect x="270" y="404" width="200" height="42" rx="6"/>
+<text class="t" x="280" y="420">routing_rule</text>
+<text class="s" x="280" y="436">→ task · → trade · campus</text></g>
+<g class="m"><rect x="270" y="452" width="200" height="42" rx="6"/>
+<text class="t" x="280" y="468">article</text>
+<text class="s" x="280" y="484">title · category · → campus</text></g>
+<text class="gl" x="484" y="250">PEOPLE</text>
+<g class="m"><rect x="484" y="260" width="200" height="42" rx="6"/>
+<text class="t" x="494" y="276">contact</text>
+<text class="s" x="494" y="292">name · kind · org</text></g>
+<g class="m"><rect x="484" y="308" width="200" height="42" rx="6"/>
+<text class="t" x="494" y="324">contact_method</text>
+<text class="s" x="494" y="340">→ contact · kind · value</text></g>
+<g class="m"><rect x="484" y="356" width="200" height="42" rx="6"/>
+<text class="t" x="494" y="372">rotation</text>
+<text class="s" x="494" y="388">name · period_days · anchor</text></g>
+<g class="m"><rect x="484" y="404" width="200" height="42" rx="6"/>
+<text class="t" x="494" y="420">rotation_slot</text>
+<text class="s" x="494" y="436">→ rotation · → contact</text></g>
+<g class="m"><rect x="484" y="452" width="200" height="42" rx="6"/>
+<text class="t" x="494" y="468">contact_link</text>
+<text class="s" x="494" y="484">→ contact · → rotation · role</text></g>
+<rect class="pn-m" x="780" y="190" width="680" height="320" rx="10"/>
+<text class="pt" x="796" y="214" fill="#26215C">live schema</text>
+<text class="lab" x="880" y="214">The published version. The assistant reads only this. Same 14 tables, same columns.</text>
+<text class="gl" x="796" y="250">PLACES</text>
+<g class="l"><rect x="796" y="260" width="200" height="26" rx="6"/>
+<text class="t" x="806" y="274.0" dominant-baseline="central">zone</text></g>
+<g class="l"><rect x="796" y="292" width="200" height="26" rx="6"/>
+<text class="t" x="806" y="306.0" dominant-baseline="central">building</text></g>
+<g class="l"><rect x="796" y="324" width="200" height="26" rx="6"/>
+<text class="t" x="806" y="338.0" dominant-baseline="central">building_zone</text></g>
+<g class="l"><rect x="796" y="356" width="200" height="26" rx="6"/>
+<text class="t" x="806" y="370.0" dominant-baseline="central">building_note</text></g>
+<text class="gl" x="1010" y="250">TASKS AND ARTICLES</text>
+<g class="l"><rect x="1010" y="260" width="200" height="26" rx="6"/>
+<text class="t" x="1020" y="274.0" dominant-baseline="central">task_category</text></g>
+<g class="l"><rect x="1010" y="292" width="200" height="26" rx="6"/>
+<text class="t" x="1020" y="306.0" dominant-baseline="central">task</text></g>
+<g class="l"><rect x="1010" y="324" width="200" height="26" rx="6"/>
+<text class="t" x="1020" y="338.0" dominant-baseline="central">trade</text></g>
+<g class="l"><rect x="1010" y="356" width="200" height="26" rx="6"/>
+<text class="t" x="1020" y="370.0" dominant-baseline="central">routing_rule</text></g>
+<g class="l"><rect x="1010" y="388" width="200" height="26" rx="6"/>
+<text class="t" x="1020" y="402.0" dominant-baseline="central">article</text></g>
+<text class="gl" x="1224" y="250">PEOPLE</text>
+<g class="l"><rect x="1224" y="260" width="200" height="26" rx="6"/>
+<text class="t" x="1234" y="274.0" dominant-baseline="central">contact</text></g>
+<g class="l"><rect x="1224" y="292" width="200" height="26" rx="6"/>
+<text class="t" x="1234" y="306.0" dominant-baseline="central">contact_method</text></g>
+<g class="l"><rect x="1224" y="324" width="200" height="26" rx="6"/>
+<text class="t" x="1234" y="338.0" dominant-baseline="central">rotation</text></g>
+<g class="l"><rect x="1224" y="356" width="200" height="26" rx="6"/>
+<text class="t" x="1234" y="370.0" dominant-baseline="central">rotation_slot</text></g>
+<g class="l"><rect x="1224" y="388" width="200" height="26" rx="6"/>
+<text class="t" x="1234" y="402.0" dominant-baseline="central">contact_link</text></g>
+<text class="gl" x="796" y="434">VIEWS THE ASSISTANT QUERIES</text>
+<g class="v"><rect x="796" y="444" width="200" height="42" rx="6"/>
+<text class="t" x="806" y="460">routing_lookup</text>
+<text class="s" x="806" y="476">task → who handles it</text></g>
+<g class="v"><rect x="1010" y="444" width="200" height="42" rx="6"/>
+<text class="t" x="1020" y="460">building_lookup</text>
+<text class="s" x="1020" y="476">building → its zones</text></g>
+<g class="v"><rect x="1224" y="444" width="200" height="42" rx="6"/>
+<text class="t" x="1234" y="460">who_to_call</text>
+<text class="s" x="1234" y="476">rotations + contacts + off today</text></g>
+<line class="arr" x1="704" y1="360" x2="776" y2="360" marker-end="url(#a)"/>
+<text class="lab" x="740" y="324" text-anchor="middle">publish</text>
+<text class="lab" x="740" y="340" text-anchor="middle">2 approvers</text>
+<rect class="pn-w" x="40" y="560" width="1420" height="290" rx="10"/>
+<text class="pt" x="56" y="584" fill="#085041">public schema</text>
+<text class="lab" x="170" y="584">Workflow: who changed what, who approved it, which version is live. One copy, not versioned.</text>
+<text class="gl" x="60" y="618">PROPOSED EDITS</text>
+<g class="w"><rect x="60" y="628" width="220" height="44" rx="6"/>
+<text class="t" x="70" y="644">change_request</text>
+<text class="s" x="70" y="660">table · proposed · status · by</text></g>
+<g class="w"><rect x="60" y="680" width="220" height="44" rx="6"/>
+<text class="t" x="70" y="696">change_request_event</text>
+<text class="s" x="70" y="712">→ change_request · event</text></g>
+<g class="w"><rect x="60" y="732" width="220" height="44" rx="6"/>
+<text class="t" x="70" y="748">change_log</text>
+<text class="s" x="70" y="764">table · old_row · new_row (auto)</text></g>
+<text class="gl" x="300" y="618">PEOPLE</text>
+<g class="w"><rect x="300" y="628" width="220" height="44" rx="6"/>
+<text class="t" x="310" y="644">app_user</text>
+<text class="s" x="310" y="660">asurite PK · role · active</text></g>
+<g class="w"><rect x="300" y="680" width="220" height="44" rx="6"/>
+<text class="t" x="310" y="696">role_change</text>
+<text class="s" x="310" y="712">→ app_user · old → new role</text></g>
+<text class="gl" x="630" y="618">PUBLISHING: STAGING → LIVE</text>
+<g class="w"><rect x="630" y="628" width="220" height="44" rx="6"/>
+<text class="t" x="640" y="644">release</text>
+<text class="s" x="640" y="660">version PK · snapshot · is_live</text></g>
+<g class="w"><rect x="630" y="680" width="220" height="44" rx="6"/>
+<text class="t" x="640" y="696">release_request</text>
+<text class="s" x="640" y="712">→ release · kind · status</text></g>
+<g class="w"><rect x="630" y="732" width="220" height="44" rx="6"/>
+<text class="t" x="640" y="748">release_event</text>
+<text class="s" x="640" y="764">→ release · event · by</text></g>
+<text class="gl" x="880" y="618">OTHER</text>
+<g class="w"><rect x="880" y="628" width="220" height="44" rx="6"/>
+<text class="t" x="890" y="644">manual_flag</text>
+<text class="s" x="890" y="660">wo_number · target · → release</text></g>
+<g class="w"><rect x="880" y="680" width="220" height="44" rx="6"/>
+<text class="t" x="890" y="696">contact_unavailable</text>
+<text class="s" x="890" y="712">contact_id · day · set_by</text></g>
+<g class="w"><rect x="880" y="732" width="220" height="44" rx="6"/>
+<text class="t" x="890" y="748">import_sheet</text>
+<text class="s" x="890" y="764">sheet_name PK · target · status</text></g>
+<g class="w"><rect x="880" y="784" width="220" height="44" rx="6"/>
+<text class="t" x="890" y="800">campus</text>
+<text class="s" x="890" y="816">code PK · name · shared by both</text></g>
+<rect x="1130" y="604" width="310" height="226" rx="8" fill="#ffffff" stroke="#0F6E56" stroke-width="1" stroke-dasharray="4 4"/>
+<text class="t" x="1146" y="628" fill="#085041">Rules the database enforces</text>
+<text class="lab" x="1146" y="656" fill="#3d3d3a">•  Nobody approves their own change</text>
+<text class="lab" x="1146" y="678" fill="#3d3d3a">•  A denial needs a written reason</text>
+<text class="lab" x="1146" y="700" fill="#3d3d3a">•  Publishing needs two different approvers</text>
+<text class="lab" x="1146" y="722" fill="#3d3d3a">•  Rows are retired, never deleted</text>
+<text class="lab" x="1146" y="744" fill="#3d3d3a">•  Logs can only be added to</text>
+<text class="lab" x="1146" y="766" fill="#3d3d3a">•  Every release keeps a JSON snapshot</text>
+<text class="lab" x="1146" y="788" fill="#3d3d3a">•  Any release can be rolled back</text>
+<line class="arr" x1="170" y1="558" x2="170" y2="512" marker-end="url(#a)"/>
+<text class="lab" x="182" y="540">approved edits are applied</text>
+<line class="arr" x1="740" y1="558" x2="740" y2="364" marker-end="url(#a)"/>
+<line class="arr dash" x1="1000" y1="558" x2="1000" y2="512" marker-end="url(#a)"/>
+<text class="lab" x="1012" y="540">flags and off-today point at live rows</text>
+<g class="m"><rect x="40" y="884" width="18" height="10" rx="2"/></g><text class="lab" x="64" y="893">manual data (versioned)</text>
+<g class="w"><rect x="230" y="884" width="18" height="10" rx="2"/></g><text class="lab" x="254" y="893">workflow (one copy)</text>
+<g class="x u"><rect x="390" y="884" width="18" height="10" rx="2"/></g><text class="lab" x="414" y="893">not built yet or not connected</text>
+</svg>

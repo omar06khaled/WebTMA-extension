@@ -1,0 +1,202 @@
+﻿<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Full ERD</title>
+<style>body{margin:0;background:#fff;font-family:"Segoe UI",Arial,sans-serif;color:#2C2C2A}#wrap{padding:20px 24px;display:inline-block}h1{font-size:18px;font-weight:600;margin:0 0 4px}p{font-size:13px;color:#5F5E5A;margin:0 0 4px}.k{display:inline-block;width:14px;height:10px;border-radius:2px;margin:0 4px 0 12px;vertical-align:baseline}</style></head>
+<body><div id="wrap"><h1>Desk manual database: full relational diagram</h1>
+<p>Key columns only. <span class="k" style="background:#EEEDFE;border:1px solid #534AB7;margin-left:0"></span>manual data: each table exists in staging and live (same columns). <span class="k" style="background:#E1F5EE;border:1px solid #0F6E56"></span>workflow tables and campus (public schema, one copy).</p>
+<p>Solid lines are foreign keys. Dotted lines link by table name and key, or by id without a foreign key.</p>
+<div id="out"></div></div>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11.6.0/dist/mermaid.min.js"></script>
+<script>
+mermaid.initialize({startOnLoad:false,theme:'base',themeVariables:{fontSize:'14px',fontFamily:'Segoe UI, Arial, sans-serif',lineColor:'#73726c',textColor:'#3d3d3a'},er:{useMaxWidth:false}});
+mermaid.render('erd', `erDiagram
+  campus ||--o{ zone : has
+  campus ||--o{ building : has
+  campus ||--o{ routing_rule : for
+  campus |o--o{ article : scopes
+  building ||--o{ building_zone : in
+  zone ||--o{ building_zone : holds
+  building ||--o{ building_note : has
+  task_category ||--o{ task : groups
+  task ||--o{ routing_rule : routed_by
+  trade |o--o{ routing_rule : sends_to
+  contact ||--o{ contact_method : reached_by
+  rotation ||--o{ rotation_slot : has
+  contact ||--o{ rotation_slot : fills
+  contact |o--o{ contact_link : linked
+  rotation |o--o{ contact_link : linked
+  app_user ||--o{ role_change : has
+  app_user ||--o{ change_request : submits
+  app_user ||--o{ release : publishes
+  app_user ||--o{ manual_flag : raises
+  app_user ||--o{ contact_unavailable : sets
+  change_request ||--o{ change_request_event : logs
+  release ||--o{ release_request : targets
+  release ||--o{ release_event : records
+  release |o--o{ manual_flag : read_in
+  change_request |o..o{ change_log : caused
+  contact ||..o{ contact_unavailable : off_today
+  article |o..o{ import_sheet : imported_as
+  campus {
+    text code PK
+    text name
+  }
+  zone {
+    text code PK
+    text campus_code FK
+    boolean is_rfmt
+  }
+  building {
+    int id PK
+    text code UK
+    text name
+    text campus_code FK
+    text rate_schedule
+  }
+  building_zone {
+    int building_id PK
+    text zone_code PK
+  }
+  building_note {
+    int id PK
+    int building_id FK
+    text note
+  }
+  trade {
+    text code PK
+    boolean is_global
+  }
+  task_category {
+    int id PK
+    text name UK
+  }
+  task {
+    int id PK
+    int task_code
+    text description
+    int category_id FK
+  }
+  routing_rule {
+    int task_id PK
+    text campus_code PK
+    boolean is_rfmt PK
+    text kind
+    text trade_code FK
+  }
+  article {
+    int id PK
+    text title
+    text category
+    text campus_code FK
+    text source_sheet UK
+  }
+  contact {
+    int id PK
+    text name
+    text kind
+    text org
+  }
+  contact_method {
+    int id PK
+    int contact_id FK
+    text kind
+    text value
+  }
+  rotation {
+    int id PK
+    text name UK
+    int period_days
+    date anchor_date
+  }
+  rotation_slot {
+    int rotation_id PK
+    int position PK
+    int contact_id FK
+  }
+  contact_link {
+    int id PK
+    text target_table
+    text target_key
+    int contact_id FK
+    int rotation_id FK
+  }
+  app_user {
+    text asurite PK
+    text display_name
+    text role
+    boolean active
+  }
+  role_change {
+    bigint id PK
+    text asurite FK
+    text old_role
+    text new_role
+  }
+  change_request {
+    bigint id PK
+    text table_name
+    jsonb row_key
+    text action
+    jsonb proposed
+    text status
+    text requested_by FK
+    text reviewed_by FK
+  }
+  change_request_event {
+    bigint id PK
+    bigint request_id FK
+    text event
+  }
+  change_log {
+    bigint id PK
+    text table_name
+    jsonb old_row
+    jsonb new_row
+    bigint request_id
+  }
+  release {
+    int version PK
+    text label
+    text published_by FK
+    text confirmed_by FK
+    jsonb snapshot
+    boolean is_live
+  }
+  release_request {
+    bigint id PK
+    text kind
+    int target_version FK
+    text requested_by FK
+    text status
+  }
+  release_event {
+    bigint id PK
+    text event
+    int version FK
+    text confirmed_by FK
+  }
+  manual_flag {
+    bigint id PK
+    text wo_number
+    text target_table
+    text target_key
+    int release_version FK
+    text flagged_by FK
+  }
+  contact_unavailable {
+    bigint id PK
+    int contact_id
+    date day
+    text set_by FK
+  }
+  import_sheet {
+    text sheet_name PK
+    text target
+    int article_id
+    text status
+  }
+  classDef manual fill:#EEEDFE,stroke:#534AB7,color:#26215C
+  classDef flow fill:#E1F5EE,stroke:#0F6E56,color:#04342C
+  class zone,building,building_zone,building_note,trade,task_category,task,routing_rule,article,contact,contact_method,rotation,rotation_slot,contact_link manual
+  class campus,app_user,role_change,change_request,change_request_event,change_log,release,release_request,release_event,manual_flag,contact_unavailable,import_sheet flow
+`).then(function(r){document.getElementById('out').innerHTML=r.svg;document.title=document.getElementById('wrap').offsetWidth+'x'+document.getElementById('wrap').offsetHeight;}).catch(function(e){document.title='ERROR '+e.message;});
+</script></body></html>
