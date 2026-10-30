@@ -1,0 +1,155 @@
+{
+  "v": 3,
+  "attachments": {},
+  "boards": {
+    "Admin.dc.html": {
+      "expand": "fill",
+      "h": 1000,
+      "is_interactive": true,
+      "title": "Admin (managers)",
+      "w": 1440,
+      "x": 3040,
+      "y": 2740
+    },
+    "Dispatch.dc.html": {
+      "expand": "fill",
+      "h": 1700,
+      "is_interactive": true,
+      "title": "Dispatch (round 2, archived)",
+      "w": 1440,
+      "x": 0,
+      "y": 4580
+    },
+    "DispatchV2.dc.html": {
+      "expand": "fill",
+      "h": 1500,
+      "is_interactive": true,
+      "title": "Dispatch",
+      "w": 1440,
+      "x": 0,
+      "y": 1120
+    },
+    "Editor.dc.html": {
+      "expand": "fill",
+      "h": 1180,
+      "is_interactive": true,
+      "title": "Manual editor (round 2, archived)",
+      "w": 1440,
+      "x": 1520,
+      "y": 4580
+    },
+    "EditorV2.dc.html": {
+      "expand": "fill",
+      "h": 1100,
+      "is_interactive": true,
+      "title": "Manual editor (editors + approvers)",
+      "w": 1440,
+      "x": 0,
+      "y": 2740
+    },
+    "Entry.dc.html": {
+      "expand": "fill",
+      "h": 1450,
+      "is_interactive": true,
+      "title": "Change or add a task",
+      "w": 1440,
+      "x": 1520,
+      "y": 2740
+    },
+    "Import.dc.html": {
+      "expand": "fill",
+      "h": 1100,
+      "is_interactive": true,
+      "title": "Excel import check",
+      "w": 1440,
+      "x": 4560,
+      "y": 2740
+    },
+    "Lookups.dc.html": {
+      "expand": "fill",
+      "h": 1150,
+      "is_interactive": true,
+      "title": "Lookups",
+      "w": 1440,
+      "x": 3040,
+      "y": 1120
+    },
+    "LookupsMobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "Lookups on a phone",
+      "w": 390,
+      "x": 4560,
+      "y": 1120
+    },
+    "Main.dc.html": {
+      "expand": "fill",
+      "h": 1000,
+      "is_interactive": true,
+      "title": "Home",
+      "w": 1440,
+      "x": 0,
+      "y": 0
+    },
+    "Manual.dc.html": {
+      "expand": "fill",
+      "h": 1150,
+      "is_interactive": true,
+      "title": "Desk manual (everyone, read-only)",
+      "w": 1440,
+      "x": 1520,
+      "y": 1120
+    },
+    "Signin.dc.html": {
+      "expand": "fill",
+      "h": 900,
+      "is_interactive": true,
+      "title": "Sign in (CAS)",
+      "w": 1440,
+      "x": 1520,
+      "y": 0
+    }
+  },
+  "createdOnFiles": {
+    "at": "2026-10-13T21:10:00Z",
+    "v": 1
+  },
+  "designSystems": [],
+  "launch": {
+    "view": "canvas"
+  },
+  "notes": {
+    "t1": {
+      "kind": "title1",
+      "maxW": 6000,
+      "text": "Desk Assistant — UI round 3",
+      "w": 240,
+      "x": 0,
+      "y": -300
+    },
+    "t2": {
+      "kind": "title1",
+      "maxW": 2960,
+      "text": "Archive — round 2 (for comparison)",
+      "w": 240,
+      "x": 0,
+      "y": 4300
+    }
+  },
+  "order": [
+    "Main.dc.html",
+    "Signin.dc.html",
+    "DispatchV2.dc.html",
+    "Manual.dc.html",
+    "Lookups.dc.html",
+    "LookupsMobile.dc.html",
+    "EditorV2.dc.html",
+    "Entry.dc.html",
+    "Admin.dc.html",
+    "Import.dc.html",
+    "Dispatch.dc.html",
+    "Editor.dc.html"
+  ],
+  "pages": [],
+  "title": "WebTMA Assistant Mockups"
+}

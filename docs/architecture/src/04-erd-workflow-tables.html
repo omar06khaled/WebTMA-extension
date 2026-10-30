@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Workflow tables ERD</title>
+<style>body{margin:0;background:#fff;font-family:"Segoe UI",Arial,sans-serif;color:#2C2C2A}#wrap{padding:20px 24px;display:inline-block}h1{font-size:16px;font-weight:600;margin:0 0 4px}p{font-size:12px;color:#5F5E5A;margin:0 0 12px}</style></head>
+<body><div id="wrap"><h1>Desk manual database: workflow tables</h1>
+<p>Users, change requests, releases and flags (public schema). change_log, contact_unavailable and import_sheet link loosely and are not drawn.</p>
+<div id="out"></div></div>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11.4.0/dist/mermaid.min.js"></script>
+<script>
+mermaid.initialize({startOnLoad:false,theme:'base',themeVariables:{fontSize:'14px',fontFamily:'Segoe UI, Arial, sans-serif',lineColor:'#73726c',textColor:'#3d3d3a',primaryColor:'#E1F5EE',primaryBorderColor:'#0F6E56',primaryTextColor:'#04342C'}});
+mermaid.render('erd', `erDiagram
+  app_user ||--o{ role_change : has
+  app_user ||--o{ change_request : submits
+  app_user ||--o{ release : publishes
+  app_user ||--o{ manual_flag : raises
+  change_request ||--o{ change_request_event : logs
+  release ||--o{ release_request : targets
+  release ||--o{ release_event : records
+  release |o--o{ manual_flag : read_in
+  app_user {
+    text asurite PK
+    text display_name
+    text role
+    boolean active
+  }
+  role_change {
+    bigint id PK
+    text asurite FK
+    text old_role
+    text new_role
+    text changed_by FK
+  }
+  change_request {
+    bigint id PK
+    text table_name
+    jsonb row_key
+    text action
+    jsonb proposed
+    jsonb before
+    text status
+    text requested_by FK
+    text reviewed_by FK
+    int released_in
+  }
+  change_request_event {
+    bigint id PK
+    bigint request_id FK
+    text event
+    text by_user FK
+  }
+  release {
+    int version PK
+    text label
+    text published_by FK
+    text confirmed_by FK
+    jsonb snapshot
+    jsonb checks
+    boolean is_live
+  }
+  release_request {
+    bigint id PK
+    text kind
+    int target_version FK
+    int result_version FK
+    text requested_by FK
+    text decided_by FK
+    text status
+  }
+  release_event {
+    bigint id PK
+    text event
+    int version FK
+    int from_version FK
+    text requested_by FK
+    text confirmed_by FK
+  }
+  manual_flag {
+    bigint id PK
+    text wo_number
+    text target_table
+    text target_key
+    int release_version FK
+    text flagged_by FK
+    text status
+  }`).then(function(r){document.getElementById('out').innerHTML=r.svg;document.title=document.getElementById('wrap').offsetWidth+'x'+document.getElementById('wrap').offsetHeight;}).catch(function(e){document.title='ERROR '+e.message;});
+</script></body></html>

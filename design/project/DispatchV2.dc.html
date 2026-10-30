@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Dispatch</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+.app{--bg:#F6F5F2;--surface:#FFFFFF;--soft:#F1EFEB;--text:#1F1F1F;--muted:#55524D;--line:#E4E1DC;--line2:#8A867F;--link:#8C1D40;--mark:#8C1D40;--primary:#8C1D40;--ptext:#FFFFFF;--solid:#1F1F1F;--stext:#FFFFFF;--hl:#FFF6DA;--ebg:#1F1F1F;--etext:#FFFFFF;--ebtn:#FFC627;--ebtntext:#1F1F1F;min-height:100vh;background:var(--bg);color:var(--text);font-family:'Public Sans',system-ui,sans-serif;font-size:16px;line-height:1.5;display:flex;flex-direction:column}
+.app.dim{--bg:#1C1D20;--surface:#26282C;--soft:#303236;--text:#E9E6E1;--muted:#B3AEA6;--line:#3A3C41;--line2:#8E8981;--link:#F0A9BD;--mark:#FFC627;--solid:#E9E6E1;--stext:#1C1D20;--hl:#3A3524;--ebg:#FFC627;--etext:#1C1D20;--ebtn:#1C1D20;--ebtntext:#FFFFFF}
+a{color:var(--link)}
+:focus-visible{outline:3px solid var(--text);outline-offset:2px}
+.wrap{max-width:1200px;width:100%;box-sizing:border-box;margin:0 auto;padding-left:32px;padding-right:32px}
+.top{background:var(--surface);border-bottom:1px solid var(--line);border-top:4px solid #FFC627}
+.topin{display:flex;flex-wrap:wrap;align-items:center;gap:8px 32px}
+.brand{font-size:18px;font-weight:700;color:var(--text);text-decoration:none;padding:12px 0}
+.mainnav{display:flex;flex-wrap:wrap;flex:1 1 auto}
+.nav{display:inline-flex;align-items:center;min-height:52px;padding:0 16px;color:var(--text);text-decoration:none;font-weight:500;border-bottom:3px solid transparent;box-sizing:border-box}
+.nav:hover{background:var(--soft);color:var(--text)}
+.nav[aria-current="page"]{font-weight:700;border-bottom-color:var(--mark)}
+.acct{display:flex;align-items:center;gap:8px;position:relative}
+.me{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 8px;background:transparent;border:0;border-radius:8px;font:inherit;color:var(--text);cursor:pointer}
+.me:hover{background:var(--soft)}
+.av{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:#8C1D40;color:#FFFFFF;font-weight:700;font-size:13px}
+.menu{position:absolute;right:0;top:100%;margin:4px 0 0;padding:8px;list-style:none;background:var(--surface);border:1px solid var(--line);border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.14);min-width:200px;z-index:10}
+.menu a{display:flex;align-items:center;min-height:44px;padding:0 12px;border-radius:6px;color:var(--text);text-decoration:none}
+.menu a:hover{background:var(--soft)}
+.main{padding-top:48px;padding-bottom:64px;flex:1 1 auto}
+h1{margin:0;font-size:30px;line-height:1.2}
+h2{margin:0;font-size:20px;line-height:1.3}
+.lbl{font-size:14px;color:var(--muted)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 16px;border-radius:8px;font:inherit;font-size:15px;font-weight:600;cursor:pointer;text-decoration:none;box-sizing:border-box;border:1.5px solid var(--line2);background:transparent;color:var(--text)}
+.btn:hover{border-color:var(--text);color:var(--text)}
+.btn.solid{background:var(--solid);color:var(--stext);border-color:var(--solid)}
+.btn.primary{background:var(--primary);color:var(--ptext);border-color:var(--primary);font-weight:700}
+.app.dim .btn.primary{border-color:#F0A9BD}
+.btn.link{border-color:transparent;color:var(--link);text-decoration:underline;padding:0 8px}
+.btn[aria-pressed="true"]{background:var(--soft)}
+.btn.sel[aria-pressed="true"]{background:var(--solid);color:var(--stext);border-color:var(--solid)}
+.icon{width:44px;height:44px;padding:0;border:0;background:transparent;border-radius:8px;color:var(--muted);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;font:inherit;font-size:13px;font-weight:700}
+.icon:hover{background:var(--soft);color:var(--text)}
+.in{font:inherit;font-size:16px;min-height:48px;box-sizing:border-box;padding:0 14px;border:1.5px solid var(--line2);border-radius:8px;background:var(--surface);color:var(--text)}
+textarea.in{padding:14px;line-height:1.5;resize:vertical}
+hr{border:0;border-top:1px solid var(--line);margin:0}
+.mono{font-family:ui-monospace,Menlo,monospace}
+.hit{display:flex;justify-content:space-between;align-items:center;gap:12px;width:100%;min-height:48px;padding:0 14px;background:transparent;border:0;border-bottom:1px solid var(--line);font:inherit;font-size:15px;color:var(--text);cursor:pointer;text-align:left}
+.hit:last-child{border-bottom:0}
+.hit:hover{background:var(--soft)}
+.frow{display:grid;grid-template-columns:150px minmax(0,1fr) 72px;align-items:center;gap:8px;min-height:48px;border-bottom:1px solid var(--line)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+</style>
+</helmet>
+<div class="app {{ themeClass }}">
+<header class="top"><div class="wrap topin">
+<a class="brand" href="Main.dc.html">Desk Assistant</a>
+<nav class="mainnav" aria-label="Main"><a class="nav" href="Main.dc.html">Home</a><a class="nav" href="DispatchV2.dc.html" aria-current="page">Dispatch</a><a class="nav" href="Manual.dc.html">Desk manual</a><a class="nav" href="Lookups.dc.html">Lookups</a></nav>
+<div class="acct">
+<button type="button" class="btn" aria-pressed="{{ dimPressed }}" onClick="{{ toggleTheme }}">{{ themeLabel }}</button>
+<button type="button" class="me" aria-haspopup="menu" aria-expanded="{{ menuExpanded }}" onClick="{{ toggleMenu }}"><span class="av" aria-hidden="true">ON</span><span style="font-weight:600">Omar</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></button>
+<sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}"><ul class="menu" role="menu"><li role="none"><a role="menuitem" href="EditorV2.dc.html">Manual editor</a></li><li role="none"><a role="menuitem" href="Admin.dc.html">Admin</a></li><li role="none"><a role="menuitem" href="Signin.dc.html">Sign out</a></li></ul></sc-if>
+</div>
+</div></header>
+
+<sc-if value="{{ aiDown }}" hint-placeholder-val="{{ false }}">
+<div role="status" style="background:var(--surface);border-bottom:1px solid var(--line)"><div class="wrap" style="padding-top:16px;padding-bottom:16px;display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center"><strong>Suggestions are down for now.</strong><span>Lookups and the desk manual still work.</span></div></div>
+</sc-if>
+
+<main class="wrap main" style="display:flex;flex-wrap:wrap;gap:48px;align-items:flex-start">
+
+<form style="flex:1 1 340px;max-width:400px;min-width:0;display:flex;flex-direction:column;gap:16px">
+<h1 style="margin-bottom:8px">New request</h1>
+<label for="req" style="font-weight:600;font-size:15px">What's the problem? <span style="font-weight:400;color:var(--muted)">(call notes or pasted email)</span></label>
+<textarea id="req" class="in" rows="6" value="{{ reqText }}" onChange="{{ setReq }}"></textarea>
+<div style="display:flex;flex-direction:column;gap:8px">
+<label for="bld" style="font-weight:600;font-size:15px">Building</label>
+<input id="bld" type="search" class="in" autocomplete="off" placeholder="Type a name or number, e.g. Wrigley or 007" value="{{ bq }}" onChange="{{ setBq }}" aria-controls="bld-list" aria-expanded="{{ bListExpanded }}">
+<sc-if value="{{ showBList }}" hint-placeholder-val="{{ false }}"><div id="bld-list" role="listbox" aria-label="Matching buildings" class="card" style="overflow:hidden"><sc-for list="{{ bHits }}" as="b" hint-placeholder-count="3"><button type="button" role="option" aria-selected="false" class="hit" onClick="{{ b.pick }}"><span>{{ b.name }}</span><span class="lbl">{{ b.code }} · {{ b.campus }}</span></button></sc-for></div></sc-if>
+<sc-if value="{{ bNone }}" hint-placeholder-val="{{ false }}"><p class="lbl" style="margin:0" role="status">No building matches. Try the building number.</p></sc-if>
+</div>
+<div style="display:flex;gap:12px">
+<div style="flex:1 1 0;min-width:0;display:flex;flex-direction:column;gap:8px"><label for="room" style="font-weight:600;font-size:15px">Room</label><input id="room" class="in" style="width:100%" value="{{ room }}" onChange="{{ setRoom }}"></div>
+<div style="flex:1 1 0;min-width:0;display:flex;flex-direction:column;gap:8px"><label for="camp" style="font-weight:600;font-size:15px">Campus</label><select id="camp" class="in" style="width:100%" value="{{ campus }}" onChange="{{ setCampus }}"><option>Tempe</option><option>Downtown</option><option>Polytechnic</option><option>West</option></select></div>
+</div>
+<div style="display:flex;gap:8px;margin-top:8px">
+<button type="button" class="btn primary" disabled="{{ aiDown }}" style="flex:1 1 auto;min-height:52px;font-size:16px">{{ routeLabel }}</button>
+<button type="button" class="btn" aria-label="Keyboard shortcuts" aria-expanded="{{ keysExpanded }}" onClick="{{ toggleKeys }}" style="width:52px;min-height:52px;padding:0;font-size:18px">?</button>
+</div>
+<sc-if value="{{ keysOpen }}" hint-placeholder-val="{{ false }}"><p style="margin:0;font-size:14px;line-height:1.8">Ctrl + Enter: suggest · Alt + N: copy Action Requested · Alt + P: copy number</p></sc-if>
+</form>
+
+<section aria-label="Suggestion" style="flex:999 1 560px;min-width:0;display:flex;flex-direction:column;gap:24px">
+
+<sc-if value="{{ isEmergency }}" hint-placeholder-val="{{ false }}">
+<div role="alert" style="background:var(--ebg);color:var(--etext);border-radius:12px;padding:32px;display:flex;flex-direction:column;gap:16px">
+<strong style="font-size:15px">Emergency · make these calls first</strong>
+<h2 style="font-size:32px">Possible gas leak</h2>
+<p style="margin:0;font-size:18px">1. ASU PD &nbsp;·&nbsp; 2. EH&amp;S &nbsp;·&nbsp; 3. Zone supervisor</p>
+<div style="display:flex;flex-wrap:wrap;gap:8px"><button type="button" onClick="{{ copyPD }}" style="min-height:52px;padding:0 24px;background:var(--ebtn);color:var(--ebtntext);border:0;border-radius:8px;font:inherit;font-weight:700;font-size:17px;cursor:pointer">{{ pdLabel }}</button></div>
+</div>
+</sc-if>
+
+<sc-if value="{{ showResult }}" hint-placeholder-val="{{ true }}">
+<div style="background:var(--surface);border:1.5px solid var(--text);border-radius:10px;padding:16px 20px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"></path></svg>
+<strong style="font-size:17px">{{ calloutTitle }}</strong>
+<span style="font-size:15px;color:var(--muted);flex:1 1 260px">{{ calloutLong }}</span>
+</div>
+
+<div class="card" style="overflow:hidden;display:flex;flex-direction:column">
+<div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;padding:14px 24px;background:var(--soft);border-bottom:1px solid var(--line)">
+<span style="font-size:14px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:var(--muted)">Top suggestion</span>
+<span style="display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:700"><span aria-hidden="true" style="display:inline-flex;gap:3px"><span style="width:10px;height:14px;background:var(--text);border-radius:2px"></span><span style="width:10px;height:14px;background:var(--text);border-radius:2px"></span><span style="width:10px;height:14px;background:var(--text);border-radius:2px"></span></span>High confidence</span>
+</div>
+<div style="padding:24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:20px">
+<div style="display:flex;flex-direction:column;gap:4px"><span class="lbl">Task code</span><span style="font-size:28px;font-weight:700;font-variant-numeric:tabular-nums">{{ code }}</span><span style="font-size:15px">{{ codeName }}</span></div>
+<div style="display:flex;flex-direction:column;gap:4px"><span class="lbl">Trade</span><span style="font-size:28px;font-weight:700">{{ trade }}</span><span style="font-size:15px">Tempe column</span></div>
+<div style="display:flex;flex-direction:column;gap:4px"><span class="lbl">Campus</span><span style="font-size:28px;font-weight:700">Tempe</span><span style="font-size:15px">{{ place }}</span></div>
+<div style="display:flex;flex-direction:column;gap:4px"><span class="lbl">Priority</span><span style="font-size:28px;font-weight:700">{{ priority }}</span><span style="font-size:15px">{{ priorityNote }}</span></div>
+</div>
+<div style="border-top:1px solid var(--line);padding:16px 24px;display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px">
+<div style="display:flex;flex-direction:column;gap:2px;flex:1 1 240px"><span class="lbl">Who to call</span><span style="font-size:17px;font-weight:700">{{ contactName }}</span><span class="lbl">Backup: {{ backupName }}</span></div>
+<button type="button" class="btn solid" style="min-height:48px" onClick="{{ copyCell }}">{{ cellLabel }}</button>
+<button type="button" class="btn" style="min-height:48px" onClick="{{ copyBackup }}">{{ backupCopyLabel }}</button>
+</div>
+<hr>
+<div style="display:flex;flex-direction:column;gap:12px;padding:24px">
+<div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 16px"><h2 style="font-size:18px">For WebTMA</h2><span class="lbl">Same order as the WebTMA form · * required</span></div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:0 48px">
+<dl style="margin:0">
+<sc-for list="{{ leftFields }}" as="f" hint-placeholder-count="8">
+<div class="frow"><dt style="font-size:14px;color:var(--muted)">{{ f.label }}</dt><dd style="margin:0;font-size:15px;{{ f.valStyle }}">{{ f.value }}</dd><sc-if value="{{ f.has }}" hint-placeholder-val="{{ true }}"><button type="button" class="icon" style="width:72px" aria-label="Copy {{ f.label }}" onClick="{{ f.copy }}">{{ f.copyText }}</button></sc-if></div>
+</sc-for>
+</dl>
+<dl style="margin:0">
+<sc-for list="{{ rightFields }}" as="f" hint-placeholder-count="3">
+<div class="frow"><dt style="font-size:14px;color:var(--muted)">{{ f.label }}</dt><dd style="margin:0;font-size:15px;{{ f.valStyle }}">{{ f.value }}</dd><sc-if value="{{ f.has }}" hint-placeholder-val="{{ true }}"><button type="button" class="icon" style="width:72px" aria-label="Copy {{ f.label }}" onClick="{{ f.copy }}">{{ f.copyText }}</button></sc-if></div>
+</sc-for>
+</dl>
+</div>
+<div style="display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:12px"><span style="font-size:14px;color:var(--muted)">Action Requested *</span><button type="button" class="btn" onClick="{{ copyNotes }}">{{ notesLabel }}</button></div>
+<p class="mono" style="margin:0;font-size:15px;line-height:1.6;white-space:pre-wrap">{{ notes }}</p>
+</div>
+<hr>
+<div style="display:flex;flex-direction:column;gap:16px;padding:16px 24px 24px">
+<button type="button" aria-expanded="{{ trailExpanded }}" onClick="{{ toggleTrail }}" style="align-self:flex-start;display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0;background:none;border:0;font:inherit;font-size:15px;font-weight:600;color:var(--text);cursor:pointer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="{{ chevron }}" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg>Why this? <span style="font-weight:400;color:var(--muted)">4 manual sections checked</span></button>
+<sc-if value="{{ trailOpen }}" hint-placeholder-val="{{ false }}">
+<ol style="margin:0;padding-left:24px;display:flex;flex-direction:column;gap:16px;font-size:15px">
+<sc-for list="{{ trail }}" as="t" hint-placeholder-count="4"><li><strong>{{ t.decision }}: {{ t.result }}.</strong> {{ t.why }}<br><span class="lbl">From: {{ t.path }} · Not: {{ t.rejected }}</span></li></sc-for>
+</ol>
+<a href="Manual.dc.html" style="font-size:15px">Open these in the desk manual</a>
+</sc-if>
+</div>
+</div>
+
+<div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;padding:0 8px">
+<span style="font-size:15px;color:var(--muted);margin-right:auto">{{ rateText }}</span>
+<button type="button" class="btn sel" aria-pressed="{{ rightPressed }}" onClick="{{ pickRight }}">Right</button>
+<button type="button" class="btn sel" aria-pressed="{{ wrongPressed }}" onClick="{{ pickWrong }}">Wrong</button>
+</div>
+<sc-if value="{{ showWrongForm }}" hint-placeholder-val="{{ false }}">
+<fieldset class="card" style="margin:0;padding:24px 32px;display:flex;flex-direction:column;gap:12px">
+<legend class="sr">Which parts were wrong</legend>
+<strong style="font-size:16px">What was wrong? Tick each part and type the right answer.</strong>
+<sc-for list="{{ parts }}" as="p" hint-placeholder-count="5">
+<div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px">
+<label style="display:inline-flex;align-items:center;gap:10px;min-height:44px;min-width:150px;font-size:15px;cursor:pointer"><input type="checkbox" checked="{{ p.on }}" onChange="{{ p.toggle }}" style="width:20px;height:20px;accent-color:#8C1D40">{{ p.name }}</label>
+<sc-if value="{{ p.on }}" hint-placeholder-val="{{ false }}"><label for="{{ p.id }}" class="sr">Right {{ p.name }}</label><input id="{{ p.id }}" class="in" placeholder="Right {{ p.name }}, e.g. {{ p.hint }}" style="flex:1 1 220px"></sc-if>
+</div>
+</sc-for>
+<button type="button" class="btn solid" style="align-self:flex-start;margin-top:8px" onClick="{{ saveFb }}">Save</button>
+</fieldset>
+</sc-if>
+</sc-if>
+
+<sc-if value="{{ isNoMatch }}" hint-placeholder-val="{{ false }}">
+<div class="card" style="padding:32px;display:flex;flex-direction:column;gap:16px">
+<span class="lbl">No task code for this in the desk manual</span>
+<p style="margin:0;font-size:20px"><strong>Send to ISAAC Services.</strong> Card-access doors aren't handled by the Lock Shop.</p>
+<a href="Manual.dc.html" style="font-size:15px">Read the ISAAC Doors page</a>
+<hr>
+<div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center"><span style="font-size:15px;color:var(--muted);margin-right:auto">Know the right code?</span><label for="nm" class="sr">Right task code</label><input id="nm" class="in" placeholder="e.g. 11040" style="width:160px"><button type="button" class="btn" onClick="{{ saveFb }}">Save</button></div>
+<sc-if value="{{ fbSaved }}" hint-placeholder-val="{{ false }}"><p style="margin:0;font-size:15px" role="status">Thanks, saved.</p></sc-if>
+</div>
+</sc-if>
+
+<sc-if value="{{ aiDown }}" hint-placeholder-val="{{ false }}">
+<div style="padding:32px 0;display:flex;flex-direction:column;gap:16px"><h2>Route this one by hand</h2><div style="display:flex;flex-wrap:wrap;gap:8px"><a href="Manual.dc.html" class="btn">Search the manual</a><a href="Lookups.dc.html" class="btn">Open Lookups</a></div></div>
+</sc-if>
+
+</section>
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"view":{"editor":"enum","options":["match","no match","emergency","AI unavailable"],"default":"match"},"theme":{"editor":"enum","options":["light","dim"],"default":"light"},"$preview":{"width":1440,"height":1500}}'>
+class Component extends DCLogic {
+constructor(props) { super(props); this.state = { dim: null, menu: false, fb: 'none', saved: false, trail: false, keys: false, loc: false, backup: false, copied: '', parts: {}, req: null, bq: null, bsel: null, room: null, campus: null }; }
+renderVals() {
+const s = this.state;
+const dim = s.dim ?? ((this.props.theme ?? 'light') === 'dim');
+const v = this.props.view ?? 'match';
+const emer = v === 'emergency', aiDown = v === 'AI unavailable';
+const copy = (id) => () => { this.setState({ copied: id }); clearTimeout(this._t); this._t = setTimeout(() => this.setState({ copied: '' }), 1500); };
+const cl = (id, label) => s.copied === id ? 'Copied' : label;
+const F = (id, label, value, req) => ({ label: label + (req ? ' *' : ''), value: value || 'Not given, ask the caller', has: !!value, valStyle: value ? 'font-weight:600;' : 'font-style:italic;color:var(--muted);', copy: copy(id), copyText: cl(id, 'Copy') });
+const B = [['Wrigley Hall','007 (CM)','Tempe'],['Psychology North','031A (CM)','Tempe'],['ISTB 4','075 (CM)','Tempe'],['Memorial Union','035 (CB)','Tempe'],['Hayden Library','010 (CM)','Tempe'],['Old Main','032 (CM)','Tempe'],['Cronkite Building','[code]','Downtown'],['Fletcher Library','900 (CM)','West']];
+const bName = s.bsel ?? (emer ? 'ISTB 4' : 'Wrigley Hall');
+const bRow = B.find(b => b[0] === bName) || B[0];
+const room = s.room ?? (emer ? '231' : '210');
+const campus = s.campus ?? bRow[2];
+const bq = s.bq ?? bName;
+const typing = s.bq !== null && s.bq.trim() !== '' && s.bq !== bName;
+const bHits = typing ? B.filter(b => (b[0] + ' ' + b[1]).toLowerCase().includes(s.bq.trim().toLowerCase())).map(b => ({ name: b[0], code: b[1], campus: b[2], pick: () => this.setState({ bsel: b[0], bq: null, campus: b[2] }) })) : [];
+const bldField = bRow[1] + ' · ' + bRow[0];
+const leftFields = emer ? [
+F('b','Building',bldField), F('pr','Priority','Emergency',true), F('rq','Requestor','Jordan'), F('ph','Phone','x5-5678'), F('em','Email',''),
+F('tc','Task Code','18020',true), F('td','Task Description','Odor/Smell',true), F('tr','Trade Description','ZONE',true)
+] : [
+F('b','Building',bldField), F('pr','Priority','Routine',true), F('rq','Requestor','Dana'), F('ph','Phone','x5-1234'), F('em','Email',''),
+F('tc','Task Code','18300',true), F('td','Task Description','Cold Call',true), F('tr','Trade Description','EMS',true)
+];
+const rightFields = [ F('rc','Repair Center','TMPE',true), F('wt','WO Type', emer ? '15 After Hours' : '1 Corrective Maintenance', true), F('rs','Rate Schedule','CM',true) ];
+const trail = emer ? [
+{ decision: 'Emergency', result: 'possible gas leak', why: 'The caller smells gas.', path: 'EHS – Emergency Situations', rejected: 'routine odor call' },
+{ decision: 'Task code', result: '18020 Odor/Smell', why: 'The manual says to call ASU PD and EH&S before the zone.', path: 'Trades and Task Codes', rejected: '18300 Cold Call' },
+{ decision: 'Priority', result: 'Emergency', why: 'Gas is a safety risk.', path: 'Shop Priorities', rejected: 'Routine' },
+{ decision: 'Who to call', result: 'ASU PD first', why: 'Same Odor/Smell note.', path: 'ASU PD Contacts', rejected: 'zone supervisor first' }
+] : [
+{ decision: 'Task code', result: '18300 Cold Call', why: 'The room is cold now, even though it was warm earlier.', path: 'Trades and Task Codes', rejected: '18290 Hot Call' },
+{ decision: 'Trade', result: 'EMS', why: 'Wrigley Hall heating and cooling is handled by EMS on Tempe.', path: 'HOTCOLD Calls', rejected: 'ZONE' },
+{ decision: 'Priority', result: 'Routine', why: 'Uncomfortable, but not a safety risk.', path: 'Shop Priorities', rejected: 'Expedite' },
+{ decision: 'Call-out', result: 'none', why: 'Routine, during business hours.', path: 'After-hours rules', rejected: 'phone call-out' }
+];
+const names = [['p1','Task code','18290'],['p2','Trade','ZONE'],['p3','Priority','Expedite'],['p4','Call-out','call out needed'],['p5','Who to call','RFMT-HVAC on-call']];
+const parts = names.map(([id, name, hint]) => ({ id, name, hint, on: !!s.parts[id], toggle: () => this.setState({ parts: { ...s.parts, [id]: !s.parts[id] } }) }));
+const fb = s.fb;
+return {
+themeClass: dim ? 'dim' : '', dimPressed: dim ? 'true' : 'false', themeLabel: dim ? 'Dim mode: on' : 'Dim mode: off', toggleTheme: () => this.setState({ dim: !dim }),
+menuOpen: s.menu, menuExpanded: s.menu ? 'true' : 'false', toggleMenu: () => this.setState({ menu: !s.menu }),
+isNoMatch: v === 'no match', isEmergency: emer, aiDown, showResult: v === 'match' || emer,
+routeLabel: aiDown ? 'Suggestions unavailable' : 'Suggest routing',
+reqText: s.req ?? (emer ? 'Smells like gas in the hallway outside ISTB4 room 231. — Jordan, x5-5678' : 'Hi, room 210 in Wrigley Hall was warm this morning but now it\'s freezing in here. Class starts at 2. Thanks, Dana x5-1234'),
+setReq: (e) => this.setState({ req: e.target.value }),
+bq, setBq: (e) => this.setState({ bq: e.target.value }), bHits, showBList: bHits.length > 0, bNone: typing && bHits.length === 0, bListExpanded: bHits.length > 0 ? 'true' : 'false',
+room, setRoom: (e) => this.setState({ room: e.target.value }), campus, setCampus: (e) => this.setState({ campus: e.target.value }),
+keysOpen: s.keys, keysExpanded: s.keys ? 'true' : 'false', toggleKeys: () => this.setState({ keys: !s.keys }),
+copyPD: copy('pd'), pdLabel: cl('pd', 'Copy ASU PD number'),
+calloutTitle: emer ? 'Call out now' : 'No call-out needed', calloutLong: emer ? 'Safety risk. Make the emergency calls above first.' : 'Routine priority during business hours. Create the WO; no phone call needed.',
+place: bName + (room ? ' · ' + room : ''), priority: emer ? 'Emergency' : 'Routine', priorityNote: emer ? 'Safety risk' : 'Class at 2 PM',
+copyBackup: copy('bk'), backupCopyLabel: cl('bk', 'Copy backup'),
+code: emer ? '18020' : '18300', codeName: emer ? 'Odor/Smell' : 'Cold Call', trade: emer ? 'ZONE' : 'EMS',
+meta: emer ? 'ISTB 4 · Emergency' : 'Wrigley Hall · Routine',
+contactName: emer ? 'ASU PD, then EH&S' : 'EMS desk · [Name]', backupName: emer ? 'EH&S after-hours line' : 'ACAD A supervisor · [Name]',
+copyCell: copy('cell'), cellLabel: cl('cell', 'Copy cell [number]'),
+backupOpen: s.backup, backupExpanded: s.backup ? 'true' : 'false', backupLabel: s.backup ? 'Hide backup' : 'Show backup', toggleBackup: () => this.setState({ backup: !s.backup }),
+leftFields, rightFields,
+notes: emer ? 'ISTB4 RM 231 HALLWAY - POSSIBLE GAS SMELL. ASU PD AND EH&S NOTIFIED [TIME].\nCONTACT: JORDAN X5-5678' : 'WRIGLEY HALL RM 210 - ROOM TOO COLD. WAS WARM THIS AM, NOW COLD. CLASS @ 2PM.\nCONTACT: DANA X5-1234',
+copyNotes: copy('notes'), notesLabel: cl('notes', 'Copy'),
+trail, trailOpen: s.trail, trailExpanded: s.trail ? 'true' : 'false', chevron: s.trail ? 'transform:rotate(90deg)' : '', toggleTrail: () => this.setState({ trail: !s.trail }),
+parts,
+rateText: s.saved ? 'Thanks, your rating is saved.' : 'Was this right?',
+rightPressed: fb === 'right' ? 'true' : 'false', wrongPressed: fb === 'wrong' ? 'true' : 'false',
+showWrongForm: fb === 'wrong' && !s.saved,
+pickRight: () => this.setState({ fb: 'right', saved: true }),
+pickWrong: () => this.setState({ fb: 'wrong', saved: false }),
+saveFb: () => this.setState({ saved: true }), fbSaved: s.saved
+};
+}
+}
+</script>
+</body>
+</html>

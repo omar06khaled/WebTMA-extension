@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Manual tables ERD</title>
+<style>body{margin:0;background:#fff;font-family:"Segoe UI",Arial,sans-serif;color:#2C2C2A}#wrap{padding:20px 24px;display:inline-block}h1{font-size:16px;font-weight:600;margin:0 0 4px}p{font-size:12px;color:#5F5E5A;margin:0 0 12px}</style></head>
+<body><div id="wrap"><h1>Desk manual database: manual data tables</h1>
+<p>Key columns only. Every table also has active, updated_at and updated_by. The same 14 tables exist in the staging and live schemas.</p>
+<div id="out"></div></div>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11.4.0/dist/mermaid.min.js"></script>
+<script>
+mermaid.initialize({startOnLoad:false,theme:'base',themeVariables:{fontSize:'14px',fontFamily:'Segoe UI, Arial, sans-serif',lineColor:'#73726c',textColor:'#3d3d3a',primaryColor:'#EEEDFE',primaryBorderColor:'#534AB7',primaryTextColor:'#26215C'}});
+mermaid.render('erd', `erDiagram
+  campus ||--o{ zone : has
+  campus ||--o{ building : has
+  campus ||--o{ routing_rule : for
+  campus |o--o{ article : scopes
+  building ||--o{ building_zone : in
+  zone ||--o{ building_zone : holds
+  building ||--o{ building_note : has
+  task_category ||--o{ task : groups
+  task ||--o{ routing_rule : routed_by
+  trade |o--o{ routing_rule : sends_to
+  contact ||--o{ contact_method : reached_by
+  rotation ||--o{ rotation_slot : has
+  contact ||--o{ rotation_slot : fills
+  contact |o--o{ contact_link : linked
+  rotation |o--o{ contact_link : linked
+  campus {
+    text code PK
+    text name
+  }
+  zone {
+    text code PK
+    text campus_code FK
+    boolean is_rfmt
+    boolean active
+  }
+  building {
+    int id PK
+    text code UK
+    text name
+    text campus_code FK
+    text rate_schedule
+    text managed_by
+  }
+  building_zone {
+    int building_id PK
+    text zone_code PK
+    boolean active
+  }
+  building_note {
+    int id PK
+    int building_id FK
+    text note
+  }
+  trade {
+    text code PK
+    boolean is_global
+  }
+  task_category {
+    int id PK
+    text name UK
+    text section_note
+  }
+  task {
+    int id PK
+    int task_code
+    text description
+    int category_id FK
+    boolean custodial
+  }
+  routing_rule {
+    int task_id PK
+    text campus_code PK
+    boolean is_rfmt PK
+    text kind
+    text trade_code FK
+  }
+  article {
+    int id PK
+    text title
+    text category
+    text campus_code FK
+    text source_sheet UK
+  }
+  contact {
+    int id PK
+    text name
+    text kind
+    text org
+  }
+  contact_method {
+    int id PK
+    int contact_id FK
+    text kind
+    text value
+  }
+  rotation {
+    int id PK
+    text name UK
+    int period_days
+    date anchor_date
+  }
+  rotation_slot {
+    int rotation_id PK
+    int position PK
+    int contact_id FK
+  }
+  contact_link {
+    int id PK
+    text target_table
+    text target_key
+    int contact_id FK
+    int rotation_id FK
+    text role
+  }`).then(function(r){document.getElementById('out').innerHTML=r.svg;document.title=document.getElementById('wrap').offsetWidth+'x'+document.getElementById('wrap').offsetHeight;}).catch(function(e){document.title='ERROR '+e.message;});
+</script></body></html>

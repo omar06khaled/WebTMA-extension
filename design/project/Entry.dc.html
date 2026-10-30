@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Change a task</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+.app{--bg:#F6F5F2;--surface:#FFFFFF;--soft:#F1EFEB;--text:#1F1F1F;--muted:#55524D;--line:#E4E1DC;--line2:#8A867F;--link:#8C1D40;--mark:#8C1D40;--primary:#8C1D40;--ptext:#FFFFFF;--solid:#1F1F1F;--stext:#FFFFFF;--hl:#FFF6DA;min-height:100vh;background:var(--bg);color:var(--text);font-family:'Public Sans',system-ui,sans-serif;font-size:16px;line-height:1.5;display:flex;flex-direction:column}
+.app.dim{--bg:#1C1D20;--surface:#26282C;--soft:#303236;--text:#E9E6E1;--muted:#B3AEA6;--line:#3A3C41;--line2:#8E8981;--link:#F0A9BD;--mark:#FFC627;--solid:#E9E6E1;--stext:#1C1D20;--hl:#3A3524}
+a{color:var(--link)}
+:focus-visible{outline:3px solid var(--text);outline-offset:2px}
+.wrap{max-width:1200px;width:100%;box-sizing:border-box;margin:0 auto;padding-left:32px;padding-right:32px}
+.top{background:var(--surface);border-bottom:1px solid var(--line);border-top:4px solid #FFC627}
+.topin{display:flex;flex-wrap:wrap;align-items:center;gap:8px 32px}
+.brand{font-size:18px;font-weight:700;color:var(--text);text-decoration:none;padding:12px 0}
+.mainnav{display:flex;flex-wrap:wrap;flex:1 1 auto}
+.nav{display:inline-flex;align-items:center;min-height:52px;padding:0 16px;color:var(--text);text-decoration:none;font-weight:500;border-bottom:3px solid transparent;box-sizing:border-box}
+.nav:hover{background:var(--soft);color:var(--text)}
+.acct{display:flex;align-items:center;gap:8px;position:relative}
+.me{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 8px;background:transparent;border:0;border-radius:8px;font:inherit;color:var(--text);cursor:pointer}
+.me:hover{background:var(--soft)}
+.av{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:#8C1D40;color:#FFFFFF;font-weight:700;font-size:13px}
+.menu{position:absolute;right:0;top:100%;margin:4px 0 0;padding:8px;list-style:none;background:var(--surface);border:1px solid var(--line);border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.14);min-width:200px;z-index:10}
+.menu a{display:flex;align-items:center;min-height:44px;padding:0 12px;border-radius:6px;color:var(--text);text-decoration:none}
+.menu a:hover{background:var(--soft)}
+.main{max-width:880px;padding-top:48px;padding-bottom:64px;display:flex;flex-direction:column;gap:32px;flex:1 1 auto}
+h1{margin:0;font-size:30px;line-height:1.2}
+h2{margin:0;font-size:20px;line-height:1.3}
+.lbl{font-size:14px;color:var(--muted)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 16px;border-radius:8px;font:inherit;font-size:15px;font-weight:600;cursor:pointer;text-decoration:none;box-sizing:border-box;border:1.5px solid var(--line2);background:transparent;color:var(--text)}
+.btn:hover{border-color:var(--text);color:var(--text)}
+.btn.solid{background:var(--solid);color:var(--stext);border-color:var(--solid)}
+.btn.link{border-color:transparent;color:var(--link);text-decoration:underline;padding:0 8px}
+.btn[aria-pressed="true"]{background:var(--soft)}
+.btn[disabled]{opacity:.55;cursor:not-allowed}
+.in{font:inherit;font-size:16px;min-height:48px;box-sizing:border-box;padding:0 14px;border:1.5px solid var(--line2);border-radius:8px;background:var(--surface);color:var(--text);width:100%}
+textarea.in{padding:14px;line-height:1.5;resize:vertical}
+.f{display:flex;flex-direction:column;gap:8px}
+.f label{font-size:15px;font-weight:600}
+.chip{display:inline-flex;align-items:center;gap:4px;min-height:40px;padding:0 4px 0 14px;border:1.5px solid var(--line2);border-radius:20px;font-size:15px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+</style>
+</helmet>
+<div class="app {{ themeClass }}">
+<header class="top"><div class="wrap topin" style="max-width:1200px">
+<a class="brand" href="Main.dc.html">Desk Assistant</a>
+<nav class="mainnav" aria-label="Main"><a class="nav" href="Main.dc.html">Home</a><a class="nav" href="DispatchV2.dc.html">Dispatch</a><a class="nav" href="Manual.dc.html">Desk manual</a><a class="nav" href="Lookups.dc.html">Lookups</a></nav>
+<div class="acct">
+<button type="button" class="btn" aria-pressed="{{ dimPressed }}" onClick="{{ toggleTheme }}">{{ themeLabel }}</button>
+<button type="button" class="me" aria-haspopup="menu" aria-expanded="{{ menuExpanded }}" onClick="{{ toggleMenu }}"><span class="av" aria-hidden="true">ON</span><span style="font-weight:600">Omar</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></button>
+<sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}"><ul class="menu" role="menu"><li role="none"><a role="menuitem" href="EditorV2.dc.html">Manual editor</a></li><li role="none"><a role="menuitem" href="Admin.dc.html">Admin</a></li><li role="none"><a role="menuitem" href="Signin.dc.html">Sign out</a></li></ul></sc-if>
+</div>
+</div></header>
+
+<main class="wrap main">
+<a href="EditorV2.dc.html" style="font-size:15px">← Back to the manual editor</a>
+
+<sc-if value="{{ isSent }}" hint-placeholder-val="{{ false }}">
+<div class="card" style="padding:48px;display:flex;flex-direction:column;gap:16px" role="status">
+<h1>Sent for approval</h1>
+<p style="margin:0;font-size:17px">Another approver will check it. Dispatchers won't see it until it's published. You can follow it under <strong>My requests</strong>.</p>
+<div style="display:flex;gap:8px"><a href="EditorV2.dc.html" class="btn solid">Back to the editor</a><button type="button" class="btn" onClick="{{ reset }}">Make another change</button></div>
+</div>
+</sc-if>
+
+<sc-if value="{{ isForm }}" hint-placeholder-val="{{ true }}">
+<div style="display:flex;flex-direction:column;gap:8px"><h1>{{ title }}</h1><span class="lbl">{{ subtitle }}</span></div>
+
+<sc-if value="{{ conflict }}" hint-placeholder-val="{{ true }}">
+<div role="alert" style="padding:20px 24px;background:var(--hl);border-radius:12px;display:flex;flex-direction:column;gap:6px">
+<strong style="font-size:16px">[Editor name] is already changing this task</strong>
+<span style="font-size:15px">They sent a change to the notes yesterday at 3:40 PM. <a href="EditorV2.dc.html">See their change</a></span>
+<span style="font-size:15px">{{ conflictRule }}</span>
+</div>
+</sc-if>
+
+<form class="card" style="padding:32px;display:flex;flex-direction:column;gap:24px">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px">
+<div class="f"><label for="e1">Part of the manual</label><select id="e1" class="in"><option>Trades and Task Codes</option><option>Zone Guides</option><option>Schedules</option><option>Contacts</option></select></div>
+<div class="f"><label for="e2">Task name</label><input id="e2" class="in" value="{{ name }}"></div>
+<div class="f"><label for="e3">Task code</label><input id="e3" class="in" value="{{ codeVal }}"></div>
+</div>
+<fieldset style="border:0;margin:0;padding:0;display:flex;flex-direction:column;gap:12px">
+<legend style="font-size:15px;font-weight:600;padding:0;margin-bottom:12px">Who handles it on each campus</legend>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px">
+<div class="f"><label for="c1" style="font-weight:400">Tempe</label><input id="c1" class="in" value="ZONE"></div>
+<div class="f"><label for="c2" style="font-weight:400">Downtown</label><input id="c2" class="in" value="ZONE"></div>
+<div class="f"><label for="c3" style="font-weight:400">Poly</label><input id="c3" class="in" value="ZONE"></div>
+<div class="f"><label for="c4" style="font-weight:400">West</label><input id="c4" class="in" value="ZONE"></div>
+</div>
+</fieldset>
+<div class="f"><label for="e4">Notes for dispatchers</label><textarea id="e4" class="in" rows="3" onChange="{{ setNotes }}">{{ notes }}</textarea></div>
+<div class="f">
+<span style="font-size:15px;font-weight:600">People to call for this task</span>
+<div style="display:flex;flex-wrap:wrap;gap:8px">
+<sc-for list="{{ contacts }}" as="c" hint-placeholder-count="1"><span class="chip">{{ c.name }}<button type="button" aria-label="Remove {{ c.name }}" onClick="{{ c.remove }}" style="width:32px;height:32px;border:0;background:transparent;border-radius:16px;cursor:pointer;color:var(--text);font-size:18px">×</button></span></sc-for>
+<button type="button" class="btn" style="min-height:40px;border-radius:20px" onClick="{{ addContact }}">+ Add a person</button>
+</div>
+<span class="lbl">Change a person's number once and every task they're on updates.</span>
+</div>
+</form>
+
+<sc-if value="{{ isEdit }}" hint-placeholder-val="{{ true }}">
+<section class="card" style="overflow:hidden">
+<h2 style="padding:20px 32px;font-size:17px;border-bottom:1px solid var(--line)">What will change</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">
+<div style="padding:24px 32px;display:flex;flex-direction:column;gap:8px;border-right:1px solid var(--line)"><span class="lbl">Now</span><p style="margin:0;font-size:16px;color:var(--muted)">Blue Lights requests - send to the zone first. If they are LED style t…</p></div>
+<div style="padding:24px 32px;display:flex;flex-direction:column;gap:8px"><span class="lbl">After your change</span><p style="margin:0;font-size:16px;font-weight:600">{{ notes }}</p></div>
+</div>
+</section>
+</sc-if>
+
+<div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">
+<button type="button" class="btn solid" disabled="{{ blocked }}" onClick="{{ send }}" style="min-height:52px;padding:0 24px;font-size:16px">Send for approval</button>
+<a href="EditorV2.dc.html" class="btn link">Cancel</a>
+<sc-if value="{{ isEdit }}" hint-placeholder-val="{{ true }}"><button type="button" class="btn" style="margin-left:auto" onClick="{{ askRemove }}">{{ removeLabel }}</button></sc-if>
+</div>
+<sc-if value="{{ blocked }}" hint-placeholder-val="{{ false }}"><p class="lbl" style="margin:0">Sending is paused until their change is approved or rejected.</p></sc-if>
+</sc-if>
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"mode":{"editor":"enum","options":["edit","add"],"default":"edit"},"conflictRule":{"editor":"enum","options":["none","warn and allow (Decision B option 1)","block (Decision B option 2)"],"default":"warn and allow (Decision B option 1)"},"theme":{"editor":"enum","options":["light","dim"],"default":"light"},"$preview":{"width":1440,"height":1450}}'>
+class Component extends DCLogic {
+constructor(props) { super(props); this.state = { dim: null, menu: false, sent: false, notes: null, contacts: ['RFMT-Electrical on-call'], removeAsk: false }; }
+renderVals() {
+const s = this.state;
+const dim = s.dim ?? ((this.props.theme ?? 'light') === 'dim');
+const edit = (this.props.mode ?? 'edit') === 'edit';
+const rule = this.props.conflictRule ?? 'warn and allow (Decision B option 1)';
+const blocked = edit && rule.startsWith('block');
+const notes = s.notes ?? (edit ? 'Blue Lights requests: send to the zone first. LED-style blue lights go to RFMT-Electrical.' : '');
+return {
+themeClass: dim ? 'dim' : '', dimPressed: dim ? 'true' : 'false', themeLabel: dim ? 'Dim mode: on' : 'Dim mode: off', toggleTheme: () => this.setState({ dim: !dim }),
+menuOpen: s.menu, menuExpanded: s.menu ? 'true' : 'false', toggleMenu: () => this.setState({ menu: !s.menu }),
+isSent: s.sent, isForm: !s.sent, reset: () => this.setState({ sent: false }),
+isEdit: edit, title: edit ? 'Change a task: Lighting' : 'Add a task', subtitle: edit ? 'Trades and Task Codes · code 15040' : 'New tasks stay hidden from dispatchers until they are published.',
+name: edit ? 'Lighting' : '', codeVal: edit ? '15040' : '',
+notes, setNotes: (e) => this.setState({ notes: e.target.value }),
+contacts: s.contacts.map((n, i) => ({ name: n, remove: () => this.setState({ contacts: s.contacts.filter((_, j) => j !== i) }) })),
+addContact: () => this.setState({ contacts: [...s.contacts, '[New person]'] }),
+conflict: edit && rule !== 'none',
+conflictRule: blocked ? 'You can send yours once theirs is approved or rejected. It may help to talk to them first.' : 'You can still send yours. The approver will see both and pick one.',
+blocked, send: () => { if (!blocked) this.setState({ sent: true }); },
+askRemove: () => { if (s.removeAsk) this.setState({ sent: true }); else this.setState({ removeAsk: true }); },
+removeLabel: s.removeAsk ? 'Yes, ask to remove this task' : 'Ask to remove this task'
+};
+}
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Admin</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+.app{--bg:#F6F5F2;--surface:#FFFFFF;--soft:#F1EFEB;--text:#1F1F1F;--muted:#55524D;--line:#E4E1DC;--line2:#8A867F;--link:#8C1D40;--mark:#8C1D40;--primary:#8C1D40;--ptext:#FFFFFF;--solid:#1F1F1F;--stext:#FFFFFF;--hl:#FFF6DA;min-height:100vh;background:var(--bg);color:var(--text);font-family:'Public Sans',system-ui,sans-serif;font-size:16px;line-height:1.5;display:flex;flex-direction:column}
+.app.dim{--bg:#1C1D20;--surface:#26282C;--soft:#303236;--text:#E9E6E1;--muted:#B3AEA6;--line:#3A3C41;--line2:#8E8981;--link:#F0A9BD;--mark:#FFC627;--solid:#E9E6E1;--stext:#1C1D20;--hl:#3A3524}
+a{color:var(--link)}
+:focus-visible{outline:3px solid var(--text);outline-offset:2px}
+.wrap{max-width:1200px;width:100%;box-sizing:border-box;margin:0 auto;padding-left:32px;padding-right:32px}
+.top{background:var(--surface);border-bottom:1px solid var(--line);border-top:4px solid #FFC627}
+.topin{display:flex;flex-wrap:wrap;align-items:center;gap:8px 32px}
+.brand{font-size:18px;font-weight:700;color:var(--text);text-decoration:none;padding:12px 0}
+.mainnav{display:flex;flex-wrap:wrap;flex:1 1 auto}
+.nav{display:inline-flex;align-items:center;min-height:52px;padding:0 16px;color:var(--text);text-decoration:none;font-weight:500;border-bottom:3px solid transparent;box-sizing:border-box}
+.nav:hover{background:var(--soft);color:var(--text)}
+.acct{display:flex;align-items:center;gap:8px;position:relative}
+.me{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 8px;background:transparent;border:0;border-radius:8px;font:inherit;color:var(--text);cursor:pointer}
+.me:hover{background:var(--soft)}
+.av{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:#8C1D40;color:#FFFFFF;font-weight:700;font-size:13px}
+.menu{position:absolute;right:0;top:100%;margin:4px 0 0;padding:8px;list-style:none;background:var(--surface);border:1px solid var(--line);border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.14);min-width:200px;z-index:10}
+.menu a{display:flex;align-items:center;min-height:44px;padding:0 12px;border-radius:6px;color:var(--text);text-decoration:none}
+.menu a:hover{background:var(--soft)}
+.menu a[aria-current="page"]{font-weight:700}
+.main{padding-top:48px;padding-bottom:64px;display:flex;flex-direction:column;gap:32px;flex:1 1 auto}
+h1{margin:0;font-size:30px;line-height:1.2}
+h2{margin:0;font-size:20px;line-height:1.3}
+.lbl{font-size:14px;color:var(--muted)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 16px;border-radius:8px;font:inherit;font-size:15px;font-weight:600;cursor:pointer;text-decoration:none;box-sizing:border-box;border:1.5px solid var(--line2);background:transparent;color:var(--text)}
+.btn:hover{border-color:var(--text);color:var(--text)}
+.btn.solid{background:var(--solid);color:var(--stext);border-color:var(--solid)}
+.btn.link{border-color:transparent;color:var(--link);text-decoration:underline;padding:0 8px}
+.btn[aria-pressed="true"]{background:var(--soft)}
+.in{font:inherit;font-size:16px;min-height:48px;box-sizing:border-box;padding:0 14px;border:1.5px solid var(--line2);border-radius:8px;background:var(--surface);color:var(--text)}
+.tabs{display:flex;flex-wrap:wrap;gap:0 8px;border-bottom:1px solid var(--line)}
+.tab{display:inline-flex;align-items:center;gap:8px;min-height:52px;padding:0 16px;background:transparent;border:0;border-bottom:3px solid transparent;margin-bottom:-1px;font:inherit;font-size:16px;font-weight:500;cursor:pointer;color:var(--text);text-decoration:none;box-sizing:border-box}
+.tab[aria-selected="true"]{font-weight:700;border-bottom-color:var(--mark)}
+table{width:100%;border-collapse:collapse}
+th{font-size:14px;color:var(--muted);font-weight:600;text-align:left;padding:14px 16px;border-bottom:1px solid var(--line)}
+td{padding:14px 16px;text-align:left;vertical-align:middle;border-bottom:1px solid var(--line)}
+tr:last-child td{border-bottom:0}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+</style>
+</helmet>
+<div class="app {{ themeClass }}">
+<header class="top"><div class="wrap topin">
+<a class="brand" href="Main.dc.html">Desk Assistant</a>
+<nav class="mainnav" aria-label="Main"><a class="nav" href="Main.dc.html">Home</a><a class="nav" href="DispatchV2.dc.html">Dispatch</a><a class="nav" href="Manual.dc.html">Desk manual</a><a class="nav" href="Lookups.dc.html">Lookups</a></nav>
+<div class="acct">
+<button type="button" class="btn" aria-pressed="{{ dimPressed }}" onClick="{{ toggleTheme }}">{{ themeLabel }}</button>
+<button type="button" class="me" aria-haspopup="menu" aria-expanded="{{ menuExpanded }}" onClick="{{ toggleMenu }}"><span class="av" aria-hidden="true">MG</span><span style="font-weight:600">[Manager]</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></button>
+<sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}"><ul class="menu" role="menu"><li role="none"><a role="menuitem" href="EditorV2.dc.html">Manual editor</a></li><li role="none"><a role="menuitem" href="Admin.dc.html" aria-current="page">Admin</a></li><li role="none"><a role="menuitem" href="Signin.dc.html">Sign out</a></li></ul></sc-if>
+</div>
+</div></header>
+
+<main class="wrap main">
+<div style="display:flex;flex-direction:column;gap:8px"><h1>Admin</h1><span class="lbl">For managers. Everyone in FDM can sign in and use Dispatch, the manual and Lookups.</span></div>
+
+<div role="tablist" aria-label="Admin" class="tabs">
+<button type="button" role="tab" class="tab" aria-selected="{{ peopleSel }}" onClick="{{ showPeople }}">Who can edit</button>
+<button type="button" role="tab" class="tab" aria-selected="{{ logSel }}" onClick="{{ showLog }}">Activity log</button>
+<a href="Import.dc.html" class="tab">Excel import check</a>
+</div>
+
+<sc-if value="{{ isPeople }}" hint-placeholder-val="{{ true }}">
+<form class="card" style="padding:24px 32px;display:flex;flex-wrap:wrap;gap:16px;align-items:flex-end">
+<div style="flex:2 1 260px;display:flex;flex-direction:column;gap:8px"><label for="who" style="font-weight:600;font-size:15px">Name or ASURITE</label><input id="who" class="in" placeholder="e.g. jdoe12" value="{{ newName }}" onChange="{{ setNewName }}"></div>
+<div style="flex:1 1 200px;display:flex;flex-direction:column;gap:8px"><label for="role" style="font-weight:600;font-size:15px">Can</label><select id="role" class="in" value="{{ newRole }}" onChange="{{ setNewRole }}"><option value="Editor">Edit the manual</option><option value="Approver">Edit and approve</option><option value="Manager">Manage access</option></select></div>
+<button type="button" class="btn solid" style="min-height:48px" onClick="{{ grant }}">Give access</button>
+</form>
+<div class="card" style="overflow-x:auto">
+<table style="min-width:720px">
+<thead><tr><th>Name</th><th>ASURITE</th><th>Can</th><th>Given by</th><th><span class="sr">Actions</span></th></tr></thead>
+<tbody>
+<sc-for list="{{ people }}" as="p" hint-placeholder-count="4">
+<tr><td style="font-weight:600">{{ p.name }}</td><td>{{ p.id }}</td><td>{{ p.roleText }}</td><td class="lbl">{{ p.by }}</td>
+<td style="text-align:right"><sc-if value="{{ p.active }}" hint-placeholder-val="{{ true }}"><button type="button" class="btn" onClick="{{ p.remove }}">Remove access</button></sc-if><sc-if value="{{ p.removed }}" hint-placeholder-val="{{ false }}"><span style="font-weight:600;margin-right:8px">Removed</span><button type="button" class="btn link" onClick="{{ p.undo }}">Undo</button></sc-if></td></tr>
+</sc-for>
+</tbody>
+</table>
+</div>
+<p class="lbl" style="margin:0">Changes apply the next time the person opens a page. Every change goes in the activity log.</p>
+</sc-if>
+
+<sc-if value="{{ isLog }}" hint-placeholder-val="{{ false }}">
+<div style="display:flex;flex-wrap:wrap;gap:16px;align-items:flex-end">
+<div style="display:flex;flex-direction:column;gap:8px"><label for="lf1" style="font-weight:600;font-size:15px">Show</label><select id="lf1" class="in" value="{{ filter }}" onChange="{{ setFilter }}"><option value="all">Everything</option><option value="change">Manual changes</option><option value="publish">Publishing</option><option value="access">Access changes</option></select></div>
+<button type="button" class="btn" style="margin-left:auto">Download as spreadsheet</button>
+</div>
+<div class="card" style="overflow-x:auto">
+<table style="min-width:720px">
+<thead><tr><th>When</th><th>Who</th><th>What happened</th></tr></thead>
+<tbody>
+<sc-for list="{{ log }}" as="r" hint-placeholder-count="6"><tr><td style="white-space:nowrap" class="lbl">{{ r.when }}</td><td>{{ r.who }}</td><td>{{ r.what }}</td></tr></sc-for>
+</tbody>
+</table>
+</div>
+<p class="lbl" style="margin:0">Managers and approvers can see this. Nobody can edit or delete it.</p>
+</sc-if>
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"theme":{"editor":"enum","options":["light","dim"],"default":"light"},"$preview":{"width":1440,"height":1000}}'>
+class Component extends DCLogic {
+constructor(props) { super(props); this.state = { dim: null, menu: false, tab: 'people', removed: {}, extra: [], newName: '', newRole: 'Editor', filter: 'all' }; }
+renderVals() {
+const s = this.state;
+const dim = s.dim ?? ((this.props.theme ?? 'light') === 'dim');
+const roleText = { Editor: 'Edit the manual', Approver: 'Edit and approve', Manager: 'Manage access' };
+const base = [
+{ name: 'Omar Nassar', id: 'omnassar', role: 'Approver', by: '[Manager] · Oct 14' },
+{ name: '[Approver 2]', id: '[asurite]', role: 'Approver', by: '[Manager] · Oct 14' },
+{ name: '[Editor 1]', id: '[asurite]', role: 'Editor', by: '[Manager] · Oct 15' },
+{ name: '[Editor 2]', id: '[asurite]', role: 'Editor', by: '[Manager] · Oct 15' }
+].concat(s.extra);
+const people = base.map((p, i) => ({ ...p, roleText: roleText[p.role], active: !s.removed[i], removed: !!s.removed[i],
+remove: () => this.setState({ removed: { ...s.removed, [i]: true } }),
+undo: () => { const n = { ...s.removed }; delete n[i]; this.setState({ removed: n }); } }));
+const all = [
+{ k: 'publish', when: 'Oct 16, 9:12 AM', who: '[Approver 2]', what: 'Published v2027.3.1 (second approver: Omar Nassar)' },
+{ k: 'change', when: 'Oct 16, 8:50 AM', who: 'Omar Nassar', what: 'Approved a change to Lighting notes' },
+{ k: 'change', when: 'Oct 15, 4:02 PM', who: '[Editor 1]', what: 'Sent a change to Lighting notes' },
+{ k: 'change', when: 'Oct 15, 2:30 PM', who: '[Approver 2]', what: 'Did not approve Bike Lock notes: "already covered"' },
+{ k: 'access', when: 'Oct 15, 11:00 AM', who: '[Manager]', what: 'Gave [Editor 2] access to edit the manual' },
+{ k: 'publish', when: 'Oct 14, 3:15 PM', who: 'Omar Nassar', what: 'Went back from v2027.2.4 to v2027.2.3' }
+];
+return {
+themeClass: dim ? 'dim' : '', dimPressed: dim ? 'true' : 'false', themeLabel: dim ? 'Dim mode: on' : 'Dim mode: off', toggleTheme: () => this.setState({ dim: !dim }),
+menuOpen: s.menu, menuExpanded: s.menu ? 'true' : 'false', toggleMenu: () => this.setState({ menu: !s.menu }),
+isPeople: s.tab === 'people', isLog: s.tab === 'log', peopleSel: s.tab === 'people' ? 'true' : 'false', logSel: s.tab === 'log' ? 'true' : 'false',
+showPeople: () => this.setState({ tab: 'people' }), showLog: () => this.setState({ tab: 'log' }),
+people, newName: s.newName, setNewName: (e) => this.setState({ newName: e.target.value }), newRole: s.newRole, setNewRole: (e) => this.setState({ newRole: e.target.value }),
+grant: () => { const n = (s.newName || '').trim(); if (!n) return; this.setState({ extra: [...s.extra, { name: n, id: n, role: s.newRole, by: 'You · just now' }], newName: '' }); },
+filter: s.filter, setFilter: (e) => this.setState({ filter: e.target.value }),
+log: s.filter === 'all' ? all : all.filter(r => r.k === s.filter)
+};
+}
+}
+</script>
+</body>
+</html>

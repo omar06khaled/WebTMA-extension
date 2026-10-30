@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Desk manual editor</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F7F7F7;font-family:'Public Sans',system-ui,sans-serif;color:#191919}
+a{color:#8C1D40}a:hover{color:#5E1229}
+:focus-visible{outline:3px solid #191919;outline-offset:2px}
+.nav{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;text-decoration:none;color:#191919;font-weight:500;border-bottom:3px solid transparent}
+.nav:hover{color:#191919;background:#F2F2F2}
+.nav[aria-current="page"]{font-weight:700;border-bottom-color:#8C1D40}
+.sec{display:flex;align-items:center;min-height:40px;padding:0 12px;text-decoration:none;color:#191919;font-size:14px;border-left:4px solid transparent;border-radius:0 4px 4px 0}
+.sec:hover{background:#F2F2F2;color:#191919}
+.sec[aria-current="page"]{font-weight:700;border-left-color:#8C1D40;background:#F2F2F2}
+td,th{padding:10px 12px;text-align:left;vertical-align:top}
+</style>
+</helmet>
+<div style="min-height:100vh;display:flex;flex-direction:column">
+<div style="height:6px;background:#FFC627"></div>
+<header style="background:#FFFFFF;border-bottom:1px solid #D0D0D0">
+<div style="max-width:1280px;margin:0 auto;padding:8px 24px;display:flex;flex-wrap:wrap;align-items:center;gap:12px 32px">
+<a href="Main.dc.html" style="display:flex;flex-direction:column;text-decoration:none;color:#191919;line-height:1.15">
+<span style="font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#8C1D40">ASU Facilities</span>
+<span style="font-size:20px;font-weight:700">Desk Assistant</span>
+</a>
+<nav aria-label="Main" style="display:flex;flex-wrap:wrap;gap:4px;flex:1 1 auto">
+<a class="nav" href="Main.dc.html">Home</a>
+<a class="nav" href="Dispatch.dc.html">Dispatch</a>
+<a class="nav" href="Manual.dc.html">Desk manual</a>
+<a class="nav" href="Lookups.dc.html">Lookups</a>
+<a class="nav" href="Editor.dc.html" aria-current="page" style="gap:6px;margin-left:auto"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg>Manual editor</a>
+<a class="nav" href="Admin.dc.html" style="gap:6px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg>Admin</a>
+</nav>
+<div style="display:flex;align-items:center;gap:12px">
+<span style="display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:#8C1D40;color:#FFFFFF;font-weight:700;font-size:14px" aria-hidden="true">ON</span>
+<div style="display:flex;flex-direction:column;line-height:1.2"><span style="font-weight:600;font-size:14px">Omar Nassar</span><span style="font-size:12px;color:#484848">{{ roleLabel }}</span></div>
+</div>
+</div>
+</header>
+
+<div style="background:#FFFFFF;border-bottom:1px solid #D0D0D0">
+<div style="max-width:1280px;margin:0 auto;padding:16px 24px;display:flex;flex-wrap:wrap;align-items:center;gap:12px 24px">
+<div style="display:flex;flex-direction:column;gap:2px;flex:1 1 auto">
+<span style="font-size:13px;color:#484848;font-weight:600">Manual editor · editors and approvers only</span>
+<span style="font-size:15px">Live: <strong>v2027.3</strong> · Next patch <strong>v2027.3.1</strong>: 1 approved change (Lighting notes)</span>
+</div>
+<sc-if value="{{ isApprover }}" hint-placeholder-val="{{ true }}">
+<div style="display:flex;flex-wrap:wrap;gap:8px">
+<button type="button" style="min-height:44px;padding:0 16px;background:#FFFFFF;color:#191919;border:2px solid #191919;border-radius:6px;font:inherit;font-weight:600;cursor:pointer">Preview next version</button>
+<sc-if value="{{ needsSignoff }}" hint-placeholder-val="{{ true }}">
+<button type="button" style="display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;background:#8C1D40;color:#FFFFFF;border:0;border-radius:6px;font:inherit;font-weight:700;cursor:pointer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"></path></svg>Request publish of v2027.3.1</button>
+</sc-if>
+<sc-if value="{{ awaitingSignoff }}" hint-placeholder-val="{{ false }}">
+<span style="display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 14px;border:2px dashed #191919;border-radius:6px;font-size:14px;font-weight:600"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>Requested by you · waiting for a second approver</span>
+</sc-if>
+<sc-if value="{{ canSignoff }}" hint-placeholder-val="{{ false }}">
+<button type="button" style="display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;background:#8C1D40;color:#FFFFFF;border:0;border-radius:6px;font:inherit;font-weight:700;cursor:pointer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg>Sign off and publish v2027.3.1</button>
+<span style="font-size:13px;color:#484848;align-self:center">Requested by [Approver 1]</span>
+</sc-if>
+</div>
+</sc-if>
+</div>
+</div>
+
+<main style="max-width:1280px;width:100%;box-sizing:border-box;margin:0 auto;padding:24px;display:flex;flex-wrap:wrap;gap:24px;align-items:flex-start">
+
+<nav aria-label="Desk manual sections" style="flex:1 1 220px;max-width:100%;background:#FFFFFF;border:1px solid #D0D0D0;border-radius:8px;padding:16px 8px 16px 0;display:flex;flex-direction:column;gap:2px">
+<label for="secsearch" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Search sections</label>
+<input id="secsearch" type="search" placeholder="Search sections" style="margin:0 0 10px 12px;font:inherit;font-size:14px;height:40px;box-sizing:border-box;padding:0 10px;border:2px solid #747474;border-radius:6px;color:#191919">
+<span style="padding:6px 12px;font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#484848">Routing</span>
+<a class="sec" href="#" aria-current="page">Trades and Task Codes</a>
+<a class="sec" href="#">HOTCOLD Calls</a>
+<a class="sec" href="#">ISAAC Doors</a>
+<a class="sec" href="#">Shop Priorities</a>
+<a class="sec" href="#">Memorial Union</a>
+<span style="padding:12px 12px 6px;font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#484848">Contacts</span>
+<a class="sec" href="#">TMPE Zone Guide</a>
+<a class="sec" href="#">Elevators – Tempe</a>
+<a class="sec" href="#">Emergency Utility</a>
+<span style="padding:12px 12px 6px;font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#484848">Schedules</span>
+<a class="sec" href="#">Lock/Unlock Times</a>
+<a class="sec" href="#">Trash Schedules</a>
+</nav>
+
+<section style="flex:999 1 560px;min-width:0;display:flex;flex-direction:column;gap:16px">
+<div style="display:flex;flex-wrap:wrap;align-items:flex-end;gap:12px">
+<div style="flex:1 1 auto"><h1 style="margin:0;font-size:26px">Trades and Task Codes</h1><p style="margin:4px 0 0;font-size:14px;color:#484848">Which trade handles each task, by campus</p></div>
+<sc-if value="{{ canEdit }}" hint-placeholder-val="{{ true }}">
+<div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">
+<label for="esearch" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Find an entry by name or code</label>
+<input id="esearch" type="search" placeholder="Find by name or code, e.g. 15040" style="font:inherit;font-size:14px;height:44px;width:260px;max-width:100%;box-sizing:border-box;padding:0 10px;border:2px solid #747474;border-radius:6px;color:#191919">
+<a href="Entry.dc.html" style="display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0 16px;background:#FFFFFF;color:#191919;border:2px solid #191919;border-radius:6px;font-weight:600;text-decoration:none;box-sizing:border-box"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>Add entry</a>
+</div>
+</sc-if>
+</div>
+
+<div style="background:#FFFFFF;border:1px solid #D0D0D0;border-radius:8px;overflow-x:auto">
+<table style="width:100%;border-collapse:collapse;font-size:14px;min-width:760px">
+<thead><tr style="border-bottom:2px solid #191919;background:#F7F7F7"><th>Task</th><th>Code</th><th>Tempe</th><th>Downtown</th><th>Poly</th><th>West</th><th style="width:34%">Notes</th></tr></thead>
+<tbody>
+<tr style="border-bottom:1px solid #E0E0E0"><td>Cold Call</td><td style="font-variant-numeric:tabular-nums">18300</td><td>EMS</td><td>ZONE</td><td>ZONE</td><td>ZONE</td><td style="color:#484848">—</td></tr>
+<tr style="border-bottom:1px solid #E0E0E0"><td>Hot Call</td><td style="font-variant-numeric:tabular-nums">18290</td><td>EMS</td><td>ZONE</td><td>ZONE</td><td>ZONE</td><td>West Las Casas hot/cold go to RFMT LSCS</td></tr>
+<tr style="border-bottom:1px solid #E0E0E0;background:#FFF8E1;outline:2px dashed #191919;outline-offset:-2px">
+<td><span style="display:inline-flex;align-items:center;gap:6px">Lighting <span style="font-size:11px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;border:1.5px solid #191919;border-radius:3px;padding:1px 5px">Edited</span></span></td>
+<td style="font-variant-numeric:tabular-nums">15040</td><td>ZONE</td><td>ZONE</td><td>ZONE</td><td>ZONE</td>
+<td><label for="n1" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Notes for Lighting</label><textarea id="n1" rows="3" style="width:100%;box-sizing:border-box;font:inherit;font-size:14px;padding:8px;border:2px solid #191919;border-radius:4px;resize:vertical;color:#191919">Blue Lights requests: send to the zone first. LED-style blue lights go to RFMT-Electrical.</textarea></td></tr>
+<tr style="border-bottom:1px solid #E0E0E0"><td>Leak</td><td style="font-variant-numeric:tabular-nums">13170</td><td>ZONE</td><td>ZONE</td><td>ZONE</td><td>ZONE</td><td style="color:#484848">—</td></tr>
+<tr style="border-bottom:1px solid #E0E0E0"><td>Lock/Unlock Door</td><td style="font-variant-numeric:tabular-nums">11040</td><td>LOCK</td><td>LOCK</td><td>LOCK</td><td>LOCK</td><td>Lock Shop does not handle ISAAC doors</td></tr>
+<tr style="border-bottom:1px solid #E0E0E0"><td>Odor/Smell</td><td style="font-variant-numeric:tabular-nums">18020</td><td>ZONE</td><td>ZONE</td><td>ZONE</td><td>ZONE</td><td>Possible gas leak: call ASU PD and EH&amp;S before the zone</td></tr>
+<tr><td>Toilet</td><td style="font-variant-numeric:tabular-nums">23070</td><td>ZONE</td><td>ZONE</td><td>ZONE</td><td>ZONE</td><td>Clogged or running: Priority = Expedite</td></tr>
+</tbody>
+</table>
+</div>
+
+<sc-if value="{{ canEdit }}" hint-placeholder-val="{{ true }}">
+<div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;background:#FFFFFF;border:2px solid #191919;border-radius:8px;padding:14px 18px">
+<span style="flex:1 1 auto;font-size:15px"><strong>1 unsaved edit</strong> on this page</span>
+<button type="button" style="min-height:44px;padding:0 16px;background:#FFFFFF;color:#191919;border:2px solid #747474;border-radius:6px;font:inherit;font-weight:600;cursor:pointer">Discard</button>
+<button type="button" style="min-height:44px;padding:0 18px;background:#191919;color:#FFFFFF;border:0;border-radius:6px;font:inherit;font-weight:700;cursor:pointer">Submit for approval</button>
+</div>
+</sc-if>
+</section>
+
+<aside style="flex:1 1 300px;min-width:0;display:flex;flex-direction:column;gap:16px">
+<sc-if value="{{ isApprover }}" hint-placeholder-val="{{ true }}">
+<section style="background:#FFFFFF;border:1px solid #D0D0D0;border-radius:8px;padding:18px;display:flex;flex-direction:column;gap:12px">
+<h2 style="margin:0;font-size:17px">Waiting for approval (2)</h2>
+<div style="border-top:1px solid #E0E0E0;padding-top:12px;display:flex;flex-direction:column;gap:6px">
+<span style="font-size:14px"><strong>Hot Call · Notes</strong></span>
+<span style="font-size:13px;color:#484848">[Editor name] · 2h ago</span>
+<span style="font-size:13px"><del>Hot/Cold calls for West Las Casas…</del></span>
+<span style="font-size:13px"><ins>West Las Casas hot/cold go to RFMT LSCS</ins></span>
+<div style="display:flex;gap:8px;margin-top:4px"><button type="button" style="flex:1;min-height:44px;background:#191919;color:#FFFFFF;border:0;border-radius:6px;font:inherit;font-weight:700;cursor:pointer">Approve</button><button type="button" style="flex:1;min-height:44px;background:#FFFFFF;color:#191919;border:2px solid #191919;border-radius:6px;font:inherit;font-weight:600;cursor:pointer">Reject</button></div>
+</div>
+<div style="border-top:1px solid #E0E0E0;padding-top:12px;display:flex;flex-direction:column;gap:6px">
+<span style="font-size:14px"><strong>TMPE Zone Guide · ACAD A</strong></span>
+<span style="font-size:13px;color:#484848">[Editor name] · yesterday</span>
+<span style="font-size:13px">Supervisor schedule changed</span>
+<a href="#" style="font-size:14px;font-weight:600">Review change →</a>
+</div>
+</section>
+</sc-if>
+
+<section style="background:#FFFFFF;border:1px solid #D0D0D0;border-radius:8px;padding:18px;display:flex;flex-direction:column;gap:10px">
+<h2 style="margin:0;font-size:17px">My requests (3)</h2>
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;border-top:1px solid #E0E0E0;padding-top:10px"><div style="display:flex;flex-direction:column"><span style="font-size:14px;font-weight:600">Lighting · Notes</span><span style="font-size:13px;color:#484848">Submitted today</span></div><span style="display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>Under review</span></div>
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;border-top:1px solid #E0E0E0;padding-top:10px"><div style="display:flex;flex-direction:column"><span style="font-size:14px;font-weight:600">Knox box · New entry</span><span style="font-size:13px;color:#484848">Oct 12</span></div><span style="display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg>Approved</span></div>
+<div style="display:flex;flex-direction:column;gap:6px;border-top:1px solid #E0E0E0;padding-top:10px"><div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><div style="display:flex;flex-direction:column"><span style="font-size:14px;font-weight:600">Bike Lock · Notes</span><span style="font-size:13px;color:#484848">Oct 10</span></div><span style="display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>Denied</span></div><span style="font-size:13px;color:#484848">Reason: "Affidavit rule already covered in the zone note"</span><a href="#" style="font-size:14px;font-weight:600">Appeal with a note →</a></div>
+</section>
+
+<section style="background:#FFFFFF;border:1px solid #D0D0D0;border-radius:8px;padding:18px;display:flex;flex-direction:column;gap:10px">
+<h2 style="margin:0;font-size:17px">Flagged by dispatchers (1)</h2>
+<div style="border-top:1px solid #E0E0E0;padding-top:10px;display:flex;flex-direction:column;gap:6px">
+<span style="font-size:14px"><strong>ISAAC Doors</strong></span>
+<span style="font-size:13px;color:#484848">[Dispatcher name] · today · WO <strong style="color:#191919;font-variant-numeric:tabular-nums">[WO number]</strong></span>
+<span style="font-size:14px;line-height:1.5">"After-hours Help Desk number is cut off"</span>
+<a href="#" style="font-size:14px;font-weight:600">Open section to fix →</a>
+</div>
+</section>
+
+<section style="background:#FFFFFF;border:1px solid #D0D0D0;border-radius:8px;padding:18px;display:flex;flex-direction:column;gap:10px">
+<h2 style="margin:0;font-size:17px">Releases</h2>
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;border-top:1px solid #E0E0E0;padding-top:10px">
+<div style="display:flex;flex-direction:column"><span style="font-size:14px;font-weight:700">v2027.3 · Live</span><span style="font-size:13px;color:#484848">Oct 9 · [Approver]</span></div>
+<span style="font-size:12px;font-weight:700;border:1.5px solid #191919;border-radius:3px;padding:2px 6px">CURRENT</span>
+</div>
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;border-top:1px solid #E0E0E0;padding-top:10px">
+<div style="display:flex;flex-direction:column"><span style="font-size:14px;font-weight:600">v2027.2</span><span style="font-size:13px;color:#484848">Sep 22 · [Approver]</span></div>
+<sc-if value="{{ isApprover }}" hint-placeholder-val="{{ true }}"><button type="button" style="min-height:40px;padding:0 12px;background:#FFFFFF;color:#191919;border:2px solid #747474;border-radius:6px;font:inherit;font-size:13px;font-weight:600;cursor:pointer">Roll back</button></sc-if>
+</div>
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;border-top:1px solid #E0E0E0;padding-top:10px">
+<div style="display:flex;flex-direction:column"><span style="font-size:14px;font-weight:600">v2027.1</span><span style="font-size:13px;color:#484848">Jul 1 · Imported from Desk Manual 2027.xlsx</span></div>
+</div>
+</section>
+</aside>
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"role":{"editor":"enum","options":["approver","editor"],"default":"approver"},"publish":{"editor":"enum","options":["ready to request","waiting for second approver","second approver view"],"default":"ready to request"},"$preview":{"width":1440,"height":1180}}'>
+class Component extends DCLogic {
+renderVals() {
+const role = this.props.role ?? 'approver';
+const labels = { approver: 'Dispatcher · Approver', editor: 'MOM · Editor', viewer: 'Dispatcher · Viewer' };
+const pub = this.props.publish ?? 'ready to request';
+return {
+needsSignoff: pub === 'ready to request',
+awaitingSignoff: pub === 'waiting for second approver',
+canSignoff: pub === 'second approver view',
+roleLabel: labels[role],
+isApprover: role === 'approver',
+isViewer: role === 'viewer',
+canEdit: role !== 'viewer'
+};
+}
+}
+</script>
+</body>
+</html>

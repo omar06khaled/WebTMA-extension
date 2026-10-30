@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Manual editor</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+.app{--bg:#F6F5F2;--surface:#FFFFFF;--soft:#F1EFEB;--text:#1F1F1F;--muted:#55524D;--line:#E4E1DC;--line2:#8A867F;--link:#8C1D40;--mark:#8C1D40;--primary:#8C1D40;--ptext:#FFFFFF;--solid:#1F1F1F;--stext:#FFFFFF;--hl:#FFF6DA;min-height:100vh;background:var(--bg);color:var(--text);font-family:'Public Sans',system-ui,sans-serif;font-size:16px;line-height:1.5;display:flex;flex-direction:column}
+.app.dim{--bg:#1C1D20;--surface:#26282C;--soft:#303236;--text:#E9E6E1;--muted:#B3AEA6;--line:#3A3C41;--line2:#8E8981;--link:#F0A9BD;--mark:#FFC627;--solid:#E9E6E1;--stext:#1C1D20;--hl:#3A3524}
+a{color:var(--link)}
+:focus-visible{outline:3px solid var(--text);outline-offset:2px}
+.wrap{max-width:1200px;width:100%;box-sizing:border-box;margin:0 auto;padding-left:32px;padding-right:32px}
+.top{background:var(--surface);border-bottom:1px solid var(--line);border-top:4px solid #FFC627}
+.topin{display:flex;flex-wrap:wrap;align-items:center;gap:8px 32px}
+.brand{font-size:18px;font-weight:700;color:var(--text);text-decoration:none;padding:12px 0}
+.mainnav{display:flex;flex-wrap:wrap;flex:1 1 auto}
+.nav{display:inline-flex;align-items:center;min-height:52px;padding:0 16px;color:var(--text);text-decoration:none;font-weight:500;border-bottom:3px solid transparent;box-sizing:border-box}
+.nav:hover{background:var(--soft);color:var(--text)}
+.acct{display:flex;align-items:center;gap:8px;position:relative}
+.me{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 8px;background:transparent;border:0;border-radius:8px;font:inherit;color:var(--text);cursor:pointer}
+.me:hover{background:var(--soft)}
+.av{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:#8C1D40;color:#FFFFFF;font-weight:700;font-size:13px}
+.menu{position:absolute;right:0;top:100%;margin:4px 0 0;padding:8px;list-style:none;background:var(--surface);border:1px solid var(--line);border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.14);min-width:200px;z-index:10}
+.menu a{display:flex;align-items:center;min-height:44px;padding:0 12px;border-radius:6px;color:var(--text);text-decoration:none}
+.menu a:hover{background:var(--soft)}
+.menu a[aria-current="page"]{font-weight:700}
+.main{padding-top:48px;padding-bottom:64px;display:flex;flex-direction:column;gap:32px;flex:1 1 auto}
+h1{margin:0;font-size:30px;line-height:1.2}
+h2{margin:0;font-size:20px;line-height:1.3}
+.lbl{font-size:14px;color:var(--muted)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px}
+.list{padding:0 32px}
+.row{display:flex;flex-wrap:wrap;align-items:center;gap:8px 24px;padding:20px 0;border-bottom:1px solid var(--line)}
+.row:last-child{border-bottom:0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 16px;border-radius:8px;font:inherit;font-size:15px;font-weight:600;cursor:pointer;text-decoration:none;box-sizing:border-box;border:1.5px solid var(--line2);background:transparent;color:var(--text)}
+.btn:hover{border-color:var(--text);color:var(--text)}
+.btn.solid{background:var(--solid);color:var(--stext);border-color:var(--solid)}
+.btn.primary{background:var(--primary);color:var(--ptext);border-color:var(--primary);font-weight:700}
+.app.dim .btn.primary{border-color:#F0A9BD}
+.btn[aria-pressed="true"]{background:var(--soft)}
+.in{font:inherit;font-size:16px;min-height:48px;box-sizing:border-box;padding:0 14px;border:1.5px solid var(--line2);border-radius:8px;background:var(--surface);color:var(--text)}
+.tabs{display:flex;flex-wrap:wrap;gap:0 8px;border-bottom:1px solid var(--line)}
+.tab{display:inline-flex;align-items:center;gap:8px;min-height:52px;padding:0 16px;background:transparent;border:0;border-bottom:3px solid transparent;margin-bottom:-1px;font:inherit;font-size:16px;font-weight:500;cursor:pointer;color:var(--text)}
+.tab[aria-selected="true"]{font-weight:700;border-bottom-color:var(--mark)}
+.count{display:inline-flex;align-items:center;justify-content:center;min-width:24px;height:24px;padding:0 6px;box-sizing:border-box;border-radius:12px;background:var(--solid);color:var(--stext);font-size:13px;font-weight:700}
+table{width:100%;border-collapse:collapse}
+th{font-size:14px;color:var(--muted);font-weight:600;text-align:left;padding:14px 16px;border-bottom:1px solid var(--line)}
+td{padding:14px 16px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+tr:last-child td{border-bottom:0}
+tbody tr:hover td{background:var(--soft)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+</style>
+</helmet>
+<div class="app {{ themeClass }}">
+<header class="top"><div class="wrap topin">
+<a class="brand" href="Main.dc.html">Desk Assistant</a>
+<nav class="mainnav" aria-label="Main"><a class="nav" href="Main.dc.html">Home</a><a class="nav" href="DispatchV2.dc.html">Dispatch</a><a class="nav" href="Manual.dc.html">Desk manual</a><a class="nav" href="Lookups.dc.html">Lookups</a></nav>
+<div class="acct">
+<button type="button" class="btn" aria-pressed="{{ dimPressed }}" onClick="{{ toggleTheme }}">{{ themeLabel }}</button>
+<button type="button" class="me" aria-haspopup="menu" aria-expanded="{{ menuExpanded }}" onClick="{{ toggleMenu }}"><span class="av" aria-hidden="true">ON</span><span style="font-weight:600">Omar</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></button>
+<sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}"><ul class="menu" role="menu"><li role="none"><a role="menuitem" href="EditorV2.dc.html" aria-current="page">Manual editor</a></li><li role="none"><a role="menuitem" href="Admin.dc.html">Admin</a></li><li role="none"><a role="menuitem" href="Signin.dc.html">Sign out</a></li></ul></sc-if>
+</div>
+</div></header>
+
+<main class="wrap main">
+<div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px">
+<div style="display:flex;flex-direction:column;gap:8px"><h1>Manual editor</h1><span style="font-size:16px">Dispatchers see <strong>v2027.3</strong> <span class="lbl">·</span> {{ pubStatus }}</span></div>
+<sc-if value="{{ isApprover }}" hint-placeholder-val="{{ true }}">
+<div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">
+<a href="Manual.dc.html" class="btn">Preview changes</a>
+<sc-if value="{{ showPubBtn }}" hint-placeholder-val="{{ true }}"><button type="button" class="btn primary" onClick="{{ doPublish }}">{{ pubBtn }}</button></sc-if>
+</div>
+</sc-if>
+</div>
+
+<div role="tablist" aria-label="Editor sections" class="tabs">
+<sc-for list="{{ tabs }}" as="t" hint-placeholder-count="5">
+<button type="button" role="tab" class="tab" aria-selected="{{ t.sel }}" onClick="{{ t.pick }}">{{ t.label }}<sc-if value="{{ t.hasCount }}" hint-placeholder-val="{{ false }}"><span class="count">{{ t.count }}</span></sc-if></button>
+</sc-for>
+</div>
+
+<sc-if value="{{ isEdit }}" hint-placeholder-val="{{ true }}">
+<div style="display:flex;flex-wrap:wrap;align-items:flex-end;gap:16px">
+<div style="display:flex;flex-direction:column;gap:8px;flex:0 1 300px"><label for="sec" class="lbl">Part of the manual</label><select id="sec" class="in" style="font-weight:600"><option>Trades and Task Codes</option><option>HOTCOLD Calls</option><option>ISAAC Doors</option><option>Shop Priorities</option><option>TMPE Zone Guide</option><option>Lock/Unlock Times</option></select></div>
+<div style="display:flex;flex-direction:column;gap:8px;flex:1 1 280px"><label for="find" class="lbl">Find a task</label><input id="find" type="search" class="in" placeholder="Name or code, e.g. 15040" value="{{ q }}" onChange="{{ setQ }}"></div>
+<a href="Entry.dc.html" class="btn" style="min-height:48px">+ Add a task</a>
+</div>
+<div class="card" style="overflow-x:auto">
+<table style="min-width:900px">
+<thead><tr><th>Task</th><th>Code</th><th>Tempe</th><th>Downtown</th><th>Poly</th><th>West</th><th style="width:36%">Notes</th></tr></thead>
+<tbody>
+<sc-for list="{{ rows }}" as="r" hint-placeholder-count="7">
+<tr style="{{ r.rowStyle }}">
+<td><a href="Entry.dc.html" style="color:var(--text);font-weight:600">{{ r.task }}</a><sc-if value="{{ r.edited }}" hint-placeholder-val="{{ false }}"><br><span style="font-size:13px;font-weight:700">Changed · waiting for approval</span></sc-if></td>
+<td style="font-variant-numeric:tabular-nums">{{ r.code }}</td><td>{{ r.t }}</td><td>{{ r.d }}</td><td>{{ r.p }}</td><td>{{ r.w }}</td><td style="color:var(--muted)">{{ r.notes }}</td>
+</tr>
+</sc-for>
+</tbody>
+</table>
+<sc-if value="{{ noRows }}" hint-placeholder-val="{{ false }}"><p style="margin:0;padding:24px" role="status">No task matches "{{ q }}".</p></sc-if>
+</div>
+<p class="lbl" style="margin:0">Click a task name to change it.</p>
+</sc-if>
+
+<sc-if value="{{ isQueue }}" hint-placeholder-val="{{ false }}">
+<div class="card list">
+<sc-for list="{{ queue }}" as="c" hint-placeholder-count="2">
+<div class="row">
+<div style="flex:1 1 400px;display:flex;flex-direction:column;gap:8px">
+<span style="font-size:17px;font-weight:700">{{ c.title }}</span>
+<span class="lbl">{{ c.who }}</span>
+<span style="font-size:15px"><span class="lbl">Before: </span><del>{{ c.before }}</del></span>
+<span style="font-size:15px;font-weight:600"><span class="lbl" style="font-weight:400">After: </span>{{ c.after }}</span>
+</div>
+<sc-if value="{{ c.pending }}" hint-placeholder-val="{{ true }}"><div style="display:flex;gap:8px"><button type="button" class="btn" onClick="{{ c.reject }}">Reject</button><button type="button" class="btn solid" onClick="{{ c.approve }}">Approve</button></div></sc-if>
+<sc-if value="{{ c.done }}" hint-placeholder-val="{{ false }}"><div style="display:flex;gap:8px;align-items:center"><strong role="status">{{ c.result }}</strong><button type="button" class="btn" onClick="{{ c.undo }}">Undo</button></div></sc-if>
+</div>
+</sc-for>
+</div>
+<p class="lbl" style="margin:0">You can't approve your own changes. They show in My requests.</p>
+</sc-if>
+
+<sc-if value="{{ isMine }}" hint-placeholder-val="{{ false }}">
+<div class="card list">
+<div class="row"><div style="flex:1 1 300px;display:flex;flex-direction:column;gap:4px"><span style="font-size:17px;font-weight:700">Lighting · notes</span><span class="lbl">Sent today</span></div><span style="font-weight:600">Waiting for approval</span></div>
+<div class="row"><div style="flex:1 1 300px;display:flex;flex-direction:column;gap:4px"><span style="font-size:17px;font-weight:700">Knox box · new task</span><span class="lbl">Oct 12</span></div><span style="font-weight:600">Approved</span></div>
+<div class="row"><div style="flex:1 1 300px;display:flex;flex-direction:column;gap:4px"><span style="font-size:17px;font-weight:700">Bike Lock · notes</span><span class="lbl">Oct 10 · Reason: "Already covered in the zone note"</span></div><span style="font-weight:600">Not approved</span><a href="Entry.dc.html" class="btn">Ask again</a></div>
+</div>
+</sc-if>
+
+<sc-if value="{{ isFlags }}" hint-placeholder-val="{{ false }}">
+<div class="card list">
+<div class="row">
+<div style="flex:1 1 400px;display:flex;flex-direction:column;gap:6px"><span style="font-size:17px;font-weight:700">ISAAC Doors</span><span style="font-size:15px">"After-hours Help Desk number is cut off"</span><span class="lbl">From [Dispatcher name] · today · WO [WO number]</span></div>
+<sc-if value="{{ flagOpen }}" hint-placeholder-val="{{ true }}"><div style="display:flex;gap:8px"><button type="button" class="btn" onClick="{{ dismissFlag }}">Not a problem</button><a href="Entry.dc.html" class="btn solid">Fix it</a></div></sc-if>
+<sc-if value="{{ flagDone }}" hint-placeholder-val="{{ false }}"><strong role="status">Closed</strong></sc-if>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{ isHistory }}" hint-placeholder-val="{{ false }}">
+<div class="card list">
+<div class="row"><div style="flex:1 1 300px;display:flex;flex-direction:column;gap:4px"><span style="font-size:17px;font-weight:700">v2027.3 · what dispatchers see now</span><span class="lbl">Published Oct 9 by [Approver] and [Approver 2]</span></div></div>
+<div class="row"><div style="flex:1 1 300px;display:flex;flex-direction:column;gap:4px"><span style="font-size:17px;font-weight:700">v2027.2</span><span class="lbl">Sep 22 by [Approver] and [Approver 2]</span></div><sc-if value="{{ isApprover }}" hint-placeholder-val="{{ true }}"><button type="button" class="btn">Go back to this version</button></sc-if></div>
+<div class="row"><div style="flex:1 1 300px;display:flex;flex-direction:column;gap:4px"><span style="font-size:17px;font-weight:700">v2027.1</span><span class="lbl">Jul 1 · first copy from the Excel manual</span></div></div>
+</div>
+</sc-if>
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"role":{"editor":"enum","options":["approver","editor"],"default":"approver"},"publish":{"editor":"enum","options":["ready to send","waiting for second approver","second approver view"],"default":"ready to send"},"theme":{"editor":"enum","options":["light","dim"],"default":"light"},"$preview":{"width":1440,"height":1100}}'>
+class Component extends DCLogic {
+constructor(props) { super(props); this.state = { dim: null, menu: false, tab: 'edit', q: '', decided: {}, flag: false, sent: false }; }
+renderVals() {
+const s = this.state;
+const dim = s.dim ?? ((this.props.theme ?? 'light') === 'dim');
+const ap = (this.props.role ?? 'approver') === 'approver';
+const pubProp = this.props.publish ?? 'ready to send';
+const pub = s.sent ? 'waiting for second approver' : pubProp;
+const tab = (!ap && s.tab === 'queue') ? 'edit' : s.tab;
+const pendingCount = ['hot', 'zone'].filter(k => !s.decided[k]).length;
+const defs = [['edit', 'Edit manual', 0], ['queue', 'To review', pendingCount], ['mine', 'My requests', 0], ['flags', 'Problems reported', s.flag ? 0 : 1], ['history', 'History', 0]].filter(d => ap || d[0] !== 'queue');
+const tabs = defs.map(([id, label, count]) => ({ label, count, hasCount: count > 0, sel: tab === id ? 'true' : 'false', pick: () => this.setState({ tab: id }) }));
+const R = (task, code, tt, d, p, w, notes, edited) => ({ task, code, t: tt, d, p, w, notes, edited: !!edited, rowStyle: edited ? 'box-shadow:inset 4px 0 0 var(--solid);' : '' });
+const all = [
+R('Cold Call', '18300', 'EMS', 'ZONE', 'ZONE', 'ZONE', '—'),
+R('Hot Call', '18290', 'EMS', 'ZONE', 'ZONE', 'ZONE', 'West Las Casas hot/cold go to RFMT LSCS'),
+R('Lighting', '15040', 'ZONE', 'ZONE', 'ZONE', 'ZONE', 'Blue Lights requests: send to the zone first. LED-style blue lights go to RFMT-Electrical.', true),
+R('Leak', '13170', 'ZONE', 'ZONE', 'ZONE', 'ZONE', '—'),
+R('Lock/Unlock Door', '11040', 'LOCK', 'LOCK', 'LOCK', 'LOCK', 'Lock Shop does not handle ISAAC doors'),
+R('Odor/Smell', '18020', 'ZONE', 'ZONE', 'ZONE', 'ZONE', 'Possible gas leak: call ASU PD and EH&S before the zone'),
+R('Toilet', '23070', 'ZONE', 'ZONE', 'ZONE', 'ZONE', 'Clogged or running: Priority = Expedite')
+];
+const q = (s.q || '').trim().toLowerCase();
+const rows = q ? all.filter(r => r.task.toLowerCase().includes(q) || r.code.includes(q)) : all;
+const C = (id, title, who, before, after) => {
+const d = s.decided[id];
+return { title, who, before, after, pending: !d, done: !!d, result: d === 'a' ? 'Approved' : 'Rejected',
+approve: () => this.setState({ decided: { ...s.decided, [id]: 'a' } }),
+reject: () => this.setState({ decided: { ...s.decided, [id]: 'r' } }),
+undo: () => { const n = { ...s.decided }; delete n[id]; this.setState({ decided: n }); } };
+};
+return {
+themeClass: dim ? 'dim' : '', dimPressed: dim ? 'true' : 'false', themeLabel: dim ? 'Dim mode: on' : 'Dim mode: off', toggleTheme: () => this.setState({ dim: !dim }),
+menuOpen: s.menu, menuExpanded: s.menu ? 'true' : 'false', toggleMenu: () => this.setState({ menu: !s.menu }),
+isApprover: ap, tabs,
+isEdit: tab === 'edit', isQueue: tab === 'queue', isMine: tab === 'mine', isFlags: tab === 'flags', isHistory: tab === 'history',
+pubStatus: s.published ? 'v2027.3.1 published just now' : pub === 'waiting for second approver' ? '1 change waiting for a second approver to publish' : pub === 'second approver view' ? '[Approver 1] asked you to publish 1 change' : '1 approved change ready to publish',
+showPubBtn: !s.published && pub !== 'waiting for second approver',
+pubBtn: pub === 'second approver view' ? 'Approve and publish' : 'Send to publish',
+doPublish: () => this.setState(pub === 'second approver view' ? { published: true } : { sent: true }),
+q: s.q, setQ: (e) => this.setState({ q: e.target.value }), rows, noRows: rows.length === 0,
+queue: [
+C('hot', 'Hot Call · notes', 'Changed by [Editor name] · 2 hours ago', 'Hot/Cold calls for West Las Casas go to RFMT LSCS for GMM to troubleshoot', 'West Las Casas hot/cold go to RFMT LSCS'),
+C('zone', 'TMPE Zone Guide · ACAD A', 'Changed by [Editor name] · yesterday', '[Supervisor 2]: M–F', '[Supervisor 2]: M–Th 6:30–5, off Fri')
+],
+flagOpen: !s.flag, flagDone: s.flag, dismissFlag: () => this.setState({ flag: true })
+};
+}
+}
+</script>
+</body>
+</html>

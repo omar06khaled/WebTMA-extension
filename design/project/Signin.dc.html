@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Sign in</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F7F7F7;font-family:'Public Sans',system-ui,sans-serif;color:#191919}
+a{color:#8C1D40}a:hover{color:#5E1229}
+:focus-visible{outline:3px solid #191919;outline-offset:2px}
+</style>
+</helmet>
+<div style="min-height:100vh;display:flex;flex-direction:column">
+<div style="height:6px;background:#FFC627"></div>
+<header style="background:#FFFFFF;border-bottom:1px solid #D0D0D0">
+<div style="max-width:1280px;margin:0 auto;padding:12px 24px;display:flex;flex-direction:column;line-height:1.15">
+<span style="font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#8C1D40">ASU Facilities</span>
+<span style="font-size:20px;font-weight:700">Desk Assistant</span>
+</div>
+</header>
+<main style="flex:1 1 auto;display:flex;align-items:center;justify-content:center;padding:64px 16px">
+<div style="width:100%;max-width:440px;box-sizing:border-box;background:#FFFFFF;border:1px solid #D0D0D0;border-top:6px solid #8C1D40;border-radius:8px;padding:40px 32px;display:flex;flex-direction:column;gap:20px">
+<h1 style="margin:0;font-size:28px;font-weight:700">Sign in</h1>
+<p style="margin:0;font-size:16px;color:#484848;line-height:1.5">Use your ASURITE ID. Access is limited to FDM dispatch staff and desk manual editors.</p>
+<a href="Main.dc.html" style="display:flex;align-items:center;justify-content:center;gap:10px;height:52px;background:#FFC627;color:#191919;text-decoration:none;font-weight:700;font-size:16px;border-radius:6px">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg>
+Sign in with ASURITE</a>
+<p style="margin:0;font-size:14px;color:#484848;line-height:1.5">You'll be sent to the ASU CAS sign-in page and brought back here.</p>
+<hr style="border:0;border-top:1px solid #E0E0E0;margin:4px 0">
+<p style="margin:0;font-size:14px;color:#484848">No access yet? <a href="#">Request access from the MOM group</a></p>
+</div>
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

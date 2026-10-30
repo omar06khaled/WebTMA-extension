@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Desk manual</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+.app{--bg:#F6F5F2;--surface:#FFFFFF;--soft:#F1EFEB;--text:#1F1F1F;--muted:#55524D;--line:#E4E1DC;--line2:#8A867F;--link:#8C1D40;--mark:#8C1D40;--primary:#8C1D40;--ptext:#FFFFFF;--solid:#1F1F1F;--stext:#FFFFFF;--hl:#FFF6DA;min-height:100vh;background:var(--bg);color:var(--text);font-family:'Public Sans',system-ui,sans-serif;font-size:16px;line-height:1.5;display:flex;flex-direction:column}
+.app.dim{--bg:#1C1D20;--surface:#26282C;--soft:#303236;--text:#E9E6E1;--muted:#B3AEA6;--line:#3A3C41;--line2:#8E8981;--link:#F0A9BD;--mark:#FFC627;--solid:#E9E6E1;--stext:#1C1D20;--hl:#3A3524}
+a{color:var(--link)}
+:focus-visible{outline:3px solid var(--text);outline-offset:2px}
+.wrap{max-width:1200px;width:100%;box-sizing:border-box;margin:0 auto;padding-left:32px;padding-right:32px}
+.top{background:var(--surface);border-bottom:1px solid var(--line);border-top:4px solid #FFC627}
+.topin{display:flex;flex-wrap:wrap;align-items:center;gap:8px 32px}
+.brand{font-size:18px;font-weight:700;color:var(--text);text-decoration:none;padding:12px 0}
+.mainnav{display:flex;flex-wrap:wrap;flex:1 1 auto}
+.nav{display:inline-flex;align-items:center;min-height:52px;padding:0 16px;color:var(--text);text-decoration:none;font-weight:500;border-bottom:3px solid transparent;box-sizing:border-box}
+.nav:hover{background:var(--soft);color:var(--text)}
+.nav[aria-current="page"]{font-weight:700;border-bottom-color:var(--mark)}
+.acct{display:flex;align-items:center;gap:8px;position:relative}
+.me{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 8px;background:transparent;border:0;border-radius:8px;font:inherit;color:var(--text);cursor:pointer}
+.me:hover{background:var(--soft)}
+.av{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:#8C1D40;color:#FFFFFF;font-weight:700;font-size:13px}
+.menu{position:absolute;right:0;top:100%;margin:4px 0 0;padding:8px;list-style:none;background:var(--surface);border:1px solid var(--line);border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.14);min-width:200px;z-index:10}
+.menu a{display:flex;align-items:center;min-height:44px;padding:0 12px;border-radius:6px;color:var(--text);text-decoration:none}
+.menu a:hover{background:var(--soft)}
+.main{padding-top:48px;padding-bottom:64px;display:flex;flex-direction:column;gap:32px;flex:1 1 auto}
+h1{margin:0;font-size:30px;line-height:1.2}
+h2{margin:0;font-size:20px;line-height:1.3}
+.lbl{font-size:14px;color:var(--muted)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 16px;border-radius:8px;font:inherit;font-size:15px;font-weight:600;cursor:pointer;text-decoration:none;box-sizing:border-box;border:1.5px solid var(--line2);background:transparent;color:var(--text)}
+.btn:hover{border-color:var(--text);color:var(--text)}
+.btn.solid{background:var(--solid);color:var(--stext);border-color:var(--solid)}
+.btn[aria-pressed="true"]{background:var(--soft)}
+.in{font:inherit;font-size:16px;min-height:48px;box-sizing:border-box;padding:0 14px;border:1.5px solid var(--line2);border-radius:8px;background:var(--surface);color:var(--text)}
+textarea.in{padding:14px;line-height:1.5;resize:vertical}
+.hit{display:flex;justify-content:space-between;align-items:center;gap:16px;width:100%;min-height:52px;padding:0 16px;background:transparent;border:0;border-bottom:1px solid var(--line);font:inherit;font-size:16px;color:var(--text);cursor:pointer;text-align:left}
+.hit:last-child{border-bottom:0}
+.hit:hover{background:var(--soft)}
+.tile{display:flex;flex-direction:column;align-items:flex-start;gap:6px;min-height:140px;padding:24px;font:inherit;color:var(--text);text-align:left;cursor:pointer;box-sizing:border-box}
+.tile:hover{border-color:var(--line2);background:var(--soft)}
+.prose{max-width:680px;display:flex;flex-direction:column;gap:24px;font-size:17px;line-height:1.65}
+.prose p,.prose ul{margin:0}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+</style>
+</helmet>
+<div class="app {{ themeClass }}">
+<header class="top"><div class="wrap topin">
+<a class="brand" href="Main.dc.html">Desk Assistant</a>
+<nav class="mainnav" aria-label="Main"><a class="nav" href="Main.dc.html">Home</a><a class="nav" href="DispatchV2.dc.html">Dispatch</a><a class="nav" href="Manual.dc.html" aria-current="page">Desk manual</a><a class="nav" href="Lookups.dc.html">Lookups</a></nav>
+<div class="acct">
+<button type="button" class="btn" aria-pressed="{{ dimPressed }}" onClick="{{ toggleTheme }}">{{ themeLabel }}</button>
+<button type="button" class="me" aria-haspopup="menu" aria-expanded="{{ menuExpanded }}" onClick="{{ toggleMenu }}"><span class="av" aria-hidden="true">ON</span><span style="font-weight:600">Omar</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></button>
+<sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}"><ul class="menu" role="menu"><li role="none"><a role="menuitem" href="EditorV2.dc.html">Manual editor</a></li><li role="none"><a role="menuitem" href="Admin.dc.html">Admin</a></li><li role="none"><a role="menuitem" href="Signin.dc.html">Sign out</a></li></ul></sc-if>
+</div>
+</div></header>
+
+<main class="wrap main">
+<div style="display:flex;flex-direction:column;gap:16px;max-width:760px">
+<h1>Desk manual</h1>
+<label for="ms" class="sr">Search the desk manual</label>
+<input id="ms" type="search" class="in" placeholder="Search a building, task, or person" value="{{ q }}" onChange="{{ setQ }}" style="min-height:56px;font-size:17px">
+<sc-if value="{{ hasHits }}" hint-placeholder-val="{{ false }}">
+<div class="card" role="listbox" aria-label="Matches" style="overflow:hidden">
+<sc-for list="{{ hits }}" as="h" hint-placeholder-count="3">
+<button type="button" class="hit" role="option" aria-selected="false" onClick="{{ h.open }}"><span>{{ h.name }}</span><span class="lbl">{{ h.kind }}</span></button>
+</sc-for>
+</div>
+</sc-if>
+<sc-if value="{{ noHits }}" hint-placeholder-val="{{ false }}"><p style="margin:0" role="status">Nothing matches "{{ q }}". Try a building name or a task code.</p></sc-if>
+<span class="lbl">Version v2027.3</span>
+</div>
+
+<sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+<section aria-label="Browse by topic" style="display:flex;flex-direction:column;gap:16px">
+<h2>Or browse by topic</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px">
+<sc-for list="{{ cats }}" as="c" hint-placeholder-count="6">
+<button type="button" class="card tile" onClick="{{ c.open }}"><span style="font-size:19px;font-weight:700">{{ c.name }}</span><span style="font-size:15px;color:var(--muted)">{{ c.desc }}</span><span class="lbl" style="margin-top:auto">{{ c.count }} pages</span></button>
+</sc-for>
+</div>
+</section>
+</sc-if>
+
+<sc-if value="{{ isCat }}" hint-placeholder-val="{{ false }}">
+<section style="display:flex;flex-direction:column;gap:16px;max-width:760px">
+<button type="button" class="btn link" style="align-self:flex-start;padding:0" onClick="{{ goHome }}">← All topics</button>
+<h2 style="font-size:26px">{{ catName }}</h2>
+<div class="card" style="overflow:hidden">
+<sc-for list="{{ catPages }}" as="p" hint-placeholder-count="5"><button type="button" class="hit" onClick="{{ p.open }}"><span>{{ p.name }}</span><span aria-hidden="true" class="lbl">→</span></button></sc-for>
+</div>
+</section>
+</sc-if>
+
+<sc-if value="{{ isArticle }}" hint-placeholder-val="{{ false }}">
+<article class="card" style="padding:48px;display:flex;flex-direction:column;gap:32px">
+<div style="display:flex;flex-direction:column;gap:8px"><button type="button" class="btn link" style="align-self:flex-start;padding:0;min-height:32px" onClick="{{ goCat }}">← {{ crumb }}</button><h2 style="font-size:28px">{{ title }}</h2></div>
+
+<sc-if value="{{ isIsaac }}" hint-placeholder-val="{{ true }}">
+<div class="prose">
+<p style="padding:16px 20px;background:var(--hl);border-radius:8px"><strong>Not the Lock Shop.</strong> Card-access (ISAAC) doors go to ISAAC Services. Regular locks and keys stay with the Lock Shop.</p>
+<div><h3 style="margin:0 0 8px;font-size:18px">Weekdays, 7:30 AM to 4:00 PM</h3><p>Call the ISAAC Services front desk at <strong>480-727-1327</strong>.</p></div>
+<div><h3 style="margin:0 0 8px;font-size:18px">After hours</h3><p>The ASU Help Desk takes the details and opens a ticket. Emergencies are handled right away; everything else waits for the next business day.</p></div>
+<div><h3 style="margin:0 0 8px;font-size:18px">Who the caller should contact</h3><ul style="padding-left:22px"><li>Students: the Service Center</li><li>Faculty and staff: ServiceNow, or ISAAC Services during the day</li><li>Residence halls: Residential ISAAC</li></ul></div>
+</div>
+</sc-if>
+<sc-if value="{{ isHot }}" hint-placeholder-val="{{ false }}">
+<div class="prose">
+<p>Downtown, West and Poly: send hot and cold calls to the zone.</p>
+<p>Tempe: check the building list. Most buildings go to <strong>EMS</strong>; some rooms go to the zone.</p>
+<p>Example: Wrigley Hall (WGH, 7) is EMS for the whole building.</p>
+</div>
+</sc-if>
+<sc-if value="{{ isOther }}" hint-placeholder-val="{{ false }}">
+<div class="prose"><p style="color:var(--muted)">[This page's content from the desk manual goes here.]</p></div>
+</sc-if>
+
+<div style="border-top:1px solid var(--line);padding-top:24px;display:flex;flex-direction:column;gap:16px;max-width:680px">
+<sc-if value="{{ reportClosed }}" hint-placeholder-val="{{ true }}">
+<div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px"><span class="lbl">Something wrong or out of date on this page?</span><button type="button" class="btn" onClick="{{ openReport }}">Report a problem</button><a href="#" style="font-size:15px;margin-left:auto">Print this page</a></div>
+</sc-if>
+<sc-if value="{{ reportOpen }}" hint-placeholder-val="{{ false }}">
+<form style="display:flex;flex-direction:column;gap:16px">
+<h3 style="margin:0;font-size:18px">Report a problem on this page</h3>
+<div style="display:flex;flex-direction:column;gap:8px"><label for="cwo" style="font-weight:600;font-size:15px">Work order number</label><input id="cwo" class="in" placeholder="e.g. 1234567" style="max-width:260px"></div>
+<div style="display:flex;flex-direction:column;gap:8px"><label for="cwhat" style="font-weight:600;font-size:15px">What's wrong?</label><textarea id="cwhat" class="in" rows="3" placeholder="e.g. The after-hours number is cut off"></textarea></div>
+<div style="display:flex;gap:8px"><button type="button" class="btn solid" onClick="{{ sendReport }}">Send to the editors</button><button type="button" class="btn" onClick="{{ closeReport }}">Cancel</button></div>
+</form>
+</sc-if>
+<sc-if value="{{ reportSent }}" hint-placeholder-val="{{ false }}"><p style="margin:0" role="status"><strong>Thanks.</strong> An editor will look at it.</p></sc-if>
+</div>
+</article>
+</sc-if>
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"theme":{"editor":"enum","options":["light","dim"],"default":"light"},"$preview":{"width":1440,"height":1150}}'>
+class Component extends DCLogic {
+constructor(props) { super(props); this.state = { dim: null, menu: false, q: '', page: null, cat: null, report: 'closed' }; }
+renderVals() {
+const s = this.state;
+const dim = s.dim ?? ((this.props.theme ?? 'light') === 'dim');
+const topics = [
+['Routing', 'Which trade gets which job', ['Trades and Task Codes', 'HOTCOLD Calls', 'ISAAC Doors', 'Shop Priorities', 'Memorial Union', 'Broken Glass']],
+['Zones and contacts', 'Supervisors, phone lists, who to call', ['TMPE Zone Guide', 'DTPC Zone Guide', 'POLY Zone Guide', 'West Zone Guide', 'FDM Phone List', 'Aramark Contacts']],
+['Schedules', 'Lock and unlock times, trash days, building hours', ['Lock/Unlock Times', 'Trash Schedules', 'Building Hours (MU)']],
+['Emergencies', 'Gas, elevators, utilities, suspicious packages', ['EHS – Emergency Situations', 'Elevators – Tempe', 'Emergency Utility', 'Suspicious Packages']],
+['Buildings', 'Billable, leased and classroom lists', ['Billable Buildings', 'Leased Buildings', 'Classroom Lists']],
+['Office info', 'How the desk works day to day', ['Office Behaviors', 'Radio Protocol', 'Processing Emails', 'Onboarding Links']]
+];
+const catOf = (p) => (topics.find(t => t[2].includes(p)) || topics[0])[0];
+const openPage = (p) => () => this.setState({ page: p, cat: catOf(p), q: '', report: 'closed' });
+const index = [
+{ name: 'ISAAC Doors', kind: 'Page', page: 'ISAAC Doors' },
+{ name: 'Lock/Unlock Door · 11040', kind: 'Task', page: 'ISAAC Doors' },
+{ name: 'Residential ISAAC', kind: 'Contact', page: 'ISAAC Doors' },
+{ name: 'HOTCOLD Calls', kind: 'Page', page: 'HOTCOLD Calls' },
+{ name: 'Wrigley Hall (WGH, 7)', kind: 'Building', page: 'HOTCOLD Calls' },
+{ name: 'Cold Call · 18300', kind: 'Task', page: 'HOTCOLD Calls' },
+{ name: 'TMPE Zone Guide', kind: 'Page', page: 'TMPE Zone Guide' }
+];
+const q = (s.q || '').trim().toLowerCase();
+const hits = q ? index.filter(i => i.name.toLowerCase().includes(q)).map(i => ({ ...i, open: openPage(i.page) })) : [];
+const cur = topics.find(t => t[0] === s.cat);
+const hot = s.page === 'HOTCOLD Calls', isaac = s.page === 'ISAAC Doors';
+return {
+isHome: !s.page && !s.cat, isCat: !s.page && !!s.cat, isArticle: !!s.page, isOther: !!s.page && !hot && !isaac,
+cats: topics.map(([name, desc, pages]) => ({ name, desc, count: pages.length, open: () => this.setState({ cat: name, page: null }) })),
+catName: cur ? cur[0] : '', catPages: cur ? cur[2].map(p => ({ name: p, open: openPage(p) })) : [],
+goHome: () => this.setState({ cat: null, page: null }), goCat: () => this.setState({ page: null }),
+themeClass: dim ? 'dim' : '', dimPressed: dim ? 'true' : 'false', themeLabel: dim ? 'Dim mode: on' : 'Dim mode: off', toggleTheme: () => this.setState({ dim: !dim }),
+menuOpen: s.menu, menuExpanded: s.menu ? 'true' : 'false', toggleMenu: () => this.setState({ menu: !s.menu }),
+q: s.q, setQ: (e) => this.setState({ q: e.target.value }), hits, hasHits: hits.length > 0, noHits: !!q && hits.length === 0,
+isIsaac: isaac, isHot: hot, title: s.page || '', crumb: s.cat || 'All topics',
+reportClosed: s.report === 'closed', reportOpen: s.report === 'open', reportSent: s.report === 'sent',
+openReport: () => this.setState({ report: 'open' }), closeReport: () => this.setState({ report: 'closed' }), sendReport: () => this.setState({ report: 'sent' })
+};
+}
+}
+</script>
+</body>
+</html>
