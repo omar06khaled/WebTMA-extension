@@ -305,6 +305,25 @@ CREATE TABLE public.change_log (
 );
 CREATE INDEX change_log_table_idx ON public.change_log (table_name, changed_at DESC);
 
+-- A bundle of related edits (a new task and its routing rules, a new building and its zones)
+-- that is reviewed as one unit: approved or denied together, applied in order, all or nothing.
+-- Its edits are ordinary change_request rows that carry this set's id.
+CREATE TABLE public.change_set (
+    id            bigserial PRIMARY KEY,
+    title         text NOT NULL,
+    reason        text,
+    status        text NOT NULL DEFAULT 'pending'
+                  CHECK (status IN ('pending', 'approved', 'denied', 'withdrawn')),
+    requested_by  text NOT NULL REFERENCES public.app_user(asurite),
+    requested_at  timestamptz NOT NULL DEFAULT now(),
+    reviewed_by   text REFERENCES public.app_user(asurite),
+    reviewed_at   timestamptz,
+    review_note   text,
+    CHECK (reviewed_by IS DISTINCT FROM requested_by),
+    CHECK (status NOT IN ('approved', 'denied') OR reviewed_by IS NOT NULL),
+    CHECK (status <> 'denied' OR nullif(btrim(review_note), '') IS NOT NULL)
+);
+
 -- Stories 2.2-2.6: an editor proposes; another editor or approver accepts or denies.
 CREATE TABLE public.change_request (
     id             bigserial PRIMARY KEY,
@@ -323,11 +342,16 @@ CREATE TABLE public.change_request (
     reviewed_at    timestamptz,
     review_note    text,
     released_in    int,                             -- release version it went live in
+    set_id         bigint REFERENCES public.change_set(id),   -- null = a single edit on its own
+    set_position   int,                             -- order inside the set (1, 2, 3 ...)
+    UNIQUE (set_id, set_position),
+    CHECK ((set_id IS NULL) = (set_position IS NULL)),
     CHECK (reviewed_by IS DISTINCT FROM requested_by),                  -- decision A: never your own
     CHECK (status NOT IN ('approved', 'denied') OR reviewed_by IS NOT NULL),
     CHECK (status <> 'denied' OR nullif(btrim(review_note), '') IS NOT NULL)  -- story 2.6: denials need a reason
 );
 CREATE INDEX change_request_target_idx ON public.change_request (table_name, target_key) WHERE status = 'pending';
+CREATE INDEX change_request_set_idx ON public.change_request (set_id) WHERE set_id IS NOT NULL;
 
 -- Every step a request goes through (submitted, approved, denied, reopened, appealed ...). Append-only.
 CREATE TABLE public.change_request_event (
@@ -639,23 +663,27 @@ BEGIN
     RETURN v_id;
 END $$;
 
--- Writes an approved request into staging. Internal: only approve_change() calls it.
-CREATE FUNCTION public.apply_change(p_req public.change_request) RETURNS void
+-- Writes an approved request into staging. Internal: approve_change() and approve_change_set()
+-- call it. p_proposed replaces the stored values (a set fills in the ids of rows it just made).
+-- Returns the new row as JSON for an insert, so a set can read the id it was given.
+CREATE FUNCTION public.apply_change(p_req public.change_request, p_proposed jsonb DEFAULT NULL) RETURNS jsonb
 LANGUAGE plpgsql SECURITY DEFINER SET search_path = public, pg_temp AS $$
 DECLARE
     v_pk   text[] := public.pk_columns(p_req.table_name);
     v_cols text;
     v_n    int;
-    v_new  jsonb := p_req.proposed || jsonb_build_object('updated_by', p_req.requested_by);
+    v_row  jsonb;
+    v_prop jsonb  := COALESCE(p_proposed, p_req.proposed);
+    v_new  jsonb  := COALESCE(p_proposed, p_req.proposed) || jsonb_build_object('updated_by', p_req.requested_by);
 BEGIN
     -- re-check: the row may have changed or been retired since it was submitted
-    PERFORM public.validate_request(p_req.table_name, p_req.row_key, p_req.action, p_req.proposed);
+    PERFORM public.validate_request(p_req.table_name, p_req.row_key, p_req.action, v_prop);
     PERFORM set_config('app.request_id', p_req.id::text, true);
 
     IF p_req.action = 'insert' THEN
         SELECT string_agg(format('%I', k), ', ') INTO v_cols FROM jsonb_object_keys(v_new) k;
-        EXECUTE format('INSERT INTO staging.%I (%s) SELECT %s FROM jsonb_populate_record(NULL::staging.%I, $1)',
-                       p_req.table_name, v_cols, v_cols, p_req.table_name) USING v_new;
+        EXECUTE format('INSERT INTO staging.%1$I AS n (%2$s) SELECT %2$s FROM jsonb_populate_record(NULL::staging.%1$I, $1) RETURNING to_jsonb(n)',
+                       p_req.table_name, v_cols) INTO v_row USING v_new;
         v_n := 1;
     ELSE
         IF p_req.action = 'retire'  THEN v_new := jsonb_build_object('active', false, 'updated_by', p_req.requested_by); END IF;
@@ -674,8 +702,9 @@ BEGIN
         RAISE EXCEPTION 'Request % changed % rows, expected 1', p_req.id, v_n;
     END IF;
     PERFORM set_config('app.request_id', '', true);
+    RETURN v_row;
 END $$;
-REVOKE ALL ON FUNCTION public.apply_change(public.change_request) FROM PUBLIC;
+REVOKE ALL ON FUNCTION public.apply_change(public.change_request, jsonb) FROM PUBLIC;
 
 CREATE FUNCTION public.approve_change(p_id bigint, p_note text DEFAULT NULL)
 RETURNS void LANGUAGE plpgsql SECURITY DEFINER SET search_path = public, pg_temp AS $$
@@ -684,6 +713,9 @@ BEGIN
     SELECT * INTO v_req FROM public.change_request WHERE id = p_id FOR UPDATE;
     IF NOT FOUND OR v_req.status <> 'pending' THEN
         RAISE EXCEPTION 'Request % is not pending', p_id;
+    END IF;
+    IF v_req.set_id IS NOT NULL THEN
+        RAISE EXCEPTION 'Request % belongs to change set %; approve the set instead', p_id, v_req.set_id;
     END IF;
     IF v_req.requested_by = v_me THEN
         RAISE EXCEPTION 'You can''t approve your own request (decision A)';
@@ -700,6 +732,7 @@ DECLARE v_me text := public.require_role('editor', 'approver', 'admin'); v_req p
 BEGIN
     SELECT * INTO v_req FROM public.change_request WHERE id = p_id FOR UPDATE;
     IF NOT FOUND OR v_req.status <> 'pending' THEN RAISE EXCEPTION 'Request % is not pending', p_id; END IF;
+    IF v_req.set_id IS NOT NULL THEN RAISE EXCEPTION 'Request % belongs to change set %; deny the set instead', p_id, v_req.set_id; END IF;
     IF v_req.requested_by = v_me THEN RAISE EXCEPTION 'You can''t review your own request (decision A)'; END IF;
     IF nullif(btrim(p_reason), '') IS NULL THEN RAISE EXCEPTION 'A denial needs a reason (story 2.6)'; END IF;
     UPDATE public.change_request
@@ -714,6 +747,7 @@ DECLARE v_me text := public.require_role('editor', 'approver', 'admin'); v_req p
 BEGIN
     SELECT * INTO v_req FROM public.change_request WHERE id = p_id FOR UPDATE;
     IF NOT FOUND OR v_req.status <> 'denied' THEN RAISE EXCEPTION 'Request % is not denied', p_id; END IF;
+    IF v_req.set_id IS NOT NULL THEN RAISE EXCEPTION 'Request % belongs to change set %; reopen the set instead', p_id, v_req.set_id; END IF;
     IF v_req.reviewed_by <> v_me AND public.my_role() NOT IN ('approver', 'admin') THEN
         RAISE EXCEPTION 'Only the reviewer who denied it, or an approver, can reopen it';
     END IF;
@@ -729,6 +763,7 @@ DECLARE v_me text := public.require_role('editor', 'approver', 'admin'); v_req p
 BEGIN
     SELECT * INTO v_req FROM public.change_request WHERE id = p_id FOR UPDATE;
     IF NOT FOUND OR v_req.status <> 'denied' THEN RAISE EXCEPTION 'Request % is not denied', p_id; END IF;
+    IF v_req.set_id IS NOT NULL THEN RAISE EXCEPTION 'Request % belongs to change set %; appeal the set instead', p_id, v_req.set_id; END IF;
     IF v_req.requested_by <> v_me THEN RAISE EXCEPTION 'Only the author can appeal'; END IF;
     IF nullif(btrim(p_note), '') IS NULL THEN RAISE EXCEPTION 'An appeal needs a note'; END IF;
     UPDATE public.change_request SET status = 'pending', reviewed_by = NULL, reviewed_at = NULL, review_note = NULL
@@ -742,9 +777,173 @@ DECLARE v_me text := public.require_role('editor', 'approver', 'admin'); v_req p
 BEGIN
     SELECT * INTO v_req FROM public.change_request WHERE id = p_id FOR UPDATE;
     IF NOT FOUND OR v_req.status NOT IN ('pending', 'denied') THEN RAISE EXCEPTION 'Request % can''t be withdrawn', p_id; END IF;
+    IF v_req.set_id IS NOT NULL THEN RAISE EXCEPTION 'Request % belongs to change set %; withdraw the set instead', p_id, v_req.set_id; END IF;
     IF v_req.requested_by <> v_me THEN RAISE EXCEPTION 'Only the author can withdraw'; END IF;
     UPDATE public.change_request SET status = 'withdrawn' WHERE id = p_id;
     INSERT INTO public.change_request_event (request_id, event, by_user, note) VALUES (p_id, 'withdrawn', v_me, p_note);
+END $$;
+
+-- ================================================================ change sets
+-- Related edits reviewed as one unit. p_items is a JSON list, in the order it is applied:
+--   [{"table": "task", "action": "insert", "proposed": {"description": "...", "category_id": 3}},
+--    {"table": "routing_rule", "action": "insert",
+--     "proposed": {"task_id": "@1", "campus_code": "tempe", "is_rfmt": false, "kind": "trade", "trade_code": "JANI"}}]
+-- "@N" in a value means "the id of the row item N adds", for rows that have no id yet.
+-- The set is approved or denied as a whole, never one item at a time, and applies all or nothing.
+CREATE FUNCTION public.submit_change_set(p_title text, p_items jsonb, p_reason text DEFAULT NULL)
+RETURNS bigint LANGUAGE plpgsql SECURITY DEFINER SET search_path = public, pg_temp AS $$
+DECLARE
+    v_me        text := public.require_role('editor', 'approver', 'admin');
+    v_set       bigint;
+    v_item      jsonb;
+    v_pos       int := 0;
+    v_key       jsonb;
+    v_ref       int;
+    v_req       bigint;
+    v_conflicts int := 0;
+BEGIN
+    IF nullif(btrim(p_title), '') IS NULL THEN RAISE EXCEPTION 'A change set needs a title'; END IF;
+    IF jsonb_typeof(p_items) IS DISTINCT FROM 'array' OR jsonb_array_length(p_items) = 0 THEN
+        RAISE EXCEPTION 'A change set needs a list of items';
+    END IF;
+    IF jsonb_array_length(p_items) > 100 THEN RAISE EXCEPTION 'A change set holds at most 100 items'; END IF;
+
+    INSERT INTO public.change_set (title, reason, requested_by) VALUES (btrim(p_title), p_reason, v_me)
+    RETURNING id INTO v_set;
+
+    FOR v_item IN SELECT * FROM jsonb_array_elements(p_items) LOOP
+        v_pos := v_pos + 1;
+        IF v_item ->> 'table' IS NULL OR v_item ->> 'action' IS NULL THEN
+            RAISE EXCEPTION 'Item %: needs a table and an action', v_pos;
+        END IF;
+        v_key := nullif(v_item -> 'row_key', 'null'::jsonb);
+        PERFORM public.validate_request(v_item ->> 'table', v_key, v_item ->> 'action', v_item -> 'proposed');
+
+        -- every "@N" must name an earlier item that adds a row with an id
+        FOR v_ref IN SELECT substr(e.value #>> '{}', 2)::int
+                     FROM jsonb_each(COALESCE(v_item -> 'proposed', '{}')) e
+                     WHERE jsonb_typeof(e.value) = 'string' AND e.value #>> '{}' ~ '^@[0-9]+$' LOOP
+            IF v_ref < 1 OR v_ref >= v_pos OR NOT EXISTS (
+                   SELECT 1 FROM public.change_request r
+                   WHERE r.set_id = v_set AND r.set_position = v_ref AND r.action = 'insert'
+                     AND EXISTS (SELECT 1 FROM information_schema.columns c
+                                 WHERE c.table_schema = 'staging' AND c.table_name = r.table_name
+                                   AND c.column_name = 'id')) THEN
+                RAISE EXCEPTION 'Item %: @% must point at an earlier item that adds a row with an id', v_pos, v_ref;
+            END IF;
+        END LOOP;
+
+        INSERT INTO public.change_request
+            (table_name, row_key, target_key, action, proposed, before, reason, requested_by, set_id, set_position)
+        VALUES (v_item ->> 'table', v_key,
+                CASE WHEN v_key IS NOT NULL THEN public.flat_key(v_item ->> 'table', v_key) END,
+                v_item ->> 'action', COALESCE(v_item -> 'proposed', '{}'),
+                CASE WHEN v_key IS NOT NULL THEN public.staging_row(v_item ->> 'table', v_key) END,
+                p_reason, v_me, v_set, v_pos)
+        RETURNING id INTO v_req;
+        INSERT INTO public.change_request_event (request_id, event, by_user, note)
+        VALUES (v_req, 'submitted', v_me, p_reason);
+        IF v_key IS NOT NULL THEN
+            v_conflicts := v_conflicts + (SELECT count(*) FROM public.conflicts_for(v_item ->> 'table', v_key, v_req));
+        END IF;
+    END LOOP;
+    IF v_conflicts > 0 THEN
+        RAISE NOTICE 'Heads up: % other pending request(s) on entries in this set. See conflicts_for().', v_conflicts;
+    END IF;
+    RETURN v_set;
+END $$;
+
+-- Copies a set's decision down to its items and logs the step on each. Internal.
+CREATE FUNCTION public.sync_set_items(p_set bigint, p_event text, p_by text, p_note text) RETURNS void
+LANGUAGE sql SECURITY DEFINER SET search_path = public, pg_temp AS $$
+    UPDATE public.change_request r
+    SET status = s.status, reviewed_by = s.reviewed_by, reviewed_at = s.reviewed_at, review_note = s.review_note
+    FROM public.change_set s WHERE r.set_id = s.id AND s.id = p_set;
+    INSERT INTO public.change_request_event (request_id, event, by_user, note)
+    SELECT id, p_event, p_by, p_note FROM public.change_request WHERE set_id = p_set ORDER BY set_position;
+$$;
+REVOKE ALL ON FUNCTION public.sync_set_items(bigint, text, text, text) FROM PUBLIC;
+
+CREATE FUNCTION public.approve_change_set(p_id bigint, p_note text DEFAULT NULL)
+RETURNS void LANGUAGE plpgsql SECURITY DEFINER SET search_path = public, pg_temp AS $$
+DECLARE
+    v_me   text := public.require_role('editor', 'approver', 'admin');
+    v_set  public.change_set;
+    v_req  public.change_request;
+    v_ids  jsonb := '{}';
+    v_prop jsonb;
+    v_row  jsonb;
+BEGIN
+    SELECT * INTO v_set FROM public.change_set WHERE id = p_id FOR UPDATE;
+    IF NOT FOUND OR v_set.status <> 'pending' THEN RAISE EXCEPTION 'Change set % is not pending', p_id; END IF;
+    IF v_set.requested_by = v_me THEN RAISE EXCEPTION 'You can''t approve your own change set (decision A)'; END IF;
+    FOR v_req IN SELECT * FROM public.change_request WHERE set_id = p_id ORDER BY set_position LOOP
+        -- swap each "@N" for the id that item N was given
+        SELECT COALESCE(jsonb_object_agg(e.key,
+                   CASE WHEN jsonb_typeof(e.value) = 'string' AND e.value #>> '{}' ~ '^@[0-9]+$'
+                        THEN v_ids -> substr(e.value #>> '{}', 2) ELSE e.value END), '{}')
+        INTO v_prop FROM jsonb_each(v_req.proposed) e;
+        v_row := public.apply_change(v_req, v_prop);   -- any failure undoes the whole set
+        IF v_row ? 'id' THEN
+            v_ids := v_ids || jsonb_build_object(v_req.set_position::text, v_row -> 'id');
+        END IF;
+    END LOOP;
+    UPDATE public.change_set
+    SET status = 'approved', reviewed_by = v_me, reviewed_at = now(), review_note = p_note WHERE id = p_id;
+    PERFORM public.sync_set_items(p_id, 'approved', v_me, p_note);
+END $$;
+
+CREATE FUNCTION public.deny_change_set(p_id bigint, p_reason text)
+RETURNS void LANGUAGE plpgsql SECURITY DEFINER SET search_path = public, pg_temp AS $$
+DECLARE v_me text := public.require_role('editor', 'approver', 'admin'); v_set public.change_set;
+BEGIN
+    SELECT * INTO v_set FROM public.change_set WHERE id = p_id FOR UPDATE;
+    IF NOT FOUND OR v_set.status <> 'pending' THEN RAISE EXCEPTION 'Change set % is not pending', p_id; END IF;
+    IF v_set.requested_by = v_me THEN RAISE EXCEPTION 'You can''t review your own change set (decision A)'; END IF;
+    IF nullif(btrim(p_reason), '') IS NULL THEN RAISE EXCEPTION 'A denial needs a reason (story 2.6)'; END IF;
+    UPDATE public.change_set
+    SET status = 'denied', reviewed_by = v_me, reviewed_at = now(), review_note = p_reason WHERE id = p_id;
+    PERFORM public.sync_set_items(p_id, 'denied', v_me, p_reason);
+END $$;
+
+CREATE FUNCTION public.reopen_change_set(p_id bigint, p_note text DEFAULT NULL)
+RETURNS void LANGUAGE plpgsql SECURITY DEFINER SET search_path = public, pg_temp AS $$
+DECLARE v_me text := public.require_role('editor', 'approver', 'admin'); v_set public.change_set;
+BEGIN
+    SELECT * INTO v_set FROM public.change_set WHERE id = p_id FOR UPDATE;
+    IF NOT FOUND OR v_set.status <> 'denied' THEN RAISE EXCEPTION 'Change set % is not denied', p_id; END IF;
+    IF v_set.reviewed_by <> v_me AND public.my_role() NOT IN ('approver', 'admin') THEN
+        RAISE EXCEPTION 'Only the reviewer who denied it, or an approver, can reopen it';
+    END IF;
+    UPDATE public.change_set SET status = 'pending', reviewed_by = NULL, reviewed_at = NULL, review_note = NULL
+    WHERE id = p_id;
+    PERFORM public.sync_set_items(p_id, 'reopened', v_me, p_note);
+END $$;
+
+CREATE FUNCTION public.appeal_change_set(p_id bigint, p_note text)
+RETURNS void LANGUAGE plpgsql SECURITY DEFINER SET search_path = public, pg_temp AS $$
+DECLARE v_me text := public.require_role('editor', 'approver', 'admin'); v_set public.change_set;
+BEGIN
+    SELECT * INTO v_set FROM public.change_set WHERE id = p_id FOR UPDATE;
+    IF NOT FOUND OR v_set.status <> 'denied' THEN RAISE EXCEPTION 'Change set % is not denied', p_id; END IF;
+    IF v_set.requested_by <> v_me THEN RAISE EXCEPTION 'Only the author can appeal'; END IF;
+    IF nullif(btrim(p_note), '') IS NULL THEN RAISE EXCEPTION 'An appeal needs a note'; END IF;
+    UPDATE public.change_set SET status = 'pending', reviewed_by = NULL, reviewed_at = NULL, review_note = NULL
+    WHERE id = p_id;
+    PERFORM public.sync_set_items(p_id, 'appealed', v_me, p_note);
+END $$;
+
+CREATE FUNCTION public.withdraw_change_set(p_id bigint, p_note text DEFAULT NULL)
+RETURNS void LANGUAGE plpgsql SECURITY DEFINER SET search_path = public, pg_temp AS $$
+DECLARE v_me text := public.require_role('editor', 'approver', 'admin'); v_set public.change_set;
+BEGIN
+    SELECT * INTO v_set FROM public.change_set WHERE id = p_id FOR UPDATE;
+    IF NOT FOUND OR v_set.status NOT IN ('pending', 'denied') THEN
+        RAISE EXCEPTION 'Change set % can''t be withdrawn', p_id;
+    END IF;
+    IF v_set.requested_by <> v_me THEN RAISE EXCEPTION 'Only the author can withdraw'; END IF;
+    UPDATE public.change_set SET status = 'withdrawn' WHERE id = p_id;
+    PERFORM public.sync_set_items(p_id, 'withdrawn', v_me, p_note);
 END $$;
 
 -- ================================================================ automatic checks before a release
@@ -1146,6 +1345,9 @@ GRANT EXECUTE ON FUNCTION
     public.submit_change(text, jsonb, text, jsonb, text), public.approve_change(bigint, text),
     public.deny_change(bigint, text), public.reopen_change(bigint, text),
     public.appeal_change(bigint, text), public.withdraw_change(bigint, text),
+    public.submit_change_set(text, jsonb, text), public.approve_change_set(bigint, text),
+    public.deny_change_set(bigint, text), public.reopen_change_set(bigint, text),
+    public.appeal_change_set(bigint, text), public.withdraw_change_set(bigint, text),
     public.release_checks(), public.last_change_id(),
     public.request_publish(text, text, numeric), public.request_rollback(int, text),
     public.confirm_release(bigint), public.cancel_release_request(bigint),

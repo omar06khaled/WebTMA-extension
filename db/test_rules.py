@@ -135,6 +135,75 @@ def main():
                        (Jsonb({"code": zone}), Jsonb({"updated_by": "someone"})), expect="not editable")
     check("nobody can forge who made a change", ok, msg)
 
+    print("\nChange sets: related edits reviewed together")
+    cat = db.owner("SELECT id FROM staging.task_category ORDER BY id LIMIT 1")[0][0]
+    cells = [(c, rf) for c in ("dtpc", "poly", "tempe", "west") for rf in (False, True)]
+
+    def task_items(name, trade=None):
+        items = [{"table": "task", "action": "insert", "proposed": {"description": name, "category_id": cat}}]
+        for campus, rf in cells:
+            rule = {"task_id": "@1", "campus_code": campus, "is_rfmt": rf,
+                    "kind": "trade" if trade else "see_note"}
+            if trade:
+                rule["trade_code"] = trade
+            else:
+                rule["instruction"] = "Set test"
+            items.append({"table": "routing_rule", "action": "insert", "proposed": rule})
+        return items
+
+    sid = db.as_("t_ed1", "SELECT submit_change_set(%s, %s, %s)",
+                 ("New task with routing", Jsonb(task_items("Set test - Backflow")), "test set"))[0][0]
+    pos = [p for (p,) in db.owner("SELECT set_position FROM change_request WHERE set_id = %s ORDER BY set_position", (sid,))]
+    check("a set of 9 edits is filed as one unit, in order", pos == list(range(1, 10)), str(pos))
+    first = db.owner("SELECT id FROM change_request WHERE set_id = %s AND set_position = 1", (sid,))[0][0]
+    ok, msg = db.fails("t_ed1", "SELECT approve_change_set(%s)", (sid,), expect="own change set")
+    check("an editor can't approve their own set", ok, msg)
+    ok, msg = db.fails("t_ed2", "SELECT approve_change(%s)", (first,), expect="change set")
+    check("one edit of a set can't be approved on its own", ok, msg)
+    ok, msg = db.fails("t_ed2", "SELECT deny_change_set(%s, '')", (sid,), expect="needs a reason")
+    check("a set's denial needs a reason", ok, msg)
+    db.as_("t_ed2", "SELECT deny_change_set(%s, 'Check the RFMT cells first')", (sid,))
+    states = {s for (s,) in db.owner("SELECT status FROM change_request WHERE set_id = %s", (sid,))}
+    check("denying a set denies every edit in it", states == {"denied"}, str(states))
+    ok, msg = db.fails("t_ed2", "SELECT appeal_change_set(%s, 'pls')", (sid,), expect="only the author")
+    check("only the author can appeal a set", ok, msg)
+    db.as_("t_ed1", "SELECT appeal_change_set(%s, 'The RFMT cells are right')", (sid,))
+    check("an appeal puts the whole set back for review",
+          db.owner("SELECT count(*) FROM change_request WHERE set_id = %s AND status = 'pending'", (sid,))[0][0] == 9)
+    db.as_("t_ed2", "SELECT approve_change_set(%s, 'looks right')", (sid,))
+    new_task = db.owner("SELECT id FROM staging.task WHERE description = 'Set test - Backflow'")
+    rules = db.owner("SELECT count(*) FROM staging.routing_rule WHERE task_id = %s", (new_task[0][0],)) if new_task else [(0,)]
+    check("approving the set adds the task and all 8 routing rules, linked to it", bool(new_task) and rules[0][0] == 8,
+          f"{new_task} {rules}")
+    logged = db.owner("SELECT count(*) FROM change_log WHERE request_id IN "
+                      "(SELECT id FROM change_request WHERE set_id = %s)", (sid,))[0][0]
+    check("every row of the set is in the change log under its own request", logged == 9, str(logged))
+    events = {e for (e,) in db.owner("SELECT event FROM change_request_event WHERE request_id = %s", (first,))}
+    check("every step of the set is kept on each edit",
+          events == {"submitted", "denied", "appealed", "approved"}, str(events))
+
+    bad = task_items("Set test - Atomic", trade="NO-SUCH-TRADE")
+    sid2 = db.as_("t_ed1", "SELECT submit_change_set('Will fail', %s)", (Jsonb(bad),))[0][0]
+    ok, msg = db.fails("t_ed2", "SELECT approve_change_set(%s)", (sid2,), expect="foreign key")
+    check("a set with one bad edit is refused", ok, msg)
+    check("...and nothing from it reached staging",
+          db.owner("SELECT count(*) FROM staging.task WHERE description = 'Set test - Atomic'")[0][0] == 0)
+    check("...and it is still waiting for review",
+          db.owner("SELECT status FROM change_set WHERE id = %s", (sid2,))[0][0] == "pending")
+    db.as_("t_ed1", "SELECT withdraw_change_set(%s)", (sid2,))
+    states = {s for (s,) in db.owner("SELECT status FROM change_request WHERE set_id = %s", (sid2,))}
+    check("the author can withdraw a set", states == {"withdrawn"}, str(states))
+
+    forward = task_items("Set test - Forward")
+    forward[0]["proposed"]["category_id"] = "@3"
+    ok, msg = db.fails("t_ed1", "SELECT submit_change_set('Bad ref', %s)", (Jsonb(forward),), expect="earlier item")
+    check("an item can only refer to an earlier item's new id", ok, msg)
+    ok, msg = db.fails("t_ed1", "SELECT submit_change_set('Empty', '[]'::jsonb)", expect="list of items")
+    check("an empty set is refused", ok, msg)
+    ok, msg = db.fails("t_disp", "SELECT submit_change_set('x', %s)", (Jsonb(task_items("Set test - Viewer")),),
+                       expect="can't do this")
+    check("a dispatcher can't file a set", ok, msg)
+
     print("\nLinked contacts and who to call (stories 2.7, 3.2, 4.1-4.5)")
     def via_request(table, action, proposed, row_key=None):
         rid = db.as_("t_ed1", "SELECT submit_change(%s, %s, %s, %s)",

@@ -15,6 +15,7 @@ How an edit travels:
 
 1. An editor calls `submit_change()`. `conflicts_for()` warns if someone else has a pending edit on the same entry, but doesn't block it.
 2. **Another** editor or approver calls `approve_change()` or `deny_change()`. A denial needs a reason. The reviewer can `reopen_change()` it, and the author can `appeal_change()` with a note.
+   **Edits that belong together** (a new task and its routing rules, a new building and its zones) go in as one **change set**: `submit_change_set(title, items, reason)`. Another editor approves or denies the whole set with `approve_change_set()` or `deny_change_set()`. There are matching `reopen_change_set()`, `appeal_change_set()` and `withdraw_change_set()`. Items apply in order and all or nothing, so one bad item undoes the lot. A value like `"@1"` stands for the id of the row item 1 adds, so a routing rule can point at the new task before it has an id. The items of a set can't be approved one at a time.
 3. Approver A calls `request_publish()`. Approver **B** then calls `confirm_release()`. Rolling back takes the same two steps through `request_rollback()`.
 4. If staging changes between A's request and B's confirmation, the confirmation is refused, so B always signs off on exactly what A saw.
 
