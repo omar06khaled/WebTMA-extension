@@ -9,7 +9,7 @@ Diagrams and working notes for the WebTMA assistant. Nothing here contains keys,
 | `architecture/01-architecture-today.png` | What runs today on `main`: Chrome extension, local FastAPI backend (Layer 1 and Layer 2), Create AI and Supabase |
 | `architecture/02-architecture-planned-database.png` | The planned desk manual database and web app. Not built or connected yet |
 | `architecture/03-erd-manual-tables.png` | Relational diagram of the manual data tables (zones, buildings, tasks, routing rules, articles, contacts) |
-| `architecture/04-erd-workflow-tables.png` | Relational diagram of the workflow tables (users, change requests, releases, flags) |
+| `architecture/04-erd-workflow-tables.png` | Relational diagram of the workflow tables (users, change sets and requests, releases, flags) |
 | `architecture/05-erd-full.png` | One relational diagram with all 26 tables and their foreign keys (solid lines), plus the loose links by name or id (dotted). Purple is manual data, green is workflow. Very wide (about 4,450 px at 1x), so zoom in. Source is `src/05-erd-full.html` |
 | `architecture/05-full-database.png` | The whole database in one picture: the `staging`, `live` and `public` schemas, every table, who reads and writes what, and the rules the database enforces. Source is `05-full-database.svg` |
 

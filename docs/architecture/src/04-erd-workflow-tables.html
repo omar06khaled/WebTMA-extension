@@ -2,7 +2,7 @@
 <html lang="en"><head><meta charset="utf-8"><title>Workflow tables ERD</title>
 <style>body{margin:0;background:#fff;font-family:"Segoe UI",Arial,sans-serif;color:#2C2C2A}#wrap{padding:20px 24px;display:inline-block}h1{font-size:16px;font-weight:600;margin:0 0 4px}p{font-size:12px;color:#5F5E5A;margin:0 0 12px}</style></head>
 <body><div id="wrap"><h1>Desk manual database: workflow tables</h1>
-<p>Users, change requests, releases and flags (public schema). change_log, contact_unavailable and import_sheet link loosely and are not drawn.</p>
+<p>Users, change sets and requests, releases and flags (public schema). A change set groups related edits that are reviewed together. change_log, contact_unavailable and import_sheet link loosely and are not drawn.</p>
 <div id="out"></div></div>
 <script src="https://cdn.jsdelivr.net/npm/mermaid@11.4.0/dist/mermaid.min.js"></script>
 <script>
@@ -12,6 +12,8 @@ mermaid.render('erd', `erDiagram
   app_user ||--o{ change_request : submits
   app_user ||--o{ release : publishes
   app_user ||--o{ manual_flag : raises
+  app_user ||--o{ change_set : files
+  change_set |o--o{ change_request : groups
   change_request ||--o{ change_request_event : logs
   release ||--o{ release_request : targets
   release ||--o{ release_event : records
@@ -29,8 +31,17 @@ mermaid.render('erd', `erDiagram
     text new_role
     text changed_by FK
   }
+  change_set {
+    bigint id PK
+    text title
+    text status
+    text requested_by FK
+    text reviewed_by FK
+  }
   change_request {
     bigint id PK
+    bigint set_id FK
+    int set_position
     text table_name
     jsonb row_key
     text action

@@ -133,14 +133,17 @@ text{font-family:"Segoe UI",Arial,sans-serif}
 <text class="lab" x="170" y="584">Workflow: who changed what, who approved it, which version is live. One copy, not versioned.</text>
 <text class="gl" x="60" y="618">PROPOSED EDITS</text>
 <g class="w"><rect x="60" y="628" width="220" height="44" rx="6"/>
-<text class="t" x="70" y="644">change_request</text>
-<text class="s" x="70" y="660">table · proposed · status · by</text></g>
+<text class="t" x="70" y="644">change_set</text>
+<text class="s" x="70" y="660">title · status · requested_by</text></g>
 <g class="w"><rect x="60" y="680" width="220" height="44" rx="6"/>
-<text class="t" x="70" y="696">change_request_event</text>
-<text class="s" x="70" y="712">→ change_request · event</text></g>
+<text class="t" x="70" y="696">change_request</text>
+<text class="s" x="70" y="712">table · proposed · → change_set</text></g>
 <g class="w"><rect x="60" y="732" width="220" height="44" rx="6"/>
-<text class="t" x="70" y="748">change_log</text>
-<text class="s" x="70" y="764">table · old_row · new_row (auto)</text></g>
+<text class="t" x="70" y="748">change_request_event</text>
+<text class="s" x="70" y="764">→ change_request · event</text></g>
+<g class="w"><rect x="60" y="784" width="220" height="44" rx="6"/>
+<text class="t" x="70" y="800">change_log</text>
+<text class="s" x="70" y="816">table · old_row · new_row (auto)</text></g>
 <text class="gl" x="300" y="618">PEOPLE</text>
 <g class="w"><rect x="300" y="628" width="220" height="44" rx="6"/>
 <text class="t" x="310" y="644">app_user</text>
@@ -173,13 +176,14 @@ text{font-family:"Segoe UI",Arial,sans-serif}
 <text class="s" x="890" y="816">code PK · name · shared by both</text></g>
 <rect x="1130" y="604" width="310" height="226" rx="8" fill="#ffffff" stroke="#0F6E56" stroke-width="1" stroke-dasharray="4 4"/>
 <text class="t" x="1146" y="628" fill="#085041">Rules the database enforces</text>
-<text class="lab" x="1146" y="656" fill="#3d3d3a">•  Nobody approves their own change</text>
-<text class="lab" x="1146" y="678" fill="#3d3d3a">•  A denial needs a written reason</text>
-<text class="lab" x="1146" y="700" fill="#3d3d3a">•  Publishing needs two different approvers</text>
-<text class="lab" x="1146" y="722" fill="#3d3d3a">•  Rows are retired, never deleted</text>
-<text class="lab" x="1146" y="744" fill="#3d3d3a">•  Logs can only be added to</text>
-<text class="lab" x="1146" y="766" fill="#3d3d3a">•  Every release keeps a JSON snapshot</text>
-<text class="lab" x="1146" y="788" fill="#3d3d3a">•  Any release can be rolled back</text>
+<text class="lab" x="1146" y="656" fill="#3d3d3a">•  Related edits are reviewed as one set</text>
+<text class="lab" x="1146" y="678" fill="#3d3d3a">•  Nobody approves their own change</text>
+<text class="lab" x="1146" y="700" fill="#3d3d3a">•  A denial needs a written reason</text>
+<text class="lab" x="1146" y="722" fill="#3d3d3a">•  Publishing needs two different approvers</text>
+<text class="lab" x="1146" y="744" fill="#3d3d3a">•  Rows are retired, never deleted</text>
+<text class="lab" x="1146" y="766" fill="#3d3d3a">•  Logs can only be added to</text>
+<text class="lab" x="1146" y="788" fill="#3d3d3a">•  Every release keeps a JSON snapshot</text>
+<text class="lab" x="1146" y="810" fill="#3d3d3a">•  Any release can be rolled back</text>
 <line class="arr" x1="170" y1="558" x2="170" y2="512" marker-end="url(#a)"/>
 <text class="lab" x="182" y="540">approved edits are applied</text>
 <line class="arr" x1="740" y1="558" x2="740" y2="364" marker-end="url(#a)"/>

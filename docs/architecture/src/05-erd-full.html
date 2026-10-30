@@ -29,6 +29,8 @@ mermaid.render('erd', `erDiagram
   app_user ||--o{ release : publishes
   app_user ||--o{ manual_flag : raises
   app_user ||--o{ contact_unavailable : sets
+  app_user ||--o{ change_set : files
+  change_set |o--o{ change_request : groups
   change_request ||--o{ change_request_event : logs
   release ||--o{ release_request : targets
   release ||--o{ release_event : records
@@ -131,8 +133,17 @@ mermaid.render('erd', `erDiagram
     text old_role
     text new_role
   }
+  change_set {
+    bigint id PK
+    text title
+    text status
+    text requested_by FK
+    text reviewed_by FK
+  }
   change_request {
     bigint id PK
+    bigint set_id FK
+    int set_position
     text table_name
     jsonb row_key
     text action
@@ -197,6 +208,6 @@ mermaid.render('erd', `erDiagram
   classDef manual fill:#EEEDFE,stroke:#534AB7,color:#26215C
   classDef flow fill:#E1F5EE,stroke:#0F6E56,color:#04342C
   class zone,building,building_zone,building_note,trade,task_category,task,routing_rule,article,contact,contact_method,rotation,rotation_slot,contact_link manual
-  class campus,app_user,role_change,change_request,change_request_event,change_log,release,release_request,release_event,manual_flag,contact_unavailable,import_sheet flow
+  class campus,app_user,role_change,change_set,change_request,change_request_event,change_log,release,release_request,release_event,manual_flag,contact_unavailable,import_sheet flow
 `).then(function(r){document.getElementById('out').innerHTML=r.svg;document.title=document.getElementById('wrap').offsetWidth+'x'+document.getElementById('wrap').offsetHeight;}).catch(function(e){document.title='ERROR '+e.message;});
 </script></body></html>
