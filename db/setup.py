@@ -10,7 +10,8 @@ Steps, in order (stops at the first failure, nothing half-done is left behind in
   4. db/import_articles.py   every other sheet as an article           (from the workbook)
   5. publish v1              the only release with one sign-off; every later one needs two
 
-Run it against an EMPTY database, as the database owner. The app connects as a login role
+Run it against an EMPTY database, as the database owner. If it stops part-way, fix the cause and
+run the same command again: finished steps are skipped. The app connects as a login role
 that is a member of deskmanual_app; the assistant as a member of deskmanual_reader, e.g.
     CREATE ROLE desk_web LOGIN PASSWORD '...' IN ROLE deskmanual_app;
     CREATE ROLE desk_ai  LOGIN PASSWORD '...' IN ROLE deskmanual_reader;
@@ -47,20 +48,33 @@ def main():
     if not args.dsn:
         sys.exit("Give --dsn or set DATABASE_URL")
 
+    # Each step is all-or-nothing, so a run that stopped part-way can simply be run again:
+    # steps that already finished are skipped and it carries on from the one that failed.
     print("== 1. schema")
     with psycopg.connect(args.dsn, autocommit=True) as conn:
         if conn.execute("SELECT to_regclass('public.release')").fetchone()[0]:
-            sys.exit("This database already has the schema. setup.py is for an empty database.")
-        conn.execute((DB / "schema.sql").read_text(encoding="utf-8"))
-        print("   ok")
+            if conn.execute("SELECT count(*) FROM public.release").fetchone()[0]:
+                sys.exit("This database is already set up and published. Nothing to do.")
+            print("   already there (an earlier run stopped part-way); carrying on")
+        else:
+            conn.execute((DB / "schema.sql").read_text(encoding="utf-8"))
+            print("   ok")
 
         print("\n== 2. first admin")
-        conn.execute("INSERT INTO public.app_user (asurite, display_name, role) VALUES (%s, %s, 'admin')",
-                     (args.admin.lower(), args.admin_name))
+        conn.execute("INSERT INTO public.app_user (asurite, display_name, role) VALUES (%s, %s, 'admin') "
+                     "ON CONFLICT (asurite) DO NOTHING", (args.admin.lower(), args.admin_name))
         print(f"   {args.admin.lower()} is admin")
+        have_core = conn.execute("SELECT count(*) FROM staging.building").fetchone()[0] > 0
+        have_articles = conn.execute("SELECT count(*) FROM staging.article").fetchone()[0] > 0
 
-    run("3. core import", str(DB / "import_core.py"), "--dsn", args.dsn)
-    run("4. articles", str(DB / "import_articles.py"), "--dsn", args.dsn, "--workbook", args.workbook)
+    if have_core:
+        print("\n== 3. core import\n   already done")
+    else:
+        run("3. core import", str(DB / "import_core.py"), "--dsn", args.dsn)
+    if have_articles:
+        print("\n== 4. articles\n   already done")
+    else:
+        run("4. articles", str(DB / "import_articles.py"), "--dsn", args.dsn, "--workbook", args.workbook)
 
     if args.no_publish:
         print("\nStopped before publishing. Preview staging, then run:\n"

@@ -93,12 +93,16 @@ def main():
             code = b["bldgCode"].strip()
             if code in merged:
                 kept = merged[code]
-                if b["name"] != kept["name"]:
-                    questions.append(f"Building {code} has two names: {kept['name']!r} / {b['name']!r}. Kept the first.")
+                for field, label in (("name", "names"), ("campus", "campuses"),
+                                     ("rateSchedule", "rate schedules"), ("subtype", "subtypes")):
+                    if b.get(field) != kept.get(field):
+                        questions.append(f"Building {code} has two {label}: {kept.get(field)!r} / {b.get(field)!r}. "
+                                         "Kept the first.")
                 kept["_sources"].append(b.get("zoneSource"))
+                kept["_sectors"].append(b.get("sector"))      # zones from every row are kept
                 kept["notes"] = list(dict.fromkeys((kept.get("notes") or []) + (b.get("notes") or [])))
                 continue
-            merged[code] = dict(b, _sources=[b.get("zoneSource")])
+            merged[code] = dict(b, _sources=[b.get("zoneSource")], _sectors=[b.get("sector")])
         dupes = len(buildings) - len(merged)
 
         no_zone = 0
@@ -108,15 +112,16 @@ def main():
                 "VALUES (%s,%s,%s,%s,%s,%s) RETURNING id",
                 (code, b["name"], b.get("campus"), b.get("rateSchedule"), b.get("subtype"), IMPORT_USER)).fetchone()[0]
 
-            sector = (b.get("sector") or "").strip()
-            if not sector or sector in (NOT_IN_GUIDE, OLD_NOT_IN_GUIDE):
+            sectors = [(s or "").strip() for s in b["_sectors"]]
+            sectors = [s for s in sectors if s and s not in (NOT_IN_GUIDE, OLD_NOT_IN_GUIDE)]
+            if not sectors:
                 no_zone += 1
                 old = sorted({s.replace("old sector ", "") for s in b["_sources"] if s and s.startswith("old sector")})
                 if old:
                     cur.execute("INSERT INTO staging.building_note (building_id, note, updated_by) VALUES (%s,%s,%s)",
                                 (building_id, f"{NOT_IN_GUIDE}. Old sector(s): {', '.join(old)}", IMPORT_USER))
             else:
-                zones = dict.fromkeys(ZONE_ALIASES.get(z.strip(), z.strip()) for z in sector.split("/"))
+                zones = dict.fromkeys(ZONE_ALIASES.get(z.strip(), z.strip()) for s in sectors for z in s.split("/"))
                 for zone in zones:
                     if zone not in known_zones:
                         questions.append(f"Building {code}: unknown zone {zone!r}. Skipped.")
@@ -132,8 +137,8 @@ def main():
         for tasks in knowledge.values():
             for t in tasks.values():
                 for cell in t["trade"].values():
-                    if isinstance(cell, str) and cell != "SEE NOTE":
-                        trades.add(cell)
+                    if isinstance(cell, str) and cell.strip() and cell.strip() != "SEE NOTE":
+                        trades.add(cell.strip())
         for code in sorted(trades):
             if "/" in code:
                 questions.append(f"Trade cell {code!r} names two trades in one cell. Imported as one trade for now.")
@@ -153,6 +158,8 @@ def main():
                     dropped += 1
                     continue
                 code, notes = t["taskCode"], t.get("notes")
+                if isinstance(code, float) and code.is_integer():
+                    code = int(code)                      # 23090.0 is the number 23090
                 if code is not None and not isinstance(code, int):
                     questions.append(f"Task {description!r} has {code!r} as its task code, not a number. "
                                      "Imported with no code and kept the text in its notes.")
@@ -165,8 +172,15 @@ def main():
                      task_order, IMPORT_USER)).fetchone()[0]
                 task_total += 1
 
+                unknown = sorted(set(t["trade"]) - set(COLUMNS))
+                if unknown:
+                    questions.append(f"Task {description!r} has columns this importer doesn't know: "
+                                     f"{', '.join(unknown)}. Their cells were NOT imported.")
+                kinds = []
                 for column, (campus, rfmt) in COLUMNS.items():
                     cell = t["trade"].get(column)
+                    if isinstance(cell, str):
+                        cell = cell.strip()
                     trade, instruction = None, None
                     if isinstance(cell, dict):
                         kind, instruction = "zone", cell.get("instruction")
@@ -177,10 +191,18 @@ def main():
                     else:
                         kind = "not_handled"
                     counts[kind] += 1
+                    kinds.append(kind)
                     cur.execute(
                         "INSERT INTO staging.routing_rule (task_id, campus_code, is_rfmt, kind, trade_code, instruction, updated_by) "
                         "VALUES (%s,%s,%s,%s,%s,%s,%s)",
                         (task_id, campus, rfmt, kind, trade, instruction, IMPORT_USER))
+                if set(kinds) == {"not_handled"}:
+                    questions.append(f"Task {description!r} is blank in all 8 columns, so it routes nowhere. "
+                                     "Is it only a note, or is a trade missing?")
+
+        no_campus = sum(1 for b in merged.values() if not b.get("campus"))
+        if no_campus:
+            questions.append(f"{no_campus} buildings have no campus in buildings_lookup.json.")
 
         print(f"buildings: {len(merged)} ({dupes} duplicate rows merged, {no_zone} with no 2027 zone)")
         print(f"zones: {len(known_zones)}   trades: {len(trades)}   categories: {len(knowledge)}   "

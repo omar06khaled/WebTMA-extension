@@ -21,8 +21,11 @@ Requires: pip install openpyxl "psycopg[binary]"
 import argparse
 import datetime as dt
 import os
+import posixpath
 import re
 import sys
+import xml.etree.ElementTree as ET
+import zipfile
 from pathlib import Path
 
 import openpyxl
@@ -38,10 +41,128 @@ CAMPUS_PREFIX = [("DTPC", "dtpc"), ("POLY", "poly"), ("TMPE", "tempe"), ("TEMPE"
 BULLET = re.compile(r"^\s*(?:o|•|·|-|\*|▪|➢)\s+")
 
 
-def fmt(value):
+def number_as_shown(v, nf):
+    """A number the way its Excel format displays it, for the formats that change the digits:
+    percent, currency, thousands, fixed decimals, and digit patterns like phone numbers and ZIP codes.
+    Returns None when the format is plain or not one of those."""
+    if not nf or nf in ("General", "@") or isinstance(v, bool):
+        return None
+    for sec in nf.split(";"):                      # "[<=9999999]###-####;(###) ###-####"
+        m = re.match(r"\[(<=|>=|<|>|=)(-?[\d.]+)\]", sec)
+        if m:
+            n = float(m.group(2))
+            if not {"<=": v <= n, ">=": v >= n, "<": v < n, ">": v > n, "=": v == n}[m.group(1)]:
+                continue
+        break
+    else:
+        return None
+    p = re.sub(r"\[\$([^\]\-]*)[^\]]*\]", r"\1", sec)             # [$$-409] -> $
+    p = re.sub(r"\[[^\]]*\]|_.|\*.", "", p).replace('"', "").replace("\\", "")
+    if not re.search(r"[0#?]", p):                                 # a date or time format, or text
+        return None
+    if "%" in p:
+        v = v * 100
+    sign, v = ("-" if v < 0 else ""), abs(v)
+    if re.fullmatch(r"[^0#?]*[0#?,]*(?:\.[0#?]+)?[^0#?]*", p):     # one number: 0.00%  $#,##0.00  00000
+        prefix, run, suffix = re.match(r"([^0#?]*)([0#?,]*(?:\.[0#?]+)?)(.*)", p).groups()
+        whole, _, dec = run.partition(".")
+        body = format(v, f",.{len(dec)}f" if "," in whole else f".{len(dec)}f")
+        head, dot, tail = body.partition(".")
+        head = head.replace(",", "").zfill(whole.count("0")) if "," not in whole else head
+        return sign + prefix + head + dot + tail + suffix
+    digits, out = str(int(round(v))), []                           # digit pattern: (000) 000-0000
+    for ch in reversed(p):
+        if ch in "0#?":
+            if digits:
+                out.append(digits[-1])
+                digits = digits[:-1]
+            elif ch == "0":
+                out.append("0")
+        elif ch != ",":
+            out.append(ch)
+    return sign + digits + "".join(reversed(out))
+
+
+def sheet_from_location(loc):
+    """'Bob''s Notes'!A1 -> Bob's Notes"""
+    name = loc.rsplit("!", 1)[0]
+    if name.startswith("'") and name.endswith("'") and len(name) >= 2:
+        name = name[1:-1].replace("''", "'")
+    return name
+
+
+NS = {"main": "http://schemas.openxmlformats.org/spreadsheetml/2006/main",
+      "r": "http://schemas.openxmlformats.org/officeDocument/2006/relationships",
+      "xdr": "http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing",
+      "a": "http://schemas.openxmlformats.org/drawingml/2006/main",
+      "c": "http://schemas.openxmlformats.org/drawingml/2006/chart"}
+
+
+def drawings_by_sheet(path):
+    """Pictures, charts and shapes (text boxes) on each sheet, read straight from the .xlsx file.
+    openpyxl drops shapes and text boxes without a word, and only sees pictures when Pillow is installed."""
+    out = {}
+    try:
+        z = zipfile.ZipFile(path)
+    except (zipfile.BadZipFile, OSError):
+        return out
+    with z:
+        names = set(z.namelist())
+
+        def rels(part):
+            folder, file = posixpath.split(part)
+            rel_part = posixpath.join(folder, "_rels", file + ".rels")
+            if rel_part not in names:
+                return {}
+            found = {}
+            for r in ET.fromstring(z.read(rel_part)):
+                target = r.get("Target", "")
+                found[r.get("Id")] = (r.get("Type", ""), target.lstrip("/") if target.startswith("/")
+                                      else posixpath.normpath(posixpath.join(folder, target)))
+            return found
+
+        if "xl/workbook.xml" not in names:
+            return out
+        workbook_rels = rels("xl/workbook.xml")
+        for sheet in ET.fromstring(z.read("xl/workbook.xml")).iter(f"{{{NS['main']}}}sheet"):
+            target = workbook_rels.get(sheet.get(f"{{{NS['r']}}}id"))
+            info = {"pictures": 0, "charts": 0, "shapes": []}
+            for rel_type, part in (rels(target[1]).values() if target else ()):
+                if rel_type.endswith("/drawing") and part in names:
+                    drawing = ET.fromstring(z.read(part))
+                    info["pictures"] += len(list(drawing.iter(f"{{{NS['xdr']}}}pic")))
+                    info["charts"] += len(list(drawing.iter(f"{{{NS['c']}}}chart")))
+                    for sp in drawing.iter(f"{{{NS['xdr']}}}sp"):
+                        paragraphs = ["".join(t.text or "" for t in p.iter(f"{{{NS['a']}}}t"))
+                                      for p in sp.iter(f"{{{NS['a']}}}p")]
+                        info["shapes"].append("\n".join(x for x in paragraphs if x.strip()))
+            out[sheet.get("name")] = info
+    return out
+
+
+def uncached_formulas(path):
+    """Sheets with formulas whose result was never stored (a file made by a script, not saved by Excel).
+    Those cells read as blank, so say so instead of dropping them quietly."""
+    values = openpyxl.load_workbook(path, data_only=True)
+    formulas = openpyxl.load_workbook(path)
+    found = {}
+    for ws in formulas.worksheets:
+        shown = values[ws.title]
+        n = sum(1 for row in ws.iter_rows() for c in row
+                if isinstance(c.value, str) and c.value.startswith("=") and shown[c.coordinate].value is None)
+        if n:
+            found[ws.title] = n
+    return found
+
+
+def fmt(value, number_format=None):
     """A cell value as text, the way it reads in Excel."""
     if value is None:
         return ""
+    if isinstance(value, (int, float)) and not isinstance(value, bool):
+        shown = number_as_shown(value, number_format)
+        if shown is not None:
+            return shown
     if isinstance(value, dt.datetime):
         if value.time() == dt.time(0):
             return value.date().isoformat()
@@ -75,7 +196,7 @@ def toc_map(wb):
                 continue
             loc = c.hyperlink.location if c.hyperlink else None
             if loc and "!" in loc:
-                sheet = loc.rsplit("!", 1)[0].strip("'")
+                sheet = sheet_from_location(loc)
                 category = heading_for_col.get(c.column, "")
                 order += 1
                 # A sheet listed twice (HOT/COLD under TRADES and ARCHIVE) keeps its first, non-archive home.
@@ -96,18 +217,21 @@ def md_escape(text):
     return text.replace("|", "\\|").replace("\n", "<br>")
 
 
-def sheet_to_markdown(ws, sheetnames):
-    """Returns (markdown, rows_read, warnings)."""
+def sheet_to_markdown(ws, sheetnames, drawing=None):
+    """Returns (markdown, rows_read, warnings). `drawing` is this sheet's entry from drawings_by_sheet()."""
     warnings = []
     lines_out = []
     internal_links = set()
     coloured, colours = 0, set()
+    cell_notes = []
 
     rows = []
     for row in ws.iter_rows():
         cells = []
         for c in row:
-            text = fmt(c.value)
+            if getattr(c, "comment", None) is not None and (c.comment.text or "").strip():
+                cell_notes.append(f"{c.coordinate}: {c.comment.text.strip()}")
+            text = fmt(c.value, c.number_format)
             if not text:
                 continue
             if c.row <= 2 and text.upper() == "BACK":       # the "BACK" button to the TOC
@@ -125,7 +249,7 @@ def sheet_to_markdown(ws, sheetnames):
                 if c.hyperlink.target:
                     text = f"[{text}]({c.hyperlink.target})"
                 elif c.hyperlink.location:
-                    target = c.hyperlink.location.rsplit("!", 1)[0].strip("'")
+                    target = sheet_from_location(c.hyperlink.location)
                     if target in sheetnames and target != ws.title:
                         internal_links.add(target)
                         text = f"{text} (see “{target.strip()}”)"
@@ -170,10 +294,29 @@ def sheet_to_markdown(ws, sheetnames):
                     lines_out.append(text + "  ")
         lines_out.append("")
 
-    pictures = len(getattr(ws, "_images", []))
+    if cell_notes:                                  # Excel "notes" on cells
+        lines_out.extend(["", "### Notes on cells"] + [f"- {n}" for n in cell_notes])
+        warnings.append(f"{len(cell_notes)} cell note(s) added at the end of the article")
+    drawing = drawing or {"pictures": 0, "charts": 0, "shapes": []}
+    pictures = max(len(getattr(ws, "_images", [])), drawing["pictures"])
     if pictures:
         warnings.append(f"{pictures} picture(s) or map(s) not imported; attach or link them")
         lines_out.append(f"> This sheet had {pictures} picture(s) or map(s) that weren't imported yet.")
+    if drawing["charts"] or getattr(ws, "_charts", []):
+        n = max(drawing["charts"], len(getattr(ws, "_charts", [])))
+        warnings.append(f"{n} chart(s) not imported")
+        lines_out.append(f"> This sheet had {n} chart(s) that weren't imported.")
+    boxes = [s for s in drawing["shapes"] if s.strip()]
+    if boxes:
+        lines_out.extend(["", "### Text boxes on the sheet"] + [f"- {s.strip()}" for s in boxes])
+        warnings.append(f"{len(boxes)} text box(es) added at the end of the article; their position is lost")
+    if len(drawing["shapes"]) > len(boxes):
+        warnings.append(f"{len(drawing['shapes']) - len(boxes)} shape(s) or arrow(s) with no text were not imported")
+    if ws.sheet_state != "visible":
+        warnings.append(f"sheet is {ws.sheet_state} in Excel; imported anyway")
+    hidden_cols = [k for k, d in ws.column_dimensions.items() if d.hidden]
+    if hidden_cols:
+        warnings.append(f"hidden column(s) {', '.join(hidden_cols)} were imported as normal columns")
     if coloured:
         warnings.append(f"{coloured} highlighted cell(s) in {len(colours)} colour(s): "
                         "if the colour meant something, write it as text")
@@ -207,6 +350,8 @@ def main():
     book_name = args.workbook_name or re.sub(r"^[0-9a-f]{6,}-", "", path.stem).replace("_", " ")
     wb = openpyxl.load_workbook(path, data_only=True)
     toc = toc_map(wb)
+    drawings = drawings_by_sheet(path)
+    uncached = uncached_formulas(path)
 
     plan = []
     for order, ws in enumerate(wb.worksheets):
@@ -216,11 +361,18 @@ def main():
                              warnings=[SKIP.get(name) or CORE[name]], rows=None))
             continue
         category, title, toc_order = toc.get(name, (NOT_IN_TOC, name.strip(), 1000 + order))
-        body, n_rows, warnings = sheet_to_markdown(ws, wb.sheetnames)
+        body, n_rows, warnings = sheet_to_markdown(ws, wb.sheetnames, drawings.get(name))
         if name not in toc:
             warnings.append("not linked from the table of contents")
+        if uncached.get(name):
+            warnings.append(f"{uncached[name]} formula cell(s) have no stored result, so they came in blank. "
+                            "Open the workbook in Excel, save it, and import again")
         plan.append(dict(sheet=name, target="article", title=title, category=category or NOT_IN_TOC,
                          campus=campus_of(name), body=body, rows=n_rows, warnings=warnings, order=toc_order))
+
+    for sheet in wb.chartsheets:                    # a sheet that is only a chart
+        plan.append(dict(sheet=sheet.title, target="skipped", rows=None,
+                         warnings=["chart sheet: nothing imported"]))
 
     articles = [p for p in plan if p["target"] == "article"]
     if args.dry_run:
