@@ -65,7 +65,8 @@ def main():
                      "ON CONFLICT (asurite) DO NOTHING", (args.admin.lower(), args.admin_name))
         print(f"   {args.admin.lower()} is admin")
         have_core = conn.execute("SELECT count(*) FROM staging.building").fetchone()[0] > 0
-        have_articles = conn.execute("SELECT count(*) FROM staging.article").fetchone()[0] > 0
+        have_articles = conn.execute("SELECT count(*) FROM staging.article "
+                                     "WHERE source_sheet <> 'Trades and Task Codes (General Notes)'").fetchone()[0] > 0
 
     if have_core:
         print("\n== 3. core import\n   already done")

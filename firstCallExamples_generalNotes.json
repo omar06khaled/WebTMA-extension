@@ -1,0 +1,26 @@
+[
+  {
+    "afterCategory": "Lock Shop",
+    "text": "Rekey requests: These are billable and go to estimates. If unsure, change the type to Key Request so DeAnn or Melanie will process.\n\nRequests for key requests or building access--do not process. Refer to My Service now to submit a proper key request. Document action taken and reject request.\n\nLantana and Century Hall - fob reader/card access are managed by Capstone. On the Work Order assign to RFMT-POLY\n\nISAAC requests - refer student to their MyASU and press help. There is a phone number, live chat or email and reject the request. Do not email isaac-q@asu.edu"
+  },
+  {
+    "afterCategory": "Carpentry",
+    "text": "Mullion removal = Zone\n\nADA doors are critical and the Zone Supervisor should be called.\n\nFor RFMT: missing or damaged ceiling tiles, process to the correct zone, then go into the WO, enter the subtype of vandalism"
+  },
+  {
+    "afterCategory": "Fire/Life Safety",
+    "text": "The new fire system for Adelphi, Sonora needs to go to TMPE-Fire\n\nFor Fire Reports talking about Climatec records: send to TMPE-Fire\n\nFor RFMT requests for TMPE-Fire, RC must be TMPE"
+  },
+  {
+    "afterCategory": "Landscape/Grounds",
+    "text": "RFMT work orders for TMPE: RC must be TMPE\n\nPOLY-GRNDS: Dispatch Jesus Vasquez (602-418-9651) or Ruben Camacho (602-329-7365)\n\nCleaning blood off of concrete goes to EHS"
+  },
+  {
+    "afterCategory": "Residential Facilities",
+    "text": "Cabinets with missing/broken keys, furniture moves, raise/lower beds the task is 27020 Property Control. Trade = MVRS RC=TMPE, POLY, WEST\nFACMAN does not provide rails or offer installation services.\n\nPer University Housing: There are to be NO bidet, shower head replacements, or any type of domestic water modifications to the dorm rooms. If you receive a workorder requesting any type of modification, please notify University Housing.\n\nPest control for Res life: Priority is Routine always. A vendor comes every Wednesday,\n\nZone DOES NOT work on big water jugs/cooler. Please have student pull bottle off of the cooler. Call the zone to have a fan to dry the floor.\n\nNo cleaning of refrigerators in the dorm rooms or lounges"
+  },
+  {
+    "afterCategory": "Signage/Wayfinding",
+    "text": "Sign requests should not go to estimates\n\nRC would need to be TMPE if Res Life\n\nCalls for needing approval to hang signs on campus: refer to brandguide.asu.edu/requests/approvals/signage"
+  }
+]

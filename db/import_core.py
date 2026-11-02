@@ -3,6 +3,7 @@
 Reads the cleaned files the existing tools already produce (decision 9):
     buildings_lookup.json             <- tools/build_buildings.py
     firstCallExamples_enriched.json   <- tools/build_knowledge_base.py
+    firstCallExamples_generalNotes.json   <- the same tool: rules from the sheet's 'General Notes' rows
 
 Usage (from the repo root, after running db/schema.sql on an empty database):
     python db/import_core.py --dsn "postgresql://user:pass@localhost:5432/deskmanual"
@@ -24,6 +25,7 @@ import psycopg
 
 ROOT = Path(__file__).resolve().parent.parent
 IMPORT_USER = "import"
+GENERAL_NOTES_SHEET = "Trades and Task Codes (General Notes)"   # source_sheet of the one article this importer adds
 
 # Sheet column -> (campus, is_rfmt)
 COLUMNS = {
@@ -199,6 +201,20 @@ def main():
                 if set(kinds) == {"not_handled"}:
                     questions.append(f"Task {description!r} is blank in all 8 columns, so it routes nowhere. "
                                      "Is it only a note, or is a trade missing?")
+
+        # ---- 'General Notes' rows: dispatch rules that belong to no single task (one article)
+        general = load("firstCallExamples_generalNotes.json") if (ROOT / "firstCallExamples_generalNotes.json").exists() else []
+        if general:
+            parts = ["Dispatch rules from the bottom of the routing sheet that apply to a group of tasks."]
+            for g in general:
+                parts.append(f"### After {g['afterCategory']}\n\n{g['text']}")
+            cur.execute("INSERT INTO staging.article (title, category, body_md, source_sheet, sort_order, updated_by) "
+                        "VALUES (%s,%s,%s,%s,%s,%s)",
+                        ("General dispatch notes", "TRADES and TASKS", "\n\n".join(parts), GENERAL_NOTES_SHEET, 0, IMPORT_USER))
+            print(f"general notes: {len(general)} blocks in one article")
+        else:
+            questions.append("firstCallExamples_generalNotes.json is missing, so the routing sheet's General Notes "
+                             "were NOT imported. Run tools/build_knowledge_base.py to create it.")
 
         no_campus = sum(1 for b in merged.values() if not b.get("campus"))
         if no_campus:

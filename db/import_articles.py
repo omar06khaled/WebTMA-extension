@@ -391,7 +391,8 @@ def main():
     from psycopg.types.json import Jsonb
 
     with psycopg.connect(args.dsn) as conn, conn.cursor() as cur:
-        if cur.execute("SELECT count(*) FROM staging.article").fetchone()[0]:
+        # (the core import adds one article of its own: the routing sheet's General Notes)
+        if cur.execute("SELECT count(*) FROM staging.article WHERE source_sheet <> 'Trades and Task Codes (General Notes)'").fetchone()[0]:
             sys.exit("staging.article already has rows. This importer is for a fresh database.")
         cur.execute("INSERT INTO public.app_user (asurite, display_name, role) VALUES (%s, %s, 'viewer') "
                     "ON CONFLICT DO NOTHING", (IMPORT_USER, f"Initial import from {book_name}"))

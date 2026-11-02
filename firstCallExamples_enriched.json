@@ -1755,7 +1755,7 @@
         }
       },
       "custodial": false,
-      "notes": "- Blue Lights requests - send to the zone first. If they are LED style the zone will let us know to send to UTO. Yellow boxes goes to UTO. Parking lots do not need approval from parking - Light poles on ASU campus go to UDIST"
+      "notes": "- Blue Lights requests - send to the zone first. If they are LED style the zone will let us know to send to UTO. Yellow boxes goes to UTO. Parking lots do not need approval from parking\n- Light poles on ASU campus go to UDIST"
     },
     "Electrical Panel/Breaker (power outages)": {
       "taskCode": 15010,
@@ -2215,7 +2215,7 @@
         }
       },
       "custodial": false,
-      "notes": "- TMPE-RFMT elevators--RC should be TMPE not RFMT - RACC building elevators=Trade is RACC not elevator"
+      "notes": "- TMPE-RFMT elevators--RC should be TMPE not RFMT\n- RACC building elevators=Trade is RACC not elevator"
     }
   },
   "Fire/Life Safety": {
@@ -2975,7 +2975,7 @@
         }
       },
       "custodial": false,
-      "notes": "Hot/Cold calls for West Las Casas go to RFMT LSCS for GMM to troubleshoot Palo Verde East/West go to EMS. All other buildings go to RFMT Zone"
+      "notes": "Hot/Cold calls for West Las Casas go to RFMT LSCS for GMM to troubleshoot\n\nPalo Verde East/West go to EMS. All other buildings go to RFMT Zone"
     },
     "Event temp control": {
       "taskCode": 18330,
@@ -3913,7 +3913,7 @@
         }
       },
       "custodial": false,
-      "notes": "$500.00 fee required -80 degree freezers need $500 fee"
+      "notes": "$500.00 fee required\n\n-80 degree freezers need $500 fee"
     },
     "Cooler": {
       "taskCode": 18100,
@@ -4594,7 +4594,7 @@
         }
       },
       "custodial": false,
-      "notes": "- Biodesign--Grounds does not handle. Send to the zone. Biodesign handles their own. - Athletics buildings--they use Truly Nolan. Send screenshot of request to Debbie Tomah for her to contact them. If there are bees on a field, send to GRNDS since that is more of an emergency. Pest control for Res life: Priority is Routine always. A vendor comes every Wednesday, EMERGENCY PEST CONTROL CALLS - Guillermo Legarda – (480) 692-9565 - Kevin Kasper – (856) 834-0282"
+      "notes": "- Biodesign--Grounds does not handle. Send to the zone. Biodesign handles their own.\n- Athletics buildings--they use Truly Nolan. Send screenshot of request to Debbie Tomah for her to contact them. If there are bees on a field, send to GRNDS since that is more of an emergency.\nPest control for Res life: Priority is Routine always. A vendor comes every Wednesday,\nEMERGENCY PEST CONTROL CALLS\n- Guillermo Legarda – (480) 692-9565\n- Kevin Kasper – (856) 834-0282"
     },
     "Exterior Pest Control": {
       "taskCode": 19145,
@@ -5054,7 +5054,7 @@
         }
       },
       "custodial": false,
-      "notes": "- DTPC Res Life = Capstone email: living@asu.edu - Hose bibs and outside plumbing issues go to the zone - Spigots attached to the building go to the zone; others go to Grounds"
+      "notes": "- DTPC Res Life = Capstone email: living@asu.edu\n- Hose bibs and outside plumbing issues go to the zone\n- Spigots attached to the building go to the zone; others go to Grounds"
     },
     "Eyewash Station": {
       "taskCode": 23060,
@@ -6491,7 +6491,7 @@
         }
       },
       "custodial": false,
-      "notes": "- Requests for mold checks in academic buildings: Screenshot the request, email EHS@asu.edu and reject the request. - Requests for mold checks in res life buildings: send to the RFMT zone."
+      "notes": "- Requests for mold checks in academic buildings: Screenshot the request, email EHS@asu.edu and reject the request.\n- Requests for mold checks in res life buildings: send to the RFMT zone."
     }
   },
   "Pool": {

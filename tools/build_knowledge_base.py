@@ -97,6 +97,14 @@ def clean(value):
     return re.sub(r"\s+", " ", str(value)).strip()
 
 
+def note_text(value):
+    """Like clean(), but keeps the line breaks so bullet lists in a note stay lists."""
+    if value is None:
+        return ""
+    lines = (re.sub(r"[^\S\n]+", " ", line).strip() for line in str(value).replace("\r", "").split("\n"))
+    return re.sub(r"\n{3,}", "\n\n", "\n".join(lines)).strip()
+
+
 def zone(campus, instruction):
     return {"type": "ZONE", "options": ZONE_OPTIONS[campus], "instruction": instruction}
 
@@ -145,12 +153,13 @@ def build(path, sheet_name):
     for row_number, row in enumerate(workbook[sheet_name].iter_rows(values_only=True), start=1):
         cells = [clean(value) for value in row] + [""] * 11
         description, code_raw = cells[0], cells[1]
-        trades_raw, notes = cells[2:10], cells[10]
+        trades_raw, notes = cells[2:10], note_text(row[10] if len(row) > 10 else None)
 
         if not any(cells[:11]) or description.lower() == "task description":
             continue
         if description.lower().startswith("general notes"):
-            general_notes.append((category, description))
+            text = re.sub(r"^general notes\s*:?\s*", "", note_text(row[0]), flags=re.I)
+            general_notes.append((category, text))
             continue
         if description in CATEGORY_ROWS or (description and not any(cells[1:11])):
             category = description
@@ -203,9 +212,17 @@ def main():
         json.dump(knowledge_base, handle, indent=2, ensure_ascii=False)
         handle.write("\n")
 
+    # The 'General Notes' rows are dispatch rules that belong to no single task. They go in their own
+    # file, so the backend's knowledge base keeps its shape; db/import_core.py loads this one.
+    notes_out = args.out.replace("_enriched.json", "_generalNotes.json") if args.out.endswith("_enriched.json") \
+        else args.out.rsplit(".", 1)[0] + "_generalNotes.json"
+    with open(notes_out, "w", encoding="utf-8") as handle:
+        json.dump([{"afterCategory": c, "text": t} for c, t in general_notes], handle, indent=2, ensure_ascii=False)
+        handle.write("\n")
+
     total = sum(len(tasks) for tasks in knowledge_base.values())
     print(f"Wrote {args.out}: {len(knowledge_base)} categories, {total} tasks")
-    print(f"{len(general_notes)} 'General Notes' rows are not in the knowledge base (they stay in the manual)")
+    print(f"Wrote {notes_out}: {len(general_notes)} 'General Notes' blocks")
     if warnings:
         print(f"\n{len(warnings)} things to review:")
         for message, places in warnings.items():
