@@ -67,7 +67,7 @@ CREATE ROLE desk_ai  LOGIN PASSWORD '...' IN ROLE deskmanual_reader;
 python db/test_rules.py --dsn "postgresql://.../deskmanual_test"
 ```
 
-This runs 51 checks of the user-story rules, all made through the app's role. It covers peer review, appeals, conflict warnings, two-person publish and rollback, who-to-call, rights, flags, and the absence of back doors.
+This runs 68 checks of the user-story rules, all made through the app's role. It covers peer review, appeals, conflict warnings, two-person publish and rollback, who-to-call, rights, flags, and the absence of back doors.
 
 ## Review the import (story 10.2)
 
@@ -77,6 +77,14 @@ SELECT sheet_name, target, status, warnings FROM import_sheet ORDER BY sheet_nam
 -- mark one checked (approver/admin)
 SELECT review_import('Radio Protocol', 'reviewed', 'matches the Excel');
 ```
+
+## Look up a dispatch in the browser
+
+```powershell
+python db/lookup/server.py --dsn "postgresql://.../deskmanual"
+```
+
+Then open http://127.0.0.1:8765. Pick a task, and optionally a building or campus. The page shows who gets the call for regular and RFMT work orders, the building's own zone, every note that applies (building, section, task, General Notes) and all eight routing cells. It reads the live version only, listens on this machine only, and never writes. It is a preview for checking the data, not the web app.
 
 ## Useful queries
 
