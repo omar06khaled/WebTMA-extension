@@ -1,6 +1,7 @@
 node_modules/
 .env
 audit.log
+feedback.jsonl
 chunks.jsonl
 __pycache__/
 .venv/

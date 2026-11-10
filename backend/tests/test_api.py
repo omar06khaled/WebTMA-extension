@@ -288,9 +288,90 @@ def test_audit_applied_updates_matching_entry(load_app, monkeypatch):
     timestamp = client.post("/api/suggest", json={"actionRequested": "light out"}).json()["auditTimestamp"]
 
     assert client.post("/api/audit/applied", json={"auditTimestamp": timestamp, "appliedSuggestion": "Lighting"}).json() == {"ok": True}
-    assert json.loads(module.AUDIT_LOG_PATH.read_text().strip())["appliedSuggestion"] == "Lighting"
+    assert module.find_audit_entry(timestamp)["appliedSuggestion"] == "Lighting"
+
+    # append-only: the request line is untouched, each Apply adds an event, the latest wins
+    request_line = module.AUDIT_LOG_PATH.read_text().splitlines()[0]
+    assert client.post("/api/audit/applied", json={"auditTimestamp": timestamp, "appliedSuggestion": "Exit signs"}).status_code == 200
+    lines = module.AUDIT_LOG_PATH.read_text().splitlines()
+    assert lines[0] == request_line and json.loads(request_line)["appliedSuggestion"] is None
+    events = [json.loads(l) for l in lines[1:]]
+    assert [e["type"] for e in events] == ["applied", "applied"]
+    assert all(e["auditTimestamp"] == timestamp for e in events)
+    assert module.find_audit_entry(timestamp)["appliedSuggestion"] == "Exit signs"
     assert client.post("/api/audit/applied", json={"auditTimestamp": "nope", "appliedSuggestion": "x"}).status_code == 404
     assert client.post("/api/audit/applied", json={"appliedSuggestion": "x"}).status_code == 400
+
+
+def test_feedback_is_appended_and_validated(load_app, monkeypatch, tmp_path):
+    monkeypatch.setenv("FEEDBACK_LOG_PATH", str(tmp_path / "feedback.jsonl"))
+    module, client = load_app()
+    queue_model_replies(module, monkeypatch, {"suggestions": [pick("Lighting", "Electrical")], "noMatchFound": False})
+    timestamp = client.post("/api/suggest", json={"actionRequested": "light out in 101"}).json()["auditTimestamp"]
+    lighting = {"taskDescription": "Lighting", "category": "Electrical", "taskCode": 123, "source": "layer1"}
+
+    ok = {"auditTimestamp": timestamp, "suggestion": lighting, "verdict": "wrong",
+          "reasons": ["wrong_trade"], "note": "  should be RFMT  ", "tester": "Omar"}
+    assert client.post("/api/feedback", json=ok).json()["ok"] is True
+    # changing the answer appends a second line instead of overwriting
+    assert client.post("/api/feedback", json={"auditTimestamp": timestamp, "suggestion": lighting, "verdict": "correct"}).status_code == 200
+
+    lines = [json.loads(l) for l in module.FEEDBACK_LOG_PATH.read_text().splitlines()]
+    assert len(lines) == 2
+    assert lines[0]["actionRequested"] == "light out in 101" and lines[0]["note"] == "should be RFMT"
+    assert lines[0]["reasons"] == ["wrong_trade"] and lines[0]["tester"] == "Omar"
+    assert lines[1]["verdict"] == "correct" and lines[1]["reasons"] == [] and lines[1]["tester"] is None
+
+    bad = [
+        {**ok, "verdict": "maybe"},
+        {**ok, "reasons": ["made_up"]},
+        {**ok, "reasons": []},                       # wrong needs a reason
+        {**ok, "verdict": "correct"},                # correct can't carry reasons
+        {**ok, "suggestion": {"source": "layer1"}},
+        {**ok, "suggestion": {**lighting, "source": "layer3"}},
+        {k: v for k, v in ok.items() if k != "auditTimestamp"},
+    ]
+    for body in bad:
+        assert client.post("/api/feedback", json=body).status_code == 400, body
+    assert client.post("/api/feedback", json={**ok, "auditTimestamp": "nope"}).status_code == 404
+    assert len(module.FEEDBACK_LOG_PATH.read_text().splitlines()) == 2
+
+
+def test_feedback_no_match_and_expected(load_app, monkeypatch, tmp_path):
+    monkeypatch.setenv("FEEDBACK_LOG_PATH", str(tmp_path / "feedback.jsonl"))
+    module, client = load_app()
+    queue_model_replies(module, monkeypatch, {"suggestions": [], "noMatchFound": True})
+    timestamp = client.post("/api/suggest", json={"actionRequested": "sewer ejector pump alarm"}).json()["auditTimestamp"]
+
+    wrong = {"auditTimestamp": timestamp, "kind": "no_match", "verdict": "wrong",
+             "expected": "  Sewer 23120  ", "tester": "Omar"}
+    assert client.post("/api/feedback", json=wrong).status_code == 200
+    right = {"auditTimestamp": timestamp, "kind": "no_match", "verdict": "correct"}
+    assert client.post("/api/feedback", json=right).status_code == 200
+
+    lines = [json.loads(l) for l in module.FEEDBACK_LOG_PATH.read_text().splitlines()]
+    assert lines[0]["kind"] == "no_match" and lines[0]["source"] is None and lines[0]["taskDescription"] is None
+    assert lines[0]["expected"] == "Sewer 23120" and lines[0]["actionRequested"] == "sewer ejector pump alarm"
+    assert lines[1]["verdict"] == "correct" and lines[1]["expected"] is None
+
+    bad = [
+        {**wrong, "kind": "maybe"},
+        {**wrong, "suggestion": {"taskDescription": "Sewer", "source": "layer1"}},  # no_match has no suggestion
+        {**wrong, "reasons": ["wrong_task"]},                                       # no reasons for no_match
+        {**right, "expected": "Sewer"},                                             # correct can't carry expected
+        {**wrong, "expected": 23120},
+    ]
+    for body in bad:
+        assert client.post("/api/feedback", json=body).status_code == 400, body
+
+    # expected also works on a wrong suggestion, and is trimmed to 120 chars
+    queue_model_replies(module, monkeypatch, {"suggestions": [pick("Pump", "Plumbing")], "noMatchFound": False})
+    ts2 = client.post("/api/suggest", json={"actionRequested": "lift station pump"}).json()["auditTimestamp"]
+    body = {"auditTimestamp": ts2, "suggestion": {"taskDescription": "Pump", "source": "layer1"},
+            "verdict": "wrong", "reasons": ["wrong_task"], "expected": "x" * 300}
+    assert client.post("/api/feedback", json=body).status_code == 200
+    last = json.loads(module.FEEDBACK_LOG_PATH.read_text().splitlines()[-1])
+    assert last["kind"] == "suggestion" and len(last["expected"]) == 120
 
 
 def test_building_search(load_app):
@@ -347,3 +428,24 @@ def test_every_knowledge_base_entry_validates_against_itself(load_app):
             if errors:
                 failures[description] = errors
     assert failures == {}
+
+
+def test_iter_lines_reversed_handles_block_boundaries(load_app, tmp_path):
+    module, _ = load_app()
+    lines = [f'{{"timestamp":"t{i}","pad":"{"x" * (i % 7)}é"}}' for i in range(200)]
+    path = tmp_path / "audit.log"
+    path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    for block in (1, 3, 16, 64 * 1024):  # tiny blocks force lines and UTF-8 chars to split across reads
+        got = [l for l in module.iter_lines_reversed(path, block_size=block) if l]
+        assert got == lines[::-1], block
+
+
+def test_find_audit_entry_prefers_latest_and_finds_old(load_app, monkeypatch, tmp_path):
+    module, _ = load_app()
+    path = tmp_path / "audit.log"
+    path.write_text('{"timestamp":"old","actionRequested":"first"}\nnot json\n'
+                    '{"timestamp":"new","actionRequested":"second"}\n', encoding="utf-8")
+    monkeypatch.setattr(module, "AUDIT_LOG_PATH", path)
+    assert module.find_audit_entry("new")["actionRequested"] == "second"
+    assert module.find_audit_entry("old")["actionRequested"] == "first"
+    assert module.find_audit_entry("missing") is None

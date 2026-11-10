@@ -1,7 +1,7 @@
 # WebTMA Assistant backend (FastAPI)
 
 Python port of `server.js`. Same endpoints and response shapes, so the extension needs no changes.
-Runtime model: OpenAI `gpt-4o-mini` (change with `OPENAI_MODEL`).
+Runtime model: OpenAI `gpt-4o-mini` by default. Set `OPENAI_BASE_URL` to use ASU CreateAI instead.
 
 ## Run locally (Windows PowerShell, from the repo root)
 
@@ -17,8 +17,9 @@ uvicorn main:app --reload --port 3000
 
 | Variable | Required | Notes |
 |---|---|---|
-| `OPENAI_API_KEY` | yes | server refuses to start without it |
-| `OPENAI_MODEL` | no | defaults to `gpt-4o-mini` |
+| `OPENAI_API_KEY` | yes | OpenAI key (`sk-...`) or ASU CreateAI token (`eyJ...`); server refuses to start without it |
+| `OPENAI_BASE_URL` | no | empty = OpenAI. ASU CreateAI: `https://api-main-poc.aiml.asu.edu/v1` |
+| `OPENAI_MODEL` | no | defaults to `gpt-4o-mini`. On CreateAI use `provider/model`, e.g. `openai/gpt4_1` |
 | `LAYER2_ENABLED` | no | `true` turns on the desk manual fallback |
 | `LAYER2_URL` | if Layer 2 on | 2027 manual: `https://absylmqaiibsjemqecyy.supabase.co/functions/v1/layer2-2027` |
 | `SUPABASE_ANON_KEY` | if Layer 2 on | unchanged |

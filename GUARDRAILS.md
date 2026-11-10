@@ -315,3 +315,15 @@ Every suggestion served must be logged with:
 
 This log is the paper trail that lets supervisors audit what the AI suggested
 vs. what the operator actually chose.
+
+`audit.log` is append-only. The request line above is written once with
+`"appliedSuggestion": null` and never rewritten. When the operator clicks Apply,
+a separate event line is appended that points back to it:
+
+```json
+{"type": "applied", "timestamp": "ISO8601", "auditTimestamp": "<request timestamp>", "appliedSuggestion": "Lighting"}
+```
+
+If Apply is clicked more than once, the latest event wins. Anything reading the
+log should join events to requests by `auditTimestamp` (the backend's
+`find_audit_entry()` does this).
