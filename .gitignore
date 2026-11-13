@@ -7,3 +7,6 @@ __pycache__/
 .venv/
 .pytest_cache/
 backend/eval_results*.json
+bin/
+obj/
+api/DeskManual.Api/wwwroot/

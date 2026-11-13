@@ -1,0 +1,69 @@
+/* ASU colours until the Unity design system is added. */
+:root {
+  --maroon: #8c1d40;
+  --gold: #ffc627;
+  --ink: #191919;
+  --muted: #5c6670;
+  --line: #d0d0d0;
+  --bg: #fafafa;
+  --card: #ffffff;
+  --error: #b72a2a;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #e8e8e8;
+    --muted: #a3acb5;
+    --line: #3a3a3a;
+    --bg: #141414;
+    --card: #1e1e1e;
+    --error: #ff8a80;
+  }
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+
+.masthead { background: var(--maroon); border-bottom: 4px solid var(--gold); color: #fff; }
+.masthead-inner {
+  max-width: 960px; margin: 0 auto; padding: 14px 16px;
+  display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap;
+}
+.brand { font-weight: 700; font-size: 1.25rem; }
+.who { display: flex; align-items: center; gap: 10px; }
+.role {
+  background: var(--gold); color: #191919; border-radius: 3px;
+  padding: 1px 6px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase;
+}
+
+main { max-width: 960px; margin: 24px auto; padding: 0 16px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 20px 24px; }
+.card.narrow { max-width: 420px; margin: 40px auto; }
+h1 { font-size: 1.4rem; margin: 0 0 12px; }
+
+form { display: grid; gap: 14px; }
+label { display: grid; gap: 4px; font-weight: 600; }
+input {
+  font: inherit; padding: 8px 10px; border: 1px solid var(--line); border-radius: 4px;
+  background: var(--bg); color: var(--ink);
+}
+
+.button {
+  display: inline-block; background: var(--maroon); color: #fff; border: 0; border-radius: 4px;
+  padding: 10px 16px; font: inherit; font-weight: 700; cursor: pointer; text-decoration: none;
+}
+.button:hover { filter: brightness(1.1); }
+.link {
+  background: none; border: 0; color: #fff; text-decoration: underline;
+  font: inherit; cursor: pointer; padding: 0;
+}
+
+dl { display: grid; grid-template-columns: max-content 1fr; gap: 6px 16px; margin: 0 0 16px; }
+dt { color: var(--muted); }
+dd { margin: 0; }
+
+.muted { color: var(--muted); font-weight: 400; }
+.error { color: var(--error); }

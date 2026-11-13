@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="DeskManual.Api/DeskManual.Api.csproj" />
+  <Project Path="DeskManual.Api.Tests/DeskManual.Api.Tests.csproj" />
+</Solution>
