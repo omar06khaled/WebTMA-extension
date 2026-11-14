@@ -1,5 +1,9 @@
 import { useEffect, useState, type FormEvent } from 'react'
 import { ApiError, get, post, type Health, type Me } from './api'
+import Dispatch from './Dispatch'
+import Lookups from './Lookups'
+import Manual from './Manual'
+import { Link, useLocation } from './ui'
 
 type Session =
   | { state: 'loading' }
@@ -7,8 +11,15 @@ type Session =
   | { state: 'signedIn'; me: Me }
   | { state: 'error'; message: string }
 
+const NAV = [
+  { to: '/', label: 'Dispatch', match: (p: string) => p === '/' },
+  { to: '/lookups', label: 'Lookups', match: (p: string) => p.startsWith('/lookups') },
+  { to: '/manual', label: 'Manual', match: (p: string) => p.startsWith('/manual') },
+]
+
 export default function App() {
   const [session, setSession] = useState<Session>({ state: 'loading' })
+  const { path, search } = useLocation()
 
   const load = () =>
     get<Me>('/auth/me')
@@ -27,14 +38,24 @@ export default function App() {
     window.location.assign(redirect)
   }
 
+  const signedIn = session.state === 'signedIn'
+
   return (
     <>
       <header className="masthead">
         <div className="masthead-inner">
-          <span className="brand">Desk Manual</span>
-          {session.state === 'signedIn' && (
+          <Link to="/" className="brand">Desk Manual</Link>
+          {signedIn && (
+            <nav aria-label="Main">
+              {NAV.map((n) => (
+                <Link key={n.to} to={n.to} className={n.match(path) ? 'active' : ''}>{n.label}</Link>
+              ))}
+            </nav>
+          )}
+          {signedIn && (
             <span className="who">
-              {session.me.name} <span className="role">{session.me.role}</span>
+              <span className="who-name">{session.me.name}</span>
+              <span className="role">{session.me.role}</span>
               <button className="link" onClick={signOut}>Sign out</button>
             </span>
           )}
@@ -44,9 +65,27 @@ export default function App() {
         {session.state === 'loading' && <p className="muted">Loading…</p>}
         {session.state === 'error' && <p className="error">{session.message}</p>}
         {session.state === 'signedOut' && <SignIn mode={session.signIn} onSignedIn={load} />}
-        {session.state === 'signedIn' && <Home me={session.me} />}
+        {signedIn && (
+          path.startsWith('/lookups') ? <Lookups path={path} search={search} />
+            : path.startsWith('/manual') ? <Manual path={path} />
+              : <Dispatch search={path === '/' ? search : ''} />
+        )}
       </main>
+      {signedIn && <Footer />}
     </>
+  )
+}
+
+function Footer() {
+  const [health, setHealth] = useState<Health | null>(null)
+  useEffect(() => {
+    get<Health>('/api/health').then(setHealth).catch(() => setHealth(null))
+  }, [])
+  return (
+    <footer className="footer">
+      {health?.liveVersion ? `Live manual version ${health.liveVersion}` : 'Live manual version unknown'}
+      {' · '}Answers come from the published manual only.
+    </footer>
   )
 }
 
@@ -74,7 +113,7 @@ function SignIn({ mode, onSignedIn }: { mode: 'cas' | 'dev'; onSignedIn: () => v
     e.preventDefault()
     try {
       await post('/auth/dev-login', { asurite, name })
-      window.history.replaceState(null, '', '/')
+      if (window.location.pathname === '/signin') window.history.replaceState(null, '', '/')
       onSignedIn()
     } catch (err) {
       setError((err as Error).message)
@@ -97,34 +136,6 @@ function SignIn({ mode, onSignedIn }: { mode: 'cas' | 'dev'; onSignedIn: () => v
         </label>
         <button className="button" type="submit">Sign in</button>
       </form>
-    </section>
-  )
-}
-
-function Home({ me }: { me: Me }) {
-  const [health, setHealth] = useState<Health | string | null>(null)
-
-  useEffect(() => {
-    get<Health>('/api/health').then(setHealth).catch((e) => setHealth(e.message))
-  }, [])
-
-  return (
-    <section className="card">
-      <h1>Signed in as {me.asurite}</h1>
-      <dl>
-        <dt>Name</dt>
-        <dd>{me.name}</dd>
-        <dt>Role</dt>
-        <dd>{me.role}</dd>
-        <dt>Live manual</dt>
-        <dd>
-          {health === null ? 'Checking…'
-            : typeof health === 'string' ? <span className="error">{health}</span>
-              : health.liveVersion === null ? 'Nothing published yet'
-                : `Version ${health.liveVersion}`}
-        </dd>
-      </dl>
-      <p className="muted">Dispatch and Lookups come next.</p>
     </section>
   )
 }

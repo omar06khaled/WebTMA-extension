@@ -36,7 +36,29 @@ cd web; npm install; npm run dev             # web app on http://localhost:5173
 
 Open http://localhost:5173. In Development, sign-in is a stand-in form (any ASURITE). A first-time ASURITE becomes a **viewer**. The API refuses to start the stand-in anywhere but Development.
 
-Tests: `dotnet test api/DeskManual.slnx`
+Tests: `dotnet test api/DeskManual.slnx`. The tests that need a database are skipped unless `DESKMANUAL_TEST_DB` points at a **throwaway copy** (they add a flag, and flags can't be deleted):
+
+```powershell
+$env:DESKMANUAL_TEST_DB = "Host=127.0.0.1;Port=5433;Database=deskmanual_test"   # desk_web and desk_reader log in to it
+dotnet test api/DeskManual.slnx
+```
+
+One of them asks every task for all eight cells and checks them against the database's own routing table.
+
+## What the API answers
+
+Everything needs a signed-in person. Reads use the live (published) manual only and never call the AI.
+
+| Endpoint | Answers |
+|---|---|
+| `GET /api/tasks?q=` | Tasks by description, category or code |
+| `GET /api/dispatch/route?taskId=&building=&campus=` | Who gets the call for regular and RFMT WOs, the task, section, building and General Notes, and all eight cells. A building sets the campus and narrows zone answers to its own zones |
+| `GET /api/buildings?q=`, `GET /api/buildings/{code}` | Buildings, then one with its zones and notes |
+| `GET /api/zones/{code}` | A zone and its buildings |
+| `GET /api/trades/{code}` | A trade and the tasks that go to it, by campus and WO type |
+| `GET /api/search?q=` | Tasks, buildings, zones, trades and articles in one go |
+| `GET /api/manual`, `GET /api/manual/{id}` | The articles' contents, then one article |
+| `POST /api/flags` | Flag a mistake: `woNumber` (required), `description`, `targetTable`, `targetKey` |
 
 ## Sign-in and sessions
 

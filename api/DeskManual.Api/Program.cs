@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Diagnostics;
 using Npgsql;
 
 var builder = WebApplication.CreateBuilder(args);
+DefaultTypeMap.MatchNamesWithUnderscores = true; // task_code -> TaskCode
 
 builder.Services.AddSingleton(sp =>
 {
@@ -85,6 +86,7 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapAuth(authMode);
+app.MapDispatch();
 
 app.MapGet("/api/health", async (Db db) =>
 {
