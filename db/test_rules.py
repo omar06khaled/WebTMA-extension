@@ -99,6 +99,28 @@ def main():
     check("the assistant can't read staging", ok, msg)
     n = db.as_(None, "SELECT count(*) FROM live.routing_lookup", role="deskmanual_reader")[0][0]
     check("the assistant can read the published manual", n > 0)
+    ok, msg = db.fails(None, "SELECT snapshot FROM release", role="deskmanual_reader", expect="permission denied")
+    check("the assistant can't read past release snapshots", ok, msg)
+    n = db.as_(None, "SELECT count(*) FROM release WHERE is_live", role="deskmanual_reader")[0][0]
+    check("the assistant can still see which version is live", n == 1, str(n))
+    ok, msg = db.fails(None, "SELECT id FROM app_session", expect="permission denied")
+    check("the app can't list session ids", ok, msg)
+
+    print("\nSessions (security audit)")
+    sid = db.as_(None, "SELECT start_session('t_disp', 10)")[0][0]
+    who = db.as_(None, "SELECT asurite FROM check_session(%s)", (sid,))
+    check("a new session is good", who == [("t_disp",)], str(who))
+    db.as_(None, "SELECT end_session(%s)", (sid,))
+    check("a session ended at sign-out is no longer good", db.as_(None, "SELECT * FROM check_session(%s)", (sid,)) == [])
+    sid = db.as_(None, "SELECT start_session('t_disp', 10)")[0][0]
+    db.owner("UPDATE app_user SET active = false WHERE asurite = 't_disp'")
+    check("deactivating a person ends their sessions at once", db.as_(None, "SELECT * FROM check_session(%s)", (sid,)) == [])
+    ok, msg = db.fails(None, "SELECT start_session('t_disp', 10)", expect="not an active user")
+    check("a deactivated person can't open a session", ok, msg)
+    db.owner("UPDATE app_user SET active = true WHERE asurite = 't_disp'")
+    sid = db.as_(None, "SELECT start_session('t_disp', 1000)")[0][0]
+    hours = db.owner("SELECT extract(epoch FROM expires_at - started_at) / 3600 FROM app_session WHERE id = %s", (sid,))[0][0]
+    check("a session lasts at most a day", hours <= 24, str(hours))
 
     print("\nPeer review (decision A, stories 2.2-2.6)")
     r1 = db.as_("t_ed1", "SELECT submit_change('zone', %s, 'update', %s, 'test note')",
@@ -294,6 +316,16 @@ def main():
     check("closing a flag needs a note", ok, msg)
     db.as_("t_ed1", "SELECT resolve_flag(%s, 'fixed', 'routing corrected in request 12')", (fid,))
     check("an editor closes it with a note", db.owner("SELECT status FROM manual_flag WHERE id = %s", (fid,))[0][0] == "fixed")
+    ok, msg = db.fails("t_disp", "SELECT flag_entry(%s, 'x')", ("W" * 41,), expect="too long")
+    check("a flag's WO number is at most 40 characters", ok, msg)
+    ok, msg = db.fails("t_disp", "SELECT flag_entry('WO-1', %s)", ("x" * 4001,), expect="4,000")
+    check("a flag's description is at most 4,000 characters", ok, msg)
+    ok, msg = db.fails("t_disp", "SELECT flag_entry('WO-1', 'x', 'app_user', 'admin')", expect="unknown kind")
+    check("a flag can only point at a manual table", ok, msg)
+    for i in range(29):  # one already sent above
+        db.as_("t_disp", "SELECT flag_entry(%s, 'rate test')", (f"RATE-{i}",))
+    ok, msg = db.fails("t_disp", "SELECT flag_entry('RATE-X', 'one too many')", expect="30 flags")
+    check("at most 30 flags an hour per person", ok, msg)
 
     failed = results.count(False)
     print(f"\n{len(results) - failed} passed, {failed} failed")

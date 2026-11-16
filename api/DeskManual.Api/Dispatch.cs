@@ -147,6 +147,13 @@ public static partial class Dispatch
                 return Results.BadRequest(new { error = "Enter the WO number." });
             if (string.IsNullOrWhiteSpace(f.Description))
                 return Results.BadRequest(new { error = "Say what is wrong." });
+            // The database enforces these too; checking here gives a clearer message sooner.
+            if (f.WoNumber.Trim().Length > 40)
+                return Results.BadRequest(new { error = "The WO number is too long." });
+            if (f.Description.Length > 4000)
+                return Results.BadRequest(new { error = "Keep the description under 4,000 characters." });
+            if (f.TargetKey?.Length > 200)
+                return Results.BadRequest(new { error = "Unknown entry." });
             var id = await db.AsUser(ctx.User.Asurite(), (c, tx) => c.QuerySingleAsync<long>(
                 "SELECT flag_entry(@wo, @description, @table, @key)",
                 new { wo = f.WoNumber.Trim(), description = f.Description.Trim(), table = f.TargetTable, key = f.TargetKey }, tx));
@@ -274,7 +281,8 @@ public static partial class Dispatch
     [GeneratedRegex(@"\[([^\]]+)\]\([^)\s]+\)")]
     private static partial Regex MarkdownLink();
 
-    [GeneratedRegex(@"(\s*·\s*){2,}")]
+    // Non-backtracking: article text is long, and a run of spaces must not make this slow.
+    [GeneratedRegex(@"(\s*·\s*){2,}", RegexOptions.NonBacktracking)]
     private static partial Regex SeparatorRun();
 
     public record TaskRow(int Id, int? TaskCode, string Description, string Category);

@@ -64,6 +64,7 @@ FEEDBACK_REASONS = {"wrong_task", "wrong_trade", "wrong_campus_zone", "other"}
 FEEDBACK_NOTE_MAX = 500
 FEEDBACK_EXPECTED_MAX = 120
 FEEDBACK_TESTER_MAX = 60
+MAX_ACTION_CHARS = 8000  # a long pasted email fits; a megabyte of junk doesn't
 
 with open(ROOT / "firstCallExamples_enriched.json", encoding="utf-8") as handle:
     KNOWLEDGE_BASE = json.load(handle)
@@ -555,9 +556,13 @@ async def suggest(request: Request):
         return error(400, "actionRequested is required and must be a string")
     if len(action_requested) < 3:
         return error(400, "actionRequested too short")
+    # A pasted email can be long, but not this long; the cap keeps one caller from burning the model budget.
+    if len(action_requested) > MAX_ACTION_CHARS:
+        return error(400, f"actionRequested is longer than {MAX_ACTION_CHARS} characters")
 
     timestamp = now_iso()
-    log.info(f"[WebTMA SERVER] POST /api/suggest - {timestamp} - {action_requested[:80]}")
+    # Length only: the request text can hold caller details, which don't belong in the console log.
+    log.info(f"[WebTMA SERVER] POST /api/suggest - {timestamp} - {len(action_requested)} chars")
 
     user_message = (
         f"KNOWLEDGE BASE:\n{KNOWLEDGE_BASE_TEXT}\n\n"
@@ -849,4 +854,5 @@ async def health():
 if __name__ == "__main__":
     import uvicorn
 
-    uvicorn.run(app, host="0.0.0.0", port=int(os.getenv("PORT", "3000")))
+    # This machine only by default: the service has no sign-in. Set HOST=0.0.0.0 to expose it on purpose.
+    uvicorn.run(app, host=os.getenv("HOST", "127.0.0.1"), port=int(os.getenv("PORT", "3000")))

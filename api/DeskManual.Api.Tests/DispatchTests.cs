@@ -30,6 +30,7 @@ public class DispatchTests : IDisposable
             b.ConfigureAppConfiguration(c => c.AddInMemoryCollection(new Dictionary<string, string?>
             {
                 ["Auth:Mode"] = "dev",
+                ["Auth:SessionCheckSeconds"] = "0", // see deactivation and sign-out at once
                 ["ConnectionStrings:Reader"] = Base + ";Username=desk_reader",
                 ["ConnectionStrings:App"] = Base + ";Username=desk_web",
             }));
@@ -205,6 +206,65 @@ public class DispatchTests : IDisposable
         Assert.Equal("test_flagger", (string)row.flagged_by);
         Assert.Equal("open", (string)row.status);
         Assert.NotNull(row.release_version);
+    }
+
+    [SkippableFact]
+    public async Task Signing_out_ends_the_session_even_for_a_copied_cookie()
+    {
+        Skip.If(factory is null, "DESKMANUAL_TEST_DB is not set");
+        // Sign in by hand to get the raw cookie, then use it from two places: the browser and a copy.
+        var raw = factory!.CreateClient(new WebApplicationFactoryClientOptions { HandleCookies = false });
+        raw.DefaultRequestHeaders.Add("X-Desk-Manual", "1");
+        var login = await raw.PostAsJsonAsync("/auth/dev-login", new { asurite = "test_signout" });
+        login.EnsureSuccessStatusCode();
+        var cookie = login.Headers.GetValues("Set-Cookie").First().Split(';')[0];
+        raw.DefaultRequestHeaders.Add("Cookie", cookie);
+        Assert.Equal(HttpStatusCode.OK, (await raw.GetAsync("/api/tasks?q=lock")).StatusCode);
+
+        (await raw.PostAsync("/auth/logout", null)).EnsureSuccessStatusCode();
+        Assert.Equal(HttpStatusCode.Unauthorized, (await raw.GetAsync("/api/tasks?q=lock")).StatusCode);
+    }
+
+    [SkippableFact]
+    public async Task Deactivating_someone_stops_their_reads_at_once()
+    {
+        var client = await SignedIn("test_deactivated");
+        Assert.Equal(HttpStatusCode.OK, (await client.GetAsync("/api/tasks?q=lock")).StatusCode);
+        await using var owner = new NpgsqlConnection(Base + ";Username=postgres");
+        await owner.ExecuteAsync("UPDATE app_user SET active = false WHERE asurite = 'test_deactivated'");
+        try
+        {
+            Assert.Equal(HttpStatusCode.Unauthorized, (await client.GetAsync("/api/tasks?q=lock")).StatusCode);
+            Assert.Equal(HttpStatusCode.Forbidden,
+                (await client.PostAsJsonAsync("/auth/dev-login", new { asurite = "test_deactivated" })).StatusCode);
+        }
+        finally
+        {
+            await owner.ExecuteAsync("UPDATE app_user SET active = true WHERE asurite = 'test_deactivated'");
+        }
+    }
+
+    [SkippableFact]
+    public async Task Bad_input_is_a_400_not_a_500()
+    {
+        var client = await SignedIn();
+        foreach (var path in new[] { "/api/dispatch/route?taskId=abc", "/api/dispatch/route?taskId=99999999999",
+                                     "/api/search?q=%00", "/api/tasks?q=a%00b" })
+            Assert.Equal(HttpStatusCode.BadRequest, (await client.GetAsync(path)).StatusCode);
+        var json = new StringContent("{not json", System.Text.Encoding.UTF8, "application/json");
+        Assert.Equal(HttpStatusCode.BadRequest, (await client.PostAsync("/api/flags", json)).StatusCode);
+    }
+
+    [SkippableFact]
+    public async Task Oversized_flags_are_refused()
+    {
+        var client = await SignedIn("test_bigflag");
+        Assert.Equal(HttpStatusCode.BadRequest, (await client.PostAsJsonAsync("/api/flags",
+            new { woNumber = new string('W', 41), description = "x" })).StatusCode);
+        Assert.Equal(HttpStatusCode.BadRequest, (await client.PostAsJsonAsync("/api/flags",
+            new { woNumber = "WO-1", description = new string('x', 4001) })).StatusCode);
+        Assert.Equal(HttpStatusCode.BadRequest, (await client.PostAsJsonAsync("/api/flags",
+            new { woNumber = "WO-1", description = "x", targetTable = "app_user", targetKey = "admin" })).StatusCode);
     }
 
     [Fact]

@@ -18,6 +18,7 @@ import psycopg
 from psycopg.rows import dict_row
 
 DSN = None  # set from --dsn in main()
+ALLOWED_HOSTS = set()  # set from --port in main()
 PAGE = Path(__file__).with_name("index.html")
 CAMPUSES = ["dtpc", "poly", "tempe", "west"]
 
@@ -94,6 +95,10 @@ class Handler(BaseHTTPRequestHandler):
         self.wfile.write(data)
 
     def do_GET(self):
+        # Only answer requests addressed to this machine. A web page that points its own domain at
+        # 127.0.0.1 (DNS rebinding) would send its own Host, and could otherwise read the live manual.
+        if self.headers.get("Host", "") not in ALLOWED_HOSTS:
+            return self.send(403, {"error": "forbidden host"})
         url = urlparse(self.path)
         p = {k: v[0] for k, v in parse_qs(url.query).items()}
         try:
@@ -127,6 +132,7 @@ def main():
     if not args.dsn:
         sys.exit("Give --dsn or set DATABASE_URL")
     DSN = args.dsn
+    ALLOWED_HOSTS.update({f"127.0.0.1:{args.port}", f"localhost:{args.port}"})
     print(f"Dispatch lookup on http://127.0.0.1:{args.port}")
     ThreadingHTTPServer(("127.0.0.1", args.port), Handler).serve_forever()
 

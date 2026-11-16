@@ -414,10 +414,11 @@ CREATE TABLE public.release_event (
 -- Stories 2.8 / 3.3: a dispatcher says an entry is wrong, with the WO number.
 CREATE TABLE public.manual_flag (
     id               bigserial PRIMARY KEY,
-    wo_number        text NOT NULL CHECK (btrim(wo_number) <> ''),
+    -- Length limits: flags can never be deleted, so nobody may fill the table with junk (security audit).
+    wo_number        text NOT NULL CHECK (btrim(wo_number) <> '' AND length(wo_number) <= 40),
     target_table     text,                          -- the entry flagged, if known
-    target_key       text,
-    description      text NOT NULL CHECK (btrim(description) <> ''),
+    target_key       text CHECK (length(target_key) <= 200),
+    description      text NOT NULL CHECK (btrim(description) <> '' AND length(description) <= 4000),
     release_version  int REFERENCES public.release(version),   -- what they were reading
     flagged_by       text NOT NULL REFERENCES public.app_user(asurite),
     flagged_at       timestamptz NOT NULL DEFAULT now(),
@@ -560,6 +561,42 @@ RETURNS text LANGUAGE sql SECURITY DEFINER SET search_path = public, pg_temp AS 
     INSERT INTO public.app_user (asurite, display_name) VALUES (lower(p_asurite), p_display_name)
     ON CONFLICT (asurite) DO UPDATE SET display_name = EXCLUDED.display_name
     RETURNING role
+$$;
+
+-- Sign-in sessions. The session cookie only carries the id, and the app checks the row on every
+-- request, so signing out or being deactivated takes effect at once instead of when the cookie expires.
+CREATE TABLE public.app_session (
+    id          uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+    asurite     text NOT NULL REFERENCES public.app_user(asurite),
+    started_at  timestamptz NOT NULL DEFAULT now(),
+    expires_at  timestamptz NOT NULL,
+    ended_at    timestamptz
+);
+
+CREATE FUNCTION public.start_session(p_asurite text, p_hours int)
+RETURNS uuid LANGUAGE plpgsql SECURITY DEFINER SET search_path = public, pg_temp AS $$
+DECLARE v_id uuid;
+BEGIN
+    IF NOT EXISTS (SELECT 1 FROM public.app_user WHERE asurite = lower(p_asurite) AND active) THEN
+        RAISE EXCEPTION '% is not an active user', p_asurite;
+    END IF;
+    INSERT INTO public.app_session (asurite, expires_at)
+    VALUES (lower(p_asurite), now() + make_interval(hours => least(greatest(p_hours, 1), 24)))
+    RETURNING id INTO v_id;
+    RETURN v_id;
+END $$;
+
+CREATE FUNCTION public.end_session(p_id uuid)
+RETURNS void LANGUAGE sql SECURITY DEFINER SET search_path = public, pg_temp AS $$
+    UPDATE public.app_session SET ended_at = now() WHERE id = p_id AND ended_at IS NULL
+$$;
+
+-- Who a session belongs to, if it is still good: not ended, not expired, and the person still active.
+CREATE FUNCTION public.check_session(p_id uuid)
+RETURNS TABLE (asurite text, role text) LANGUAGE sql STABLE SECURITY DEFINER SET search_path = public, pg_temp AS $$
+    SELECT u.asurite, u.role
+    FROM public.app_session s JOIN public.app_user u ON u.asurite = s.asurite
+    WHERE s.id = p_id AND s.ended_at IS NULL AND s.expires_at > now() AND u.active
 $$;
 
 -- ================================================================ change requests (stories 2.2-2.6, 2.9)
@@ -1174,13 +1211,32 @@ END $$;
 REVOKE ALL ON FUNCTION public.bootstrap_publish(text) FROM PUBLIC;
 
 -- ================================================================ flags and same-day changes
+CREATE INDEX manual_flag_by_idx ON public.manual_flag (flagged_by, flagged_at);
+
+-- At most 30 flags an hour per person: enough for a bad day, not enough to flood the editors.
 CREATE FUNCTION public.flag_entry(p_wo_number text, p_description text, p_table text DEFAULT NULL, p_key text DEFAULT NULL)
-RETURNS bigint LANGUAGE sql SECURITY DEFINER SET search_path = public, pg_temp AS $$
+RETURNS bigint LANGUAGE plpgsql SECURITY DEFINER SET search_path = public, pg_temp AS $$
+DECLARE v_me text := public.me(); v_id bigint;
+BEGIN
+    IF length(btrim(p_wo_number)) > 40 THEN
+        RAISE EXCEPTION 'The WO number is too long';
+    END IF;
+    IF length(p_description) > 4000 THEN
+        RAISE EXCEPTION 'Keep the description under 4,000 characters';
+    END IF;
+    IF p_table IS NOT NULL AND NOT p_table = ANY (public.manual_tables()) THEN
+        RAISE EXCEPTION 'Unknown kind of entry: %', left(p_table, 40);
+    END IF;
+    IF (SELECT count(*) FROM public.manual_flag
+        WHERE flagged_by = v_me AND flagged_at > now() - interval '1 hour') >= 30 THEN
+        RAISE EXCEPTION 'You have sent 30 flags in the last hour. Try again later.';
+    END IF;
     INSERT INTO public.manual_flag (wo_number, description, target_table, target_key, release_version, flagged_by)
     VALUES (btrim(p_wo_number), p_description, p_table, p_key,
-            (SELECT version FROM public.release WHERE is_live), public.me())
-    RETURNING id
-$$;
+            (SELECT version FROM public.release WHERE is_live), v_me)
+    RETURNING id INTO v_id;
+    RETURN v_id;
+END $$;
 
 CREATE FUNCTION public.resolve_flag(p_id bigint, p_status text, p_note text)
 RETURNS void LANGUAGE plpgsql SECURITY DEFINER SET search_path = public, pg_temp AS $$
@@ -1326,11 +1382,15 @@ END $$;
 
 REVOKE ALL ON SCHEMA public, staging, live FROM PUBLIC;
 REVOKE EXECUTE ON ALL FUNCTIONS IN SCHEMA public, staging FROM PUBLIC;
+-- Functions added later aren't callable by everyone either; each needs its own grant.
+ALTER DEFAULT PRIVILEGES REVOKE EXECUTE ON FUNCTIONS FROM PUBLIC;
 
--- The assistant: published manual only.
+-- The assistant: published manual only. Of the releases, only which version is live: the
+-- snapshots hold every past version, retired contacts included.
 GRANT USAGE ON SCHEMA live, public TO deskmanual_reader;
 GRANT SELECT ON ALL TABLES IN SCHEMA live TO deskmanual_reader;
-GRANT SELECT ON public.contact_unavailable, public.release TO deskmanual_reader;
+GRANT SELECT ON public.contact_unavailable TO deskmanual_reader;
+GRANT SELECT (version, label, published_at, note, is_live) ON public.release TO deskmanual_reader;
 GRANT EXECUTE ON FUNCTION public.phx_today(), public.phx_now() TO deskmanual_reader;
 
 -- The website: reads everything (it hides staging and logs from people by role),
@@ -1353,7 +1413,10 @@ GRANT EXECUTE ON FUNCTION
     public.confirm_release(bigint), public.cancel_release_request(bigint),
     public.flag_entry(text, text, text, text), public.resolve_flag(bigint, text, text),
     public.mark_unavailable(int, text), public.clear_unavailable(bigint),
-    public.review_import(text, text, text), public.manual_tables()
+    public.review_import(text, text, text), public.manual_tables(),
+    public.start_session(text, int), public.end_session(uuid), public.check_session(uuid)
 TO deskmanual_app;
+-- Session ids are bearer secrets: the app checks them through check_session(), never by reading the table.
+REVOKE SELECT ON public.app_session FROM deskmanual_app;
 
 COMMIT;

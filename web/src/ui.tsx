@@ -159,11 +159,11 @@ function FlagDialog({ target, onClose }: { target: FlagTarget; onClose: () => vo
             {error && <p className="error">{error}</p>}
             <label>
               WO number
-              <input value={wo} onChange={(e) => setWo(e.target.value)} required autoFocus inputMode="numeric" />
+              <input value={wo} onChange={(e) => setWo(e.target.value)} required autoFocus inputMode="numeric" maxLength={40} />
             </label>
             <label>
               What's wrong?
-              <textarea value={description} onChange={(e) => setDescription(e.target.value)} required rows={4} />
+              <textarea value={description} onChange={(e) => setDescription(e.target.value)} required rows={4} maxLength={4000} />
             </label>
             <div className="actions">
               <button type="button" className="button secondary" onClick={onClose}>Cancel</button>

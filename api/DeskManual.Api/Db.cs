@@ -9,8 +9,20 @@ namespace DeskManual.Api;
 /// </summary>
 public sealed class Db(string readerConnection, string appConnection) : IDisposable
 {
-    readonly NpgsqlDataSource reader = NpgsqlDataSource.Create(readerConnection);
-    readonly NpgsqlDataSource app = NpgsqlDataSource.Create(appConnection);
+    // Npgsql allows 100 connections per pool and Postgres 100 in total, so a spike used to run the
+    // database out of connections (load test, 200 users). Capped, extra requests wait their turn instead.
+    // A "Maximum Pool Size" in the connection string still wins.
+    readonly NpgsqlDataSource reader = Create(readerConnection, defaultMax: 30);
+    readonly NpgsqlDataSource app = Create(appConnection, defaultMax: 10);
+
+    static NpgsqlDataSource Create(string connection, int defaultMax)
+    {
+        var b = new NpgsqlConnectionStringBuilder(connection);
+        if (!connection.Contains("Maximum Pool Size", StringComparison.OrdinalIgnoreCase)
+            && !connection.Contains("Max Pool Size", StringComparison.OrdinalIgnoreCase))
+            b.MaxPoolSize = defaultMax;
+        return NpgsqlDataSource.Create(b.ConnectionString);
+    }
 
     /// <summary>The published (live) manual only, read-only. For dispatch and lookups.</summary>
     public Task<T> Read<T>(Func<NpgsqlConnection, NpgsqlTransaction, Task<T>> work) =>
